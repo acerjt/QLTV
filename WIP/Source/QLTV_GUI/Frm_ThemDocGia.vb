@@ -14,8 +14,7 @@ Public Class Frm_ThemDocGia
         Dim docgia As DocGiaDTO
         docgia = New DocGiaDTO()
 
-        Dim quydinh As QuyDinhDTO
-        quydinh = New QuyDinhDTO()
+
         '1. Mapping data from GUI control
         docgia.MaDocGia = Txt_MaDocGia.Text
         docgia.HoVaTen = Txt_HoVaTen.Text
@@ -26,18 +25,21 @@ Public Class Frm_ThemDocGia
         docgia.NgayLap = Dtp_NgayLap.Value
         docgia.NgayHetHan = docgia.NgayLap.AddMonths(6) '.ToString
 
-
+        Dim quydinh As QuyDinhDTO
+        quydinh = New QuyDinhDTO()
         Dim qd As QuyDinhBUS
         qd = New QuyDinhBUS()
 
         Dim GetTuoiToiDa = 0
         Dim GetTuoiToiThieu = 0
         Dim GetThoiGianSuDung = 0
-        Dim result As Result
-        result = qd.GetQuyDinh(GetTuoiToiThieu, GetTuoiToiDa, GetThoiGianSuDung)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động mã Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
+
+        ' lấy tham số từ database
+        Dim result1 As Result
+        result1 = qd.GetQuyDinh(GetTuoiToiThieu, GetTuoiToiDa, GetThoiGianSuDung)
+        If (result1.FlagResult = False) Then
+            MessageBox.Show("lấy tham số từ database không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result1.SystemMessage)
             Me.Close()
             Return
         End If
@@ -63,7 +65,7 @@ Public Class Frm_ThemDocGia
 
 
         '3. Insert to DB
-        'Dim result As Result
+        Dim result As Result
         result = dgBus.insert(docgia)
         If (result.FlagResult = True) Then
             MessageBox.Show("Thêm Độc Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -71,7 +73,7 @@ Public Class Frm_ThemDocGia
             Dim nextMaDocGia = "1"
             result = dgBus.buildMaDocGia(nextMaDocGia)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy danh tự động mã Độc Gỉa không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Lấy danh tự động mã Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Close()
                 Return
             End If

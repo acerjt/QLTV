@@ -31,7 +31,7 @@ Public Class Frm_QLDocGia
                 'docgia.TinhTrangThe = Txt_TinhTrangThe.Text
                 'docgia.SoSachDangMuon = Txt_SoSachDangMuon.Text
 
-                docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGiaCapNhap.SelectedValue)
+                'docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGiaCapNhap.SelectedValue)
                 '2. Business .....
                 If (dgBus.isValidName(docgia) = False) Then
                     MessageBox.Show("Họ tên Độc Giả không đúng.")

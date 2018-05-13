@@ -185,11 +185,11 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function Update(dg As DocGiaDTO) As Result
+    Public Function update(dg As DocGiaDTO) As Result
 
         Dim query As String = String.Empty
         query &= " UPDATE [tblDocGia] SET"
-        query &= " ,[hovaten] = @hovaten "
+        query &= " [hovaten] = @hovaten "
         query &= " ,[maloaidocgia] = @maloaidocgia "
         query &= " ,[ngaysinh] = @ngaysinh "
         query &= " ,[diachi] = @diachi "
@@ -233,7 +233,7 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function Delete(MaDocGia As String) As Result
+    Public Function delete(MaDocGia As String) As Result
 
         Dim query As String = String.Empty
         query &= " DELETE FROM [tblDocGia] "
