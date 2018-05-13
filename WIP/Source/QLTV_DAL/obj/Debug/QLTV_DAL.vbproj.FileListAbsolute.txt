@@ -1,0 +1,34 @@
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.exe
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.pdb
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.xml
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.exe
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\Utility.exe
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.pdb
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.xml
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\Utility.pdb
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\bin\Debug\Utility.xml
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.exe
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.xml
+C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\QLTV_DAL.exe
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\QLTV_DAL.pdb
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\QLTV_DAL.xml
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\QLTV_DTO.exe
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\Utility.exe
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\QLTV_DTO.pdb
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\QLTV_DTO.xml
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\Utility.pdb
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\bin\Debug\Utility.xml
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.exe
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.xml
+D:\New folder (3)\New folder (2)\A\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
