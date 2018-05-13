@@ -20,9 +20,9 @@ Public Class DocGiaBUS
         Return True
     End Function
 
-    Public Function isValidAge(dg As DocGiaDTO) As Boolean
+    Public Function isValidAge(dg As DocGiaDTO, qd As QuyDinhDTO) As Boolean
         Dim NamHienTai = DateTime.Now.Year
-        If ((NamHienTai - dg.NgaySinh.Year) < 18 Or (NamHienTai - dg.NgaySinh.Year) > 55) Then
+        If ((NamHienTai - dg.NgaySinh.Year) < qd.TuoiToiThieu Or (NamHienTai - dg.NgaySinh.Year) > qd.TuoiToiDa) Then
             Return False
         End If
         Return True
@@ -74,6 +74,8 @@ Public Class DocGiaBUS
         '2. insert to DB
         Return dgDAL.SelectALL_ByType(MaLoaiDocGia, listDocGia)
     End Function
+
+
     Public Function buildMaDocGia(ByRef nextMaDocGia As Integer) As Result
         Return dgDAL.BuildMaDocGia(nextMaDocGia)
     End Function

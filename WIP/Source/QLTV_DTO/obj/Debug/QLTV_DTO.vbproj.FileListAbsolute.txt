@@ -17,3 +17,13 @@ D:\New folder (3)\New folder (2)\A\QLTV_DTO\obj\Debug\QLTV_DTO.vbproj.CoreCompil
 D:\New folder (3)\New folder (2)\A\QLTV_DTO\obj\Debug\QLTV_DTO.exe
 D:\New folder (3)\New folder (2)\A\QLTV_DTO\obj\Debug\QLTV_DTO.xml
 D:\New folder (3)\New folder (2)\A\QLTV_DTO\obj\Debug\QLTV_DTO.pdb
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\bin\Debug\QLTV_DTO.exe
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\bin\Debug\QLTV_DTO.pdb
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\bin\Debug\QLTV_DTO.xml
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.Resources.resources
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.vbproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.exe
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.xml
+C:\Users\Administrator\Desktop\New folder (6)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.pdb

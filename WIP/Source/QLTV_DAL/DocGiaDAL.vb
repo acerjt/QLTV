@@ -17,9 +17,9 @@ Public Class DocGiaDAL
 
     Public Function BuildMaDocGia(ByRef nextMaDocGia As String) As Result 'ex: 18222229
         nextMaDocGia = String.Empty
-        Dim y = DateTime.Now.Year
-        Dim x = y.ToString().Substring(2)
-        nextMaDocGia = x + "000000"
+        'Dim y = DateTime.Now.Year
+        ' Dim x = y.ToString().Substring(2)
+        'nextMaDocGia = x + "1"
 
         Dim query As String = String.Empty
         query &= "SELECT TOP 1 [madocgia] "
@@ -44,22 +44,22 @@ Public Class DocGiaDAL
                             msOnDB = reader("madocgia")
                         End While
                     End If
-                    If (msOnDB <> Nothing And msOnDB.Length >= 8) Then
-                        Dim currentYear = DateTime.Now.Year.ToString().Substring(2)
-                        Dim iCurrentYear = Integer.Parse(currentYear)
-                        Dim currentYearOnDB = msOnDB.Substring(0, 2)
-                        Dim icurrentYearOnDB = Integer.Parse(currentYearOnDB)
-                        Dim year = iCurrentYear
-                        If (year < icurrentYearOnDB) Then
-                            year = icurrentYearOnDB
-                        End If
-                        nextMaDocGia = year.ToString()
-                        Dim v = msOnDB.Substring(2)
-                        Dim convertDecimal = Convert.ToDecimal(v)
-                        convertDecimal = convertDecimal + 1
-                        Dim tmp = convertDecimal.ToString()
-                        tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
-                        nextMaDocGia = nextMaDocGia + tmp
+                    If (msOnDB <> Nothing And msOnDB.Length >= 1) Then
+                        'Dim currentYear = DateTime.Now.Year.ToString().Substring(2)
+                        'Dim iCurrentYear = Integer.Parse(currentYear)
+                        'Dim currentYearOnDB = msOnDB.Substring(0, 2)
+                        'Dim icurrentYearOnDB = Integer.Parse(currentYearOnDB)
+                        'Dim year = iCurrentYear
+                        'If (year < icurrentYearOnDB) Then
+                        '    year = icurrentYearOnDB
+                        'End If
+                        'nextMaDocGia = year.ToString()
+                        'Dim v = msOnDB.Substring(2)
+                        'Dim convertDecimal = Convert.ToDecimal(v)
+                        'convertDecimal = convertDecimal + 1
+                        'Dim tmp = convertDecimal.ToString()
+                        'tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
+                        nextMaDocGia = msOnDB + 1
                         System.Console.WriteLine(nextMaDocGia)
                     End If
 
