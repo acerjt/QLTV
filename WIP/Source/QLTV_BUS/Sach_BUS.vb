@@ -19,9 +19,9 @@ Public Class Sach_BUS
 
         Return True
     End Function
-    Public Function isValidTacGia(TacGia As TacGia_DTO, Sach As Sach_DTO) As Boolean
+    Public Function isValidTacGia(Sach As Sach_DTO) As Boolean
         'Dim currentyear = DateTime.Now.Year
-        If (Sach.TenTacGia > TacGia.TenTacGia And Sach.TenTacGia < 1) Then
+        If (Sach.TenTacGia < 1) Then
             Return False
         End If
 
@@ -42,36 +42,36 @@ Public Class Sach_BUS
         '2. insert to DB
         Return SachDAL.insert(Sach)
     End Function
-    'Public Function update(hs As HocSinhDTO) As Result
-    '    '1. verify data here!!
+    Public Function update(Sach As Sach_DTO) As Result
+        '1. verify data here!!
 
-    '    '2. insert to DB
-    '    Return hsDAL.update(hs)
-    'End Function
-    'Public Function delete(maLoai As Integer) As Result
-    '    '1. verify data here!!
+        '2. insert to DB
+        Return SachDAL.update(Sach)
+    End Function
+    Public Function delete(MaSach As Integer) As Result
+        '1. verify data here!!
 
-    '    '2. insert to DB
-    '    Return hsDAL.delete(maLoai)
-    'End Function
+        '2. insert to DB
+        Return SachDAL.delete(MaSach)
+    End Function
     Public Function selectAll(ByRef listSach As List(Of Sach_DTO)) As Result
         '1. verify data here!!
 
         '2. insert to DB
         Return SachDAL.selectALL(listSach)
     End Function
-    'Public Function selectALL_ByMaLop(iMaLop As Integer, ByRef listHS As List(Of HocSinhDTO)) As Result
-    '    '1. verify data here!!
+    Public Function selectALL_ByTacGia(iMaTacGia As Integer, ByRef listSach As List(Of Sach_DTO)) As Result
+        '1. verify data here!!
 
-    '    '2. insert to DB
-    '    Return hsDAL.selectALL_ByMaLop(iMaLop, listHS)
-    'End Function
-    'Public Function selectALL_ByType(maLoai As Integer, ByRef listHS As List(Of HocSinhDTO)) As Result
-    '    '1. verify data here!!
+        '2. insert to DB
+        Return SachDAL.selectALL_ByMaTacGia(iMaTacGia, listSach)
+    End Function
+    Public Function selectALL_ByTheLoaiSach(iMaTheLoaiSach As Integer, ByRef listSach As List(Of Sach_DTO)) As Result
+        '1. verify data here!!
 
-    '    '2. insert to DB
-    '    Return hsDAL.selectALL_ByType(maLoai, listHS)
-    'End Function
+        '2. insert to DB
+        Return SachDAL.selectALL_ByMaTheLoaiSach(iMaTheLoaiSach, listSach)
+    End Function
     Public Function buildMaSach(ByRef nextMaSach As Integer) As Result
         Return SachDAL.buildMaSach(nextMaSach)
     End Function

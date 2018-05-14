@@ -65,7 +65,7 @@ Public Class Sach_DAL
         query &= "INSERT INTO [tblSach] ([MaSach], [TenSach], [MaTheLoaiSach], [MaTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia])"
         query &= "VALUES (@MaSach,@TenSach,@MaTheLoaiSach,@MaTacGia,@NamXuatBan,@NhaXuatBan,@NgayNhap,@TriGia)"
 
-        'get MSHS
+        'get MSSach
         Dim nextMaSach = "1"
         buildMaSach(nextMaSach)
         Sach.MaSach = nextMaSach
@@ -101,9 +101,9 @@ Public Class Sach_DAL
     Public Function selectALL(ByRef listSach As List(Of Sach_DTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT ([MaSach], [TenSach], [MaTheLoaiSach], [MaTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia])"
-        query &= "FROM [tblSach]"
-
+        query &= "SELECT [MaSach], [TenSach], [TenTheLoaiSach], [TenTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia]"
+        query &= "FROM [tblSach],[tblTacGia],[tblTheLoaiSach]"
+        query &= "WHERE  [tblSach].[MaTacGia]=[tblTacGia].[MaTacGia] AND [tblSach].[MaTheLoaiSach]=[tblTheLoaiSach].[MaTheLoaiSach]"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -119,17 +119,158 @@ Public Class Sach_DAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("MaTheLoaiSach"), reader("MaTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
                         End While
                     End If
 
                 Catch ex As Exception
                     conn.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Lấy tất cả Học sinh không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả sách không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
+    End Function
+    Public Function selectALL_ByMaTheLoaiSach(iMaTheLoaiSach As Integer, ByRef listSach As List(Of Sach_DTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [MaSach], [TenSach], [MaTheLoaiSach], [TenTacGia], [NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia] "
+        query &= "FROM [tblSach]    , [tblTacGia] "
+        query &= "WHERE [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia]"
+        query &= "     AND [MaTheLoaiSach] = @MaTheLoaiSach"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaTheLoaiSach", iMaTheLoaiSach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("MaTheLoaiSach"), reader("TenTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy sách theo thể loại không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function selectALL_ByMaTacGia(iMaTacGia As Integer, ByRef listSach As List(Of Sach_DTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [MaSach], [TenSach], [TenTheLoaiSach], [MaTacGia], [NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia] "
+        query &= "FROM [tblSach]    , [tblTheLoaiSach] "
+        query &= "WHERE [tblSach].[MaTheLoaiSach] = [tblTheLoaiSach].[MaTheLoaiSach]"
+        query &= "     AND [MaTacGia] = @MaTacGia"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaTacGia", iMaTacGia)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listSach.Clear()
+                        While reader.Read()
+                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("MaTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy sách theo tên tác giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function update(Sach As Sach_DTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblSach] SET"
+        query &= " [TenSach] = @TenSach "
+        query &= " ,[MaTheLoaiSach] = @MaTheLoaiSach "
+        query &= " ,[MaTacGia] = @MaTacGia "
+        query &= " ,[NamXuatBan] = @NamXuatBan "
+        query &= " ,[NhaXuatBan] = @NhaXuatBan "
+        query &= " ,[NgayNhap] = @NgayNhap "
+        query &= " ,[TriGia] = @TriGia "
+        query &= " WHERE "
+        query &= " [MaSach] = @MaSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@TenSach", Sach.TenSach)
+                    .Parameters.AddWithValue("@MaTheLoaiSach", Sach.TheLoai)
+                    .Parameters.AddWithValue("@MaTacGia", Sach.TenTacGia)
+                    .Parameters.AddWithValue("@NamXuatBan", Sach.NamXuatBan)
+                    .Parameters.AddWithValue("@NhaXuatBan", Sach.NhaXuatBan)
+                    .Parameters.AddWithValue("@NgayNhap", Sach.NgayNhap)
+                    .Parameters.AddWithValue("@TriGia", Sach.TriGia)
+                    .Parameters.AddWithValue("@MaSach", Sach.MaSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Cập nhật sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function delete(MaSach As String) As Result
+
+        Dim query As String = String.Empty
+        query &= " DELETE FROM [tblSach] "
+        query &= " WHERE "
+        query &= " [MaSach] = @MaSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaSach", MaSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Xóa sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)  ' thanh cong
     End Function
 End Class

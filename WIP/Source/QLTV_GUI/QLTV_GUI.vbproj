@@ -90,6 +90,10 @@
     <Compile Include="Frm_QLLoaiDocGia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_QlSach.Designer.vb" />
+    <Compile Include="Frm_QlSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_QuyDinh.Designer.vb">
       <DependentUpon>Frm_QuyDinh.vb</DependentUpon>
     </Compile>
@@ -106,6 +110,24 @@
       <DependentUpon>Frm_ThemLoaiDocGia.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_ThemLoaiDocGia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ThemSach.Designer.vb">
+      <DependentUpon>Frm_ThemSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThemSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ThemTacGia.Designer.vb">
+      <DependentUpon>Frm_ThemTacGia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThemTacGia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ThemTheLoaiSach.Designer.vb">
+      <DependentUpon>Frm_ThemTheLoaiSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThemTheLoaiSach.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -134,6 +156,7 @@
     <EmbeddedResource Include="Frm_QLLoaiDocGia.resx">
       <DependentUpon>Frm_QLLoaiDocGia.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QlSach.resx" />
     <EmbeddedResource Include="Frm_QuyDinh.resx">
       <DependentUpon>Frm_QuyDinh.vb</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +165,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ThemLoaiDocGia.resx">
       <DependentUpon>Frm_ThemLoaiDocGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ThemSach.resx">
+      <DependentUpon>Frm_ThemSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ThemTacGia.resx">
+      <DependentUpon>Frm_ThemTacGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ThemTheLoaiSach.resx">
+      <DependentUpon>Frm_ThemTheLoaiSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -1,10 +1,9 @@
 ﻿Public Class Sach_DTO
     Private strMaSach As String
     Private strTenSach As String
-    Private iTheLoai As Integer
-    Private iMaTacGia As Integer
-    Private strTenTacGia As String
-    Private iNamXuatBan As Integer
+    Private iTheLoai As String
+    Private iTacGia As String
+    Private iNamXuatBan As String
     Private strNhaXuatBan As String
     Private dateNgayNhap As DateTime
     Private strTriGia As String
@@ -15,8 +14,8 @@
     End Sub
     Public Sub New(strMaSach As String,
                    strTenSach As String,
-                   iTheLoai As Integer,
-                   iMaTacGia As Integer,
+                   iTheLoai As String,
+                   iTacGia As String,
                    iNamXuatBan As Integer,
                    strNhaXuatBan As String,
                    dateNgayNhap As DateTime,
@@ -27,7 +26,7 @@
         Me.strTenSach = strTenSach
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
-        Me.iMaTacGia = iMaTacGia
+        Me.iTacGia = iTacGia
         Me.iNamXuatBan = iNamXuatBan
         Me.strNhaXuatBan = strNhaXuatBan
         Me.dateNgayNhap = dateNgayNhap
@@ -50,11 +49,11 @@
             strTenSach = value
         End Set
     End Property
-    Property TheLoai() As Integer
+    Property TheLoai() As String
         Get
             Return iTheLoai
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
             iTheLoai = value
         End Set
     End Property
@@ -68,10 +67,10 @@
     'End Property
     Property TenTacGia() As String
         Get
-            Return iMaTacGia
+            Return iTacGia
         End Get
         Set(ByVal value As String)
-            iMaTacGia = value
+            iTacGia = value
         End Set
     End Property
     Property NamXuatBan() As Integer

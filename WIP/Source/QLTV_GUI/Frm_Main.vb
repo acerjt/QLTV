@@ -30,4 +30,28 @@
         frmquydinh.MdiParent = Me
         frmquydinh.Show()
     End Sub
+
+    Private Sub ThêmSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmSáchToolStripMenuItem.Click
+        Dim frmSach As Frm_ThemSach = New Frm_ThemSach()
+        frmSach.MdiParent = Me
+        frmSach.Show()
+    End Sub
+
+    Private Sub ThêmThểLoạiSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmThểLoạiSáchToolStripMenuItem.Click
+        Dim frmTheLoaiSach As Frm_ThemTheLoaiSach = New Frm_ThemTheLoaiSach()
+        frmTheLoaiSach.MdiParent = Me
+        frmTheLoaiSach.Show()
+    End Sub
+
+    Private Sub ThêmTácGiảToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmTácGiảToolStripMenuItem.Click
+        Dim frmTacGia As Frm_ThemTacGia = New Frm_ThemTacGia()
+        frmTacGia.MdiParent = Me
+        frmTacGia.Show()
+    End Sub
+
+    Private Sub QuảnLíSáchToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles QuảnLíSáchToolStripMenuItem1.Click
+        Dim frmQlSach As Frm_QlSach = New Frm_QlSach()
+        frmQlSach.MdiParent = Me
+        frmQlSach.Show()
+    End Sub
 End Class

@@ -90,6 +90,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="QuyDinhBUS.vb" />
+    <Compile Include="Sach_BUS.vb" />
+    <Compile Include="TacGia_BUS.vb" />
+    <Compile Include="TheLoaiSach_BUS.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

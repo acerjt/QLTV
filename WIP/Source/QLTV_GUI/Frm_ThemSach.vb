@@ -59,8 +59,7 @@ Public Class Frm_ThemSach
     Private Sub Btn_Nhap_Click(sender As Object, e As EventArgs) Handles Btn_Nhap.Click
         Dim Sach As Sach_DTO
         Sach = New Sach_DTO()
-        Dim TacGia As TacGia_DTO
-        TacGia = New TacGia_DTO()
+
         '1. Mapping data from GUI control
         Sach.MaSach = Txt_MaSach.Text
         Sach.TenSach = TxtTenSach.Text
@@ -78,7 +77,7 @@ Public Class Frm_ThemSach
             Return
         End If
 
-        If (SachBUS.isValidTacGia(TacGia, Sach) = False) Then
+        If (SachBUS.isValidTacGia(Sach) = False) Then
             MessageBox.Show("Tác giả chưa có trong cơ sở dữ liệu")
             Cb_TenTacGia.Focus()
             Return

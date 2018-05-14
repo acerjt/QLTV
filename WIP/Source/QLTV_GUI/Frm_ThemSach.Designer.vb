@@ -80,9 +80,9 @@ Partial Class Frm_ThemSach
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(76, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(59, 17)
+        Me.Label4.Size = New System.Drawing.Size(95, 17)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Thể loại"
+        Me.Label4.Text = "Thể loại Sách"
         '
         'Label5
         '
