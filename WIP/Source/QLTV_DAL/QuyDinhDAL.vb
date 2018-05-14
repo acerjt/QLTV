@@ -16,11 +16,11 @@ Public Class QuyDinhDAL
     Public Function update(qd As QuyDinhDTO) As Result
 
         Dim query As String = String.Empty
-        query &= " UPDATE [[tblquydinh]] SET"
+        query &= " UPDATE [tblquydinh] SET"
         query &= " [tuoitoithieu] = @tuoitoithieu "
         query &= " ,[tuoitoida] = @tuoitoida "
         query &= " ,[thoigiansudung] = @thoigiansudung"
-        query &= "WHERE "
+        query &= " WHERE "
         query &= " [id] = @id "
 
         Using conn As New SqlConnection(connectionString)

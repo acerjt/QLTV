@@ -14,17 +14,7 @@ Public Class Frm_ThemDocGia
         Dim docgia As DocGiaDTO
         docgia = New DocGiaDTO()
 
-
-        '1. Mapping data from GUI control
-        docgia.MaDocGia = Txt_MaDocGia.Text
-        docgia.HoVaTen = Txt_HoVaTen.Text
-        docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGia.SelectedValue)
-        docgia.NgaySinh = Dtp_NgaySinh.Value
-        docgia.DiaChi = Txt_DiaChi.Text
-        docgia.Email = Txt_Email.Text
-        docgia.NgayLap = Dtp_NgayLap.Value
-        docgia.NgayHetHan = docgia.NgayLap.AddMonths(6) '.ToString
-
+        'get thamso từ database
         Dim quydinh As QuyDinhDTO
         quydinh = New QuyDinhDTO()
         Dim qd As QuyDinhBUS
@@ -46,8 +36,18 @@ Public Class Frm_ThemDocGia
         quydinh.TuoiToiThieu = GetTuoiToiThieu
         quydinh.TuoiToiDa = GetTuoiToiDa
         quydinh.ThoiGianSuDung = GetThoiGianSuDung
+        '1. Mapping data from GUI control
+        docgia.MaDocGia = Txt_MaDocGia.Text
+        docgia.HoVaTen = Txt_HoVaTen.Text
+        docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGia.SelectedValue)
+        docgia.NgaySinh = Dtp_NgaySinh.Value
+        docgia.DiaChi = Txt_DiaChi.Text
+        docgia.Email = Txt_Email.Text
+        docgia.NgayLap = Dtp_NgayLap.Value
+        docgia.NgayHetHan = docgia.NgayLap.AddMonths(quydinh.ThoiGianSuDung) '.ToString
 
-        'End If
+
+
 
 
         '2. Business .....
@@ -125,15 +125,8 @@ Public Class Frm_ThemDocGia
         docgia = New DocGiaDTO()
         Dim quydinh As QuyDinhDTO
         quydinh = New QuyDinhDTO()
-        '1. Mapping data from GUI control
-        docgia.MaDocGia = Txt_MaDocGia.Text
-        docgia.HoVaTen = Txt_HoVaTen.Text
-        docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGia.SelectedValue)
-        docgia.NgaySinh = Dtp_NgaySinh.Value
-        docgia.DiaChi = Txt_DiaChi.Text
-        docgia.Email = Txt_Email.Text
-        docgia.NgayLap = Dtp_NgayLap.Value
-        docgia.NgayHetHan = docgia.NgayLap.AddMonths(6)
+
+        'lấy tham số từ database
         Dim qd As QuyDinhBUS
         qd = New QuyDinhBUS()
 
@@ -151,6 +144,16 @@ Public Class Frm_ThemDocGia
         quydinh.TuoiToiThieu = GetTuoiToiThieu
         quydinh.TuoiToiDa = GetTuoiToiDa
         quydinh.ThoiGianSuDung = GetThoiGianSuDung
+
+        '1. Mapping data from GUI control
+        docgia.MaDocGia = Txt_MaDocGia.Text
+        docgia.HoVaTen = Txt_HoVaTen.Text
+        docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGia.SelectedValue)
+        docgia.NgaySinh = Dtp_NgaySinh.Value
+        docgia.DiaChi = Txt_DiaChi.Text
+        docgia.Email = Txt_Email.Text
+        docgia.NgayLap = Dtp_NgayLap.Value
+        docgia.NgayHetHan = docgia.NgayLap.AddMonths(quydinh.ThoiGianSuDung)
 
 
 
