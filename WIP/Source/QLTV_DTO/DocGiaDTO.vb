@@ -1,5 +1,5 @@
 ﻿Public Class DocGiaDTO
-    Private strMaDocGia As String
+    Private strMaDocGia As Integer
     Private strHoVaTen As String
     Private iLoaiDocGia As Integer
     Private dateNgaySinh As DateTime

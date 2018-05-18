@@ -149,6 +149,48 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
+    Public Function selectHoVaTen(MaDocGia As Integer, ByRef ten As String) As Result
+
+        Dim query As String = String.Empty
+
+        query &= " SELECT  [hovaten]"
+        query &= " FROM [tblDocGia]"
+        query &= " WHERE [tblDocGia].[madocgia] = @madocgia"
+
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@madocgia", MaDocGia)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    Dim tenonDB As String
+                    tenonDB = ""
+                    If reader.HasRows = True Then
+
+                        While reader.Read()
+                            tenonDB = reader("HoVaTen")
+                        End While
+
+                    End If
+                    ten = tenonDB
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Lấy thông tin độc giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
     Public Function SelectALL_ByType(MaLoaiDocGia As Integer, ByRef listDocGia As List(Of DocGiaDTO)) As Result
 
         Dim query As String = String.Empty

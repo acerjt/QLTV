@@ -54,4 +54,10 @@
         frmQlSach.MdiParent = Me
         frmQlSach.Show()
     End Sub
+
+    Private Sub LậpPhiếuMượnSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LậpPhiếuMượnSáchToolStripMenuItem.Click
+        Dim frmLapPhieuMuonSach As Frm_LapPhieuMuonSach = New Frm_LapPhieuMuonSach()
+        frmLapPhieuMuonSach.MdiParent = Me
+        frmLapPhieuMuonSach.Show()
+    End Sub
 End Class
