@@ -75,12 +75,13 @@ Public Class DocGiaBUS
         Return dgDAL.SelectALL_ByType(MaLoaiDocGia, listDocGia)
     End Function
 
-    Public Function selecthovaten(MaDocGia As Integer, ByRef ten As String) As Result
+    Public Function selecthovaten(ByRef MaDocGia As Integer, ByRef ten As String) As Result
         '1. verify data here!!
 
-        '2. insert to DB
         Return dgDAL.selectHoVaTen(MaDocGia, ten)
     End Function
+
+
 
     Public Function buildMaDocGia(ByRef nextMaDocGia As Integer) As Result
         Return dgDAL.BuildMaDocGia(nextMaDocGia)

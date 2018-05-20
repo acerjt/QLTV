@@ -75,4 +75,15 @@ Public Class Sach_BUS
     Public Function buildMaSach(ByRef nextMaSach As Integer) As Result
         Return SachDAL.buildMaSach(nextMaSach)
     End Function
+
+    'Public Function select_ByMaSach(ByRef MaSach As Integer, ByRef tensach As String, ByRef theloai As String, ByRef tacgia As String) As Result
+    '    Return SachDAL.select_ByMaSach(MaSach, tensach, theloai, tacgia)
+    'End Function
+
+    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef a As String, ByRef b As String, ByRef c As String, ByRef d As DateTime) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return SachDAL.selectALL_ByMaSach(MaSach, a, b, c, d)
+    End Function
 End Class

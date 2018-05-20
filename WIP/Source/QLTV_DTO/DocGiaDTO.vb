@@ -1,5 +1,5 @@
 ﻿Public Class DocGiaDTO
-    Private strMaDocGia As Integer
+    Private iMaDocGia As Integer
     Private strHoVaTen As String
     Private iLoaiDocGia As Integer
     Private dateNgaySinh As DateTime
@@ -13,8 +13,8 @@
 
     End Sub
 
-    Public Sub New(strMaDocGia As String, strHoVaTen As String, iLoaiDocGia As Integer, dateNgaySinh As DateTime, strDiaChi As String, strEmail As String, dateNgayLap As DateTime, dateNgayHetHan As DateTime) ', strTinhTrangThe As String) ', iSoSachDangMuon As Integer)
-        Me.strMaDocGia = strMaDocGia
+    Public Sub New(iMaDocGia As Integer, strHoVaTen As String, iLoaiDocGia As Integer, dateNgaySinh As DateTime, strDiaChi As String, strEmail As String, dateNgayLap As DateTime, dateNgayHetHan As DateTime) ', strTinhTrangThe As String) ', iSoSachDangMuon As Integer)
+        Me.iMaDocGia = iMaDocGia
         Me.strHoVaTen = strHoVaTen
         Me.iLoaiDocGia = iLoaiDocGia
         Me.dateNgaySinh = dateNgaySinh
@@ -28,10 +28,10 @@
 
     Property MaDocGia() As String
         Get
-            Return strMaDocGia
+            Return iMaDocGia
         End Get
         Set(ByVal Value As String)
-            strMaDocGia = Value
+            iMaDocGia = Value
         End Set
     End Property
 

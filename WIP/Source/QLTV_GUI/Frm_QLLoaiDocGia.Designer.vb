@@ -115,6 +115,7 @@ Partial Class Frm_QLLoaiDocGia
         Me.Controls.Add(Me.Lb1)
         Me.Name = "Frm_QLLoaiDocGia"
         Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Quản Lí Loại Độc Giả"
         CType(Me.Dgv_ListLoaiDocGia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -45,20 +45,7 @@ Public Class DocGiaDAL
                         End While
                     End If
                     If (msOnDB <> Nothing And msOnDB.Length >= 1) Then
-                        'Dim currentYear = DateTime.Now.Year.ToString().Substring(2)
-                        'Dim iCurrentYear = Integer.Parse(currentYear)
-                        'Dim currentYearOnDB = msOnDB.Substring(0, 2)
-                        'Dim icurrentYearOnDB = Integer.Parse(currentYearOnDB)
-                        'Dim year = iCurrentYear
-                        'If (year < icurrentYearOnDB) Then
-                        '    year = icurrentYearOnDB
-                        'End If
-                        'nextMaDocGia = year.ToString()
-                        'Dim v = msOnDB.Substring(2)
-                        'Dim convertDecimal = Convert.ToDecimal(v)
-                        'convertDecimal = convertDecimal + 1
-                        'Dim tmp = convertDecimal.ToString()
-                        'tmp = tmp.PadLeft(msOnDB.Length - 2, "0")
+
                         nextMaDocGia = msOnDB + 1
                         System.Console.WriteLine(nextMaDocGia)
                     End If
@@ -150,7 +137,7 @@ Public Class DocGiaDAL
     End Function
 
     Public Function selectHoVaTen(MaDocGia As Integer, ByRef ten As String) As Result
-
+        ten = String.Empty
         Dim query As String = String.Empty
 
         query &= " SELECT  [hovaten]"
@@ -172,20 +159,22 @@ Public Class DocGiaDAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     Dim tenonDB As String
-                    tenonDB = ""
+                    tenonDB = Nothing
                     If reader.HasRows = True Then
 
                         While reader.Read()
-                            tenonDB = reader("HoVaTen")
+                            tenonDB = reader("HovaTen")
                         End While
-
                     End If
+
                     ten = tenonDB
+
+
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Lấy thông tin độc giả không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả phiếu mượn sách không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using

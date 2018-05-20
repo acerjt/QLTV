@@ -203,6 +203,95 @@ Public Class Sach_DAL
         Return New Result(True) ' thanh cong
     End Function
 
+    'Public Function select_ByMaSach(ByRef MaSach As Integer, ByRef tensach As String, ByRef theloai As String, ByRef tacgia As String) As Result
+    '    'Dim tensach1 As String
+    '    'tensach1 = ""
+
+    '    'Dim theloai1 As String
+    '    'theloai1 = ""
+
+    '    'Dim tacgia1 As String
+    '    'tacgia1 = ""
+    '    Dim query As String = String.Empty
+    '    query &= "SELECT [TenSach], [TenTheLoaiSach], [TenTacGia] "
+    '    query &= "FROM [tblSach]    , [tblTacGia] , [tblTheLoaiSach]"
+    '    query &= "WHERE [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia] and [tblTheLoaiSach].[MaTheLoaiSach]=[tblSach].[MaTheLoaiSach] "
+    '    query &= "     AND [MaSach] = @MaSach"
+    '    Using conn As New SqlConnection(connectionString)
+    '        Using comm As New SqlCommand()
+    '            With comm
+    '                .Connection = conn
+    '                .CommandType = CommandType.Text
+    '                .CommandText = query
+    '                .Parameters.AddWithValue("@MaSach", MaSach)
+    '            End With
+    '            Try
+    '                conn.Open()
+    '                Dim reader As SqlDataReader
+    '                reader = comm.ExecuteReader()
+    '                If reader.HasRows = True Then
+    '                    While reader.Read()
+    '                        tensach = reader("tensach")
+    '                        tacgia = reader("tentagia")
+    '                        theloai = reader("tentheloai")
+    '                    End While
+    '                End If
+
+    '            Catch ex As Exception
+    '                conn.Close()
+    '                System.Console.WriteLine(ex.StackTrace)
+    '                Return New Result(False, "Lấy sách theo thể loại không thành công", ex.StackTrace)
+    '            End Try
+    '        End Using
+    '    End Using
+    '    Return New Result(True) ' thanh cong
+    'End Function
+
+    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef a As String, ByRef b As String, ByRef c As String, ByRef d As DateTime) As Result
+
+
+        Dim query As String = String.Empty
+        query &= "SELECT [TenSach], [TenTheLoaiSach], [TenTacGia]  "
+        query &= "FROM [tblSach]    , [tblTheLoaiSach], [tblTacGia]"
+        query &= "WHERE [tblSach].[MaTheLoaiSach] = [tblTheLoaiSach].[MaTheLoaiSach] AND [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia]"
+        query &= "     AND [MaSach] = @MaSach"
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaSach", MaSach)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            a = reader("tensach")
+                            b = reader("tentheloaisach")
+                            c = reader("tentacgia")
+                            ' While reader.Read()
+
+                            'listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("MaTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                        End While
+                    End If
+                    Dim NgayHienTai As DateTime
+                    NgayHienTai = DateTime.Now
+                    d = NgayHienTai.AddDays(5)
+                    'If a = "" Then
+                    '    MessageBox("Không tồn tại mã sách")
+                    'End If
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy danh sách theo mã sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
     Public Function update(Sach As Sach_DTO) As Result
 
         Dim query As String = String.Empty

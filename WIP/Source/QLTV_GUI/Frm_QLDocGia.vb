@@ -217,6 +217,63 @@ Public Class Frm_QLDocGia
         End If
 
 
+        'dgvListDocGia.SuspendLayout()
+        Dgv_ListDocGia.Columns.Clear()
+        Dgv_ListDocGia.DataSource = Nothing
+
+        Dgv_ListDocGia.AutoGenerateColumns = False
+        Dgv_ListDocGia.AllowUserToAddRows = False
+        Dgv_ListDocGia.DataSource = listDocGia
+
+        Dim clMaDocGia = New DataGridViewTextBoxColumn()
+        clMaDocGia.Name = "MaDocGia"
+        clMaDocGia.HeaderText = "Mã Độc Giả"
+        clMaDocGia.DataPropertyName = "MaDocGia"
+        Dgv_ListDocGia.Columns.Add(clMaDocGia)
+
+        Dim clLoaiDocGia = New DataGridView()
+        'clLoaiDocGia.Name = "LoaiDocGia"
+        'clLoaiDocGia.HeaderText = "Tên Loại Độc Giả"
+        'clLoaiDocGia.DataPropertyName = "LoaiDocGia"
+        'Dgv_ListDocGia.Columns.Add(clLoaiDocGia)
+
+        Dim clHoVaTen = New DataGridViewTextBoxColumn()
+        clHoVaTen.Name = "HoVaTen"
+        clHoVaTen.HeaderText = "Họ Và Tên"
+        clHoVaTen.DataPropertyName = "HoVaTen"
+        Dgv_ListDocGia.Columns.Add(clHoVaTen)
+
+        Dim clNgaySinh = New DataGridViewTextBoxColumn()
+        clNgaySinh.Name = "NgaySinh"
+        clNgaySinh.HeaderText = "Ngày Sinh"
+        clNgaySinh.DataPropertyName = "NgaySinh"
+        Dgv_ListDocGia.Columns.Add(clNgaySinh)
+        'Dgv_ListDocGia.ResumeLayout()
+
+        Dim clDiaChi = New DataGridViewTextBoxColumn()
+        clDiaChi.Name = "DiaChi"
+        clDiaChi.HeaderText = "Địa Chỉ"
+        clDiaChi.DataPropertyName = "DiaChi"
+        Dgv_ListDocGia.Columns.Add(clDiaChi)
+
+        Dim clEmail = New DataGridViewTextBoxColumn()
+        clEmail.Name = "Email"
+        clEmail.HeaderText = "Email"
+        clEmail.DataPropertyName = "Email"
+        Dgv_ListDocGia.Columns.Add(clEmail)
+
+        Dim clNgayLap = New DataGridViewTextBoxColumn()
+        clNgayLap.Name = "NgayLap"
+        clNgayLap.HeaderText = "Ngày Lập"
+        clNgayLap.DataPropertyName = "NgayLap"
+        Dgv_ListDocGia.Columns.Add(clNgayLap)
+
+        Dim clNgayHetHan = New DataGridViewTextBoxColumn()
+        clNgayHetHan.Name = "NgayHetHan"
+        clNgayHetHan.HeaderText = "Ngày Hết Hạn"
+        clNgayHetHan.DataPropertyName = "NgayHetHan"
+        Dgv_ListDocGia.Columns.Add(clNgayHetHan)
+
 
     End Sub
 
@@ -236,7 +293,7 @@ Public Class Frm_QLDocGia
         ' Get the current cell location.
         Dim currentRowIndex As Integer = Dgv_ListDocGia.CurrentCellAddress.Y 'current row selected
         'Dim x As Integer = Dgv_ListDocGia.CurrentCellAddress.X 'curent column selected
-
+        'Dim x As Integer = Dgv_ListDocGia.CurrentCell.Selected
         ' Write coordinates to console for debugging
         'Console.WriteLine(y.ToString + " " + x.ToString)
 
