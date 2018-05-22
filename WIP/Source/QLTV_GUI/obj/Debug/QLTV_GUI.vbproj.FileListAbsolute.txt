@@ -111,8 +111,6 @@ C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_ThemLoaiDocGia.resources
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Resources.resources
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.GenerateResource.cache
-C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.CoreCompileInputs.cache
-C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.CopyComplete
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.exe
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.xml
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.pdb
@@ -225,3 +223,4 @@ D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Deb
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.exe
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.xml
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.pdb
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_LapPhieuMuonSach.resources

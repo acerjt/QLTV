@@ -136,11 +136,11 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectHoVaTen(MaDocGia As Integer, ByRef ten As String) As Result
-        ten = String.Empty
+    Public Function selectHoVaTen(MaDocGia As Integer, ByRef dg As DocGiaDTO) As Result
+
         Dim query As String = String.Empty
 
-        query &= " SELECT  [hovaten]"
+        query &= " SELECT  *"
         query &= " FROM [tblDocGia]"
         query &= " WHERE [tblDocGia].[madocgia] = @madocgia"
 
@@ -158,16 +158,16 @@ Public Class DocGiaDAL
                     conn.Open()
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
-                    Dim tenonDB As String
-                    tenonDB = Nothing
+                    'Dim tenonDB As String
+                    'tenonDB = Nothing
                     If reader.HasRows = True Then
 
                         While reader.Read()
-                            tenonDB = reader("HovaTen")
+                            dg.HoVaTen = reader("HoVaTen")
+                            dg.NgayLap = reader("NgayLap")
                         End While
                     End If
 
-                    ten = tenonDB
 
 
                 Catch ex As Exception

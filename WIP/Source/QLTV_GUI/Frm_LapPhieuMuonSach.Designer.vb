@@ -40,6 +40,7 @@ Partial Class Frm_LapPhieuMuonSach
         Me.Txt_MaDocGia = New System.Windows.Forms.TextBox()
         Me.Txt_TinhTrangThe = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Btn_LapPhieu = New System.Windows.Forms.Button()
         CType(Me.Dgv_ListPhieuMuonSach, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -180,11 +181,21 @@ Partial Class Frm_LapPhieuMuonSach
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Tình Trạng Thẻ"
         '
+        'Btn_LapPhieu
+        '
+        Me.Btn_LapPhieu.Location = New System.Drawing.Point(205, 606)
+        Me.Btn_LapPhieu.Name = "Btn_LapPhieu"
+        Me.Btn_LapPhieu.Size = New System.Drawing.Size(221, 41)
+        Me.Btn_LapPhieu.TabIndex = 18
+        Me.Btn_LapPhieu.Text = "Lập Phiếu"
+        Me.Btn_LapPhieu.UseVisualStyleBackColor = True
+        '
         'Frm_LapPhieuMuonSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1300, 659)
+        Me.Controls.Add(Me.Btn_LapPhieu)
         Me.Controls.Add(Me.Txt_TinhTrangThe)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Txt_MaDocGia)
@@ -223,4 +234,5 @@ Partial Class Frm_LapPhieuMuonSach
     Friend WithEvents Txt_MaDocGia As TextBox
     Friend WithEvents Txt_TinhTrangThe As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Btn_LapPhieu As Button
 End Class

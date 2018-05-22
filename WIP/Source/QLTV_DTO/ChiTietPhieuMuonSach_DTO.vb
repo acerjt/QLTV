@@ -1,12 +1,12 @@
 ﻿Public Class ChiTietPhieuMuonSach_DTO
     Private strMaSach As String
-    Private strMaPhieuMuonSach As DateTime
+    Private strMaPhieuMuonSach As String
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(strMaChiTietPhieuMuonSach As String, strMaSach As String, strMaPhieuMuonSach As String)
+    Public Sub New(strMaPhieuMuonSach As String, strMaSach As String)
         'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
         Me.strMaSach = strMaSach
         Me.strMaPhieuMuonSach = strMaPhieuMuonSach

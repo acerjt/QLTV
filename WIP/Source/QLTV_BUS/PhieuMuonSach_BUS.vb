@@ -21,11 +21,11 @@ Public Class PhieuMuonSach_BUS
 
     'End Function
 
-    Public Function insert(pms As PhieuMuonSach_DTO) As Result
+    Public Function insert(pms As PhieuMuonSach_DTO, listChiTietPhieuMuonSach As List(Of ChiTietPhieuMuonSach_DTO)) As Result
         '1. verify data here!!
 
         '2. insert to DB
-        Return pmsDAL.insert(pms)
+        Return pmsDAL.insert(pms, listChiTietPhieuMuonSach)
     End Function
     'Public Function update(pms As PhieuMuonSach_DTO) As Result
     '    '1. verify data here!!

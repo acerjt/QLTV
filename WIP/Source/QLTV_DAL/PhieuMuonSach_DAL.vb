@@ -53,13 +53,19 @@ Public Class PhieuMuonSach_DAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function insert(pms As PhieuMuonSach_DTO) As Result
+    Public Function insert(pms As PhieuMuonSach_DTO, listChiTietPhieuMuonSach As List(Of ChiTietPhieuMuonSach_DTO)) As Result
 
         Dim query As String = String.Empty
         query &= "INSERT INTO [tblphieumuonsach] ([maphieumuonsach], [madocgia], [ngaymuon], [ngaydukientra])"
         query &= "VALUES (@maphieumuonsach, @madocgia, @ngaymuon, @ngaydukientra)"
 
-        Dim nextID = 0
+        Dim query1 As String = String.Empty
+        query1 &= "INSERT INTO [tblChitietphieumuonsach] ( [maphieumuonsach],[masach])"
+        query1 &= "VALUES (@maphieumuonsach1, @masach)"
+
+
+
+        Dim nextID = 1
         Dim result As Result
         result = getNextID(nextID)
         If (result.FlagResult = False) Then
@@ -68,7 +74,30 @@ Public Class PhieuMuonSach_DAL
         pms.MaPhieuMuonSach = nextID
 
         Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
+            Using comm, comm1 As New SqlCommand()
+
+                conn.Open()
+                With comm1
+
+                    For Each x As ChiTietPhieuMuonSach_DTO In listChiTietPhieuMuonSach
+                        .Parameters.Clear()
+                        .Connection = conn
+                        .CommandType = CommandType.Text
+                        .CommandText = query1
+                        .Parameters.AddWithValue("@maphieumuonsach1", x.MaPhieuMuonSach)
+                        .Parameters.AddWithValue("@masach", x.MaSach)
+                        Try
+                            .ExecuteNonQuery()
+                            'conn.Close()
+                        Catch ex As Exception
+                            conn.Close()
+                            ' them that bai!!!
+                            Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
+                        End Try
+                    Next
+
+                End With
+
                 With comm
                     .Connection = conn
                     .CommandType = CommandType.Text
@@ -77,9 +106,12 @@ Public Class PhieuMuonSach_DAL
                     .Parameters.AddWithValue("@madocgia", pms.MaDocGia)
                     .Parameters.AddWithValue("@ngaymuon", pms.NgayMuon)
                     .Parameters.AddWithValue("@ngaydukientra", pms.NgayDuKienTra)
+
+                    'Dim comm1 As New SqlCommand()
+
                 End With
                 Try
-                    conn.Open()
+                    'conn.Open()
                     comm.ExecuteNonQuery()
                 Catch ex As Exception
                     conn.Close()

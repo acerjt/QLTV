@@ -73,8 +73,6 @@ C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\bin\Debug\Utility.
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbprojResolveAssemblyReference.cache
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.Resources.resources
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.GenerateResource.cache
-C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.CoreCompileInputs.cache
-C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.CopyComplete
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.exe
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.xml
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.pdb

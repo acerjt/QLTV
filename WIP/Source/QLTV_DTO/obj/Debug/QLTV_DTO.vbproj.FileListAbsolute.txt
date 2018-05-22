@@ -32,7 +32,6 @@ C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\bin\Debug\QLTV_DTO
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\bin\Debug\QLTV_DTO.xml
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.Resources.resources
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.vbproj.GenerateResource.cache
-C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.vbproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.exe
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.xml
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.pdb
@@ -56,3 +55,4 @@ C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\QLTV_DTO\
 C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.exe
 C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.xml
 C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.pdb
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DTO\obj\Debug\QLTV_DTO.vbprojResolveAssemblyReference.cache

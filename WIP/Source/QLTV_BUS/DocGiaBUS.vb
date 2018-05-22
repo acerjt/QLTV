@@ -75,10 +75,10 @@ Public Class DocGiaBUS
         Return dgDAL.SelectALL_ByType(MaLoaiDocGia, listDocGia)
     End Function
 
-    Public Function selecthovaten(ByRef MaDocGia As Integer, ByRef ten As String) As Result
+    Public Function selecthovaten(ByRef MaDocGia As Integer, ByRef dg As DocGiaDTO) As Result
         '1. verify data here!!
 
-        Return dgDAL.selectHoVaTen(MaDocGia, ten)
+        Return dgDAL.selectHoVaTen(MaDocGia, dg)
     End Function
 
 
