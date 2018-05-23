@@ -115,3 +115,5 @@ D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_DAL\obj\Deb
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.exe
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.xml
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete

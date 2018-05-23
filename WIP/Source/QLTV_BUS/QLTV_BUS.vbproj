@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhieuMuonSach_BUS.vb" />
     <Compile Include="DocGiaBUS.vb" />
     <Compile Include="LoaiDocGia_BUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

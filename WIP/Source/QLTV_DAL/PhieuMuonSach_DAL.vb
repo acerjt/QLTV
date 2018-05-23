@@ -63,7 +63,11 @@ Public Class PhieuMuonSach_DAL
         query1 &= "INSERT INTO [tblChitietphieumuonsach] ( [maphieumuonsach],[masach])"
         query1 &= "VALUES (@maphieumuonsach1, @masach)"
 
-
+        Dim query2 As String = String.Empty
+        query2 &= " UPDATE [tblSach] SET"
+        query2 &= " [TinhTrang]=@TinhTrang"
+        query2 &= " WHERE "
+        query2 &= " [MaSach] = @MaSach2"
 
         Dim nextID = 1
         Dim result As Result
@@ -74,7 +78,7 @@ Public Class PhieuMuonSach_DAL
         pms.MaPhieuMuonSach = nextID
 
         Using conn As New SqlConnection(connectionString)
-            Using comm, comm1 As New SqlCommand()
+            Using comm, comm1, comm2 As New SqlCommand()
 
                 conn.Open()
                 With comm1
@@ -106,7 +110,7 @@ Public Class PhieuMuonSach_DAL
                     .Parameters.AddWithValue("@madocgia", pms.MaDocGia)
                     .Parameters.AddWithValue("@ngaymuon", pms.NgayMuon)
                     .Parameters.AddWithValue("@ngaydukientra", pms.NgayDuKienTra)
-
+                    '.Parameters.AddWithValue("@tinhtrang", "DangMuon")
                     'Dim comm1 As New SqlCommand()
 
                 End With
@@ -118,6 +122,36 @@ Public Class PhieuMuonSach_DAL
                     ' them that bai!!!
                     Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
                 End Try
+
+                With comm2
+                    For Each x As ChiTietPhieuMuonSach_DTO In listChiTietPhieuMuonSach
+                        .Parameters.Clear()
+                        .Connection = conn
+                        .CommandType = CommandType.Text
+                        .CommandText = query2
+                        .Parameters.AddWithValue("@masach2", x.MaSach)
+                        .Parameters.AddWithValue("@tinhtrang", "DangMuon")
+                        Try
+                            .ExecuteNonQuery()
+                            'conn.Close()
+                        Catch ex As Exception
+                            conn.Close()
+                            ' them that bai!!!
+                            Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
+                        End Try
+                    Next
+
+                End With
+                Try
+                    'conn.Open()
+                    comm2.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
+                End Try
+
+
             End Using
         End Using
         Return New Result(True) ' thanh cong

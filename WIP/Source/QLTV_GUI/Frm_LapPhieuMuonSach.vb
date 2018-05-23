@@ -5,12 +5,16 @@ Public Class Frm_LapPhieuMuonSach
     Private PhieuMuonSachBus As PhieuMuonSach_BUS
     Private DocGiaBus As DocGiaBUS
     Private SachBus As Sach_BUS
+    Private ChiTietPhieuMuonSachBUS As ChiTietPhieuMuonSach_BUS
     Private listChiTietPhieuMuonSach As List(Of ChiTietPhieuMuonSach_DTO)
+    Private listChiTietPhieuMuonSach1 As List(Of ChiTietPhieuMuonSach_DTO)
     Private Sub Frm_LapPhieuMuonSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PhieuMuonSachBus = New PhieuMuonSach_BUS()
         DocGiaBus = New DocGiaBUS()
         SachBus = New Sach_BUS()
+        ChiTietPhieuMuonSachBUS = New ChiTietPhieuMuonSach_BUS()
         listChiTietPhieuMuonSach = New List(Of ChiTietPhieuMuonSach_DTO)
+        listChiTietPhieuMuonSach1 = New List(Of ChiTietPhieuMuonSach_DTO)
         Dim listSach = New List(Of Sach_DTO)
 
         'Dim listPhieuMuonSach = New List(Of PhieuMuonSach_DTO)
@@ -81,9 +85,83 @@ Public Class Frm_LapPhieuMuonSach
             Txt_TinhTrangThe.Text = ""
         End If
         Txt_HoVaTen.Text = Dg.HoVaTen
+        result = ChiTietPhieuMuonSachBUS.selectSachDaMuon(MaDocGia, listChiTietPhieuMuonSach)
+        If (result.FlagResult = True) Then
+
+            'Dgv_ListPhieuMuonSach.Columns.Clear()
+            'Dgv_ListPhieuMuonSach.DataSource = Nothing
+
+            'Dgv_ListPhieuMuonSach.AutoGenerateColumns = False
+            Dgv_ListPhieuMuonSach1.Columns.Clear()
+            Dgv_ListPhieuMuonSach1.DataSource = Nothing
+
+            Dgv_ListPhieuMuonSach1.AutoGenerateColumns = False
+            Dgv_ListPhieuMuonSach1.AllowUserToAddRows = False
+            Dgv_ListPhieuMuonSach1.DataSource = listChiTietPhieuMuonSach
+
+            Dim Cl_MaSach1 = New DataGridViewTextBoxColumn()
+            Cl_MaSach1.Name = "Cl_MaSach"
+            Cl_MaSach1.HeaderText = "Mã Sách"
+            Cl_MaSach1.DataPropertyName = "MaSach"
+            Dgv_ListPhieuMuonSach1.Columns.Add(Cl_MaSach1)
+
+
+            'Dim Cl_TheLoaiSach = New DataGridView()
+            'Dim clLoaiHS = New DataGridView()
+            'clLoaiHS.Name = "LoaiHS"
+            'clLoaiHS.HeaderText = "Tên Loại"
+            'clLoaiHS.DataPropertyName = "LoaiHS"
+            'dgvListHS.Columns.Add(clLoaiHS)
+
+            Dim Cl_TenSach1 = New DataGridViewTextBoxColumn()
+            Cl_TenSach1.Name = "Cl_TenSach"
+            Cl_TenSach1.HeaderText = "Tên Sách"
+            Cl_TenSach1.DataPropertyName = "TenSach"
+            Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TenSach1)
+
+
+            Dim Cl_TheLoaiSach1 = New DataGridViewTextBoxColumn()
+            'Dim clLoaiHS = New DataGridView()
+            Cl_TheLoaiSach1.Name = "Cl_TheLoaiSach"
+            Cl_TheLoaiSach1.HeaderText = "Thể Loại Sách"
+            Cl_TheLoaiSach1.DataPropertyName = "TheLoaiSach"
+            Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TheLoaiSach1)
+
+            Dim Cl_TenTacGia1 = New DataGridViewTextBoxColumn()
+            Cl_TenTacGia1.Name = "Cl_TenTacGia"
+            Cl_TenTacGia1.HeaderText = "Tên Tác Giả"
+            Cl_TenTacGia1.DataPropertyName = "TenTacGia"
+            Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TenTacGia1)
+
+            Dim Cl_TinhTrang1 = New DataGridViewTextBoxColumn()
+            Cl_TinhTrang1.Name = "Cl_TinhTrang "
+            Cl_TinhTrang1.HeaderText = "Tình Trạng"
+            Cl_TinhTrang1.DataPropertyName = "TinhTrang"
+            Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TinhTrang1)
 
 
 
+
+            Dim Cl_NgayDuKienTra = New DataGridViewTextBoxColumn()
+                Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra "
+                Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
+                Cl_NgayDuKienTra.DataPropertyName = "NgayDuKienTra"
+                Dgv_ListPhieuMuonSach1.Columns.Add(Cl_NgayDuKienTra)
+
+
+            'listChiTietPhieuMuonSach.Clear()
+            For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
+                If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đã Quá Hạn") Then
+                    x.DefaultCellStyle.BackColor = Color.Pink
+                End If
+                If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "DangMuon") Then
+                    x.DefaultCellStyle.BackColor = Color.LightBlue
+                End If
+            Next
+
+        End If
+        ' Dgv_ListPhieuMuonSach.Rows.Add()
+        'listChiTietPhieuMuonSach.Clear()
     End Sub
 
     'Private Sub loadListSach(MaSach As String)
@@ -153,6 +231,9 @@ Public Class Frm_LapPhieuMuonSach
 
     Private Sub Txt_MaDocGia_TextChanged(sender As Object, e As EventArgs) Handles Txt_MaDocGia.TextChanged
         Dim MaDocGia As String
+        'listChiTietPhieuMuonSach.Clear()
+        'Dgv_ListPhieuMuonSach.DataSource = Nothing
+        'Dgv_ListPhieuMuonSach.Refresh()
 
         If Txt_MaDocGia.Text <> "" Then
             MaDocGia = Txt_MaDocGia.Text
@@ -195,12 +276,12 @@ Public Class Frm_LapPhieuMuonSach
                 Dgv_ListPhieuMuonSach.Item("Cl_TacGia", e.RowIndex).Value = c
                 Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = d
                 Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
-                If (listChiTietPhieuMuonSach.Count() = e.RowIndex) Then
-                    listChiTietPhieuMuonSach.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
+                If (listChiTietPhieuMuonSach1.Count() = e.RowIndex) Then
+                    listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
                 Else
-                    If (listChiTietPhieuMuonSach.Count() > e.RowIndex) Then
-                        listChiTietPhieuMuonSach.RemoveAt(e.RowIndex)
-                        listChiTietPhieuMuonSach.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
+                    If (listChiTietPhieuMuonSach1.Count() > e.RowIndex) Then
+                        listChiTietPhieuMuonSach1.RemoveAt(e.RowIndex)
+                        listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
                     End If
                 End If
             End If
@@ -227,7 +308,7 @@ Public Class Frm_LapPhieuMuonSach
 
         '3. Insert to DB
         Dim result As Result
-        result = PhieuMuonSachBus.insert(PhieuMuonSach, listChiTietPhieuMuonSach)
+        result = PhieuMuonSachBus.insert(PhieuMuonSach, listChiTietPhieuMuonSach1)
         If (result.FlagResult = True) Then
             MessageBox.Show("Thêm Phiếu Mượn Sách  thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'set Madocgia auto
@@ -243,7 +324,8 @@ Public Class Frm_LapPhieuMuonSach
             Txt_MaDocGia.Text = String.Empty
             Txt_TinhTrangThe.Text = String.Empty
             Txt_HoVaTen.Text = String.Empty
-            listChiTietPhieuMuonSach.Clear()
+            listChiTietPhieuMuonSach1.Clear()
+            listChiTietPhieuMuonSach1.Clear()
             Dgv_ListPhieuMuonSach.Rows.Clear()
         Else
             MessageBox.Show("Thêm Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
