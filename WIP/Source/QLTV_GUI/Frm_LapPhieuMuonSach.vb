@@ -124,7 +124,7 @@ Public Class Frm_LapPhieuMuonSach
             'Dim clLoaiHS = New DataGridView()
             Cl_TheLoaiSach1.Name = "Cl_TheLoaiSach"
             Cl_TheLoaiSach1.HeaderText = "Thể Loại Sách"
-            Cl_TheLoaiSach1.DataPropertyName = "TheLoaiSach"
+            Cl_TheLoaiSach1.DataPropertyName = "TenTheLoaiSach"
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TheLoaiSach1)
 
             Dim Cl_TenTacGia1 = New DataGridViewTextBoxColumn()
@@ -234,48 +234,86 @@ Public Class Frm_LapPhieuMuonSach
         'listChiTietPhieuMuonSach.Clear()
         'Dgv_ListPhieuMuonSach.DataSource = Nothing
         'Dgv_ListPhieuMuonSach.Refresh()
-
+        Dgv_ListPhieuMuonSach.Rows.Clear()
         If Txt_MaDocGia.Text <> "" Then
             MaDocGia = Txt_MaDocGia.Text
             loadListDocGia(MaDocGia)
         End If
 
+
+        For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
+            If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đã Quá Hạn") Then
+                x.DefaultCellStyle.BackColor = Color.Pink
+            End If
+            If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "DangMuon") Then
+                x.DefaultCellStyle.BackColor = Color.LightBlue
+            End If
+        Next
     End Sub
 
 
 
     Private Sub Dgv_ListPhieuMuonSach_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListPhieuMuonSach.CellValueChanged
-        If (e.RowIndex <> -1 And e.ColumnIndex = 1) Then
-            SachBus = New Sach_BUS()
-            Dim a, b, c As String
-            Dim d As DateTime
-            a = ""
-            b = ""
-            c = ""
+        If (e.RowIndex <> -1 And e.ColumnIndex = 0) Then
+            'Dim y As PhieuMuonSach_DTO
+            'y = New PhieuMuonSach_DTO()
+            'If (PhieuMuonSachBus.isValidMaDocGia(y) = False) Then
+            '    MessageBox.Show("Mã độc giả không được trống")
+            '    Txt_MaDocGia.Focus()
+            '    Return
+            'End If
 
-            Dim x = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(1).Value
+
+            For Each z As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
+                If (Dgv_ListPhieuMuonSach1.Item(0, z.Index).Value = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(0).Value) Then
+
+                    MessageBox.Show("Sách chưa được trả.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
+                    Dgv_ListPhieuMuonSach.Focus()
+                    Return
+                End If
+
+            Next
+
+
+
+            SachBus = New Sach_BUS()
+            Dim Chitietphieumuonsach As ChiTietPhieuMuonSach_DTO
+            Chitietphieumuonsach = New ChiTietPhieuMuonSach_DTO()
+
+
+            If Dgv_ListPhieuMuonSach.Rows.Count + Dgv_ListPhieuMuonSach1.Rows.Count > 6 Then
+                'Dgv_ListPhieuMuonSach1.AllowUserToDeleteRows = True
+                MessageBox.Show("Chỉ mượn tối đa 5 quyển trong 4 ngày.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
+                Return
+            End If
+
+
+            Dim x = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(0).Value
 
 
             Dim Sach1 = New Sach_DTO()
             Dim result As Result
-            result = SachBus.selectALL_ByMaSach(x, a, b, c, d)
+            result = SachBus.selectALL_ByMaSach(x, Chitietphieumuonsach)
             If (result.FlagResult = False) Then
                 MessageBox.Show("Lấy danh sach các sách theo mã không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 System.Console.WriteLine(result.SystemMessage)
 
                 Return
             End If
-            If a = "" Then
+            If Chitietphieumuonsach.TenSach = "" Then
                 MessageBox.Show("Không tồn tại mã độc giả.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 'x = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(1).Value
                 Dgv_ListPhieuMuonSach.Focus()
             Else
 
-                Dgv_ListPhieuMuonSach.Item("Cl_TenSach", e.RowIndex).Value = a
-                Dgv_ListPhieuMuonSach.Item("Cl_TheLoai", e.RowIndex).Value = b
-                Dgv_ListPhieuMuonSach.Item("Cl_TacGia", e.RowIndex).Value = c
-                Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = d
-                Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
+                Dgv_ListPhieuMuonSach.Item("Cl_TenSach", e.RowIndex).Value = Chitietphieumuonsach.TenSach
+                Dgv_ListPhieuMuonSach.Item("Cl_TheLoai", e.RowIndex).Value = Chitietphieumuonsach.TenTheLoaiSach
+                Dgv_ListPhieuMuonSach.Item("Cl_TinhTrang", e.RowIndex).Value = Chitietphieumuonsach.TinhTrang
+                Dgv_ListPhieuMuonSach.Item("Cl_TacGia", e.RowIndex).Value = Chitietphieumuonsach.TenTacGia
+                'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKienTra
+                ' Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
                 If (listChiTietPhieuMuonSach1.Count() = e.RowIndex) Then
                     listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
                 Else
@@ -286,6 +324,9 @@ Public Class Frm_LapPhieuMuonSach
                 End If
             End If
         End If
+
+
+
     End Sub
 
     Private Sub Btn_LapPhieu_Click(sender As Object, e As EventArgs) Handles Btn_LapPhieu.Click
@@ -301,7 +342,20 @@ Public Class Frm_LapPhieuMuonSach
         PhieuMuonSach.NgayDuKienTra = Dtp_NgayMuon.Value.AddDays(4)
 
         '2. Business .....
+        If (PhieuMuonSachBus.isValidMaDocGia(PhieuMuonSach) = False) Then
+            MessageBox.Show("Mã độc giả không được trống")
+            Txt_MaDocGia.Focus()
+            Return
+        End If
 
+
+        For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
+
+            If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "DangMuon") Then
+                MessageBox.Show("Sách đã có người mượn")
+                Return
+            End If
+        Next
 
 
 

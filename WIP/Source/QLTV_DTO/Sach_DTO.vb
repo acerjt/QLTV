@@ -7,7 +7,7 @@
     Private strNhaXuatBan As String
     Private dateNgayNhap As DateTime
     Private strTriGia As String
-
+    Private strTinhTrang As String
 
 
     Public Sub New()
@@ -19,7 +19,8 @@
                    iNamXuatBan As Integer,
                    strNhaXuatBan As String,
                    dateNgayNhap As DateTime,
-                   strTriGia As String)
+                   strTriGia As String,
+                   strTinhTrang As String)
 
 
         Me.strMaSach = strMaSach
@@ -31,7 +32,7 @@
         Me.strNhaXuatBan = strNhaXuatBan
         Me.dateNgayNhap = dateNgayNhap
         Me.strTriGia = strTriGia
-
+        Me.strTinhTrang = strTinhTrang
     End Sub
     Property MaSach() As String
         Get
@@ -103,6 +104,14 @@
         End Get
         Set(ByVal value As String)
             strTriGia = value
+        End Set
+    End Property
+    Property TinhTrang() As String
+        Get
+            Return strTinhTrang
+        End Get
+        Set(ByVal value As String)
+            strTinhTrang = value
         End Set
     End Property
 End Class

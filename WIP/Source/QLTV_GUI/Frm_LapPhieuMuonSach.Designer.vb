@@ -35,20 +35,17 @@ Partial Class Frm_LapPhieuMuonSach
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Btn_LapPhieu = New System.Windows.Forms.Button()
         Me.Dgv_ListPhieuMuonSach1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cl_STT = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cl_MaSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cl_TenSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cl_TheLoai = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cl_TacGia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cl_TinhTrang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cl_NgayDuKienTra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Dgv_ListPhieuMuonSach, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_ListPhieuMuonSach1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -110,7 +107,7 @@ Partial Class Frm_LapPhieuMuonSach
         'Dgv_ListPhieuMuonSach
         '
         Me.Dgv_ListPhieuMuonSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListPhieuMuonSach.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cl_STT, Me.Cl_MaSach, Me.Cl_TenSach, Me.Cl_TheLoai, Me.Cl_TacGia, Me.Cl_TinhTrang, Me.Cl_NgayDuKienTra})
+        Me.Dgv_ListPhieuMuonSach.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cl_MaSach, Me.Cl_TenSach, Me.Cl_TheLoai, Me.Cl_TacGia, Me.Cl_TinhTrang})
         Me.Dgv_ListPhieuMuonSach.Location = New System.Drawing.Point(46, 347)
         Me.Dgv_ListPhieuMuonSach.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Dgv_ListPhieuMuonSach.Name = "Dgv_ListPhieuMuonSach"
@@ -166,19 +163,13 @@ Partial Class Frm_LapPhieuMuonSach
         'Dgv_ListPhieuMuonSach1
         '
         Me.Dgv_ListPhieuMuonSach1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListPhieuMuonSach1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
+        Me.Dgv_ListPhieuMuonSach1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7})
         Me.Dgv_ListPhieuMuonSach1.Location = New System.Drawing.Point(46, 168)
         Me.Dgv_ListPhieuMuonSach1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Dgv_ListPhieuMuonSach1.Name = "Dgv_ListPhieuMuonSach1"
         Me.Dgv_ListPhieuMuonSach1.RowTemplate.Height = 28
         Me.Dgv_ListPhieuMuonSach1.Size = New System.Drawing.Size(1088, 152)
         Me.Dgv_ListPhieuMuonSach1.TabIndex = 19
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "STT"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
         '
         'DataGridViewTextBoxColumn2
         '
@@ -217,12 +208,6 @@ Partial Class Frm_LapPhieuMuonSach
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
         '
-        'Cl_STT
-        '
-        Me.Cl_STT.HeaderText = "STT"
-        Me.Cl_STT.Name = "Cl_STT"
-        Me.Cl_STT.ReadOnly = True
-        '
         'Cl_MaSach
         '
         Me.Cl_MaSach.HeaderText = "Mã Sách"
@@ -253,12 +238,6 @@ Partial Class Frm_LapPhieuMuonSach
         Me.Cl_TinhTrang.HeaderText = "Tình Trạng"
         Me.Cl_TinhTrang.Name = "Cl_TinhTrang"
         Me.Cl_TinhTrang.ReadOnly = True
-        '
-        'Cl_NgayDuKienTra
-        '
-        Me.Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
-        Me.Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra"
-        Me.Cl_NgayDuKienTra.ReadOnly = True
         '
         'Frm_LapPhieuMuonSach
         '
@@ -302,18 +281,15 @@ Partial Class Frm_LapPhieuMuonSach
     Friend WithEvents Label5 As Label
     Friend WithEvents Btn_LapPhieu As Button
     Friend WithEvents Dgv_ListPhieuMuonSach1 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents Cl_STT As DataGridViewTextBoxColumn
     Friend WithEvents Cl_MaSach As DataGridViewTextBoxColumn
     Friend WithEvents Cl_TenSach As DataGridViewTextBoxColumn
     Friend WithEvents Cl_TheLoai As DataGridViewTextBoxColumn
     Friend WithEvents Cl_TacGia As DataGridViewTextBoxColumn
     Friend WithEvents Cl_TinhTrang As DataGridViewTextBoxColumn
-    Friend WithEvents Cl_NgayDuKienTra As DataGridViewTextBoxColumn
 End Class

@@ -62,8 +62,8 @@ Public Class Sach_DAL
     Public Function insert(Sach As Sach_DTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblSach] ([MaSach], [TenSach], [MaTheLoaiSach], [MaTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia])"
-        query &= "VALUES (@MaSach,@TenSach,@MaTheLoaiSach,@MaTacGia,@NamXuatBan,@NhaXuatBan,@NgayNhap,@TriGia)"
+        query &= "INSERT INTO [tblSach] ([MaSach], [TenSach], [MaTheLoaiSach], [MaTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia],[TinhTrang])"
+        query &= "VALUES (@MaSach,@TenSach,@MaTheLoaiSach,@MaTacGia,@NamXuatBan,@NhaXuatBan,@NgayNhap,@TriGia,@TinhTrang)"
 
         'get MSSach
         Dim nextMaSach = "1"
@@ -84,6 +84,7 @@ Public Class Sach_DAL
                     .Parameters.AddWithValue("@NhaXuatBan", Sach.NhaXuatBan)
                     .Parameters.AddWithValue("@NgayNhap", Sach.NgayNhap)
                     .Parameters.AddWithValue("@TriGia", Sach.TriGia)
+                    .Parameters.AddWithValue("@TinhTrang", " ")
                 End With
                 Try
                     conn.Open()
@@ -101,7 +102,7 @@ Public Class Sach_DAL
     Public Function selectALL(ByRef listSach As List(Of Sach_DTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [MaSach], [TenSach], [TenTheLoaiSach], [TenTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia]"
+        query &= "SELECT [MaSach], [TenSach], [TenTheLoaiSach], [TenTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia],[TinhTrang]"
         query &= "FROM [tblSach],[tblTacGia],[tblTheLoaiSach]"
         query &= "WHERE  [tblSach].[MaTacGia]=[tblTacGia].[MaTacGia] AND [tblSach].[MaTheLoaiSach]=[tblTheLoaiSach].[MaTheLoaiSach]"
 
@@ -119,7 +120,7 @@ Public Class Sach_DAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia"), reader("TinhTrang")))
                         End While
                     End If
 
@@ -135,7 +136,7 @@ Public Class Sach_DAL
     Public Function selectALL_ByMaTheLoaiSach(iMaTheLoaiSach As Integer, ByRef listSach As List(Of Sach_DTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [MaSach], [TenSach], [MaTheLoaiSach], [TenTacGia], [NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia] "
+        query &= "SELECT [MaSach], [TenSach], [MaTheLoaiSach], [TenTacGia], [NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia],[TinhTrang] "
         query &= "FROM [tblSach]    , [tblTacGia] "
         query &= "WHERE [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia]"
         query &= "     AND [MaTheLoaiSach] = @MaTheLoaiSach"
@@ -154,7 +155,7 @@ Public Class Sach_DAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("MaTheLoaiSach"), reader("TenTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("MaTheLoaiSach"), reader("TenTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia"), reader("TinhTrang")))
                         End While
                     End If
 
@@ -170,7 +171,7 @@ Public Class Sach_DAL
     Public Function selectALL_ByMaTacGia(iMaTacGia As Integer, ByRef listSach As List(Of Sach_DTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [MaSach], [TenSach], [TenTheLoaiSach], [MaTacGia], [NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia] "
+        query &= "SELECT [MaSach], [TenSach], [TenTheLoaiSach], [MaTacGia], [NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia],[TinhTrang] "
         query &= "FROM [tblSach]    , [tblTheLoaiSach] "
         query &= "WHERE [tblSach].[MaTheLoaiSach] = [tblTheLoaiSach].[MaTheLoaiSach]"
         query &= "     AND [MaTacGia] = @MaTacGia"
@@ -189,7 +190,7 @@ Public Class Sach_DAL
                     If reader.HasRows = True Then
                         listSach.Clear()
                         While reader.Read()
-                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("MaTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                            listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("MaTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia"), reader("TinhTrang")))
                         End While
                     End If
 
@@ -247,42 +248,48 @@ Public Class Sach_DAL
     '    Return New Result(True) ' thanh cong
     'End Function
 
-    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef a As String, ByRef b As String, ByRef c As String, ByRef d As DateTime) As Result
+    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef ChiTietPhieuMuonSach As ChiTietPhieuMuonSach_DTO) As Result
 
 
         Dim query As String = String.Empty
-        query &= "SELECT [TenSach], [TenTheLoaiSach], [TenTacGia]  "
+        query &= "SELECT [tblSach].[TenSach], [TenTheLoaiSach], [TenTacGia],[TinhTrang]"
         query &= "FROM [tblSach]    , [tblTheLoaiSach], [tblTacGia]"
         query &= "WHERE [tblSach].[MaTheLoaiSach] = [tblTheLoaiSach].[MaTheLoaiSach] AND [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia]"
         query &= "     AND [MaSach] = @MaSach"
+
+        'Dim query1 As String = String.Empty
+        'query1 &= "SELECT [NgayDuKienTra]"
+        'query1 &= "FROM [tblPhieuMuonSach],[tblChiTietPhieuMuonSach]"
+        'query1 &= "WHERE [tblPhieuMuonSach].[MaPhieuMuonSach]=[tblChiTietPhieuMuonSach].[MaPhieuMuonSach]"
+        'query1 &= "     AND [MaSach] = @MaSach1"
+
+
         Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
+            Using comm, comm1 As New SqlCommand()
                 With comm
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
                     .Parameters.AddWithValue("@MaSach", MaSach)
                 End With
+
+                'With comm1
+                '    .Connection = conn
+                '    .CommandType = CommandType.Text
+                '    .CommandText = query1
+                '    .Parameters.AddWithValue("@MaSach1", MaSach)
+                'End With
                 Try
                     conn.Open()
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
                         While reader.Read()
-                            a = reader("tensach")
-                            b = reader("tentheloaisach")
-                            c = reader("tentacgia")
-                            ' While reader.Read()
 
-                            'listSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("MaTacGia"), reader("NamXuatBan"), reader("NhaXuatBan"), reader("NgayNhap"), reader("TriGia")))
+                            ChiTietPhieuMuonSach = New ChiTietPhieuMuonSach_DTO(reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang")) ', reader("NgayDuKienTra"))
                         End While
                     End If
-                    Dim NgayHienTai As DateTime
-                    NgayHienTai = DateTime.Now
-                    d = NgayHienTai.AddDays(5)
-                    'If a = "" Then
-                    '    MessageBox("Không tồn tại mã sách")
-                    'End If
+
                 Catch ex As Exception
                     conn.Close()
                     System.Console.WriteLine(ex.StackTrace)

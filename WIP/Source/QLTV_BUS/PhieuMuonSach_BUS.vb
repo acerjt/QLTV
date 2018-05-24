@@ -11,15 +11,15 @@ Public Class PhieuMuonSach_BUS
         Public Sub New(connectionString As String)
         pmsDAL = New PhieuMuonSach_DAL(connectionString)
     End Sub
-    'Public Function isValidName(ldg As LoaiDocGia_DTO) As Boolean
+    Public Function isValidMaDocGia(PhieuMuonSach As PhieuMuonSach_DTO) As Boolean
 
-    '    If (ldg.TenLoaiDocGia.Length < 1) Then
-    '        Return False
-    '    End If
+        If (PhieuMuonSach.MaDocGia.Length < 1) Then
+            Return False
+        End If
 
-    '    Return True
+        Return True
 
-    'End Function
+    End Function
 
     Public Function insert(pms As PhieuMuonSach_DTO, listChiTietPhieuMuonSach As List(Of ChiTietPhieuMuonSach_DTO)) As Result
         '1. verify data here!!
