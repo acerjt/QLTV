@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhieuMuonSach_DTO.vb" />
+    <Compile Include="ChiTietPhieuTraSach_DTO.vb" />
     <Compile Include="DocGiaDTO.vb" />
     <Compile Include="LoaiDocGia_DTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -90,6 +91,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NhanTraSach_DTO.vb" />
     <Compile Include="PhieuMuonSach_DTO.vb" />
     <Compile Include="QuyDinhDTO.vb" />
     <Compile Include="Sach_DTO.vb" />

@@ -1,7 +1,7 @@
-﻿Public Class ChiTietPhieuMuonSach_DTO
+﻿Public Class ChiTietPhieuTraSach_DTO
+
     Private strMaSach As String
-    Private strMaPhieuMuonSach As String
-    Private strTinhTrang As String
+    Private strMaPhieuTraSach As String
     'Private iMaSach As Integer
     'Private strTenSach As String
     'Private strTenTheLoaiSach As String
@@ -13,40 +13,38 @@
 
     End Sub
     'Public Sub New(strMaSach As String,
-    '               strMaPhieuMuonSach As String,
+    '               strMaPhieuTraSach As String,
     '               strTenSach As String,
     '               strTenTheLoaiSach As String,
     '               strTenTacGia As String,
-    '               strTinhTrang As String,
-    '               dateNgayDuKien As DateTime)
+    '               strTinhTrang As String)
+    '    'dateNgayDuKien As DateTime)
 
     '    'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
     '    Me.strMaSach = strMaSach
-    '    Me.strMaPhieuMuonSach = strMaPhieuMuonSach
+    '    Me.strMaPhieuTraSach = strMaPhieuTraSach
     '    'Me.iMaSach = iMaSach
     '    Me.strTenSach = strTenSach
     '    Me.strTenTheLoaiSach = strTenTheLoaiSach
     '    Me.strTenTacGia = strTenTacGia
     '    Me.strTinhTrang = strTinhTrang
-    '    Me.dateNgayDuKien = dateNgayDuKien
+    '    ' Me.dateNgayDuKien = dateNgayDuKien
     'End Sub
 
 
 
 
-    Public Sub New(strMaPhieuMuonSach As String, strMaSach As String) ', strTinhTrang As String)
+    Public Sub New(strMaPhieuTraSach As String, strMaSach As String)
         'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
         Me.strMaSach = strMaSach
-        Me.strMaPhieuMuonSach = strMaPhieuMuonSach
-        ' Me.strTinhTrang = strTinhTrang
+        Me.strMaPhieuTraSach = strMaPhieuTraSach
     End Sub
 
-    'Public Sub New(
-    '                strTenSach As String,
+    'Public Sub New(strTenSach As String,
     '               strTenTheLoaiSach As String,
     '               strTenTacGia As String,
-    '               strTinhTrang As String,
-    '               dateNgayDuKien As DateTime)
+    '               strTinhTrang As String)
+    '    'dateNgayDuKien As DateTime)
 
     '    'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
     '    'Me.strMaSach = strMaSach
@@ -56,7 +54,7 @@
     '    Me.strTenTheLoaiSach = strTenTheLoaiSach
     '    Me.strTenTacGia = strTenTacGia
     '    Me.strTinhTrang = strTinhTrang
-    '    Me.dateNgayDuKien = dateNgayDuKien
+    '    'Me.dateNgayDuKien = dateNgayDuKien
     'End Sub
 
     'Public Sub New(
@@ -87,24 +85,14 @@
         End Set
     End Property
 
-    Property MaPhieuMuonSach() As String
+    Property MaPhieuTraSach() As String
         Get
-            Return strMaPhieuMuonSach
+            Return strMaPhieuTraSach
         End Get
         Set(ByVal Value As String)
-            strMaPhieuMuonSach = Value
+            strMaPhieuTraSach = Value
         End Set
     End Property
-
-    Property TinhTrang() As String
-        Get
-            Return strTinhTrang
-        End Get
-        Set(ByVal Value As String)
-            strTinhTrang = Value
-        End Set
-    End Property
-
 
     'Property TenSach() As String
     '    Get
@@ -154,4 +142,5 @@
     '        dateNgayDuKien = Value
     '    End Set
     'End Property
+
 End Class

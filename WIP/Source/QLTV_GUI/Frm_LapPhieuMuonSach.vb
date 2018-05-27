@@ -6,14 +6,14 @@ Public Class Frm_LapPhieuMuonSach
     Private DocGiaBus As DocGiaBUS
     Private SachBus As Sach_BUS
     Private ChiTietPhieuMuonSachBUS As ChiTietPhieuMuonSach_BUS
-    Private listChiTietPhieuMuonSach As List(Of ChiTietPhieuMuonSach_DTO)
+    Private listChiTietPhieuMuonSach As List(Of Sach_DTO)
     Private listChiTietPhieuMuonSach1 As List(Of ChiTietPhieuMuonSach_DTO)
     Private Sub Frm_LapPhieuMuonSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PhieuMuonSachBus = New PhieuMuonSach_BUS()
         DocGiaBus = New DocGiaBUS()
         SachBus = New Sach_BUS()
         ChiTietPhieuMuonSachBUS = New ChiTietPhieuMuonSach_BUS()
-        listChiTietPhieuMuonSach = New List(Of ChiTietPhieuMuonSach_DTO)
+        listChiTietPhieuMuonSach = New List(Of Sach_DTO)
         listChiTietPhieuMuonSach1 = New List(Of ChiTietPhieuMuonSach_DTO)
         Dim listSach = New List(Of Sach_DTO)
 
@@ -124,7 +124,7 @@ Public Class Frm_LapPhieuMuonSach
             'Dim clLoaiHS = New DataGridView()
             Cl_TheLoaiSach1.Name = "Cl_TheLoaiSach"
             Cl_TheLoaiSach1.HeaderText = "Thể Loại Sách"
-            Cl_TheLoaiSach1.DataPropertyName = "TenTheLoaiSach"
+            Cl_TheLoaiSach1.DataPropertyName = "TheLoai"
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TheLoaiSach1)
 
             Dim Cl_TenTacGia1 = New DataGridViewTextBoxColumn()
@@ -143,10 +143,10 @@ Public Class Frm_LapPhieuMuonSach
 
 
             Dim Cl_NgayDuKienTra = New DataGridViewTextBoxColumn()
-                Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra "
-                Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
-                Cl_NgayDuKienTra.DataPropertyName = "NgayDuKienTra"
-                Dgv_ListPhieuMuonSach1.Columns.Add(Cl_NgayDuKienTra)
+            Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra "
+            Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
+            Cl_NgayDuKienTra.DataPropertyName = "NgayDuKien"
+            Dgv_ListPhieuMuonSach1.Columns.Add(Cl_NgayDuKienTra)
 
 
             'listChiTietPhieuMuonSach.Clear()
@@ -274,12 +274,24 @@ Public Class Frm_LapPhieuMuonSach
                 End If
 
             Next
+            For Each y As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
+                If e.RowIndex = 0 Then
+                    Exit For
+                Else
+                    If (Dgv_ListPhieuMuonSach.Item(0, y.Index).Value = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(0).Value And y.Index <> e.RowIndex) Then
+                        MessageBox.Show("Sách đã được chọn ở trên.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
+                        Return
+                        'Dgv_ListPhieuMuonSach.Focus()
+                    End If
+                End If
+            Next
 
 
 
             SachBus = New Sach_BUS()
-            Dim Chitietphieumuonsach As ChiTietPhieuMuonSach_DTO
-            Chitietphieumuonsach = New ChiTietPhieuMuonSach_DTO()
+            Dim Chitietphieumuonsach As Sach_DTO
+            Chitietphieumuonsach = New Sach_DTO()
 
 
             If Dgv_ListPhieuMuonSach.Rows.Count + Dgv_ListPhieuMuonSach1.Rows.Count > 6 Then
@@ -303,16 +315,16 @@ Public Class Frm_LapPhieuMuonSach
                 Return
             End If
             If Chitietphieumuonsach.TenSach = "" Then
-                MessageBox.Show("Không tồn tại mã độc giả.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                'x = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(1).Value
+                MessageBox.Show("Không tồn tại sách có mã này.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
                 Dgv_ListPhieuMuonSach.Focus()
             Else
 
                 Dgv_ListPhieuMuonSach.Item("Cl_TenSach", e.RowIndex).Value = Chitietphieumuonsach.TenSach
-                Dgv_ListPhieuMuonSach.Item("Cl_TheLoai", e.RowIndex).Value = Chitietphieumuonsach.TenTheLoaiSach
+                Dgv_ListPhieuMuonSach.Item("Cl_TheLoai", e.RowIndex).Value = Chitietphieumuonsach.TheLoai
                 Dgv_ListPhieuMuonSach.Item("Cl_TinhTrang", e.RowIndex).Value = Chitietphieumuonsach.TinhTrang
                 Dgv_ListPhieuMuonSach.Item("Cl_TacGia", e.RowIndex).Value = Chitietphieumuonsach.TenTacGia
-                'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKienTra
+                'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKien
                 ' Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
                 If (listChiTietPhieuMuonSach1.Count() = e.RowIndex) Then
                     listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
@@ -347,6 +359,20 @@ Public Class Frm_LapPhieuMuonSach
             Txt_MaDocGia.Focus()
             Return
         End If
+
+        If (Txt_TinhTrangThe.Text = "Hết Hạn") Then
+            MessageBox.Show("Thẻ đã hết hạn")
+            Return
+        End If
+
+        For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
+
+            If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đã Quá Hạn") Then
+                MessageBox.Show("Có sách quá hạn chưa được trả")
+                Return
+            End If
+        Next
+
 
 
         For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows

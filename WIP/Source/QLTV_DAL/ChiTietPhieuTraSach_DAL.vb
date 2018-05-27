@@ -4,8 +4,7 @@ Imports QLTV_DTO
 Imports Utility
 
 
-
-Public Class ChiTietPhieuMuonSach_DAL
+Public Class ChiTietPhieuTraSach_DAL
     Public connectionString As String
 
     Public Sub New()
@@ -23,13 +22,13 @@ Public Class ChiTietPhieuMuonSach_DAL
 
         Dim query As String = String.Empty
 
-        query &= "Select [tblChitietphieumuonsach].[Masach],[TenSach],[TenTheLoaiSach],[TenTacGia],[tblChitietphieumuonsach].[TinhTrang],[NgayDuKienTra] "
+        query &= "Select [tblChitietphieumuonsach].[Masach],[tblPhieuMuonSach].[Maphieumuonsach],[TenSach],[TenTheLoaiSach],[TenTacGia],[tblChitietphieumuonsach].[TinhTrang],[NgayDuKienTra] "
         query &= "From [tblSach], [tblChiTietPhieuMuonSach], [tblPhieuMuonSach], [tblTheLoaiSach], [tblTacGia]"
         query &= "Where [tblSach].[MaSach] = [tblChiTietPhieuMuonSach].[MaSach]"
         query &= "And [tblPhieuMuonSach].[MaPhieuMuonSach]=[tblChiTietPhieuMuonSach].[MaPhieuMuonSach] "
         query &= "And [tblSach].MaTheLoaiSach=[tblTheLoaiSach].[MaTheLoaiSach]"
         query &= "And [tblSach].[MaTacGia]=[tblTacGia].[MaTacGia]"
-        query &= "And [tblChiTietPhieuMuonSach].[TinhTrang]='DangMuon'"
+        query &= "And [tblChiTIetPhieuMuonSach].[TinhTrang]='DangMuon'"
         query &= "And [MaDocGia]=@MaDocGia"
 
 

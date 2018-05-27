@@ -248,7 +248,7 @@ Public Class Sach_DAL
     '    Return New Result(True) ' thanh cong
     'End Function
 
-    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef ChiTietPhieuMuonSach As ChiTietPhieuMuonSach_DTO) As Result
+    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef ChiTietPhieuMuonSach As Sach_DTO) As Result
 
 
         Dim query As String = String.Empty
@@ -286,7 +286,7 @@ Public Class Sach_DAL
                     If reader.HasRows = True Then
                         While reader.Read()
 
-                            ChiTietPhieuMuonSach = New ChiTietPhieuMuonSach_DTO(reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang")) ', reader("NgayDuKienTra"))
+                            ChiTietPhieuMuonSach = New Sach_DTO(reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang")) ', reader("NgayDuKienTra"))
                         End While
                     End If
 

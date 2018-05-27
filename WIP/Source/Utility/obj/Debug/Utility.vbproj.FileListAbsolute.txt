@@ -36,4 +36,5 @@ C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\Utility\o
 C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\Utility\obj\Debug\Utility.exe
 C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\Utility\obj\Debug\Utility.xml
 C:\Users\ASUS\Downloads\New folder (10)\New folder (7)\QLTV\WIP\Source\Utility\obj\Debug\Utility.pdb
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\Utility\obj\Debug\Utility.vbproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\Utility\obj\Debug\Utility.vbprojResolveAssemblyReference.cache

@@ -2,7 +2,9 @@
 Imports System.Data.SqlClient
 Imports QLTV_DTO
 Imports Utility
-Public Class PhieuMuonSach_DAL
+
+
+Public Class NhanTraSach_DAL
 
     Private connectionString As String
 
@@ -18,9 +20,9 @@ Public Class PhieuMuonSach_DAL
 
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [maphieumuonsach] "
-        query &= "FROM [tblPhieuMuonSach] "
-        query &= "ORDER BY [maphieumuonsach] DESC "
+        query &= "SELECT TOP 1 [MaPhieuTraSach] "
+        query &= "FROM [tblPhieuTraSach] "
+        query &= "ORDER BY [MaPhieUTraSach] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -37,7 +39,7 @@ Public Class PhieuMuonSach_DAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("maphieumuonsach")
+                            idOnDB = reader("MaPhieuTraSach")
                         End While
                     End If
                     ' new ID = current ID + 1
@@ -53,15 +55,15 @@ Public Class PhieuMuonSach_DAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function insert(pms As PhieuMuonSach_DTO, listChiTietPhieuMuonSach As List(Of ChiTietPhieuMuonSach_DTO)) As Result
+    Public Function insert(pts As NhanTraSach_DTO, listChiTietPhieuTraSach As List(Of ChiTietPhieuTraSach_DTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblphieumuonsach] ([maphieumuonsach], [madocgia], [ngaymuon], [ngaydukientra])"
-        query &= "VALUES (@maphieumuonsach, @madocgia, @ngaymuon, @ngaydukientra)"
+        query &= "INSERT INTO [tblPhieuTraSach] ([MaPhieuTraSach], [MaDocGia], [NgayTra])"
+        query &= "VALUES (@MaPhieuTraSach, @MaDocGia, @NgayTra)"
 
         Dim query1 As String = String.Empty
-        query1 &= "INSERT INTO [tblChitietphieumuonsach] ( [maphieumuonsach],[masach],[tinhtrang])"
-        query1 &= "VALUES (@maphieumuonsach1, @masach,@tinhtrang1)"
+        query1 &= "INSERT INTO [tblChiTietPhieuTraSach] ( [MaPhieuTraSach],[MaSach])"
+        query1 &= "VALUES (@MaPhieuTraSach1, @MaSach)"
 
         Dim query2 As String = String.Empty
         query2 &= " UPDATE [tblSach] SET"
@@ -69,28 +71,37 @@ Public Class PhieuMuonSach_DAL
         query2 &= " WHERE "
         query2 &= " [MaSach] = @MaSach2"
 
+
+
+        Dim query3 As String = String.Empty
+        query3 &= " UPDATE [tblChitietphieumuonsach] SET"
+        query3 &= " [TinhTrang]=@TinhTrang"
+        query3 &= " WHERE "
+        query3 &= " [MaSach] = @MaSach3"
+
+
+
         Dim nextID = 1
         Dim result As Result
         result = getNextID(nextID)
         If (result.FlagResult = False) Then
             Return result
         End If
-        pms.MaPhieuMuonSach = nextID
+        pts.MaTraSach = nextID
 
         Using conn As New SqlConnection(connectionString)
-            Using comm, comm1, comm2 As New SqlCommand()
+            Using comm, comm1, comm2, comm3 As New SqlCommand()
 
                 conn.Open()
                 With comm1
 
-                    For Each x As ChiTietPhieuMuonSach_DTO In listChiTietPhieuMuonSach
+                    For Each x As ChiTietPhieuTraSach_DTO In listChiTietPhieuTraSach
                         .Parameters.Clear()
                         .Connection = conn
                         .CommandType = CommandType.Text
                         .CommandText = query1
-                        .Parameters.AddWithValue("@maphieumuonsach1", x.MaPhieuMuonSach)
-                        .Parameters.AddWithValue("@masach", x.MaSach)
-                        .Parameters.AddWithValue("@tinhtrang1", "DangMuon")
+                        .Parameters.AddWithValue("@MaPhieuTraSach1", pts.MaTraSach)
+                        .Parameters.AddWithValue("@MaSach", x.MaSach)
                         Try
                             .ExecuteNonQuery()
                             'conn.Close()
@@ -107,10 +118,10 @@ Public Class PhieuMuonSach_DAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@maphieumuonsach", pms.MaPhieuMuonSach)
-                    .Parameters.AddWithValue("@madocgia", pms.MaDocGia)
-                    .Parameters.AddWithValue("@ngaymuon", pms.NgayMuon)
-                    .Parameters.AddWithValue("@ngaydukientra", pms.NgayDuKienTra)
+                    .Parameters.AddWithValue("@MaPhieuTraSach", pts.MaTraSach)
+                    .Parameters.AddWithValue("@MaDocGia", pts.MaDocGia)
+                    .Parameters.AddWithValue("@NgayTra", pts.NgayTra)
+                    '.Parameters.AddWithValue("@ngaydukientra", pms.NgayDuKienTra)
                     '.Parameters.AddWithValue("@tinhtrang", "DangMuon")
                     'Dim comm1 As New SqlCommand()
 
@@ -125,13 +136,13 @@ Public Class PhieuMuonSach_DAL
                 End Try
 
                 With comm2
-                    For Each x As ChiTietPhieuMuonSach_DTO In listChiTietPhieuMuonSach
+                    For Each x As ChiTietPhieuTraSach_DTO In listChiTietPhieuTraSach
                         .Parameters.Clear()
                         .Connection = conn
                         .CommandType = CommandType.Text
                         .CommandText = query2
                         .Parameters.AddWithValue("@masach2", x.MaSach)
-                        .Parameters.AddWithValue("@tinhtrang", "DangMuon")
+                        .Parameters.AddWithValue("@tinhtrang", " ")
                         Try
                             .ExecuteNonQuery()
                             'conn.Close()
@@ -151,6 +162,35 @@ Public Class PhieuMuonSach_DAL
                     ' them that bai!!!
                     Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
                 End Try
+
+                With comm3
+                    For Each x As ChiTietPhieuTraSach_DTO In listChiTietPhieuTraSach
+                        .Parameters.Clear()
+                        .Connection = conn
+                        .CommandType = CommandType.Text
+                        .CommandText = query3
+                        .Parameters.AddWithValue("@masach3", x.MaSach)
+                        .Parameters.AddWithValue("@tinhtrang", " ")
+                        Try
+                            .ExecuteNonQuery()
+                            'conn.Close()
+                        Catch ex As Exception
+                            conn.Close()
+                            ' them that bai!!!
+                            Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
+                        End Try
+                    Next
+
+                End With
+                Try
+                    'conn.Open()
+                    comm2.ExecuteNonQuery()
+                Catch ex As Exception
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Lập Phiếu Mượn Sách không thành công", ex.StackTrace)
+                End Try
+
 
 
             End Using
@@ -190,12 +230,12 @@ Public Class PhieuMuonSach_DAL
     'End Function
 
 
-    Public Function selectALL(ByRef listPhieuMuonSach As List(Of PhieuMuonSach_DTO)) As Result
+    Public Function selectALL(ByRef listPhieuTraSach As List(Of NhanTraSach_DTO)) As Result
 
         Dim query As String = String.Empty
 
-        query &= " SELECT [maphieumuonsach], [madocgia], [ngaymuon], [ngaydukientra]"
-        query &= " FROM [tblPhieuMuonSach]"
+        query &= " SELECT [MaPhieuTraSach], [MaDocGia], [NgayTra]"
+        query &= " FROM [tblPhieuTraSach]"
 
 
 
@@ -211,9 +251,9 @@ Public Class PhieuMuonSach_DAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
-                        listPhieuMuonSach.Clear()
+                        listPhieuTraSach.Clear()
                         While reader.Read()
-                            listPhieuMuonSach.Add(New PhieuMuonSach_DTO(reader("maphieumuonsach"), reader("madocgia"), reader("ngaymuon"), reader("ngaydukientra")))
+                            listPhieuTraSach.Add(New NhanTraSach_DTO(reader("maphieutrasach"), reader("madocgia"), reader("ngaytra")))
                         End While
                     End If
                 Catch ex As Exception
@@ -255,8 +295,6 @@ Public Class PhieuMuonSach_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+
 End Class
-
-
-
-

@@ -80,7 +80,7 @@ Public Class Sach_BUS
     '    Return SachDAL.select_ByMaSach(MaSach, tensach, theloai, tacgia)
     'End Function
 
-    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef ChiTietPhieuMuonSach As ChiTietPhieuMuonSach_DTO) As Result
+    Public Function selectALL_ByMaSach(MaSach As Integer, ByRef ChiTietPhieuMuonSach As Sach_DTO) As Result
         '1. verify data here!!
 
         '2. insert to DB

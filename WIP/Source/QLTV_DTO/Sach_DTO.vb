@@ -8,6 +8,7 @@
     Private dateNgayNhap As DateTime
     Private strTriGia As String
     Private strTinhTrang As String
+    Private dateNgayDuKien As DateTime
 
 
     Public Sub New()
@@ -20,7 +21,8 @@
                    strNhaXuatBan As String,
                    dateNgayNhap As DateTime,
                    strTriGia As String,
-                   strTinhTrang As String)
+                   strTinhTrang As String,
+                   dateNgayDuKien As DateTime)
 
 
         Me.strMaSach = strMaSach
@@ -33,6 +35,92 @@
         Me.dateNgayNhap = dateNgayNhap
         Me.strTriGia = strTriGia
         Me.strTinhTrang = strTinhTrang
+        Me.dateNgayDuKien = dateNgayDuKien
+    End Sub
+
+    Public Sub New(strMaSach As String,
+                   strTenSach As String,
+                   iTheLoai As String,
+                   iTacGia As String,
+                   strTinhTrang As String,
+                   dateNgayDuKien As DateTime)
+
+
+        Me.strMaSach = strMaSach
+        Me.strTenSach = strTenSach
+        Me.iTheLoai = iTheLoai
+        ' Me.strMaTacGia = strMaTacGia
+        Me.iTacGia = iTacGia
+        ' Me.iNamXuatBan = iNamXuatBan
+        'Me.strNhaXuatBan = strNhaXuatBan
+        'Me.dateNgayNhap = dateNgayNhap
+        '  Me.strTriGia = strTriGia
+        Me.strTinhTrang = strTinhTrang
+        Me.dateNgayDuKien = dateNgayDuKien
+    End Sub
+
+    Public Sub New(strMaSach As String,
+                   strTenSach As String,
+                   iTheLoai As String,
+                   iTacGia As String,
+                   iNamXuatBan As Integer,
+                   strNhaXuatBan As String,
+                   dateNgayNhap As DateTime,
+                   strTriGia As String,
+                   strTinhTrang As String)
+        'dateNgayDyKien As DateTime)
+
+
+        Me.strMaSach = strMaSach
+        Me.strTenSach = strTenSach
+        Me.iTheLoai = iTheLoai
+        ' Me.strMaTacGia = strMaTacGia
+        Me.iTacGia = iTacGia
+        Me.iNamXuatBan = iNamXuatBan
+        Me.strNhaXuatBan = strNhaXuatBan
+        Me.dateNgayNhap = dateNgayNhap
+        Me.strTriGia = strTriGia
+        Me.strTinhTrang = strTinhTrang
+        'Me.dateNgayDuKien = dateNgayDuKien
+    End Sub
+
+    Public Sub New(strTenSach As String,
+                   iTheLoai As String,
+                   iTacGia As String,
+                   strTinhTrang As String,
+                   dateNgayDuKien As DateTime)
+
+
+        'Me.strMaSach = strMaSach
+        Me.strTenSach = strTenSach
+        Me.iTheLoai = iTheLoai
+        ' Me.strMaTacGia = strMaTacGia
+        Me.iTacGia = iTacGia
+        Me.iNamXuatBan = iNamXuatBan
+        ' Me.strNhaXuatBan = strNhaXuatBan
+        'Me.dateNgayNhap = dateNgayNhap
+        ' Me.strTriGia = strTriGia
+        Me.strTinhTrang = strTinhTrang
+        Me.dateNgayDuKien = dateNgayDuKien
+    End Sub
+
+    Public Sub New(strTenSach As String,
+                   iTheLoai As String,
+                   iTacGia As String,
+                   strTinhTrang As String)
+
+
+        'Me.strMaSach = strMaSach
+        Me.strTenSach = strTenSach
+        Me.iTheLoai = iTheLoai
+        ' Me.strMaTacGia = strMaTacGia
+        Me.iTacGia = iTacGia
+        Me.iNamXuatBan = iNamXuatBan
+        ' Me.strNhaXuatBan = strNhaXuatBan
+        'Me.dateNgayNhap = dateNgayNhap
+        ' Me.strTriGia = strTriGia
+        Me.strTinhTrang = strTinhTrang
+        'Me.dateNgayDuKien = dateNgayDuKien
     End Sub
     Property MaSach() As String
         Get
@@ -112,6 +200,14 @@
         End Get
         Set(ByVal value As String)
             strTinhTrang = value
+        End Set
+    End Property
+    Property NgayDuKien() As DateTime
+        Get
+            Return dateNgayDuKien
+        End Get
+        Set(ByVal value As DateTime)
+            dateNgayDuKien = value
         End Set
     End Property
 End Class

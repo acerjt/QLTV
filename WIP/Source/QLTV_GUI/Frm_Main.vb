@@ -60,4 +60,10 @@
         frmLapPhieuMuonSach.MdiParent = Me
         frmLapPhieuMuonSach.Show()
     End Sub
+
+    Private Sub NhậnTrảSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NhậnTrảSáchToolStripMenuItem.Click
+        Dim frmLapPhieuTraSach As Frm_NhanTraSach = New Frm_NhanTraSach()
+        frmLapPhieuTraSach.MdiParent = Me
+        frmLapPhieuTraSach.Show()
+    End Sub
 End Class

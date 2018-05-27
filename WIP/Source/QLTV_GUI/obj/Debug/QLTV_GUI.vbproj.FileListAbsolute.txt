@@ -226,3 +226,4 @@ D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Deb
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_LapPhieuMuonSach.resources
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.CopyComplete
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_NhanTraSach.resources
