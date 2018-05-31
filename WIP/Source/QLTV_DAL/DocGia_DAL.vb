@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports QLTV_DTO
 Imports Utility
 
-Public Class DocGiaDAL
+Public Class DocGia_DAL
     Public connectionString As String
 
     Public Sub New()
@@ -60,7 +60,7 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function Insert(dg As DocGiaDTO) As Result
+    Public Function Insert(dg As DocGia_DTO) As Result
 
         Dim query As String = String.Empty
         query &= "INSERT INTO [tblDocGia] ([madocgia], [hovaten], [maloaidocgia], [ngaysinh], [diachi],[email],[ngaylap],[ngayhethan])"
@@ -101,7 +101,7 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function SelectALL(ByRef listDocGia As List(Of DocGiaDTO)) As Result
+    Public Function SelectALL(ByRef listDocGia As List(Of DocGia_DTO)) As Result
 
         Dim query As String = String.Empty
         query &= "SELECT [madocgia], [hovaten], [maloaidocgia], [ngaysinh], [diachi], [email], [ngaylap],[ngayhethan]"
@@ -122,7 +122,7 @@ Public Class DocGiaDAL
                     If reader.HasRows = True Then
                         listDocGia.Clear()
                         While reader.Read()
-                            listDocGia.Add(New DocGiaDTO(reader("madocgia"), reader("hovaten"), reader("maloaidocgia"), reader("ngaysinh"), reader("diachi"), reader("email"), reader("ngaylap"), reader("ngayhethan"))) ', reader("tinhtrangthe"), reader("sosachdangmuon")))
+                            listDocGia.Add(New DocGia_DTO(reader("madocgia"), reader("hovaten"), reader("maloaidocgia"), reader("ngaysinh"), reader("diachi"), reader("email"), reader("ngaylap"), reader("ngayhethan"))) ', reader("tinhtrangthe"), reader("sosachdangmuon")))
                         End While
                     End If
 
@@ -136,7 +136,7 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectHoVaTen(MaDocGia As Integer, ByRef dg As DocGiaDTO) As Result
+    Public Function selectHoVaTen(MaDocGia As Integer, ByRef dg As DocGia_DTO) As Result
 
         Dim query As String = String.Empty
 
@@ -180,7 +180,7 @@ Public Class DocGiaDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function SelectALL_ByType(MaLoaiDocGia As Integer, ByRef listDocGia As List(Of DocGiaDTO)) As Result
+    Public Function SelectALL_ByType(MaLoaiDocGia As Integer, ByRef listDocGia As List(Of DocGia_DTO)) As Result
 
         Dim query As String = String.Empty
         query &= "SELECT [madocgia], [hovaten],[maloaidocgia], [ngaysinh], [diachi], [email], [ngaylap],[ngayhethan] "
@@ -202,7 +202,7 @@ Public Class DocGiaDAL
                     If reader.HasRows = True Then
                         listDocGia.Clear()
                         While reader.Read()
-                            listDocGia.Add(New DocGiaDTO(reader("madocgia"), reader("hovaten"), reader("maloaidocgia"), reader("ngaysinh"), reader("diachi"), reader("email"), reader("ngaylap"), reader("ngayhethan")))
+                            listDocGia.Add(New DocGia_DTO(reader("madocgia"), reader("hovaten"), reader("maloaidocgia"), reader("ngaysinh"), reader("diachi"), reader("email"), reader("ngaylap"), reader("ngayhethan")))
                         End While
                     End If
 
@@ -216,7 +216,7 @@ Public Class DocGiaDAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function update(dg As DocGiaDTO) As Result
+    Public Function update(dg As DocGia_DTO) As Result
 
         Dim query As String = String.Empty
         query &= " UPDATE [tblDocGia] SET"

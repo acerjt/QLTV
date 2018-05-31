@@ -77,7 +77,7 @@
     <Compile Include="ChiTietBaoCaoMuonSachTheoThang_DAL.vb" />
     <Compile Include="ChiTietPhieuMuonSach_DAL.vb" />
     <Compile Include="ChiTietPhieuTraSach_DAL.vb" />
-    <Compile Include="DocGiaDAL.vb" />
+    <Compile Include="DocGia_DAL.vb" />
     <Compile Include="LoaiDocGia_DAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -96,7 +96,7 @@
     </Compile>
     <Compile Include="NhanTraSach_DAL.vb" />
     <Compile Include="PhieuMuonSach_DAL.vb" />
-    <Compile Include="QuyDinhDAL.vb" />
+    <Compile Include="QuyDinh_DAL.vb" />
     <Compile Include="Sach_DAL.vb" />
     <Compile Include="TacGia_DAL.vb" />
     <Compile Include="TheLoaiSach_DAL.vb" />

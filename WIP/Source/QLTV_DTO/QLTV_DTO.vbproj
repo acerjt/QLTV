@@ -76,7 +76,7 @@
     <Compile Include="ChiTietBaoCaoMuonSachTheoThang_DTO.vb" />
     <Compile Include="ChiTietPhieuMuonSach_DTO.vb" />
     <Compile Include="ChiTietPhieuTraSach_DTO.vb" />
-    <Compile Include="DocGiaDTO.vb" />
+    <Compile Include="DocGia_DTO.vb" />
     <Compile Include="LoaiDocGia_DTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -95,7 +95,7 @@
     </Compile>
     <Compile Include="NhanTraSach_DTO.vb" />
     <Compile Include="PhieuMuonSach_DTO.vb" />
-    <Compile Include="QuyDinhDTO.vb" />
+    <Compile Include="QuyDinh_DTO.vb" />
     <Compile Include="Sach_DTO.vb" />
     <Compile Include="TacGia_DTO.vb" />
     <Compile Include="TheLoaiSach_DTO.vb" />

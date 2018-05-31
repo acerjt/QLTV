@@ -5,14 +5,14 @@ Imports Utility
 
 Public Class Frm_NhanTraSach
     Private PhieuTraSachBus As NhanTraSach_BUS
-    Private DocGiaBus As DocGiaBUS
+    Private DocGiaBus As DocGia_BUS
     Private SachBus As Sach_BUS
     Private ChiTietPhieuTraSachBUS As ChiTietPhieuTraSach_BUS
     Private listChiTietPhieuMuonSach As List(Of Sach_DTO)
     Private listChiTietPhieuTraSach As List(Of ChiTietPhieuTraSach_DTO)
     Private Sub Frm_NhanTraSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PhieuTraSachBus = New NhanTraSach_BUS()
-        DocGiaBus = New DocGiaBUS()
+        DocGiaBus = New DocGia_BUS()
         SachBus = New Sach_BUS()
         ChiTietPhieuTraSachBUS = New ChiTietPhieuTraSach_BUS()
         listChiTietPhieuMuonSach = New List(Of Sach_DTO)
@@ -55,8 +55,8 @@ Public Class Frm_NhanTraSach
     End Sub
 
     Private Sub loadListDocGia(maDocGia As String)
-        Dim Dg As DocGiaDTO
-        Dg = New DocGiaDTO()
+        Dim Dg As DocGia_DTO
+        Dg = New DocGia_DTO()
 
         Dim result As Result
         result = DocGiaBus.selecthovaten(maDocGia, Dg)
