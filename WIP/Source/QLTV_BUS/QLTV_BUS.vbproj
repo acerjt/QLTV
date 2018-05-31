@@ -74,7 +74,7 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieuMuonSach_BUS.vb" />
     <Compile Include="ChiTietPhieuTraSach_BUS.vb" />
-    <Compile Include="DocGiaBUS.vb" />
+    <Compile Include="DocGia_BUS.vb" />
     <Compile Include="LoaiDocGia_BUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -93,7 +93,7 @@
     </Compile>
     <Compile Include="NhanTraSach_BUS.vb" />
     <Compile Include="PhieuMuonSach_BUS.vb" />
-    <Compile Include="QuyDinhBUS.vb" />
+    <Compile Include="QuyDinh_BUS.vb" />
     <Compile Include="Sach_BUS.vb" />
     <Compile Include="TacGia_BUS.vb" />
     <Compile Include="TheLoaiSach_BUS.vb" />

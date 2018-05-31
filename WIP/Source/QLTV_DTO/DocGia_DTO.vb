@@ -1,4 +1,4 @@
-﻿Public Class DocGiaDTO
+﻿Public Class DocGia_DTO
     Private iMaDocGia As Integer
     Private strHoVaTen As String
     Private iLoaiDocGia As Integer

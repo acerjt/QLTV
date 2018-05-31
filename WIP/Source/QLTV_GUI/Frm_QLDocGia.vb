@@ -5,7 +5,7 @@ Imports Utility
 Public Class Frm_QLDocGia
 
 
-    Private dgBus As DocGiaBUS
+    Private dgBus As DocGia_BUS
     Private ldgBus As LoaiDocGia_BUS
     Private Sub Btn_CapNhat_Click(sender As Object, e As EventArgs) Handles Btn_CapNhap.Click
 
@@ -16,8 +16,8 @@ Public Class Frm_QLDocGia
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListDocGia.RowCount) Then
             Try
-                Dim docgia As DocGiaDTO
-                docgia = New DocGiaDTO()
+                Dim docgia As DocGia_DTO
+                docgia = New DocGia_DTO()
 
                 '1. Mapping data from GUI control
                 docgia.MaDocGia = Txt_MaDocGia.Text
@@ -103,7 +103,7 @@ Public Class Frm_QLDocGia
 
     Private Sub Frm_QLDocGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        dgBus = New DocGiaBUS()
+        dgBus = New DocGia_BUS()
         ldgBus = New LoaiDocGia_BUS()
 
         ' Load LoaiDocGia list
@@ -127,7 +127,7 @@ Public Class Frm_QLDocGia
 
     End Sub
     Private Sub loadListDocGia()
-        Dim listDocGia = New List(Of DocGiaDTO)
+        Dim listDocGia = New List(Of DocGia_DTO)
         Dim result As Result
         result = dgBus.selectAll(listDocGia)
         If (result.FlagResult = False) Then
@@ -207,7 +207,7 @@ Public Class Frm_QLDocGia
     End Sub
 
     Private Sub loadListDocGia(MaLoaiDocGia As String)
-        Dim listDocGia = New List(Of DocGiaDTO)
+        Dim listDocGia = New List(Of DocGia_DTO)
         Dim result As Result
         result = dgBus.selectALL_ByType(MaLoaiDocGia, listDocGia)
         If (result.FlagResult = False) Then
@@ -300,7 +300,7 @@ Public Class Frm_QLDocGia
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListDocGia.RowCount) Then
             Try
-                Dim dg = CType(Dgv_ListDocGia.Rows(currentRowIndex).DataBoundItem, DocGiaDTO)
+                Dim dg = CType(Dgv_ListDocGia.Rows(currentRowIndex).DataBoundItem, DocGia_DTO)
                 Txt_MaDocGia.Text = dg.MaDocGia
                 Txt_HoVaTen.Text = dg.HoVaTen
                 Txt_DiaChi.Text = dg.DiaChi

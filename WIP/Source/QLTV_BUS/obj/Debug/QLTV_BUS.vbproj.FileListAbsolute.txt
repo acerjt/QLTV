@@ -138,3 +138,23 @@ D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_BUS\obj\Deb
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.pdb
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.CopyComplete
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.Resources.resources
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.exe
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.xml
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.pdb
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_BUS.exe
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_BUS.pdb
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_BUS.xml
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_DAL.exe
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_DTO.exe
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\Utility.exe
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_DAL.pdb
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_DAL.xml
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_DTO.pdb
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\QLTV_DTO.xml
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\Utility.pdb
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\bin\Debug\Utility.xml
+C:\Users\Administrator\Desktop\New folder\QLTV\WIP\Source\QLTV_BUS\obj\Debug\QLTV_BUS.vbproj.CopyComplete

@@ -3,14 +3,14 @@ Imports QLTV_DTO
 Imports Utility
 Public Class Frm_LapPhieuMuonSach
     Private PhieuMuonSachBus As PhieuMuonSach_BUS
-    Private DocGiaBus As DocGiaBUS
+    Private DocGiaBus As DocGia_BUS
     Private SachBus As Sach_BUS
     Private ChiTietPhieuMuonSachBUS As ChiTietPhieuMuonSach_BUS
     Private listChiTietPhieuMuonSach As List(Of Sach_DTO)
     Private listChiTietPhieuMuonSach1 As List(Of ChiTietPhieuMuonSach_DTO)
     Private Sub Frm_LapPhieuMuonSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PhieuMuonSachBus = New PhieuMuonSach_BUS()
-        DocGiaBus = New DocGiaBUS()
+        DocGiaBus = New DocGia_BUS()
         SachBus = New Sach_BUS()
         ChiTietPhieuMuonSachBUS = New ChiTietPhieuMuonSach_BUS()
         listChiTietPhieuMuonSach = New List(Of Sach_DTO)
@@ -65,8 +65,8 @@ Public Class Frm_LapPhieuMuonSach
         Txt_MaPhieuMuonSach.Text = nextMaPhieuMuonSach
     End Sub
     Private Sub loadListDocGia(ByRef MaDocGia As Integer)
-        Dim Dg As DocGiaDTO
-        Dg = New DocGiaDTO()
+        Dim Dg As DocGia_DTO
+        Dg = New DocGia_DTO()
 
         Dim result As Result
         result = DocGiaBus.selecthovaten(MaDocGia, Dg)
