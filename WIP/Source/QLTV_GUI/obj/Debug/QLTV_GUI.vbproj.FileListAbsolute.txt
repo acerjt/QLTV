@@ -224,6 +224,10 @@ D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Deb
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.xml
 D:\New folder (3)\New folder (2)\New folder (7)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.pdb
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_LapPhieuMuonSach.resources
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_NhanTraSach.resources
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.resources
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.vbproj.CopyComplete
-C:\Users\ASUS\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_NhanTraSach.resources

@@ -47,10 +47,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -72,6 +75,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.Designer.vb">
+      <DependentUpon>Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_LapPhieuMuonSach.designer.vb">
       <DependentUpon>Frm_LapPhieuMuonSach.vb</DependentUpon>
     </Compile>
@@ -161,6 +170,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.resx">
+      <DependentUpon>Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_LapPhieuMuonSach.resx">
       <DependentUpon>Frm_LapPhieuMuonSach.vb</DependentUpon>
     </EmbeddedResource>

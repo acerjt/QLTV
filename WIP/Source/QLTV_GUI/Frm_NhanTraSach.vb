@@ -114,7 +114,7 @@ Public Class Frm_NhanTraSach
             'Dim clLoaiHS = New DataGridView()
             Cl_TheLoaiSach1.Name = "Cl_TheLoaiSach"
             Cl_TheLoaiSach1.HeaderText = "Thể Loại Sách"
-            Cl_TheLoaiSach1.DataPropertyName = "TheLoaiSach"
+            Cl_TheLoaiSach1.DataPropertyName = "TheLoai"
             Dgv_ListSachDangMuon.Columns.Add(Cl_TheLoaiSach1)
 
             Dim Cl_TenTacGia1 = New DataGridViewTextBoxColumn()
