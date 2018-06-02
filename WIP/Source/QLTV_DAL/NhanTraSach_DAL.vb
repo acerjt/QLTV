@@ -62,8 +62,8 @@ Public Class NhanTraSach_DAL
         query &= "VALUES (@MaPhieuTraSach, @MaDocGia, @NgayTra)"
 
         Dim query1 As String = String.Empty
-        query1 &= "INSERT INTO [tblChiTietPhieuTraSach] ( [MaPhieuTraSach],[MaSach])"
-        query1 &= "VALUES (@MaPhieuTraSach1, @MaSach)"
+        query1 &= "INSERT INTO [tblChiTietPhieuTraSach] ( [MaPhieuTraSach],[MaSach],[TinhTrang],[MaPhieuMuonSach])"
+        query1 &= "VALUES (@MaPhieuTraSach1, @MaSach,@TinhTrang,@MaPhieuMuonSach)"
 
         Dim query2 As String = String.Empty
         query2 &= " UPDATE [tblSach] SET"
@@ -78,6 +78,8 @@ Public Class NhanTraSach_DAL
         query3 &= " [TinhTrang]=@TinhTrang"
         query3 &= " WHERE "
         query3 &= " [MaSach] = @MaSach3"
+
+
 
 
 
@@ -102,6 +104,8 @@ Public Class NhanTraSach_DAL
                         .CommandText = query1
                         .Parameters.AddWithValue("@MaPhieuTraSach1", pts.MaTraSach)
                         .Parameters.AddWithValue("@MaSach", x.MaSach)
+                        .Parameters.AddWithValue("@TinhTrang", x.TinhTrang)
+                        .Parameters.AddWithValue("@MaPhieuMuonSach", x.MaPhieuMuonSach)
                         Try
                             .ExecuteNonQuery()
                             'conn.Close()

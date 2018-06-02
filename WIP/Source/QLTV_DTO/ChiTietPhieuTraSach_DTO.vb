@@ -2,6 +2,8 @@
 
     Private strMaSach As String
     Private strMaPhieuTraSach As String
+    Private strTinhTrang As String
+    Private iMaPhieuMuonSach As Integer
     'Private iMaSach As Integer
     'Private strTenSach As String
     'Private strTenTheLoaiSach As String
@@ -34,10 +36,12 @@
 
 
 
-    Public Sub New(strMaPhieuTraSach As String, strMaSach As String)
+    Public Sub New(strMaPhieuTraSach As String, strMaSach As String, strTinhTrang As String, iMaPhieuMuonSach As Integer)
         'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
         Me.strMaSach = strMaSach
         Me.strMaPhieuTraSach = strMaPhieuTraSach
+        Me.strTinhTrang = strTinhTrang
+        Me.iMaPhieuMuonSach = iMaPhieuMuonSach
     End Sub
 
     'Public Sub New(strTenSach As String,
@@ -94,6 +98,24 @@
         End Set
     End Property
 
+
+    Property TinhTrang() As String
+        Get
+            Return strTinhTrang
+        End Get
+        Set(ByVal Value As String)
+            strTinhTrang = Value
+        End Set
+    End Property
+
+    Property MaPhieuMuonSach() As Integer
+        Get
+            Return iMaPhieuMuonSach
+        End Get
+        Set(ByVal Value As Integer)
+            iMaPhieuMuonSach = Value
+        End Set
+    End Property
     'Property TenSach() As String
     '    Get
     '        Return strTenSach

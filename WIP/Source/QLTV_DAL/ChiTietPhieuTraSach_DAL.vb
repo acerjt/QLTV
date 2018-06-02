@@ -22,7 +22,7 @@ Public Class ChiTietPhieuTraSach_DAL
 
         Dim query As String = String.Empty
 
-        query &= "Select [tblChitietphieumuonsach].[Masach],[tblPhieuMuonSach].[Maphieumuonsach],[TenSach],[TenTheLoaiSach],[TenTacGia],[tblChitietphieumuonsach].[TinhTrang],[NgayDuKienTra] "
+        query &= "Select [tblChitietphieumuonsach].[MaPhieuMuonSach],[tblChitietphieumuonsach].[Masach],[tblPhieuMuonSach].[Maphieumuonsach],[TenSach],[TenTheLoaiSach],[TenTacGia],[tblChitietphieumuonsach].[TinhTrang],[NgayDuKienTra] "
         query &= "From [tblSach], [tblChiTietPhieuMuonSach], [tblPhieuMuonSach], [tblTheLoaiSach], [tblTacGia]"
         query &= "Where [tblSach].[MaSach] = [tblChiTietPhieuMuonSach].[MaSach]"
         query &= "And [tblPhieuMuonSach].[MaPhieuMuonSach]=[tblChiTietPhieuMuonSach].[MaPhieuMuonSach] "
@@ -50,7 +50,7 @@ Public Class ChiTietPhieuTraSach_DAL
                     If reader.HasRows = True Then
                         ListChiTietPhieuMuonSach.Clear()
                         While reader.Read()
-                            ListChiTietPhieuMuonSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang"), reader("NgayDuKienTra")))
+                            ListChiTietPhieuMuonSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang"), reader("NgayDuKienTra"), reader("MaPhieuMuonSach")))
                         End While
                         Dim currentdate = DateTime.Now
 

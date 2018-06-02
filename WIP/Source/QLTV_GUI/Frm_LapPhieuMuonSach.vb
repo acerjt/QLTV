@@ -234,6 +234,8 @@ Public Class Frm_LapPhieuMuonSach
         'listChiTietPhieuMuonSach.Clear()
         'Dgv_ListPhieuMuonSach.DataSource = Nothing
         'Dgv_ListPhieuMuonSach.Refresh()
+
+        Dgv_ListPhieuMuonSach1.DataSource = Nothing
         Dgv_ListPhieuMuonSach.Rows.Clear()
         If Txt_MaDocGia.Text <> "" Then
             MaDocGia = Txt_MaDocGia.Text

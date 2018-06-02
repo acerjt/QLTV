@@ -9,6 +9,7 @@
     Private strTriGia As String
     Private strTinhTrang As String
     Private dateNgayDuKien As DateTime
+    Private iMaPhieuMuonSach As Integer
 
 
     Public Sub New()
@@ -43,7 +44,8 @@
                    iTheLoai As String,
                    iTacGia As String,
                    strTinhTrang As String,
-                   dateNgayDuKien As DateTime)
+                   dateNgayDuKien As DateTime,
+                   iMaPhieuMuonSach As Integer)
 
 
         Me.strMaSach = strMaSach
@@ -57,6 +59,29 @@
         '  Me.strTriGia = strTriGia
         Me.strTinhTrang = strTinhTrang
         Me.dateNgayDuKien = dateNgayDuKien
+        Me.iMaPhieuMuonSach = iMaPhieuMuonSach
+    End Sub
+    Public Sub New(strMaSach As String,
+                   strTenSach As String,
+                   iTheLoai As String,
+                   iTacGia As String,
+                   strTinhTrang As String,
+                   dateNgayDuKien As DateTime)
+        'iMaPhieuMuonSach As Integer)
+
+
+        Me.strMaSach = strMaSach
+        Me.strTenSach = strTenSach
+        Me.iTheLoai = iTheLoai
+        ' Me.strMaTacGia = strMaTacGia
+        Me.iTacGia = iTacGia
+        ' Me.iNamXuatBan = iNamXuatBan
+        'Me.strNhaXuatBan = strNhaXuatBan
+        'Me.dateNgayNhap = dateNgayNhap
+        '  Me.strTriGia = strTriGia
+        Me.strTinhTrang = strTinhTrang
+        Me.dateNgayDuKien = dateNgayDuKien
+        'Me.iMaPhieuMuonSach = iMaPhieuMuonSach
     End Sub
 
     Public Sub New(strMaSach As String,
@@ -208,6 +233,15 @@
         End Get
         Set(ByVal value As DateTime)
             dateNgayDuKien = value
+        End Set
+    End Property
+
+    Property MaPhieuMuonSach() As Integer
+        Get
+            Return iMaPhieuMuonSach
+        End Get
+        Set(ByVal value As Integer)
+            iMaPhieuMuonSach = value
         End Set
     End Property
 End Class

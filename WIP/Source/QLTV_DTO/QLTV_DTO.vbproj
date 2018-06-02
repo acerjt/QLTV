@@ -73,7 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaoCaoMuonSachTheoThang_DTO.vb" />
+    <Compile Include="BaoCaoThongKeSachTraTre_DTO.vb" />
     <Compile Include="ChiTietBaoCaoMuonSachTheoThang_DTO.vb" />
+    <Compile Include="ChiTietBaoCaoThongKeSachTraTre_DTO.vb" />
     <Compile Include="ChiTietPhieuMuonSach_DTO.vb" />
     <Compile Include="ChiTietPhieuTraSach_DTO.vb" />
     <Compile Include="DocGia_DTO.vb" />

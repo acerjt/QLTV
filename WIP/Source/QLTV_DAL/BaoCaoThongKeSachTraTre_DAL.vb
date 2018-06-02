@@ -3,7 +3,9 @@ Imports System.Data.SqlClient
 Imports QLTV_DTO
 Imports Utility
 
-Public Class BaoCaoMuonSachTheoThang_DAL
+
+
+Public Class BaoCaoThongKeSachTraTre_DAL
     Private connectionString As String
 
     Public Sub New()
@@ -18,9 +20,9 @@ Public Class BaoCaoMuonSachTheoThang_DAL
 
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MaBaoCaoThongKeMuonSachTheoTheLoai] "
-        query &= "FROM [tblBaoCaoThongKeMuonSachTheoTheLoai] "
-        query &= "ORDER BY [MaBaoCaoThongKeMuonSachTheoTheLoai] DESC "
+        query &= "SELECT TOP 1 [MaBaoCaoThongKeSachTraTre] "
+        query &= "FROM [tblBaoCaoThongKeSachTraTre] "
+        query &= "ORDER BY [MaBaoCaoThongKeSachTraTre] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -37,7 +39,7 @@ Public Class BaoCaoMuonSachTheoThang_DAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MaBaoCaoThongKeMuonSachTheoTheLoai")
+                            idOnDB = reader("MaBaoCaoThongKeSachTraTre")
                         End While
                     End If
                     ' new ID = current ID + 1
@@ -53,15 +55,15 @@ Public Class BaoCaoMuonSachTheoThang_DAL
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function insert(bctkms As BaoCaoMuonSachTheoThang_DTO, listChiTietbctkms As List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)) As Result
+    Public Function insert(bctkstt As BaoCaoThongKeSachTraTre_DTO, listChiTietbctkstt As List(Of ChiTietBaoCaoThongKeSachTraTre_DTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [tblBaoCaoThongKeMuonSachTheoTheLoai] ([MaBaoCaoThongKeMuonSachTheoTheLoai], [Nam], [Thang], [TongSoLuotMuon])"
-        query &= "VALUES (@MaBaoCaoThongKeMuonSachTheoTheLoai, @Nam, @Thang, @TongSoLuotMuon)"
+        query &= "INSERT INTO [tblBaoCaoThongKeSachTraTre] ([MaBaoCaoThongKeSachTraTre], [Nam], [Thang], [NgayLap])"
+        query &= "VALUES (@MaBaoCaoThongKeSachTraTre, @Nam, @Thang, @NgayLap)"
 
         Dim query1 As String = String.Empty
-        query1 &= "INSERT INTO [tblChiTietBaoCaoThongKeMuonSachTheoTheLoai] ( [MaBaoCaoThongKeMuonSachTheoTheLoai],[MaTheLoaiSach],[SoLuotMuon],[TyLe])"
-        query1 &= "VALUES (@MaBaoCaoThongKeMuonSachTheoTheLoai1, @MaTheLoaiSach,@SoLuotMuon,@TyLe)"
+        query1 &= "INSERT INTO [tblChiTietBaoCaoThongKeSachTraTre] ( [MaBaoCaoThongKeSachTraTre],[TenSach],[NgayMuon],[SoNgayTraTre])"
+        query1 &= "VALUES (@MaBaoCaoThongKeSachTraTre1, @TenSach,@NgayMuon,@SoNgayTraTre)"
 
         'Dim query2 As String = String.Empty
         'query2 &= " UPDATE [tblSach] SET"
@@ -75,7 +77,7 @@ Public Class BaoCaoMuonSachTheoThang_DAL
         If (result.FlagResult = False) Then
             Return result
         End If
-        bctkms.MaBaoCaoMuonSachTheoThang = nextID
+        bctkstt.MaBaoCaoSachTreTre = nextID
 
         Using conn As New SqlConnection(connectionString)
             Using comm, comm1 As New SqlCommand()
@@ -83,15 +85,15 @@ Public Class BaoCaoMuonSachTheoThang_DAL
                 conn.Open()
                 With comm1
 
-                    For Each x As ChiTietBaoCaoMuonSachTheoThang_DTO In listChiTietbctkms
+                    For Each x As ChiTietBaoCaoThongKeSachTraTre_DTO In listChiTietbctkstt
                         .Parameters.Clear()
                         .Connection = conn
                         .CommandType = CommandType.Text
                         .CommandText = query1
-                        .Parameters.AddWithValue("@MaBaoCaoThongKeMuonSachTheoTheLoai1", bctkms.MaBaoCaoMuonSachTheoThang)
-                        .Parameters.AddWithValue("@MaTheLoaiSach", x.TheLoai)
-                        .Parameters.AddWithValue("@SoLuotMuon", x.SoLuotMuon)
-                        .Parameters.AddWithValue("@TyLe", x.TyLe)
+                        .Parameters.AddWithValue("@MaBaoCaoThongKeSachTraTre1", bctkstt.MaBaoCaoSachTreTre)
+                        .Parameters.AddWithValue("@TenSach", x.TenSach)
+                        .Parameters.AddWithValue("@NgayMuon", x.NgayMuon)
+                        .Parameters.AddWithValue("@SoNgayTraTre", x.SoNgayTraTre)
                         Try
                             .ExecuteNonQuery()
                             'conn.Close()
@@ -108,10 +110,10 @@ Public Class BaoCaoMuonSachTheoThang_DAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MaBaoCaoThongKeMuonSachTheoTheLoai", bctkms.MaBaoCaoMuonSachTheoThang)
-                    .Parameters.AddWithValue("@Nam", bctkms.Nam)
-                    .Parameters.AddWithValue("@Thang", bctkms.Thang)
-                    .Parameters.AddWithValue("@TongSoLuotMuon", bctkms.TongSoLuotMuon)
+                    .Parameters.AddWithValue("@MaBaoCaoThongKeSachTraTre", bctkstt.MaBaoCaoSachTreTre)
+                    .Parameters.AddWithValue("@Nam", bctkstt.Nam)
+                    .Parameters.AddWithValue("@Thang", bctkstt.Thang)
+                    .Parameters.AddWithValue("@NgayLap", bctkstt.NgayLap)
                     '.Parameters.AddWithValue("@tinhtrang", "DangMuon")
                     'Dim comm1 As New SqlCommand()
 
@@ -158,8 +160,6 @@ Public Class BaoCaoMuonSachTheoThang_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-
-
 
 
 End Class

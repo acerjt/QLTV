@@ -45,10 +45,10 @@ Public Class Frm_NhanTraSach
 
 
         For Each x As DataGridViewRow In Dgv_ListSachDangMuon.Rows
-            If (Dgv_ListSachDangMuon.Item(4, x.Index).Value = "Đã Quá Hạn") Then
+            If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "Đã Quá Hạn") Then
                 x.DefaultCellStyle.BackColor = Color.Pink
             End If
-            If (Dgv_ListSachDangMuon.Item(4, x.Index).Value = "DangMuon") Then
+            If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "DangMuon") Then
                 x.DefaultCellStyle.BackColor = Color.LightBlue
             End If
         Next
@@ -95,6 +95,11 @@ Public Class Frm_NhanTraSach
             Cl_MaSach1.DataPropertyName = "MaSach"
             Dgv_ListSachDangMuon.Columns.Add(Cl_MaSach1)
 
+            Dim Cl_MaPhieuTraSach1 = New DataGridViewTextBoxColumn()
+            Cl_MaPhieuTraSach1.Name = "Cl_MaPhieuTraSach1"
+            Cl_MaPhieuTraSach1.HeaderText = "Mã Phiếu Mượn Sách"
+            Cl_MaPhieuTraSach1.DataPropertyName = "MaPhieuMuonSach"
+            Dgv_ListSachDangMuon.Columns.Add(Cl_MaPhieuTraSach1)
 
             'Dim Cl_TheLoaiSach = New DataGridView()
             'Dim clLoaiHS = New DataGridView()
@@ -141,10 +146,10 @@ Public Class Frm_NhanTraSach
 
             'listChiTietPhieuMuonSach.Clear()
             For Each x As DataGridViewRow In Dgv_ListSachDangMuon.Rows
-                If (Dgv_ListSachDangMuon.Item(4, x.Index).Value = "Đã Quá Hạn") Then
+                If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "Đã Quá Hạn") Then
                     x.DefaultCellStyle.BackColor = Color.Pink
                 End If
-                If (Dgv_ListSachDangMuon.Item(4, x.Index).Value = "DangMuon") Then
+                If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "DangMuon") Then
                     x.DefaultCellStyle.BackColor = Color.LightBlue
                 End If
             Next
@@ -285,20 +290,40 @@ Public Class Frm_NhanTraSach
 
                 Dgv_ListSachTra.Item("Cl_TenSach", e.RowIndex).Value = Chitietphieumuonsach.TenSach
                 Dgv_ListSachTra.Item("Cl_TheLoai", e.RowIndex).Value = Chitietphieumuonsach.TheLoai
+                Dgv_ListSachTra.Rows.Item(e.RowIndex).DefaultCellStyle.BackColor = Color.LightBlue
+
+                For Each t As DataGridViewRow In Dgv_ListSachDangMuon.Rows
+                    If (Dgv_ListSachDangMuon.Item(0, t.Index).Value = Dgv_ListSachTra.Item(0, e.RowIndex).Value) Then
+                        Chitietphieumuonsach.MaPhieuMuonSach = Dgv_ListSachDangMuon.Item(1, e.RowIndex).Value
+                        If (Dgv_ListSachDangMuon.Item(5, t.Index).Value = "Đã Quá Hạn") Then
+                            Chitietphieumuonsach.TinhTrang = "Trả Trễ"
+                            Dgv_ListSachTra.Rows.Item(e.RowIndex).DefaultCellStyle.BackColor = Color.Pink
+                        End If
+                    End If
+
+                Next
+
                 Dgv_ListSachTra.Item("Cl_TinhTrang", e.RowIndex).Value = Chitietphieumuonsach.TinhTrang
                 Dgv_ListSachTra.Item("Cl_TacGia", e.RowIndex).Value = Chitietphieumuonsach.TenTacGia
+                Dim z As String
+                If (Chitietphieumuonsach.TinhTrang = "DangMuon") Then
+                    z = " "
+                Else
+                    z = Chitietphieumuonsach.TinhTrang
+                End If
+
                 'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKienTra
                 ' Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
                 If (listChiTietPhieuTraSach.Count() = e.RowIndex) Then
-                    listChiTietPhieuTraSach.Add(New ChiTietPhieuTraSach_DTO(Txt_MaPhieuTraSach.Text, x))
+                    listChiTietPhieuTraSach.Add(New ChiTietPhieuTraSach_DTO(Txt_MaPhieuTraSach.Text, x, z, Chitietphieumuonsach.MaPhieuMuonSach)) ', d))
                 Else
-                    If (listChiTietPhieuTraSach.Count() > e.RowIndex) Then
-                        listChiTietPhieuTraSach.RemoveAt(e.RowIndex)
-                        listChiTietPhieuTraSach.Add(New ChiTietPhieuTraSach_DTO(Txt_MaPhieuTraSach.Text, x))
+                        If (listChiTietPhieuTraSach.Count() > e.RowIndex) Then
+                            listChiTietPhieuTraSach.RemoveAt(e.RowIndex)
+                        listChiTietPhieuTraSach.Add(New ChiTietPhieuTraSach_DTO(Txt_MaPhieuTraSach.Text, x, z, Chitietphieumuonsach.MaPhieuMuonSach)) ', d))
+                    End If
                     End If
                 End If
             End If
-        End If
 
 
     End Sub

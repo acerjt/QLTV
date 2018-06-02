@@ -72,4 +72,10 @@
         frmBaocaothangtheotheloai.MdiParent = Me
         frmBaocaothangtheotheloai.Show()
     End Sub
+
+    Private Sub TheoSáchTrảTrểToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TheoSáchTrảTrểToolStripMenuItem.Click
+        Dim frmBaocaothangtheosachtre As Frm_LapBaoCaoThongKeSachTraTre = New Frm_LapBaoCaoThongKeSachTraTre()
+        frmBaocaothangtheosachtre.MdiParent = Me
+        frmBaocaothangtheosachtre.Show()
+    End Sub
 End Class

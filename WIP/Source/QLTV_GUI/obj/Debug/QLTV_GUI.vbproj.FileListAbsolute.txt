@@ -307,3 +307,4 @@ C:\Users\ASUS\Desktop\New folder (2) - Copy\QLTV\WIP\Source\QLTV_GUI\obj\Debug\Q
 C:\Users\ASUS\Desktop\New folder (2) - Copy\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.exe
 C:\Users\ASUS\Desktop\New folder (2) - Copy\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.xml
 C:\Users\ASUS\Desktop\New folder (2) - Copy\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.pdb
+C:\Users\ASUS\Desktop\New folder (2) - Copy\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_LapBaoCaoThongKeSachTraTre.resources

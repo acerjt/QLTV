@@ -42,60 +42,60 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Cl_TenTheLoai.DisplayMember = "TenTheLoaiSach"
         Cl_TenTheLoai.ValueMember = "MaTheLoaiSach"
 
-        'result = ChiTietBUS.SelectAll(listChiTiet1)
+        result = ChiTietBUS.SelectAll(listChiTiet1)
 
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy tất cả báo cáo không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Return
-        'Else
-        '    Dgv_ListBaoCaoThongKe.Columns.Clear()
-        '    Dgv_ListBaoCaoThongKe.DataSource = Nothing
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy tất cả báo cáo không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        Else
+            Dgv_ListBaoCaoThongKe.Columns.Clear()
+            Dgv_ListBaoCaoThongKe.DataSource = Nothing
 
-        '    Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
-        '    Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
-        '    Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
+            Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
+            Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
+            Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
 
-        '    Dim Cl_TenTheLoai1 = New DataGridViewTextBoxColumn()
-        '    Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
-        '    Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
-        '    Cl_TenTheLoai1.DataPropertyName = "TheLoai"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
-
-
-        '    'Dim Cl_TheLoaiSach = New DataGridView()
-        '    'Dim clLoaiHS = New DataGridView()
-        '    'clLoaiHS.Name = "LoaiHS"
-        '    'clLoaiHS.HeaderText = "Tên Loại"
-        '    'clLoaiHS.DataPropertyName = "LoaiHS"
-        '    'dgvListHS.Columns.Add(clLoaiHS)
-
-        '    Dim Cl_SoLuotMuon1 = New DataGridViewTextBoxColumn()
-        '    Cl_SoLuotMuon1.Name = "Cl_SoLuotMuon1"
-        '    Cl_SoLuotMuon1.HeaderText = "Số Lượt Mượn"
-        '    Cl_SoLuotMuon1.DataPropertyName = "SoLuotMuon"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_SoLuotMuon1)
+            Dim Cl_TenTheLoai1 = New DataGridViewTextBoxColumn()
+            Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
+            Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
+            Cl_TenTheLoai1.DataPropertyName = "TheLoai"
+            Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
 
 
-        '    Dim Cl_TyLe1 = New DataGridViewTextBoxColumn()
-        '    'Dim clLoaiHS = New DataGridView()
-        '    Cl_TyLe1.Name = "Cl_TyLe1"
-        '    Cl_TyLe1.HeaderText = "Tỷ Lệ"
-        '    Cl_TyLe1.DataPropertyName = "TyLe"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TyLe1)
+            'Dim Cl_TheLoaiSach = New DataGridView()
+            'Dim clLoaiHS = New DataGridView()
+            'clLoaiHS.Name = "LoaiHS"
+            'clLoaiHS.HeaderText = "Tên Loại"
+            'clLoaiHS.DataPropertyName = "LoaiHS"
+            'dgvListHS.Columns.Add(clLoaiHS)
 
-        '    Dim Cl_Thang = New DataGridViewTextBoxColumn()
-        '    Cl_Thang.Name = "Cl_Thang"
-        '    Cl_Thang.HeaderText = "Tháng"
-        '    Cl_Thang.DataPropertyName = "Thang"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
+            Dim Cl_SoLuotMuon1 = New DataGridViewTextBoxColumn()
+            Cl_SoLuotMuon1.Name = "Cl_SoLuotMuon1"
+            Cl_SoLuotMuon1.HeaderText = "Số Lượt Mượn"
+            Cl_SoLuotMuon1.DataPropertyName = "SoLuotMuon"
+            Dgv_ListBaoCaoThongKe.Columns.Add(Cl_SoLuotMuon1)
 
-        '    Dim Cl_Nam = New DataGridViewTextBoxColumn()
-        '    Cl_Nam.Name = "Cl_Nam"
-        '    Cl_Nam.HeaderText = "Năm"
-        '    Cl_Nam.DataPropertyName = "Nam"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
-        'End If
+
+            Dim Cl_TyLe1 = New DataGridViewTextBoxColumn()
+            'Dim clLoaiHS = New DataGridView()
+            Cl_TyLe1.Name = "Cl_TyLe1"
+            Cl_TyLe1.HeaderText = "Tỷ Lệ"
+            Cl_TyLe1.DataPropertyName = "TyLe"
+            Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TyLe1)
+
+            Dim Cl_Thang = New DataGridViewTextBoxColumn()
+            Cl_Thang.Name = "Cl_Thang"
+            Cl_Thang.HeaderText = "Tháng"
+            Cl_Thang.DataPropertyName = "Thang"
+            Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
+
+            Dim Cl_Nam = New DataGridViewTextBoxColumn()
+            Cl_Nam.Name = "Cl_Nam"
+            Cl_Nam.HeaderText = "Năm"
+            Cl_Nam.DataPropertyName = "Nam"
+            Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
+        End If
 
 
 
@@ -114,6 +114,10 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             '    Txt_MaDocGia.Focus()
             '    Return
             'End If
+
+
+
+
 
             For Each y As DataGridViewRow In Dgv_ListLapBaoCaoThongKe.Rows
                 If e.RowIndex = 0 Then
@@ -147,6 +151,17 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
 
             Dim TheLoai = Dgv_ListLapBaoCaoThongKe.Rows(e.RowIndex).Cells(0).Value
 
+
+            For Each y As DataGridViewRow In Dgv_ListBaoCaoThongKe.Rows
+
+                If (Dgv_ListBaoCaoThongKe.Item(0, y.Index).Value = Dgv_ListLapBaoCaoThongKe.Rows(e.RowIndex).Cells(0).FormattedValue) Then
+                    MessageBox.Show("Thể Loại này đã được lập báo cáo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Dgv_ListLapBaoCaoThongKe.Rows.RemoveAt(e.RowIndex)
+                    Return
+                    'Dgv_ListPhieuMuonSach.Focus()
+                End If
+
+            Next
 
             'Dim Sach1 = New Sach_DTO()
             Dim result As Result
@@ -408,7 +423,7 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
                 Me.Close()
                 Return
             End If
-            Txt_MaLapBaoCao.Tag = nextMaBaoCaoThongKeMuonSach
+            Txt_MaLapBaoCao.Text = nextMaBaoCaoThongKeMuonSach
             ' Dtp_NgayMuon.Value = ""   
             Txt_Nam.Text = String.Empty
             Cb_Thang.Text = String.Empty
@@ -421,5 +436,65 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         End If
     End Sub
 
+    Private Sub Cb_Thang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_Thang.SelectedIndexChanged
+        If (Txt_Nam.Text.Length = 4) Then
 
+            Try
+                Dim Thang = Cb_Thang.Text
+                loadListChiTiet2(Txt_Nam.Text, Thang)
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub Cb_Thang_TextChanged(sender As Object, e As EventArgs) Handles Cb_Thang.TextChanged
+        Dgv_ListBaoCaoThongKe.DataSource = Nothing
+        If (Txt_Nam.Text.Length = 4) Then
+            Try
+                Dim Thang = Cb_Thang.Text
+                loadListChiTiet2(Txt_Nam.Text, Thang)
+            Catch ex As Exception
+
+            End Try
+        End If
+        If (Cb_Thang.Text = "" And Txt_Nam.Text.Length = 4) Then
+            loadListChiTiet(Txt_Nam.Text)
+        End If
+    End Sub
+
+    'Private Sub Dgv_ListBaoCaoThongKe_SelectionChanged(sender As Object, e As EventArgs) Handles Dgv_ListBaoCaoThongKe.SelectionChanged
+    '    If (Cb_Thang.Text <> "") Then
+    '        Dim currentRowIndex As Integer = Dgv_ListBaoCaoThongKe.CurrentCellAddress.Y 'current row selected
+    '        'Dim x As Integer = Dgv_ListDocGia.CurrentCellAddress.X 'curent column selected
+    '        'Dim x As Integer = Dgv_ListDocGia.CurrentCell.Selected
+    '        ' Write coordinates to console for debugging
+    '        'Console.WriteLine(y.ToString + " " + x.ToString)
+
+    '        'Verify that indexing OK
+    '        If (Dgv_ListBaoCaoThongKe.Rows.Count <> 0) Then
+    '            If (-1 < currentRowIndex And currentRowIndex < Dgv_ListBaoCaoThongKe.RowCount) Then
+    '                Try
+    '                    Dim ctbctkms = CType(Dgv_ListBaoCaoThongKe.Rows(currentRowIndex).DataBoundItem, ChiTietBaoCaoMuonSachTheoThang_DTO)
+    '                    Dgv_ListLapBaoCaoThongKe.Item("Cl_TenTheLoai", 0).Value = ctbctkms.TheLoai
+    '                    Dgv_ListLapBaoCaoThongKe("Cl_SoLuotMuon", 0).Value = ctbctkms.SoLuotMuon
+
+    '                    'Txt_HoVaTen.Text = dg.HoVaTen 
+    '                    'Txt_DiaChi.Text = dg.DiaChi
+    '                    'Dtp_NgaySinh.Value = dg.NgaySinh
+    '                    'Txt_Email.Text = dg.Email
+    '                    'Dtp_NgayLap.Value = dg.NgayLap
+    '                    'Txt_NgayHetHan.Text = dg.NgayHetHan
+
+
+
+
+    '                    'Cb_LoaiDocGiaCapNhap.SelectedIndex = Cb_LoaiDocGia.SelectedIndex
+    '                Catch ex As Exception
+    '                    Console.WriteLine(ex.StackTrace)
+    '                End Try
+    '            End If
+    '        End If
+    '        End If
+    'End Sub
 End Class
