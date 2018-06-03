@@ -83,7 +83,7 @@ Public Class ChiTietBaoCaoThongKeSachTraTre_DAL
 
         query &= " select [TenSach],[NgayMuon],[SoNgayTraTre],[Thang],[Nam]"
         query &= " from [tblChiTietBaoCaoThongKeSachTraTre],[tblBaoCaoThongKeSachTraTre]"
-        query &= " where [tblBaoCaoThongKeMuonSachTheoTheLoai].[MaBaoCaoThongKeMuonSachTheoTheLoai] = [tblChiTietBaoCaoThongKeMuonSachTheoTheLoai].[MaBaoCaoThongKeMuonSachTheoTheLoai]"
+        query &= " where [tblChiTietBaoCaoThongKeSachTraTre].[MaBaoCaoThongKeSachTraTre] = [tblBaoCaoThongKeSachTraTre].[MaBaoCaoThongKeSachTraTre]"
         query &= " And [Nam] =@Nam"
         'query &= " group by [TenTheLoaiSach]"
 
@@ -141,7 +141,7 @@ Public Class ChiTietBaoCaoThongKeSachTraTre_DAL
 
         query &= " select [TenSach],[NgayMuon],[SoNgayTraTre],[Thang],[Nam]"
         query &= " from [tblChiTietBaoCaoThongKeSachTraTre],[tblBaoCaoThongKeSachTraTre]"
-        query &= " where [tblBaoCaoThongKeMuonSachTheoTheLoai].[MaBaoCaoThongKeMuonSachTheoTheLoai] = [tblChiTietBaoCaoThongKeMuonSachTheoTheLoai].[MaBaoCaoThongKeMuonSachTheoTheLoai]"
+        query &= " where [tblBaoCaoThongKeSachTraTre].[MaBaoCaoThongKeSachTraTre] = [tblChiTietBaoCaoThongKeSachTraTre].[MaBaoCaoThongKeSachTraTre]"
         query &= " And [Nam] =@Nam"
         query &= " And [Thang] =@Thang"
         'query &= " group by [TenTheLoaiSach]"

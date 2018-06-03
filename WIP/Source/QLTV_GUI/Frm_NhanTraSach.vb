@@ -294,9 +294,9 @@ Public Class Frm_NhanTraSach
 
                 For Each t As DataGridViewRow In Dgv_ListSachDangMuon.Rows
                     If (Dgv_ListSachDangMuon.Item(0, t.Index).Value = Dgv_ListSachTra.Item(0, e.RowIndex).Value) Then
-                        Chitietphieumuonsach.MaPhieuMuonSach = Dgv_ListSachDangMuon.Item(1, e.RowIndex).Value
+                        Chitietphieumuonsach.MaPhieuMuonSach = Dgv_ListSachDangMuon.Item(1, t.Index).Value
                         If (Dgv_ListSachDangMuon.Item(5, t.Index).Value = "Đã Quá Hạn") Then
-                            Chitietphieumuonsach.TinhTrang = "Trả Trễ"
+                            Chitietphieumuonsach.TinhTrang = "Đã Quá Hạn"
                             Dgv_ListSachTra.Rows.Item(e.RowIndex).DefaultCellStyle.BackColor = Color.Pink
                         End If
                     End If
@@ -309,7 +309,9 @@ Public Class Frm_NhanTraSach
                 If (Chitietphieumuonsach.TinhTrang = "DangMuon") Then
                     z = " "
                 Else
-                    z = Chitietphieumuonsach.TinhTrang
+                    If (Chitietphieumuonsach.TinhTrang = "Đã Quá Hạn") Then
+                        z = "Trả Trễ"
+                    End If
                 End If
 
                 'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKienTra

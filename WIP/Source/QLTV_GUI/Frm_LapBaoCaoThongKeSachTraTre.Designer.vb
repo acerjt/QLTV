@@ -26,7 +26,10 @@ Partial Class Frm_LapBaoCaoThongKeSachTraTre
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Btn_LapBaoCao = New System.Windows.Forms.Button()
         Me.Dgv_ListLapBaoCaoThongKe = New System.Windows.Forms.DataGridView()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Cl_TenSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cl_NgayMuon = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cl_SoNgayTraTre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Dtp_NgayLap = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Cb_Thang = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,9 +41,6 @@ Partial Class Frm_LapBaoCaoThongKeSachTraTre
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewComboBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Dgv_ListBaoCaoThongKe = New System.Windows.Forms.DataGridView()
-        Me.Cl_TenSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cl_NgayMuon = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cl_SoNgayTraTre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Dgv_ListLapBaoCaoThongKe, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_ListBaoCaoThongKe, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,12 +84,38 @@ Partial Class Frm_LapBaoCaoThongKeSachTraTre
         Me.Dgv_ListLapBaoCaoThongKe.Size = New System.Drawing.Size(567, 266)
         Me.Dgv_ListLapBaoCaoThongKe.TabIndex = 15
         '
-        'DateTimePicker1
+        'Cl_TenSach
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(443, 18)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
-        Me.DateTimePicker1.TabIndex = 22
+        Me.Cl_TenSach.HeaderText = "Tên Sách"
+        Me.Cl_TenSach.Name = "Cl_TenSach"
+        Me.Cl_TenSach.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Cl_TenSach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'Cl_NgayMuon
+        '
+        Me.Cl_NgayMuon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Cl_NgayMuon.HeaderText = "Ngày Mượn"
+        Me.Cl_NgayMuon.Name = "Cl_NgayMuon"
+        Me.Cl_NgayMuon.ReadOnly = True
+        Me.Cl_NgayMuon.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Cl_NgayMuon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Cl_NgayMuon.Width = 77
+        '
+        'Cl_SoNgayTraTre
+        '
+        Me.Cl_SoNgayTraTre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Cl_SoNgayTraTre.HeaderText = "Số Ngày Trả Trễ"
+        Me.Cl_SoNgayTraTre.Name = "Cl_SoNgayTraTre"
+        Me.Cl_SoNgayTraTre.ReadOnly = True
+        Me.Cl_SoNgayTraTre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Cl_SoNgayTraTre.Width = 88
+        '
+        'Dtp_NgayLap
+        '
+        Me.Dtp_NgayLap.Location = New System.Drawing.Point(443, 18)
+        Me.Dtp_NgayLap.Name = "Dtp_NgayLap"
+        Me.Dtp_NgayLap.Size = New System.Drawing.Size(200, 22)
+        Me.Dtp_NgayLap.TabIndex = 22
         '
         'Label1
         '
@@ -187,32 +213,6 @@ Partial Class Frm_LapBaoCaoThongKeSachTraTre
         Me.Dgv_ListBaoCaoThongKe.Size = New System.Drawing.Size(601, 266)
         Me.Dgv_ListBaoCaoThongKe.TabIndex = 16
         '
-        'Cl_TenSach
-        '
-        Me.Cl_TenSach.HeaderText = "Tên Sách"
-        Me.Cl_TenSach.Name = "Cl_TenSach"
-        Me.Cl_TenSach.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Cl_TenSach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'Cl_NgayMuon
-        '
-        Me.Cl_NgayMuon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Cl_NgayMuon.HeaderText = "Ngày Mượn"
-        Me.Cl_NgayMuon.Name = "Cl_NgayMuon"
-        Me.Cl_NgayMuon.ReadOnly = True
-        Me.Cl_NgayMuon.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Cl_NgayMuon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cl_NgayMuon.Width = 86
-        '
-        'Cl_SoNgayTraTre
-        '
-        Me.Cl_SoNgayTraTre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Cl_SoNgayTraTre.HeaderText = "Số Ngày Trả Trễ"
-        Me.Cl_SoNgayTraTre.Name = "Cl_SoNgayTraTre"
-        Me.Cl_SoNgayTraTre.ReadOnly = True
-        Me.Cl_SoNgayTraTre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cl_SoNgayTraTre.Width = 88
-        '
         'Frm_LapBaoCaoThongKeSachTraTre
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -223,7 +223,7 @@ Partial Class Frm_LapBaoCaoThongKeSachTraTre
         Me.Controls.Add(Me.Txt_Nam)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.Dtp_NgayLap)
         Me.Controls.Add(Me.Txt_MaLapBaoCao)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Btn_LapBaoCao)
@@ -242,7 +242,7 @@ Partial Class Frm_LapBaoCaoThongKeSachTraTre
     Friend WithEvents Label4 As Label
     Friend WithEvents Btn_LapBaoCao As Button
     Friend WithEvents Dgv_ListLapBaoCaoThongKe As DataGridView
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Dtp_NgayLap As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Cb_Thang As ComboBox
     Friend WithEvents Label2 As Label

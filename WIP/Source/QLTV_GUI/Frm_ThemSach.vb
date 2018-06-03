@@ -111,4 +111,37 @@ Public Class Frm_ThemSach
         End If
 
     End Sub
+
+    'Private Sub Txt_NamXuatBan_TextChanged(sender As Object, e As EventArgs) Handles Txt_NamXuatBan.TextChanged
+    '    If (Txt_NamXuatBan.Text.Length > 4) Then
+    '        Txt_NamXuatBan.Text.PadLeft(1)
+    '        MessageBox.Show("Năm không hợp lệ.")
+    '    End If
+    'End Sub
+
+    Private Sub Txt_NamXuatBan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_NamXuatBan.KeyPress
+
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
+
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập số.")
+        End If
+    End Sub
+
+    Private Sub TxtTenSach_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTenSach.KeyPress
+        Dim a = {"W", "F", "z", "Z", "J"}
+        For Each x As Char In a
+            If (e.KeyChar = x) Then
+                e.Handled = True
+                MessageBox.Show("Kí Tự Không Hợp Lệ.")
+            End If
+        Next
+        If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
+
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập kí tự.")
+        End If
+    End Sub
+
+
 End Class
