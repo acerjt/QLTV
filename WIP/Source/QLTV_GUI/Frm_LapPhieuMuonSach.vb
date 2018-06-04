@@ -17,39 +17,6 @@ Public Class Frm_LapPhieuMuonSach
         listChiTietPhieuMuonSach1 = New List(Of ChiTietPhieuMuonSach_DTO)
         Dim listSach = New List(Of Sach_DTO)
 
-        'Dim listPhieuMuonSach = New List(Of PhieuMuonSach_DTO)
-
-        'Dim result As Result
-        'result = PhieuMuonSach.selectAll(listPhieuMuonSach)
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh sách phiếu mượn sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Me.Close()
-        '    Return
-        'End If
-        'cb_MaDocGia.DataSource = New BindingSource(listPhieuMuonSach, String.Empty)
-        'cb_MaDocGia.DisplayMember = "HoVaTen"
-        'cb_MaDocGia.ValueMember = "MaDocGia"
-        ''Txt_HoVaTen.DataBindings = New BindingSource(listPhieuMuonSach, String.Empty)
-
-
-        ''lấy ls
-        'Dim listDocGia = New List(Of DocGiaDTO)
-
-        ''Dim result As Result
-        'result = DocGia.selectAll(listDocGia)
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh sách phiếu mượn sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Me.Close()
-        '    Return
-        'End If
-        'cb_MaDocGia.DataSource = New BindingSource(listDocGia, String.Empty)
-        'cb_MaDocGia.DisplayMember = "MaDocGia"
-        'cb_MaDocGia.ValueMember = "HoVaTen"
-
-
-
 
 
         Dim result As Result
@@ -154,7 +121,7 @@ Public Class Frm_LapPhieuMuonSach
                 If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đã Quá Hạn") Then
                     x.DefaultCellStyle.BackColor = Color.Pink
                 End If
-                If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "DangMuon") Then
+                If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đang Mượn") Then
                     x.DefaultCellStyle.BackColor = Color.LightBlue
                 End If
             Next
@@ -164,39 +131,6 @@ Public Class Frm_LapPhieuMuonSach
         'listChiTietPhieuMuonSach.Clear()
     End Sub
 
-    'Private Sub loadListSach(MaSach As String)
-    '    Dim tensach As String
-    '    tensach = ""
-
-    '    Dim theloai As String
-    '    theloai = ""
-
-    '    Dim tacgia As String
-    '    tacgia = ""
-
-
-    '    Dim result As Result
-    '    result = Sach.select_ByMaSach(MaSach, tensach, theloai, tacgia)
-    '    If (result.FlagResult = False) Then
-    '        MessageBox.Show("Lấy danh sách độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        System.Console.WriteLine(result.SystemMessage)
-    '        Return
-    '    End If
-
-
-
-
-    'End Sub
-
-    'Private Sub Cb_MaDocGia_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    Try
-    '        Dim MaDocGia = cb_MaDocGia.Text
-    '        loadListDocGia(MaDocGia)
-
-    '    Catch ex As Exception
-
-    '    End Try
-    'End Sub
 
     Private Sub Dgv_ListPhieuMuonSach_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim currentRowIndex As Integer = Dgv_ListPhieuMuonSach.CurrentCellAddress.Y
@@ -219,14 +153,6 @@ Public Class Frm_LapPhieuMuonSach
         End If
 
 
-        'Try
-        '    Dim MaSach = Cl_MaSach.ValueMember
-
-        '    loadListSach(MaSach)
-
-        'Catch ex As Exception
-
-        'End Try
     End Sub
 
     Private Sub Txt_MaDocGia_TextChanged(sender As Object, e As EventArgs) Handles Txt_MaDocGia.TextChanged
@@ -247,7 +173,7 @@ Public Class Frm_LapPhieuMuonSach
             If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đã Quá Hạn") Then
                 x.DefaultCellStyle.BackColor = Color.Pink
             End If
-            If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "DangMuon") Then
+            If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đang Mượn") Then
                 x.DefaultCellStyle.BackColor = Color.LightBlue
             End If
         Next
@@ -379,7 +305,7 @@ Public Class Frm_LapPhieuMuonSach
 
         For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
 
-            If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "DangMuon") Then
+            If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "Đang Mượn") Then
                 MessageBox.Show("Sách đã có người mượn")
                 Return
             End If

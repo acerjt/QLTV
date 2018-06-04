@@ -90,7 +90,7 @@ Public Class PhieuMuonSach_DAL
                         .CommandText = query1
                         .Parameters.AddWithValue("@maphieumuonsach1", x.MaPhieuMuonSach)
                         .Parameters.AddWithValue("@masach", x.MaSach)
-                        .Parameters.AddWithValue("@tinhtrang1", "DangMuon")
+                        .Parameters.AddWithValue("@tinhtrang1", "Đang Mượn")
                         Try
                             .ExecuteNonQuery()
                             'conn.Close()
@@ -131,7 +131,7 @@ Public Class PhieuMuonSach_DAL
                         .CommandType = CommandType.Text
                         .CommandText = query2
                         .Parameters.AddWithValue("@masach2", x.MaSach)
-                        .Parameters.AddWithValue("@tinhtrang", "DangMuon")
+                        .Parameters.AddWithValue("@tinhtrang", "Đang Mượn")
                         Try
                             .ExecuteNonQuery()
                             'conn.Close()

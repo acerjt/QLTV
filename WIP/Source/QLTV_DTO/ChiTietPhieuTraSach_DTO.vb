@@ -4,34 +4,10 @@
     Private strMaPhieuTraSach As String
     Private strTinhTrang As String
     Private iMaPhieuMuonSach As Integer
-    'Private iMaSach As Integer
-    'Private strTenSach As String
-    'Private strTenTheLoaiSach As String
-    'Private strTenTacGia As String
-    'Private strTinhTrang As String
-    'Private dateNgayDuKien As DateTime
 
     Public Sub New()
 
     End Sub
-    'Public Sub New(strMaSach As String,
-    '               strMaPhieuTraSach As String,
-    '               strTenSach As String,
-    '               strTenTheLoaiSach As String,
-    '               strTenTacGia As String,
-    '               strTinhTrang As String)
-    '    'dateNgayDuKien As DateTime)
-
-    '    'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
-    '    Me.strMaSach = strMaSach
-    '    Me.strMaPhieuTraSach = strMaPhieuTraSach
-    '    'Me.iMaSach = iMaSach
-    '    Me.strTenSach = strTenSach
-    '    Me.strTenTheLoaiSach = strTenTheLoaiSach
-    '    Me.strTenTacGia = strTenTacGia
-    '    Me.strTinhTrang = strTinhTrang
-    '    ' Me.dateNgayDuKien = dateNgayDuKien
-    'End Sub
 
 
 
@@ -43,41 +19,6 @@
         Me.strTinhTrang = strTinhTrang
         Me.iMaPhieuMuonSach = iMaPhieuMuonSach
     End Sub
-
-    'Public Sub New(strTenSach As String,
-    '               strTenTheLoaiSach As String,
-    '               strTenTacGia As String,
-    '               strTinhTrang As String)
-    '    'dateNgayDuKien As DateTime)
-
-    '    'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
-    '    'Me.strMaSach = strMaSach
-    '    'Me.strMaPhieuMuonSach = strMaPhieuMuonSach
-    '    'Me.iMaSach = iMaSach
-    '    Me.strTenSach = strTenSach
-    '    Me.strTenTheLoaiSach = strTenTheLoaiSach
-    '    Me.strTenTacGia = strTenTacGia
-    '    Me.strTinhTrang = strTinhTrang
-    '    'Me.dateNgayDuKien = dateNgayDuKien
-    'End Sub
-
-    'Public Sub New(
-    '                strTenSach As String,
-    '               strTenTheLoaiSach As String,
-    '               strTenTacGia As String,
-    '               strTinhTrang As String) ',
-    '    '  dateNgayDuKien As DateTime)
-
-    '    'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
-    '    'Me.strMaSach = strMaSach
-    '    'Me.strMaPhieuMuonSach = strMaPhieuMuonSach
-    '    'Me.iMaSach = iMaSach
-    '    Me.strTenSach = strTenSach
-    '    Me.strTenTheLoaiSach = strTenTheLoaiSach
-    '    Me.strTenTacGia = strTenTacGia
-    '    Me.strTinhTrang = strTinhTrang
-    '    ' Me.dateNgayDuKien = dateNgayDuKien
-    'End Sub
 
 
     Property MaSach() As String
