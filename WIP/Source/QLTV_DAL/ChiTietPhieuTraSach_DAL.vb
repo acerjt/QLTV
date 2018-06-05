@@ -28,7 +28,7 @@ Public Class ChiTietPhieuTraSach_DAL
         query &= "And [tblPhieuMuonSach].[MaPhieuMuonSach]=[tblChiTietPhieuMuonSach].[MaPhieuMuonSach] "
         query &= "And [tblSach].MaTheLoaiSach=[tblTheLoaiSach].[MaTheLoaiSach]"
         query &= "And [tblSach].[MaTacGia]=[tblTacGia].[MaTacGia]"
-        query &= "And [tblChiTIetPhieuMuonSach].[TinhTrang]='DangMuon'"
+        query &= "And [tblChiTIetPhieuMuonSach].[TinhTrang] Like N'%Đang Mượn%'"
         query &= "And [MaDocGia]=@MaDocGia"
 
 

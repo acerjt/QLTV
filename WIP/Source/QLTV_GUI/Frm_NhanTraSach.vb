@@ -48,7 +48,7 @@ Public Class Frm_NhanTraSach
             If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "Đã Quá Hạn") Then
                 x.DefaultCellStyle.BackColor = Color.Pink
             End If
-            If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "DangMuon") Then
+            If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "Đang Mượn") Then
                 x.DefaultCellStyle.BackColor = Color.LightBlue
             End If
         Next
@@ -149,7 +149,7 @@ Public Class Frm_NhanTraSach
                 If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "Đã Quá Hạn") Then
                     x.DefaultCellStyle.BackColor = Color.Pink
                 End If
-                If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "DangMuon") Then
+                If (Dgv_ListSachDangMuon.Item(5, x.Index).Value = "Đang Mượn") Then
                     x.DefaultCellStyle.BackColor = Color.LightBlue
                 End If
             Next
@@ -306,7 +306,7 @@ Public Class Frm_NhanTraSach
                 Dgv_ListSachTra.Item("Cl_TinhTrang", e.RowIndex).Value = Chitietphieumuonsach.TinhTrang
                 Dgv_ListSachTra.Item("Cl_TacGia", e.RowIndex).Value = Chitietphieumuonsach.TenTacGia
                 Dim z As String
-                If (Chitietphieumuonsach.TinhTrang = "DangMuon") Then
+                If (Chitietphieumuonsach.TinhTrang = "Đang Mượn") Then
                     z = " "
                 Else
                     If (Chitietphieumuonsach.TinhTrang = "Đã Quá Hạn") Then
@@ -348,25 +348,6 @@ Public Class Frm_NhanTraSach
             Txt_MaDocGia.Focus()
             Return
         End If
-
-        'If (Txt_TinhTrangThe.Text = "Hết Hạn") Then
-        '    MessageBox.Show("Thẻ đã hết hạn")
-        '    Return
-        'End If
-
-        'For Each x As DataGridViewRow In Dgv_ListSachTra.Rows
-
-        '    For Each z As DataGridViewRow In Dgv_ListSachDangMuon.Rows
-        '        If (Dgv_ListSachTra.Item(0, x.Index).Value <> Dgv_ListSachDangMuon(0, z.Index).Value) Then
-        '            MessageBox.Show("Độc giả không mượn một trong số những sách này")
-        '        Else
-        '            Exit For
-        '        End If
-        '    Next
-
-        'Next
-
-
 
         For Each x As DataGridViewRow In Dgv_ListSachTra.Rows
 
