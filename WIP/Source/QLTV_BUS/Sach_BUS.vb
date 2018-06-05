@@ -86,4 +86,8 @@ Public Class Sach_BUS
         '2. insert to DB
         Return SachDAL.selectALL_ByMaSach(MaSach, ChiTietPhieuMuonSach)
     End Function
+
+    Public Function search_ByTen(TenSach As String, ByRef listChiTietPhieuMuonSach As List(Of Sach_DTO)) As Result
+        Return SachDAL.search_ByTen(TenSach, listChiTietPhieuMuonSach)
+    End Function
 End Class

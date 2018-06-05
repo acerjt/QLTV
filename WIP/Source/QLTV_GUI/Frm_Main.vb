@@ -78,4 +78,10 @@
         frmBaocaothangtheosachtre.MdiParent = Me
         frmBaocaothangtheosachtre.Show()
     End Sub
+
+    Private Sub TraCứuSáchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraCứuSáchToolStripMenuItem.Click
+        Dim frmTraCuu As Frm_TraCuuSach = New Frm_TraCuuSach()
+        frmTraCuu.MdiParent = Me
+        frmTraCuu.Show()
+    End Sub
 End Class

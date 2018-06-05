@@ -299,6 +299,87 @@ Public Class Sach_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+    Public Function search_ByTen(TenSach As String, ByRef listChiTietPhieuMuonSach As List(Of Sach_DTO)) As Result
+
+
+        Dim query As String = String.Empty
+        'query &= "SELECT [tblSach].[MaSach],[tblSach].[TenSach], [TenTheLoaiSach], [TenTacGia],[TinhTrang]"
+        'query &= "FROM [tblSach]    , [tblTheLoaiSach], [tblTacGia]"
+        'query &= "WHERE [tblSach].[MaTheLoaiSach] = [tblTheLoaiSach].[MaTheLoaiSach] AND [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia]"
+        'query &= "     AND ([TenSach] Like '%' +@TenSachOrMaSach+ '%'"
+        'query &= " Or [MaSach] Like '%' +@TenSachOrMaSach+ '%'"
+        'query &= " Or [TenTacGia] Like '%' +@TenSachOrMaSach+ '%'"
+        'query &= "Or [TenTheLoaiSach] Like '%' +@TenSachOrMaSach+ '%')"
+
+
+
+        query &= " With [sach] As ("
+        query &= "Select [MaSach],[TenSach], [TenTheLoaiSach], [TenTacGia],[TinhTrang]"
+        query &= "From [tblSach], [tblTheLoaiSach], [tblTacGia]"
+        query &= "Where [tblSach].[MaTheLoaiSach] = [tblTheLoaiSach].[MaTheLoaiSach]"
+        query &= "And [tblSach].[MaTacGia] = [tblTacGia].[MaTacGia]),"
+        query &= "[ctpms] as("
+        query &= "Select [masach],[maphieumuonsach] from [tblChiTietPhieuMuonSach] where [TinhTrang] Like N'%Đang Mượn%')"
+        query &= "Select [sach].[MaSach],[TenSach], [TenTheLoaiSach], [TenTacGia],[TinhTrang],[ctpms].[maphieumuonsach],[ngaydukientra] from [sach]"
+        query &= "Left Join [ctpms] on [ctpms].[MaSach] = [Sach].[masach]"
+        query &= "Left Join [tblPhieuMuonSach] on [tblPhieuMuonSach].[maphieumuonsach]=[ctpms].[maphieumuonsach]"
+        query &= "WHERE ([TenSach] Like '%' +@TenSachOrMaSach+ '%'"
+        query &= "Or [sach].[MaSach] Like '%' +@TenSachOrMaSach+ '%'"
+        query &= " Or [TenTacGia] Like '%' +@TenSachOrMaSach+ '%'"
+        query &= " Or [TenTheLoaiSach] Like '%' +@TenSachOrMaSach+ '%')"
+
+
+
+
+        'Dim query1 As String = String.Empty
+        'query1 &= "SELECT [NgayDuKienTra]"
+        'query1 &= "FROM [tblPhieuMuonSach],[tblChiTietPhieuMuonSach]"
+        'query1 &= "WHERE [tblPhieuMuonSach].[MaPhieuMuonSach]=[tblChiTietPhieuMuonSach].[MaPhieuMuonSach]"
+        'query1 &= "     AND [MaSach] = @MaSach1"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm, comm1 As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@TenSachOrMaSach", TenSach)
+                End With
+
+                'With comm1
+                '    .Connection = conn
+                '    .CommandType = CommandType.Text
+                '    .CommandText = query1
+                '    .Parameters.AddWithValue("@MaSach1", MaSach)
+                'End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            If IsDBNull(reader("NgayDuKienTra")) Then
+                                listChiTietPhieuMuonSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang")))
+                            Else
+                                listChiTietPhieuMuonSach.Add(New Sach_DTO(reader("MaSach"), reader("TenSach"), reader("TenTheLoaiSach"), reader("TenTacGia"), reader("TinhTrang"), reader("NgayDukienTra")))
+                            End If
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy danh sách theo mã sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
     Public Function update(Sach As Sach_DTO) As Result
 
         Dim query As String = String.Empty

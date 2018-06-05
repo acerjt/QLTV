@@ -109,14 +109,34 @@
         'Me.dateNgayDuKien = dateNgayDuKien
     End Sub
 
-    Public Sub New(strTenSach As String,
+    'Public Sub New(strTenSach As String,
+    '               iTheLoai As String,
+    '               iTacGia As String,
+    '               strTinhTrang As String,
+    '               dateNgayDuKien As DateTime)
+
+
+    '    'Me.strMaSach = strMaSach
+    '    Me.strTenSach = strTenSach
+    '    Me.iTheLoai = iTheLoai
+    '    ' Me.strMaTacGia = strMaTacGia
+    '    Me.iTacGia = iTacGia
+    '    Me.iNamXuatBan = iNamXuatBan
+    '    ' Me.strNhaXuatBan = strNhaXuatBan
+    '    'Me.dateNgayNhap = dateNgayNhap
+    '    ' Me.strTriGia = strTriGia
+    '    Me.strTinhTrang = strTinhTrang
+    '    Me.dateNgayDuKien = dateNgayDuKien
+    'End Sub
+    Public Sub New(strMaSach As String,
+                  strTenSach As String,
                    iTheLoai As String,
                    iTacGia As String,
-                   strTinhTrang As String,
-                   dateNgayDuKien As DateTime)
+                   strTinhTrang As String)
+        'dateNgayDuKien As DateTime)
 
 
-        'Me.strMaSach = strMaSach
+        Me.strMaSach = strMaSach
         Me.strTenSach = strTenSach
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
@@ -126,7 +146,7 @@
         'Me.dateNgayNhap = dateNgayNhap
         ' Me.strTriGia = strTriGia
         Me.strTinhTrang = strTinhTrang
-        Me.dateNgayDuKien = dateNgayDuKien
+        'Me.dateNgayDuKien = dateNgayDuKien
     End Sub
 
     Public Sub New(strTenSach As String,

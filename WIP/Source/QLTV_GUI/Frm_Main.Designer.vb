@@ -42,13 +42,14 @@ Partial Class Frm_Main
         Me.BáoCáoTổngKêtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThángTheoThểLoạiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TheoSáchTrảTrểToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TraCứuSáchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuảnLíĐộcGiảToolStripMenuItem, Me.QuảnLíSáchToolStripMenuItem, Me.TácVụToolStripMenuItem, Me.BáoCáoTổngKêtToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuảnLíĐộcGiảToolStripMenuItem, Me.QuảnLíSáchToolStripMenuItem, Me.TácVụToolStripMenuItem, Me.BáoCáoTổngKêtToolStripMenuItem, Me.TraCứuSáchToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
@@ -163,14 +164,20 @@ Partial Class Frm_Main
         'ThángTheoThểLoạiToolStripMenuItem
         '
         Me.ThángTheoThểLoạiToolStripMenuItem.Name = "ThángTheoThểLoạiToolStripMenuItem"
-        Me.ThángTheoThểLoạiToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.ThángTheoThểLoạiToolStripMenuItem.Size = New System.Drawing.Size(200, 26)
         Me.ThángTheoThểLoạiToolStripMenuItem.Text = "Theo thể loại"
         '
         'TheoSáchTrảTrểToolStripMenuItem
         '
         Me.TheoSáchTrảTrểToolStripMenuItem.Name = "TheoSáchTrảTrểToolStripMenuItem"
-        Me.TheoSáchTrảTrểToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.TheoSáchTrảTrểToolStripMenuItem.Size = New System.Drawing.Size(200, 26)
         Me.TheoSáchTrảTrểToolStripMenuItem.Text = "Theo Sách Trả Trể"
+        '
+        'TraCứuSáchToolStripMenuItem
+        '
+        Me.TraCứuSáchToolStripMenuItem.Name = "TraCứuSáchToolStripMenuItem"
+        Me.TraCứuSáchToolStripMenuItem.Size = New System.Drawing.Size(106, 24)
+        Me.TraCứuSáchToolStripMenuItem.Text = "Tra Cứu Sách"
         '
         'Frm_Main
         '
@@ -211,4 +218,5 @@ Partial Class Frm_Main
     Friend WithEvents BáoCáoTổngKêtToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ThángTheoThểLoạiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TheoSáchTrảTrểToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TraCứuSáchToolStripMenuItem As ToolStripMenuItem
 End Class
