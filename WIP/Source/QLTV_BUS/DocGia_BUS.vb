@@ -3,13 +3,11 @@ Imports QLTV_DTO
 Imports Utility
 Public Class DocGia_BUS
 
-
-
     Private dgDAL As DocGia_DAL
     Public Sub New()
         dgDAL = New DocGia_DAL()
     End Sub
-    Public Sub New(connectionString As String)
+        Public Sub New(connectionString As String)
         dgDAL = New DocGia_DAL(connectionString)
     End Sub
     Public Function isValidName(dg As DocGia_DTO) As Boolean
@@ -51,11 +49,11 @@ Public Class DocGia_BUS
         Return dgDAL.update(dg)
     End Function
     Public Function delete(MaLoaiDocGia As Integer) As Result
-        '1. verify data here!!
+            '1. verify data here!!
 
-        '2. insert to DB
-        Return dgDAL.delete(MaLoaiDocGia)
-    End Function
+            '2. insert to DB
+            Return dgDAL.Delete(MaLoaiDocGia)
+        End Function
     Public Function selectAll(ByRef listLoaiDocGia As List(Of DocGia_DTO)) As Result
         '1. verify data here!!
 
@@ -84,7 +82,8 @@ Public Class DocGia_BUS
 
 
     Public Function buildMaDocGia(ByRef nextMaDocGia As Integer) As Result
-        Return dgDAL.BuildMaDocGia(nextMaDocGia)
-    End Function
-End Class
+            Return dgDAL.BuildMaDocGia(nextMaDocGia)
+        End Function
+    End Class
+
 

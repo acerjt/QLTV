@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{62B9F6E4-15D9-4F61-B534-30473D749321}</ProjectGuid>
+    <ProjectGuid>{D8C381ED-8B0B-478F-A307-97754E03DB2A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>QLTV_DTO.My.MyApplication</StartupObject>
     <RootNamespace>QLTV_DTO</RootNamespace>

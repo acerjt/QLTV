@@ -1,7 +1,9 @@
-﻿Imports QLTV_DAL
+﻿
+Imports QLTV_DAL
 Imports QLTV_DTO
 Imports Utility
 Public Class LoaiDocGia_BUS
+
     Private ldgDAL As LoaiDocGia_DAL
     Public Sub New()
         ldgDAL = New LoaiDocGia_DAL()
@@ -47,5 +49,7 @@ Public Class LoaiDocGia_BUS
         Return ldgDAL.getNextID(nextID)
     End Function
 End Class
+
+
 
 

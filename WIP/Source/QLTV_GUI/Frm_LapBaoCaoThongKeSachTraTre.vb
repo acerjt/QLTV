@@ -2,8 +2,8 @@
 Imports QLTV_DTO
 Imports Utility
 
-
 Public Class Frm_LapBaoCaoThongKeSachTraTre
+
 
     ' Private listChiTiet As List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
     Private listChiTiet1 As List(Of ChiTietBaoCaoThongKeSachTraTre_DTO)
@@ -31,87 +31,10 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Return
         End If
         Txt_MaLapBaoCao.Text = nextMaBaoCaoThongKeSachTraTre
-        'result = TheLoaiBUS.selectAll(listTheLoaiSach)
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Return
-        'End If
-
-
-        ''Dgv_ListBaoCaoThongKe.DataSource = New BindingSource(listTheLoaiSach, String.Empty)
-        'Cl_TenTheLoai.DataSource = New BindingSource(listTheLoaiSach, String.Empty)
-        'Cl_TenTheLoai.DisplayMember = "TenTheLoaiSach"
-        'Cl_TenTheLoai.ValueMember = "MaTheLoaiSach"
-
-        'result = ChiTietBUS.SelectAll(listChiTiet1)
-
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy tất cả báo cáo không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Return
-        'Else
-        '    Dgv_ListBaoCaoThongKe.Columns.Clear()
-        '    Dgv_ListBaoCaoThongKe.DataSource = Nothing
-
-        '    Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
-        '    Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
-        '    Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
-
-        '    Dim Cl_TenTheLoai1 = New DataGridViewTextBoxColumn()
-        '    Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
-        '    Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
-        '    Cl_TenTheLoai1.DataPropertyName = "TheLoai"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
-
-
-        '    'Dim Cl_TheLoaiSach = New DataGridView()
-        '    'Dim clLoaiHS = New DataGridView()
-        '    'clLoaiHS.Name = "LoaiHS"
-        '    'clLoaiHS.HeaderText = "Tên Loại"
-        '    'clLoaiHS.DataPropertyName = "LoaiHS"
-        '    'dgvListHS.Columns.Add(clLoaiHS)
-
-        '    Dim Cl_SoLuotMuon1 = New DataGridViewTextBoxColumn()
-        '    Cl_SoLuotMuon1.Name = "Cl_SoLuotMuon1"
-        '    Cl_SoLuotMuon1.HeaderText = "Số Lượt Mượn"
-        '    Cl_SoLuotMuon1.DataPropertyName = "SoLuotMuon"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_SoLuotMuon1)
-
-
-        '    Dim Cl_TyLe1 = New DataGridViewTextBoxColumn()
-        '    'Dim clLoaiHS = New DataGridView()
-        '    Cl_TyLe1.Name = "Cl_TyLe1"
-        '    Cl_TyLe1.HeaderText = "Tỷ Lệ"
-        '    Cl_TyLe1.DataPropertyName = "TyLe"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TyLe1)
-
-        '    Dim Cl_Thang = New DataGridViewTextBoxColumn()
-        '    Cl_Thang.Name = "Cl_Thang"
-        '    Cl_Thang.HeaderText = "Tháng"
-        '    Cl_Thang.DataPropertyName = "Thang"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
-
-        '    Dim Cl_Nam = New DataGridViewTextBoxColumn()
-        '    Cl_Nam.Name = "Cl_Nam"
-        '    Cl_Nam.HeaderText = "Năm"
-        '    Cl_Nam.DataPropertyName = "Nam"
-        '    Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
-        'End If
-
-
-
-
-
 
     End Sub
     Private Sub Txt_Nam_TextChanged(sender As Object, e As EventArgs) Handles Txt_Nam.TextChanged
 
-        'listChiTietPhieuMuonSach.Clear()
-        'Dgv_ListPhieuMuonSach.DataSource = Nothing
-        'Dgv_ListPhieuMuonSach.Refresh()
-        'Txt_TongSoLuotMuon.Text = String.Empty
-        'Dgv_ListLapBaoCaoThongKe.Rows.Clear()
         If Txt_Nam.Text.Length = 4 And Cb_Thang.Text = "" Then
             loadListChiTiet(Txt_Nam.Text)
         Else
@@ -249,18 +172,6 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Cl_SoNgayTraTre.DataPropertyName = "SoNgayTraTre"
             Dgv_ListLapBaoCaoThongKe.Columns.Add(Cl_SoNgayTraTre)
 
-            'Dim Cl_Thang = New DataGridViewTextBoxColumn()
-            'Cl_Thang.Name = "Cl_Thang"
-            'Cl_Thang.HeaderText = "Tháng"
-            'Cl_Thang.DataPropertyName = "Thang"
-            'Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
-
-
-            'Dim Cl_Nam = New DataGridViewTextBoxColumn()
-            'Cl_Nam.Name = "Cl_Nam"
-            'Cl_Nam.HeaderText = "Năm"
-            'Cl_Nam.DataPropertyName = "Nam"
-            'Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
 
         End If
 
@@ -380,25 +291,6 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Return
         End If
 
-        'If (Txt_TinhTrangThe.Text = "Hết Hạn") Then
-        '    MessageBox.Show("Thẻ đã hết hạn")
-        '    Return
-        'End If
-
-
-
-
-
-
-        'For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
-
-        '    If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "DangMuon") Then
-        '        MessageBox.Show("Sách đã có người mượn")
-        '        Return
-        '    End If
-        'Next
-
-
 
 
         '3. Insert to DB
@@ -425,5 +317,9 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             MessageBox.Show("Thêm Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
+    End Sub
+
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
     End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Public Class TacGia_DTO
+
     Private iMaTacGia As Integer
     Private strTenTacGia As String
 
@@ -25,3 +26,5 @@
         End Set
     End Property
 End Class
+
+

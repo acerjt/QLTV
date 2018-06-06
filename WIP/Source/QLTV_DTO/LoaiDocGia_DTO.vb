@@ -1,6 +1,4 @@
 ﻿Public Class LoaiDocGia_DTO
-
-
     Private iMaLoaiDocGia As Integer
     Private strTenLoaiDocGia As String
 
@@ -28,5 +26,3 @@
     End Property
 
 End Class
-
-

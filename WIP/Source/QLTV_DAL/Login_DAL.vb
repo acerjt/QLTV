@@ -29,7 +29,7 @@ Public Class Login_DAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@username", Login.UserName)
+                    .Parameters.AddWithValue("@username", Login.Username)
                     .Parameters.AddWithValue("@password", Login.PassWord)
                 End With
                 Try

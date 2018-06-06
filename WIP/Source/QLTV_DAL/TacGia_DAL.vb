@@ -2,7 +2,6 @@
 Imports System.Data.SqlClient
 Imports QLTV_DTO
 Imports Utility
-
 Public Class TacGia_DAL
     Private connectionString As String
 
@@ -67,7 +66,7 @@ Public Class TacGia_DAL
 
         'get MSHS
         Dim nextMaTacGIa = "1"
-        buildMaTacGIa(nextMaTacGia)
+        buildMaTacGIa(nextMaTacGIa)
         TacGia.MaTacGia = nextMaTacGIa
 
         Using conn As New SqlConnection(connectionString)
@@ -126,4 +125,66 @@ Public Class TacGia_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+    Public Function update(tg As TacGia_DTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblTacGia] SET"
+        query &= " [tentacgia] = @tentacgia "
+        query &= " WHERE "
+        query &= " [matacgia] = @matacgia "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@tentacgia", tg.TenTacGia)
+                    .Parameters.AddWithValue("@matacgia", tg.MaTacGia)
+
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Cập nhật Tác Giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function delete(MaTacGia As String) As Result
+
+        Dim query As String = String.Empty
+        query &= " DELETE FROM [tblTacGia] "
+        query &= " WHERE "
+        query &= " [matacgia] = @matacgia "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matacgia", MaTacGia)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Xóa Tác Giả không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)  ' thanh cong
+    End Function
 End Class
+
+

@@ -22,9 +22,9 @@ Public Class Frm_QuyDinh
         Txt_TuoiToiDa.Text = quydinh.TuoiToiDa
         Txt_ThoiGianSuDung.Text = quydinh.ThoiGianSuDung
         Txt_SoTheLoaiSachToiDa.Text = quydinh.SoTheLoaiSachToiDa
-        Txt_Sotacgiatoida.Text = quydinh.SoTacGiaToiDa
+        Txt_SoTacGiaToiDa.Text = quydinh.SoTacGiaToiDa
         Txt_KhoangCachNamXuatBan.Text = quydinh.KhoangCachNamXuatBan
-        Txt_Soluongsachmuontoida.Text = quydinh.SoLuongSachMuonToiDa
+        Txt_SoLuongSachMuonToiDa.Text = quydinh.SoLuongSachMuonToiDa
         Txt_SoNgayMuonToiDa.Text = quydinh.SoNgayMuonToiDa
 
     End Sub
@@ -35,9 +35,9 @@ Public Class Frm_QuyDinh
             quydinh.TuoiToiDa = Integer.Parse(Txt_TuoiToiDa.Text)
             quydinh.ThoiGianSuDung = Integer.Parse(Txt_ThoiGianSuDung.Text)
             quydinh.SoTheLoaiSachToiDa = Integer.Parse(Txt_SoTheLoaiSachToiDa.Text)
-            quydinh.SoTacGiaToiDa = Integer.Parse(Txt_Sotacgiatoida.Text)
+            quydinh.SoTacGiaToiDa = Integer.Parse(Txt_SoTacGiaToiDa.Text)
             quydinh.KhoangCachNamXuatBan = Integer.Parse(Txt_KhoangCachNamXuatBan.Text)
-            quydinh.SoLuongSachMuonToiDa = Integer.Parse(Txt_Soluongsachmuontoida.Text)
+            quydinh.SoLuongSachMuonToiDa = Integer.Parse(Txt_SoLuongSachMuonToiDa.Text)
             quydinh.SoNgayMuonToiDa = Integer.Parse(Txt_SoNgayMuonToiDa.Text)
 
             Dim result = qdBus.update(quydinh)
@@ -52,9 +52,54 @@ Public Class Frm_QuyDinh
         End Try
     End Sub
 
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
+    End Sub
 
 
+#Region "Kiểm tra điều kiện nhập"
+    Private Function check(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
 
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập số.")
+
+        End If
+        Return 0
+    End Function
+    Private Sub Txt_ThoiGianSuDung_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_ThoiGianSuDung.KeyPress
+        check(sender, e)
+    End Sub
+
+    Private Sub Txt_KhoangCachNamXuatBan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_KhoangCachNamXuatBan.KeyPress
+        check(sender, e)
+    End Sub
+
+
+    Private Sub Txt_TuoiToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TuoiToiDa.KeyPress
+        check(sender, e)
+    End Sub
+
+    Private Sub Txt_TuoiToiThieu_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TuoiToiThieu.KeyPress
+        check(sender, e)
+    End Sub
+
+    Private Sub Txt_SoTheLoaiSachToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TuoiToiDa.KeyPress, Txt_SoTheLoaiSachToiDa.KeyPress
+        check(sender, e)
+    End Sub
+
+    Private Sub Txt_SoLuongSachMuonToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_SoLuongSachMuonToiDa.KeyPress
+        check(sender, e)
+    End Sub
+
+    Private Sub Txt_SoNgayMuonToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_SoNgayMuonToiDa.KeyPress
+        check(sender, e)
+    End Sub
+    Private Sub Txt_SoTacGiaToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_SoTacGiaToiDa.KeyPress
+        check(sender, e)
+    End Sub
+
+#End Region
 
 End Class
 

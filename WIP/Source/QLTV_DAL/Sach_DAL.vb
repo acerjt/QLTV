@@ -299,6 +299,76 @@ Public Class Sach_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+    Public Function update(Sach As Sach_DTO) As Result
+
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblSach] SET"
+        query &= " [TenSach] = @TenSach "
+        query &= " ,[MaTheLoaiSach] = @MaTheLoaiSach "
+        query &= " ,[MaTacGia] = @MaTacGia "
+        query &= " ,[NamXuatBan] = @NamXuatBan "
+        query &= " ,[NhaXuatBan] = @NhaXuatBan "
+        query &= " ,[NgayNhap] = @NgayNhap "
+        query &= " ,[TriGia] = @TriGia "
+        query &= " WHERE "
+        query &= " [MaSach] = @MaSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@TenSach", Sach.TenSach)
+                    .Parameters.AddWithValue("@MaTheLoaiSach", Sach.TheLoai)
+                    .Parameters.AddWithValue("@MaTacGia", Sach.TenTacGia)
+                    .Parameters.AddWithValue("@NamXuatBan", Sach.NamXuatBan)
+                    .Parameters.AddWithValue("@NhaXuatBan", Sach.NhaXuatBan)
+                    .Parameters.AddWithValue("@NgayNhap", Sach.NgayNhap)
+                    .Parameters.AddWithValue("@TriGia", Sach.TriGia)
+                    .Parameters.AddWithValue("@MaSach", Sach.MaSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Cập nhật sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function delete(MaSach As String) As Result
+
+        Dim query As String = String.Empty
+        query &= " DELETE FROM [tblSach] "
+        query &= " WHERE "
+        query &= " [MaSach] = @MaSach "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaSach", MaSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Xóa sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True)  ' thanh cong
+    End Function
 
     Public Function search_ByTen(TenSach As String, ByRef listChiTietPhieuMuonSach As List(Of Sach_DTO)) As Result
 
@@ -378,76 +448,4 @@ Public Class Sach_DAL
         Return New Result(True) ' thanh cong
     End Function
 
-
-
-    Public Function update(Sach As Sach_DTO) As Result
-
-        Dim query As String = String.Empty
-        query &= " UPDATE [tblSach] SET"
-        query &= " [TenSach] = @TenSach "
-        query &= " ,[MaTheLoaiSach] = @MaTheLoaiSach "
-        query &= " ,[MaTacGia] = @MaTacGia "
-        query &= " ,[NamXuatBan] = @NamXuatBan "
-        query &= " ,[NhaXuatBan] = @NhaXuatBan "
-        query &= " ,[NgayNhap] = @NgayNhap "
-        query &= " ,[TriGia] = @TriGia "
-        query &= " WHERE "
-        query &= " [MaSach] = @MaSach "
-
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                    .Parameters.AddWithValue("@TenSach", Sach.TenSach)
-                    .Parameters.AddWithValue("@MaTheLoaiSach", Sach.TheLoai)
-                    .Parameters.AddWithValue("@MaTacGia", Sach.TenTacGia)
-                    .Parameters.AddWithValue("@NamXuatBan", Sach.NamXuatBan)
-                    .Parameters.AddWithValue("@NhaXuatBan", Sach.NhaXuatBan)
-                    .Parameters.AddWithValue("@NgayNhap", Sach.NgayNhap)
-                    .Parameters.AddWithValue("@TriGia", Sach.TriGia)
-                    .Parameters.AddWithValue("@MaSach", Sach.MaSach)
-                End With
-                Try
-                    conn.Open()
-                    comm.ExecuteNonQuery()
-                Catch ex As Exception
-                    Console.WriteLine(ex.StackTrace)
-                    conn.Close()
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Cập nhật sách không thành công", ex.StackTrace)
-                End Try
-            End Using
-        End Using
-        Return New Result(True) ' thanh cong
-    End Function
-    Public Function delete(MaSach As String) As Result
-
-        Dim query As String = String.Empty
-        query &= " DELETE FROM [tblSach] "
-        query &= " WHERE "
-        query &= " [MaSach] = @MaSach "
-
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                    .Parameters.AddWithValue("@MaSach", MaSach)
-                End With
-                Try
-                    conn.Open()
-                    comm.ExecuteNonQuery()
-                Catch ex As Exception
-                    Console.WriteLine(ex.StackTrace)
-                    conn.Close()
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Xóa sách không thành công", ex.StackTrace)
-                End Try
-            End Using
-        End Using
-        Return New Result(True)  ' thanh cong
-    End Function
 End Class

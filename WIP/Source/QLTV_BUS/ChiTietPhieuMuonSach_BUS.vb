@@ -15,6 +15,11 @@ Public Class ChiTietPhieuMuonSach_BUS
     End Sub
 
 
+
+
+
+
+
     Public Function selectSachDaMuon(ByRef MaDocGia As String, ByRef ListChiTietPhieuMuonSach As List(Of Sach_DTO)) As Result
         Return ChitTietpmsDAL.selectSachDaMuon(MaDocGia, ListChiTietPhieuMuonSach)
     End Function

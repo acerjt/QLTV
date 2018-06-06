@@ -3,11 +3,13 @@ Imports QLTV_BUS
 Imports QLTV_DTO
 Imports Utility
 
-Public Class Frm_QlSach
+Public Class Frm_QLSach
     Private SachBUS As Sach_BUS
     Private TheLoaiSachBUS As TheLoaiSach_BUS
     Private TacGiaBUS As TacGia_BUS
+    Private QuyDinhBUS As QuyDinh_BUS
     Private Sub Frm_QlSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Size = New Size(800, 800)
         SachBUS = New Sach_BUS()
         TheLoaiSachBUS = New TheLoaiSach_BUS()
         TacGiaBUS = New TacGia_BUS()
@@ -43,9 +45,9 @@ Public Class Frm_QlSach
         Cb_TenTacGia.DisplayMember = "TenTacGia"
         Cb_TenTacGia.ValueMember = "MaTacGia"
 
-        CB_TenTacGiaCapNhat.DataSource = New BindingSource(listTacGia, String.Empty)
-        CB_TenTacGiaCapNhat.DisplayMember = "TenTacGia"
-        CB_TenTacGiaCapNhat.ValueMember = "MaTacGia"
+        Cb_TenTacGiaCapNhat.DataSource = New BindingSource(listTacGia, String.Empty)
+        Cb_TenTacGiaCapNhat.DisplayMember = "TenTacGia"
+        Cb_TenTacGiaCapNhat.ValueMember = "MaTacGia"
         loadListSach()
     End Sub
     Private Sub loadListSachByTheLoaiSach(MaTheLoaiSach As Integer)
@@ -57,8 +59,6 @@ Public Class Frm_QlSach
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
-
-
 
         'dgvListHS.SuspendLayout()
         Dgv_ListSach.Columns.Clear()
@@ -210,8 +210,6 @@ Public Class Frm_QlSach
             Return
         End If
 
-
-
         'dgvListHS.SuspendLayout()
         Dgv_ListSach.Columns.Clear()
         Dgv_ListSach.DataSource = Nothing
@@ -225,8 +223,6 @@ Public Class Frm_QlSach
         Cl_MaSach.HeaderText = "Mã Sách"
         Cl_MaSach.DataPropertyName = "MaSach"
         Dgv_ListSach.Columns.Add(Cl_MaSach)
-
-
 
 
         'Dim clLoaiHS = New DataGridView()
@@ -290,7 +286,7 @@ Public Class Frm_QlSach
                     Dim Sach = CType(Dgv_ListSach.Rows(currentRowIndex).DataBoundItem, Sach_DTO)
 
                     ' Cb_TheLoaiSachCapNhat.SelectedIndex =
-                    CB_TenTacGiaCapNhat.Text = Sach.TenTacGia
+                    Cb_TenTacGiaCapNhat.Text = Sach.TenTacGia
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)
                 End Try
@@ -319,8 +315,7 @@ Public Class Frm_QlSach
                 Dtp_NgayNhap.Value = Sach.NgayNhap
                 Txt_TriGia.Text = Sach.TriGia
                 ' Cb_TheLoaiSachCapNhat.SelectedIndex =
-                'CB_TenTacGiaCapNhat.SelectedIndex =
-                'Cb_TheLoaiSachCapNhat.Text = Sach.TheLoai
+                'CB_TenTacGiaCapNhat.SelectedIndex =    
                 Cb_TheLoaiSachCapNhat.Text = Sach.TheLoai
             Catch ex As Exception
                 Console.WriteLine(ex.StackTrace)
@@ -335,7 +330,7 @@ Public Class Frm_QlSach
         Try
             Dim MaTacGia = Convert.ToInt32(Cb_TenTacGia.SelectedValue)
             loadListSachByTenTacGia(MaTacGia)
-            CB_TenTacGiaCapNhat.SelectedIndex = Cb_TenTacGia.SelectedIndex
+            Cb_TenTacGiaCapNhat.SelectedIndex = Cb_TenTacGia.SelectedIndex
             If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
                 Try
                     Dim Sach = CType(Dgv_ListSach.Rows(currentRowIndex).DataBoundItem, Sach_DTO)
@@ -352,69 +347,15 @@ Public Class Frm_QlSach
         End Try
     End Sub
 
-    Private Sub Btn_CapNhat_Click(sender As Object, e As EventArgs) Handles Btn_CapNhat.Click
-        ' Get the current cell location.
-        Dim currentRowIndex As Integer = Dgv_ListSach.CurrentCellAddress.Y 'current row selected
 
-
-        'Verify that indexing OK
-        If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
-            Try
-                Dim Sach As Sach_DTO
-                Sach = New Sach_DTO()
-
-                '1. Mapping data from GUI control
-                Sach.MaSach = Txt_MaSach.Text
-                Sach.TenSach = Txt_TenSach.Text
-                Sach.NamXuatBan = Txt_NamXuatBan.Text
-                Sach.NhaXuatBan = Txt_NhaXuatBan.Text
-                Sach.TriGia = Txt_TriGia.Text
-                Sach.TheLoai = Convert.ToInt32(Cb_TheLoaiSachCapNhat.SelectedValue)
-                Sach.TenTacGia = Convert.ToInt32(CB_TenTacGiaCapNhat.SelectedValue)
-                Sach.NgayNhap = Dtp_NgayNhap.Value
-                '2. Business .....
-                If (SachBUS.isValidNamXuatBan(Sach) = False) Then
-                    MessageBox.Show("Chi nhan sach xuat ban trong vong 8 nam")
-                    Txt_NamXuatBan.Focus()
-                    Return
-                End If
-
-                If (SachBUS.isValidTacGia(Sach) = False) Then
-                    MessageBox.Show("Tác giả chưa có trong cơ sở dữ liệu")
-                    CB_TenTacGiaCapNhat.Focus()
-                    Return
-                End If
-                If (SachBUS.isValidTheLoai(Sach) = False) Then
-                    MessageBox.Show("Thể loại không hợp lệ")
-                    Cb_TheLoaiSachCapNhat.Focus()
-                    Return
-                End If
-                '3. Insert to DB
-                Dim result As Result
-                result = SachBUS.update(Sach)
-                If (result.FlagResult = True) Then
-                    ' Re-Load Sach list
-                    ' loadListSach(Cb_TheLoaiSach.SelectedIndex)
-                    ' Hightlight the row has been updated on table
-                    Dgv_ListSach.Rows(currentRowIndex).Selected = True
-
-                    MessageBox.Show("Cập nhật sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Cập nhật sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    System.Console.WriteLine(result.SystemMessage)
-                End If
-            Catch ex As Exception
-                Console.WriteLine(ex.StackTrace)
-            End Try
-
-        End If
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
     End Sub
 
-
     Private Sub Btn_Xoa_Click(sender As Object, e As EventArgs) Handles Btn_Xoa.Click
+
         ' Get the current cell location.
         Dim currentRowIndex As Integer = Dgv_ListSach.CurrentCellAddress.Y 'current row selected
-
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
@@ -437,9 +378,9 @@ Public Class Frm_QlSach
                                 Dgv_ListSach.Rows(currentRowIndex).Selected = True
                             End If
 
-                            MessageBox.Show("Xóa Học sinh thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa Sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Xóa Học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Xóa Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -448,72 +389,79 @@ Public Class Frm_QlSach
                 Case MsgBoxResult.No
                     Return
             End Select
-
-
         End If
     End Sub
 
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+    Private Sub Btn_CapNhat_Click(sender As Object, e As EventArgs) Handles Btn_CapNhat.Click
 
-    End Sub
+        ' Get the current cell location.
+        Dim currentRowIndex As Integer = Dgv_ListSach.CurrentCellAddress.Y 'current row selected
 
-    Private Sub Txt_MaSach_TextChanged(sender As Object, e As EventArgs) Handles Txt_MaSach.TextChanged
 
-    End Sub
+        'Verify that indexing OK
+        If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
+            Try
+                Dim Sach As Sach_DTO
+                Sach = New Sach_DTO()
+                Dim QuyDinhSach As QuyDinh_DTO
+                QuyDinhSach = New QuyDinh_DTO()
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
-    End Sub
+                QuyDinhBUS = New QuyDinh_BUS()
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
-    End Sub
+                Dim result As Result
+                result = QuyDinhBUS.GetQuyDinh(QuyDinhSach)
+                If (result.FlagResult = False) Then
+                    MessageBox.Show("Lấy danh tự động Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    System.Console.WriteLine(result.SystemMessage)
+                    Me.Close()
+                    Return
+                End If
+                '1. Mapping data from GUI control
+                Sach.MaSach = Txt_MaSach.Text
+                Sach.TenSach = Txt_TenSach.Text
+                Sach.NamXuatBan = Txt_NamXuatBan.Text
+                Sach.NhaXuatBan = Txt_NhaXuatBan.Text
+                Sach.TriGia = Txt_TriGia.Text
+                Sach.TheLoai = Convert.ToInt32(Cb_TheLoaiSachCapNhat.SelectedValue)
+                Sach.TenTacGia = Convert.ToInt32(Cb_TenTacGiaCapNhat.SelectedValue)
+                Sach.NgayNhap = Dtp_NgayNhap.Value
+                '2. Business .....
+                If (SachBUS.isValidNamXuatBan(Sach, QuyDinhSach) = False) Then
+                    MessageBox.Show("Khoảng cách năm xuất bản không đúng quy định!")
+                    Txt_NamXuatBan.Focus()
+                    Return
+                End If
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+                If (SachBUS.isValidTacGia(Sach) = False) Then
+                    MessageBox.Show("Tác giả chưa có trong cơ sở dữ liệu")
+                    Cb_TenTacGiaCapNhat.Focus()
+                    Return
+                End If
+                If (SachBUS.isValidTheLoai(Sach) = False) Then
+                    MessageBox.Show("Thể loại không hợp lệ")
+                    Cb_TheLoaiSachCapNhat.Focus()
+                    Return
+                End If
+                '3. Insert to DB
+                ' Dim result As Result
+                result = SachBUS.update(Sach)
+                If (result.FlagResult = True) Then
+                    ' Re-Load Sach list
+                    loadListSach()
+                    ' Hightlight the row has been updated on table
+                    Dgv_ListSach.Rows(currentRowIndex).Selected = True
 
-    End Sub
+                    MessageBox.Show("Cập nhật sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Cập nhật sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    System.Console.WriteLine(result.SystemMessage)
+                End If
+            Catch ex As Exception
+                Console.WriteLine(ex.StackTrace)
+            End Try
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    End Sub
-
-    Private Sub Txt_TriGia_TextChanged(sender As Object, e As EventArgs) Handles Txt_TriGia.TextChanged
-
-    End Sub
-
-    Private Sub Dtp_NgayNhap_ValueChanged(sender As Object, e As EventArgs) Handles Dtp_NgayNhap.ValueChanged
-
-    End Sub
-
-    Private Sub Txt_NhaXuatBan_TextChanged(sender As Object, e As EventArgs) Handles Txt_NhaXuatBan.TextChanged
-
-    End Sub
-
-    Private Sub Txt_NamXuatBan_TextChanged(sender As Object, e As EventArgs) Handles Txt_NamXuatBan.TextChanged
-
-    End Sub
-
-    Private Sub CB_TenTacGiaCapNhat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_TenTacGiaCapNhat.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Cb_TheLoaiSachCapNhat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_TheLoaiSachCapNhat.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Txt_TenSach_TextChanged(sender As Object, e As EventArgs) Handles Txt_TenSach.TextChanged
-
+        End If
     End Sub
 End Class

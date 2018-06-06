@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E7F6A31-4D98-4E23-9BFB-1BAE5CAE0FD6}</ProjectGuid>
+    <ProjectGuid>{58AD2139-D6F3-40CF-B3C0-F78876AA2B8A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>QLTV_GUI.My.MyApplication</StartupObject>
     <RootNamespace>QLTV_GUI</RootNamespace>
@@ -38,6 +38,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>QLTV_GUI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,15 +63,29 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Bunifu_UI_v1.52, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\New folder (3)\New folder (2)\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>D:\New folder (3)\New folder (2)\key\key\bin\Debug\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>D:\New folder (3)\New folder (2)\key\key\bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>D:\New folder (3)\New folder (2)\key\key\bin\Debug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>D:\New folder (3)\New folder (2)\key\key\bin\Debug\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -92,6 +107,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Close.Designer.vb">
+      <DependentUpon>Frm_Close.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Close.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.Designer.vb">
       <DependentUpon>Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.vb</DependentUpon>
     </Compile>
@@ -104,7 +125,7 @@
     <Compile Include="Frm_LapBaoCaoThongKeSachTraTre.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_LapPhieuMuonSach.designer.vb">
+    <Compile Include="Frm_LapPhieuMuonSach.Designer.vb">
       <DependentUpon>Frm_LapPhieuMuonSach.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_LapPhieuMuonSach.vb">
@@ -116,10 +137,11 @@
     <Compile Include="Frm_Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Main.Designer.vb">
       <DependentUpon>Frm_Main.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_Main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_NhanTraSach.Designer.vb">
@@ -140,10 +162,22 @@
     <Compile Include="Frm_QLLoaiDocGia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_QlSach.Designer.vb">
-      <DependentUpon>Frm_QlSach.vb</DependentUpon>
+    <Compile Include="Frm_QLSach.Designer.vb">
+      <DependentUpon>Frm_QLSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_QlSach.vb">
+    <Compile Include="Frm_QLSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLTacGia.Designer.vb">
+      <DependentUpon>Frm_QLTacGia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QLTacGia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLTheLoaiSach.Designer.vb">
+      <DependentUpon>Frm_QLTheLoaiSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QLTheLoaiSach.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_QuyDinh.Designer.vb">
@@ -152,7 +186,7 @@
     <Compile Include="Frm_QuyDinh.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_ThemDocGia.designer.vb">
+    <Compile Include="Frm_ThemDocGia.Designer.vb">
       <DependentUpon>Frm_ThemDocGia.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_ThemDocGia.vb">
@@ -205,6 +239,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_Close.resx">
+      <DependentUpon>Frm_Close.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.resx">
       <DependentUpon>Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.vb</DependentUpon>
     </EmbeddedResource>
@@ -229,8 +266,14 @@
     <EmbeddedResource Include="Frm_QLLoaiDocGia.resx">
       <DependentUpon>Frm_QLLoaiDocGia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_QlSach.resx">
-      <DependentUpon>Frm_QlSach.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_QLSach.resx">
+      <DependentUpon>Frm_QLSach.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLTacGia.resx">
+      <DependentUpon>Frm_QLTacGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLTheLoaiSach.resx">
+      <DependentUpon>Frm_QLTheLoaiSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_QuyDinh.resx">
       <DependentUpon>Frm_QuyDinh.vb</DependentUpon>
@@ -270,23 +313,45 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-member-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-literature-32" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-literature-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-read-online-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLTV_BUS\QLTV_BUS.vbproj">
-      <Project>{49747be3-427e-4505-982f-0633c19a2c00}</Project>
+      <Project>{afec831d-de2c-40f1-83e9-14171a3a1ea7}</Project>
       <Name>QLTV_BUS</Name>
     </ProjectReference>
     <ProjectReference Include="..\QLTV_DTO\QLTV_DTO.vbproj">
-      <Project>{62b9f6e4-15d9-4f61-b534-30473d749321}</Project>
+      <Project>{d8c381ed-8b0b-478f-a307-97754e03db2a}</Project>
       <Name>QLTV_DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utility\Utility.vbproj">
-      <Project>{5c674f35-83b8-42bb-b727-ac0b83858207}</Project>
+      <Project>{3170ed3f-8c44-4068-9945-a7aaa3a94637}</Project>
       <Name>Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-rules-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnclose.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -299,6 +364,90 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-read-online-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-read-online-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cv-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-80 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-resume-80 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contacts-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-book-shelf-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-quill-with-ink-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-applicant-80 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-abc-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-kindle-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-about-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-check-file-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-compose-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-card-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-presentation-filled-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-pie-chart-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-graph-report-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-1281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-google-web-search-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\biblioteki_buro247.ru.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lion-head-filled-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

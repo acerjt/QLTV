@@ -13,7 +13,7 @@ Public Class PhieuMuonSach_BUS
     End Sub
     Public Function isValidMaDocGia(PhieuMuonSach As PhieuMuonSach_DTO) As Boolean
 
-        If (PhieuMuonSach.MaDocGia.Length < 1) Then
+        If (PhieuMuonSach.MaDocGia.ToString.Length < 1) Then
             Return False
         End If
 

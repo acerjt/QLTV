@@ -105,7 +105,7 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
 
     End Sub
 
-    Private Sub Dgv_ListBaoCaoThongKe_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListLapBaoCaoThongKe.CellValueChanged
+    Private Sub Dgv_ListBaoCaoThongKe_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs)
         If (e.RowIndex <> -1 And e.ColumnIndex = 0) Then
             'Dim y As PhieuMuonSach_DTO
             'y = New PhieuMuonSach_DTO()
@@ -436,7 +436,7 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         End If
     End Sub
 
-    Private Sub Cb_Thang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_Thang.SelectedIndexChanged
+    Private Sub Cb_Thang_SelectedIndexChanged(sender As Object, e As EventArgs)
         If (Txt_Nam.Text.Length = 4) Then
 
             Try
@@ -448,7 +448,7 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         End If
     End Sub
 
-    Private Sub Cb_Thang_TextChanged(sender As Object, e As EventArgs) Handles Cb_Thang.TextChanged
+    Private Sub Cb_Thang_TextChanged(sender As Object, e As EventArgs)
         Dgv_ListBaoCaoThongKe.DataSource = Nothing
         If (Txt_Nam.Text.Length = 4) Then
             Try
@@ -461,6 +461,10 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         If (Cb_Thang.Text = "" And Txt_Nam.Text.Length = 4) Then
             loadListChiTiet(Txt_Nam.Text)
         End If
+    End Sub
+
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
     End Sub
 
     'Private Sub Dgv_ListBaoCaoThongKe_SelectionChanged(sender As Object, e As EventArgs) Handles Dgv_ListBaoCaoThongKe.SelectionChanged

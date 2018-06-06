@@ -2,7 +2,6 @@
 Imports QLTV_DTO
 Imports Utility
 
-
 Public Class Frm_NhanTraSach
     Private PhieuTraSachBus As NhanTraSach_BUS
     Private DocGiaBus As DocGia_BUS
@@ -157,53 +156,6 @@ Public Class Frm_NhanTraSach
         End If
     End Sub
 
-    'Private Sub Dgv_ListSachDangMuon_SelectionChanged(sender As Object, e As EventArgs) Handles Dgv_ListSachDangMuon.SelectionChanged
-    '    Dim currentRowIndex As Integer = Dgv_ListSachDangMuon.CurrentCellAddress.Y 'current row selected
-    '    'Dim x As Integer = Dgv_ListDocGia.CurrentCellAddress.X 'curent column selected
-    '    'Dim x As Integer = Dgv_ListDocGia.CurrentCell.Selected
-    '    ' Write coordinates to console for debugging
-    '    'Console.WriteLine(y.ToString + " " + x.ToString)
-    '    'listChiTietPhieuMuonSach.a
-    '    'Verify that indexing OK
-    '    If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSachDangMuon.RowCount) Then
-    '        Try
-    '            Dim ctpts = CType(Dgv_ListSachDangMuon.Rows(currentRowIndex).DataBoundItem, ChiTietPhieuMuonSach_DTO)
-    '            'Txt_MaDocGia.Text = dg.MaDocGia
-    '            'Txt_HoVaTen.Text = dg.HoVaTen
-    '            'Txt_DiaChi.Text = dg.DiaChi
-    '            'Dtp_NgaySinh.Value = dg.NgaySinh
-    '            'Txt_Email.Text = dg.Email
-    '            'Dtp_NgayLap.Value = dg.NgayLap
-    '            'Txt_NgayHetHan.Text = dg.NgayHetHan
-    '            Dgv_ListSachTra.Item("Cl_MaSach", currentRowIndex).Value = ctpts.MaSach
-    '            Dgv_ListSachTra.Item("Cl_TenSach", currentRowIndex).Value = ctpts.TenSach
-    '            Dgv_ListSachTra.Item("Cl_TheLoai", currentRowIndex).Value = ctpts.TenTheLoaiSach
-    '            Dgv_ListSachTra.Item("Cl_TinhTrang", currentRowIndex).Value = ctpts.TinhTrang
-    '            Dgv_ListSachTra.Item("Cl_TacGia", currentRowIndex).Value = ctpts.TenTacGia
-
-
-    '            'Dim ThoiGian = DateTime.Now
-    '            'If (dg.NgayLap.AddMonths(6) >= ThoiGian) Then
-    '            '    Txt_TinhTrangThe.Text = "Còn Hạn"
-    '            'Else Txt_TinhTrangThe.Text = " Hết Hạn rồi đó"
-
-    '            'If (dgBus.isValidHethan(dg) = False) Then
-    '            '    Txt_TinhTrangThe.Text = "Hết Hạn"
-    '            'Else Txt_TinhTrangThe.Text = "Còn Hạn"
-
-    '            'End If
-
-
-    '            'Cb_LoaiDocGiaCapNhap.SelectedIndex = Cb_LoaiDocGia.SelectedIndex
-    '        Catch ex As Exception
-    '            Console.WriteLine(ex.StackTrace)
-    '        End Try
-
-    '    End If
-
-
-
-    'End Sub
 
     Private Sub Dgv_ListSachTra_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListSachTra.CellValueChanged
 
@@ -255,19 +207,9 @@ Public Class Frm_NhanTraSach
 
 
 
-
-
             SachBus = New Sach_BUS()
             Dim Chitietphieumuonsach As Sach_DTO
             Chitietphieumuonsach = New Sach_DTO()
-
-
-            'If Dgv_ListPhieuMuonSach.Rows.Count + Dgv_ListPhieuMuonSach1.Rows.Count > 6 Then
-            '    'Dgv_ListPhieuMuonSach1.AllowUserToDeleteRows = True
-            '    MessageBox.Show("Chỉ mượn tối đa 5 quyển trong 4 ngày.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            '    Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
-            '    Return
-            'End If
 
 
             Dim x = Dgv_ListSachTra.Rows(e.RowIndex).Cells(0).Value
@@ -319,13 +261,13 @@ Public Class Frm_NhanTraSach
                 If (listChiTietPhieuTraSach.Count() = e.RowIndex) Then
                     listChiTietPhieuTraSach.Add(New ChiTietPhieuTraSach_DTO(Txt_MaPhieuTraSach.Text, x, z, Chitietphieumuonsach.MaPhieuMuonSach)) ', d))
                 Else
-                        If (listChiTietPhieuTraSach.Count() > e.RowIndex) Then
-                            listChiTietPhieuTraSach.RemoveAt(e.RowIndex)
+                    If (listChiTietPhieuTraSach.Count() > e.RowIndex) Then
+                        listChiTietPhieuTraSach.RemoveAt(e.RowIndex)
                         listChiTietPhieuTraSach.Add(New ChiTietPhieuTraSach_DTO(Txt_MaPhieuTraSach.Text, x, z, Chitietphieumuonsach.MaPhieuMuonSach)) ', d))
-                    End If
                     End If
                 End If
             End If
+        End If
 
 
     End Sub
@@ -357,9 +299,6 @@ Public Class Frm_NhanTraSach
             End If
         Next
 
-
-
-
         '3. Insert to DB
         Dim result As Result
         result = PhieuTraSachBus.insert(PhieuTraSach, listChiTietPhieuTraSach)
@@ -388,5 +327,31 @@ Public Class Frm_NhanTraSach
             MessageBox.Show("Thêm Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
+    End Sub
+
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Txt_MaDocGia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_MaDocGia.KeyPress
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
+
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập số.")
+
+        End If
+
+    End Sub
+    Private Sub Control_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar)) Then
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập mã số")
+        End If
+    End Sub
+
+
+    Private Sub Dgv_ListSachTra_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles Dgv_ListSachTra.EditingControlShowing
+        RemoveHandler e.Control.KeyPress, AddressOf Control_KeyPress
+        AddHandler e.Control.KeyPress, AddressOf Control_KeyPress
     End Sub
 End Class

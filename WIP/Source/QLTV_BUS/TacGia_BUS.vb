@@ -4,15 +4,24 @@ Imports Utility
 
 Public Class TacGia_BUS
     Private TacGiaDAL As TacGia_DAL
+
     Public Sub New()
         TacGiaDAL = New TacGia_DAL()
     End Sub
     Public Sub New(connectionString As String)
         TacGiaDAL = New TacGia_DAL(connectionString)
     End Sub
-    Public Function isValidInsert(TacGia As TacGia_DTO) As Boolean
+    Public Function isValidName(TacGia As TacGia_DTO) As Boolean
         'Dim currentyear = DateTime.Now.Year
-        If (TacGia.MaTacGia > 100) Then
+        If (TacGia.TenTacGia.Length < 0) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+    Public Function isValidInsertTacGia(TacGia As TacGia_DTO, quydinh As QuyDinh_DTO) As Boolean
+        'Dim currentyear = DateTime.Now.Year
+        If (TacGia.MaTacGia > quydinh.SoTacGiaToiDa) Then
             Return False
         End If
 
@@ -24,18 +33,18 @@ Public Class TacGia_BUS
         '2. insert to DB
         Return TacGiaDAL.insert(TacGia)
     End Function
-    'Public Function update(hs As HocSinhDTO) As Result
-    '    '1. verify data here!!
+    Public Function update(tg As TacGia_DTO) As Result
+        '1. verify data here!!
 
-    '    '2. insert to DB
-    '    Return hsDAL.update(hs)
-    'End Function
-    'Public Function delete(maLoai As Integer) As Result
-    '    '1. verify data here!!
+        '2. insert to DB
+        Return TacGiaDAL.update(tg)
+    End Function
+    Public Function delete(maTacGia As Integer) As Result
+        '1. verify data here!!
 
-    '    '2. insert to DB
-    '    Return hsDAL.delete(maLoai)
-    'End Function
+        '2. insert to DB
+        Return TacGiaDAL.delete(maTacGia)
+    End Function
     Public Function selectAll(ByRef listTacGia As List(Of TacGia_DTO)) As Result
         '1. verify data here!!
 
@@ -57,4 +66,6 @@ Public Class TacGia_BUS
     Public Function buildMaTacGia(ByRef nextMaTacGia As Integer) As Result
         Return TacGiaDAL.buildMaTacGIa(nextMaTacGia)
     End Function
+
+
 End Class

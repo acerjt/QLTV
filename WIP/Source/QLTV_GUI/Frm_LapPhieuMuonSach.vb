@@ -17,8 +17,6 @@ Public Class Frm_LapPhieuMuonSach
         listChiTietPhieuMuonSach1 = New List(Of ChiTietPhieuMuonSach_DTO)
         Dim listSach = New List(Of Sach_DTO)
 
-
-
         Dim result As Result
         'set MSSH auto
         Dim nextMaPhieuMuonSach = "1"
@@ -65,6 +63,7 @@ Public Class Frm_LapPhieuMuonSach
             Dgv_ListPhieuMuonSach1.AutoGenerateColumns = False
             Dgv_ListPhieuMuonSach1.AllowUserToAddRows = False
             Dgv_ListPhieuMuonSach1.DataSource = listChiTietPhieuMuonSach
+            'Dgv_ListPhieuMuonSach1.ColumnHeadersHeight = 70
 
             Dim Cl_MaSach1 = New DataGridViewTextBoxColumn()
             Cl_MaSach1.Name = "Cl_MaSach"
@@ -72,13 +71,6 @@ Public Class Frm_LapPhieuMuonSach
             Cl_MaSach1.DataPropertyName = "MaSach"
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_MaSach1)
 
-
-            'Dim Cl_TheLoaiSach = New DataGridView()
-            'Dim clLoaiHS = New DataGridView()
-            'clLoaiHS.Name = "LoaiHS"
-            'clLoaiHS.HeaderText = "Tên Loại"
-            'clLoaiHS.DataPropertyName = "LoaiHS"
-            'dgvListHS.Columns.Add(clLoaiHS)
 
             Dim Cl_TenSach1 = New DataGridViewTextBoxColumn()
             Cl_TenSach1.Name = "Cl_TenSach"
@@ -92,6 +84,7 @@ Public Class Frm_LapPhieuMuonSach
             Cl_TheLoaiSach1.Name = "Cl_TheLoaiSach"
             Cl_TheLoaiSach1.HeaderText = "Thể Loại Sách"
             Cl_TheLoaiSach1.DataPropertyName = "TheLoai"
+            Cl_TheLoaiSach1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TheLoaiSach1)
 
             Dim Cl_TenTacGia1 = New DataGridViewTextBoxColumn()
@@ -113,6 +106,8 @@ Public Class Frm_LapPhieuMuonSach
             Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra "
             Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
             Cl_NgayDuKienTra.DataPropertyName = "NgayDuKien"
+            Cl_NgayDuKienTra.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
+            Cl_NgayDuKienTra.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_NgayDuKienTra)
 
 
@@ -127,33 +122,19 @@ Public Class Frm_LapPhieuMuonSach
             Next
 
         End If
-        ' Dgv_ListPhieuMuonSach.Rows.Add()
-        'listChiTietPhieuMuonSach.Clear()
+
     End Sub
 
+    Private Sub Dgv_ListPhieuMuonSach_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Dgv_ListPhieuMuonSach.KeyPress
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
 
-    Private Sub Dgv_ListPhieuMuonSach_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-        Dim currentRowIndex As Integer = Dgv_ListPhieuMuonSach.CurrentCellAddress.Y
-        If (-1 < currentRowIndex And currentRowIndex < Dgv_ListPhieuMuonSach.RowCount) Then
-            Try
-
-            Catch ex As Exception
-            End Try
-        End If
-        If e.ColumnIndex = 1 And e.RowIndex = currentRowIndex Then
-            'Do any thing
-            If (-1 < currentRowIndex And currentRowIndex < Dgv_ListPhieuMuonSach.RowCount) Then
-                Try
-                    MsgBox("yes")
-
-                Catch ex As Exception
-                End Try
-            End If
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập số.")
 
         End If
 
-
     End Sub
+
 
     Private Sub Txt_MaDocGia_TextChanged(sender As Object, e As EventArgs) Handles Txt_MaDocGia.TextChanged
         Dim MaDocGia As String
@@ -183,13 +164,7 @@ Public Class Frm_LapPhieuMuonSach
 
     Private Sub Dgv_ListPhieuMuonSach_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListPhieuMuonSach.CellValueChanged
         If (e.RowIndex <> -1 And e.ColumnIndex = 0) Then
-            'Dim y As PhieuMuonSach_DTO
-            'y = New PhieuMuonSach_DTO()
-            'If (PhieuMuonSachBus.isValidMaDocGia(y) = False) Then
-            '    MessageBox.Show("Mã độc giả không được trống")
-            '    Txt_MaDocGia.Focus()
-            '    Return
-            'End If
+
 
 
             For Each z As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
@@ -302,7 +277,6 @@ Public Class Frm_LapPhieuMuonSach
         Next
 
 
-
         For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
 
             If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "Đang Mượn") Then
@@ -310,9 +284,6 @@ Public Class Frm_LapPhieuMuonSach
                 Return
             End If
         Next
-
-
-
 
         '3. Insert to DB
         Dim result As Result
@@ -339,5 +310,32 @@ Public Class Frm_LapPhieuMuonSach
             MessageBox.Show("Thêm Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
+    End Sub
+
+    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Txt_MaDocGia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_MaDocGia.KeyPress
+
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
+
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập số.")
+
+        End If
+
+    End Sub
+
+    Private Sub Control_KeyPress(sender As Object, e As KeyPressEventArgs)
+        If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar)) Then
+            e.Handled = True
+            MessageBox.Show("Vui lòng nhập mã số")
+        End If
+    End Sub
+
+    Private Sub Dgv_ListPhieuMuonSach_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles Dgv_ListPhieuMuonSach.EditingControlShowing
+        RemoveHandler e.Control.KeyPress, AddressOf Control_KeyPress
+        AddHandler e.Control.KeyPress, AddressOf Control_KeyPress
     End Sub
 End Class

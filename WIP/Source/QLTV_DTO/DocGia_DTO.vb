@@ -1,4 +1,5 @@
 ﻿Public Class DocGia_DTO
+
     Private iMaDocGia As Integer
     Private strHoVaTen As String
     Private iLoaiDocGia As Integer
@@ -26,11 +27,11 @@
         'Me.iSoSachDangMuon = iSoSachDangMuon
     End Sub
 
-    Property MaDocGia() As String
+    Property MaDocGia() As Integer
         Get
             Return iMaDocGia
         End Get
-        Set(ByVal Value As String)
+        Set(ByVal Value As Integer)
             iMaDocGia = Value
         End Set
     End Property
@@ -115,7 +116,6 @@
     '        iSoSachDangMuon = Value
     '    End Set
     'End Property
-
 
 
 End Class

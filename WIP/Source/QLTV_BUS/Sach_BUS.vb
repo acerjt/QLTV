@@ -11,9 +11,9 @@ Public Class Sach_BUS
     Public Sub New(connectionString As String)
         SachDAL = New Sach_DAL(connectionString)
     End Sub
-    Public Function isValidNamXuatBan(Sach As Sach_DTO) As Boolean
+    Public Function isValidNamXuatBan(Sach As Sach_DTO, qds As QuyDinh_DTO) As Boolean
         Dim currentyear = DateTime.Now.Year
-        If (currentyear - Sach.NamXuatBan < 0 Or currentyear - Sach.NamXuatBan > 8) Then
+        If (currentyear - Sach.NamXuatBan < 0 Or currentyear - Sach.NamXuatBan > qds.KhoangCachNamXuatBan) Then
             Return False
         End If
 
@@ -91,3 +91,5 @@ Public Class Sach_BUS
         Return SachDAL.search_ByTen(TenSach, listChiTietPhieuMuonSach)
     End Function
 End Class
+
+

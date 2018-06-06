@@ -1,7 +1,7 @@
 ﻿
 Public Class PhieuMuonSach_DTO
-    Private strMaPhieuMuonSach As String
-    Private strMaDocGia As String
+    Private iMaPhieuMuonSach As Integer
+    Private iMaDocGia As Integer
     Private dateNgayMuon As DateTime
     Private dateNgayDuKienTra As DateTime
 
@@ -11,27 +11,27 @@ Public Class PhieuMuonSach_DTO
 
     End Sub
 
-    Public Sub New(strMaPhieuMuonSach As String, strMaDocGia As String, dateNgayMuon As DateTime, dateNgayDuKienTra As DateTime) 'lsCTPMS As List(Of ChiTietPhieuMuonSach_DTO))
-        Me.strMaPhieuMuonSach = strMaPhieuMuonSach
-        Me.strMaDocGia = strMaDocGia
+    Public Sub New(iMaPhieuMuonSach As Integer, iMaDocGia As Integer, dateNgayMuon As DateTime, dateNgayDuKienTra As DateTime) 'lsCTPMS As List(Of ChiTietPhieuMuonSach_DTO))
+        Me.iMaPhieuMuonSach = iMaPhieuMuonSach
+        Me.iMaDocGia = iMaDocGia
         Me.dateNgayMuon = dateNgayMuon
     End Sub
 
-    Property MaPhieuMuonSach() As String
+    Property MaPhieuMuonSach() As Integer
         Get
-            Return strMaPhieuMuonSach
+            Return iMaPhieuMuonSach
         End Get
-        Set(ByVal Value As String)
-            strMaPhieuMuonSach = Value
+        Set(ByVal Value As Integer)
+            iMaPhieuMuonSach = Value
         End Set
     End Property
 
-    Property MaDocGia() As String
+    Property MaDocGia() As Integer
         Get
-            Return strMaDocGia
+            Return iMaDocGia
         End Get
-        Set(ByVal Value As String)
-            strMaDocGia = Value
+        Set(ByVal Value As Integer)
+            iMaDocGia = Value
         End Set
     End Property
 
@@ -53,12 +53,5 @@ Public Class PhieuMuonSach_DTO
         End Set
     End Property
 
-    'Public Property ListCTPMS As List(Of ChiTietPhieuMuonSach_DTO)
-    '    Get
-    '        Return lsCTPMS
-    '    End Get
-    '    Set(value As List(Of ChiTietPhieuMuonSach_DTO))
-    '        lsCTPMS = value
-    '    End Set
-    'End Property
+
 End Class

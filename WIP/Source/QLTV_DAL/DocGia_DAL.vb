@@ -2,8 +2,8 @@
 Imports System.Data.SqlClient
 Imports QLTV_DTO
 Imports Utility
-
 Public Class DocGia_DAL
+
     Public connectionString As String
 
     Public Sub New()
@@ -25,7 +25,6 @@ Public Class DocGia_DAL
         query &= "SELECT TOP 1 [madocgia] "
         query &= "FROM [tblDocGia] "
         query &= "ORDER BY [madocgia] DESC "
-
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
@@ -57,8 +56,8 @@ Public Class DocGia_DAL
                 End Try
             End Using
         End Using
-        Return New Result(True) ' thanh cong
-    End Function
+            Return New Result(True) ' thanh cong
+        End Function
 
     Public Function Insert(dg As DocGia_DTO) As Result
 
@@ -266,31 +265,32 @@ Public Class DocGia_DAL
 
     Public Function delete(MaDocGia As String) As Result
 
-        Dim query As String = String.Empty
-        query &= " DELETE FROM [tblDocGia] "
-        query &= " WHERE "
-        query &= " [madocgia] = @madocgia "
+            Dim query As String = String.Empty
+            query &= " DELETE FROM [tblDocGia] "
+            query &= " WHERE "
+            query &= " [madocgia] = @madocgia "
 
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    .Connection = conn
-                    .CommandType = CommandType.Text
-                    .CommandText = query
-                    .Parameters.AddWithValue("@madocgia", MaDocGia)
-                End With
-                Try
-                    conn.Open()
-                    comm.ExecuteNonQuery()
-                Catch ex As Exception
-                    Console.WriteLine(ex.StackTrace)
-                    conn.Close()
-                    System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Xóa Độc Giả không thành công", ex.StackTrace)
-                End Try
+            Using conn As New SqlConnection(connectionString)
+                Using comm As New SqlCommand()
+                    With comm
+                        .Connection = conn
+                        .CommandType = CommandType.Text
+                        .CommandText = query
+                        .Parameters.AddWithValue("@madocgia", MaDocGia)
+                    End With
+                    Try
+                        conn.Open()
+                        comm.ExecuteNonQuery()
+                    Catch ex As Exception
+                        Console.WriteLine(ex.StackTrace)
+                        conn.Close()
+                        System.Console.WriteLine(ex.StackTrace)
+                        Return New Result(False, "Xóa Độc Giả không thành công", ex.StackTrace)
+                    End Try
+                End Using
             End Using
-        End Using
-        Return New Result(True)  ' thanh cong
-    End Function
+            Return New Result(True)  ' thanh cong
+        End Function
+
 End Class
 

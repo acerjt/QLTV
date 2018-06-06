@@ -86,36 +86,36 @@ Public Class TheLoaiSach_DAL
         Return New Result(True) ' thanh cong
     End Function
 
-    'Public Function update(lhs As LoaiHocSinhDTO) As Result
+    Public Function update(tls As TheLoaiSach_DTO) As Result
 
-    '    Dim query As String = String.Empty
-    '    query &= " UPDATE [tblLoaiHocSinh] SET"
-    '    query &= " [tenloaihocsinh] = @tenloaihocsinh "
-    '    query &= "WHERE "
-    '    query &= " [maloaihocsinh] = @maloaihocsinh "
+        Dim query As String = String.Empty
+        query &= " UPDATE [tblTheLoaiSach] SET"
+        query &= " [tentheloaisach] = @tentheloaisach "
+        query &= "WHERE "
+        query &= " [matheloaisach] = @matheloaisach "
 
-    '    Using conn As New SqlConnection(connectionString)
-    '        Using comm As New SqlCommand()
-    '            With comm
-    '                .Connection = conn
-    '                .CommandType = CommandType.Text
-    '                .CommandText = query
-    '                .Parameters.AddWithValue("@maloaihocsinh", lhs.MaLoaiHS)
-    '                .Parameters.AddWithValue("@tenloaihocsinh", lhs.TenLoai)
-    '            End With
-    '            Try
-    '                conn.Open()
-    '                comm.ExecuteNonQuery()
-    '            Catch ex As Exception
-    '                Console.WriteLine(ex.StackTrace)
-    '                conn.Close()
-    '                ' them that bai!!!
-    '                Return New Result(False, "Cập nhật học sinh không thành công", ex.StackTrace)
-    '            End Try
-    '        End Using
-    '    End Using
-    'Return New Result(True) ' thanh cong
-    'End Function
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloaisach", tls.MaTheLoaiSach)
+                    .Parameters.AddWithValue("@tentheloaisach", tls.TenTheLoaiSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Cập nhật thể loại sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
 
     Public Function selectALL(ByRef listTheloaiSach As List(Of TheLoaiSach_DTO)) As Result
 
@@ -152,32 +152,66 @@ Public Class TheLoaiSach_DAL
         Return New Result(True) ' thanh cong
     End Function
 
-    'Public Function delete(maLoai As Integer) As Result
+    Public Function delete(maTheLoaiSach As Integer) As Result
 
-    '    Dim query As String = String.Empty
-    '    query &= " DELETE FROM [tblLoaiHocSinh] "
-    '    query &= " WHERE "
-    '    query &= " [maloaihocsinh] = @maloaihocsinh "
+        Dim query As String = String.Empty
+        query &= " DELETE FROM [tblTheLoaiSach] "
+        query &= " WHERE "
+        query &= " [matheloaisach] = @matheloaisach "
 
-    '    Using conn As New SqlConnection(connectionString)
-    '        Using comm As New SqlCommand()
-    '            With comm
-    '                .Connection = conn
-    '                .CommandType = CommandType.Text
-    '                .CommandText = query
-    '                .Parameters.AddWithValue("@maloaihocsinh", maLoai)
-    '            End With
-    '            Try
-    '                conn.Open()
-    '                comm.ExecuteNonQuery()
-    '            Catch ex As Exception
-    '                Console.WriteLine(ex.StackTrace)
-    '                conn.Close()
-    '                ' them that bai!!!
-    '                Return New Result(False, "Xóa học sinh không thành công", ex.StackTrace)
-    '            End Try
-    '        End Using
-    '    End Using
-    '    Return New Result(True) ' thanh cong
-    'End Function
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@matheloaisach", maTheLoaiSach)
+                End With
+                Try
+                    conn.Open()
+                    comm.ExecuteNonQuery()
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "Xóa thể loại sách không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function CountSoLuongTheLoai(ByRef Count As Integer) As Result
+        Dim query As String = String.Empty
+        query &= "SELECT Count ([MaTheLoaiSach]) as [SoLuongTheLoaiSach] "
+        query &= "FROM [tblTheLoaiSach] "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    'Dim idOnDB As Integer
+                    'idOnDB = Nothing
+                    If reader.HasRows = True Then
+                        While reader.Read()
+                            Count = reader("SoLuongTheLoaiSach")
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    ' them that bai!!!
+
+                    Return New Result(False, "Đếm số lượng thể loại không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
 End Class

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49747BE3-427E-4505-982F-0633C19A2C00}</ProjectGuid>
+    <ProjectGuid>{AFEC831D-DE2C-40F1-83E9-14171A3A1EA7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>QLTV_BUS.My.MyApplication</StartupObject>
     <RootNamespace>QLTV_BUS</RootNamespace>
@@ -124,15 +124,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLTV_DAL\QLTV_DAL.vbproj">
-      <Project>{1662b866-6339-4b86-a27f-b7b94ba29c8b}</Project>
+      <Project>{5c9f149d-17f6-464a-ac04-9dd7dda07831}</Project>
       <Name>QLTV_DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\QLTV_DTO\QLTV_DTO.vbproj">
-      <Project>{62b9f6e4-15d9-4f61-b534-30473d749321}</Project>
+      <Project>{d8c381ed-8b0b-478f-a307-97754e03db2a}</Project>
       <Name>QLTV_DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utility\Utility.vbproj">
-      <Project>{5c674f35-83b8-42bb-b727-ac0b83858207}</Project>
+      <Project>{3170ed3f-8c44-4068-9945-a7aaa3a94637}</Project>
       <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,31 +1,30 @@
 ﻿Public Class Login_DTO
-    Private strUserName As String
-    Private strPassWord As String
+    Private strUsername As String
+    Private strPassword As String
+
     Public Sub New()
 
     End Sub
-
-    Public Sub New(strUserName As String,
-        strPassWord As String)
-        Me.strPassWord = strPassWord
-        Me.strUserName = strUserName
+    Public Sub New(strUsername As String, strPassword As String)
+        Me.strUsername = strUsername
+        Me.strPassword = strPassword
     End Sub
 
-    Property UserName() As String
+    Property Username() As String
         Get
-            Return strUserName
+            Return strUsername
         End Get
         Set(ByVal Value As String)
-            strUserName = Value
+            strUsername = Value
         End Set
     End Property
 
-    Property PassWord() As String
+    Property Password() As String
         Get
-            Return strPassWord
+            Return strPassword
         End Get
-        Set(ByVal Value As String)
-            strPassWord = Value
+        Set(ByVal value As String)
+            strPassword = value
         End Set
     End Property
 End Class

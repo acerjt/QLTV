@@ -1,5 +1,5 @@
 ﻿Public Class Sach_DTO
-    Private strMaSach As String
+    Private iMaSach As Integer
     Private strTenSach As String
     Private iTheLoai As String
     Private iTacGia As String
@@ -14,19 +14,17 @@
 
     Public Sub New()
     End Sub
-    Public Sub New(strMaSach As String,
-                   strTenSach As String,
-                   iTheLoai As String,
-                   iTacGia As String,
-                   iNamXuatBan As Integer,
-                   strNhaXuatBan As String,
-                   dateNgayNhap As DateTime,
-                   strTriGia As String,
-                   strTinhTrang As String,
-                   dateNgayDuKien As DateTime)
+    Public Sub New(iMaSach As Integer,
+                       strTenSach As String,
+                       iTheLoai As String,
+                       iTacGia As String,
+                       iNamXuatBan As Integer,
+                       strNhaXuatBan As String,
+                       dateNgayNhap As DateTime,
+                       strTriGia As String)
 
 
-        Me.strMaSach = strMaSach
+        Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
@@ -37,9 +35,30 @@
         Me.strTriGia = strTriGia
         Me.strTinhTrang = strTinhTrang
         Me.dateNgayDuKien = dateNgayDuKien
+
+    End Sub
+    Public Sub New(iMaSach As Integer,
+                   strTenSach As String,
+                   iTheLoai As String,
+                   iTacGia As String,
+                   strTinhTrang As String,
+                   dateNgayDuKien As DateTime)
+
+
+        Me.iMaSach = iMaSach
+        Me.strTenSach = strTenSach
+        Me.iTheLoai = iTheLoai
+        ' Me.strMaTacGia = strMaTacGia
+        Me.iTacGia = iTacGia
+        ' Me.iNamXuatBan = iNamXuatBan
+        'Me.strNhaXuatBan = strNhaXuatBan
+        'Me.dateNgayNhap = dateNgayNhap
+        '  Me.strTriGia = strTriGia
+        Me.strTinhTrang = strTinhTrang
+        Me.dateNgayDuKien = dateNgayDuKien
     End Sub
 
-    Public Sub New(strMaSach As String,
+    Public Sub New(iMaSach As Integer,
                    strTenSach As String,
                    iTheLoai As String,
                    iTacGia As String,
@@ -48,7 +67,7 @@
                    iMaPhieuMuonSach As Integer)
 
 
-        Me.strMaSach = strMaSach
+        Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
@@ -61,30 +80,8 @@
         Me.dateNgayDuKien = dateNgayDuKien
         Me.iMaPhieuMuonSach = iMaPhieuMuonSach
     End Sub
-    Public Sub New(strMaSach As String,
-                   strTenSach As String,
-                   iTheLoai As String,
-                   iTacGia As String,
-                   strTinhTrang As String,
-                   dateNgayDuKien As DateTime)
-        'iMaPhieuMuonSach As Integer)
 
-
-        Me.strMaSach = strMaSach
-        Me.strTenSach = strTenSach
-        Me.iTheLoai = iTheLoai
-        ' Me.strMaTacGia = strMaTacGia
-        Me.iTacGia = iTacGia
-        ' Me.iNamXuatBan = iNamXuatBan
-        'Me.strNhaXuatBan = strNhaXuatBan
-        'Me.dateNgayNhap = dateNgayNhap
-        '  Me.strTriGia = strTriGia
-        Me.strTinhTrang = strTinhTrang
-        Me.dateNgayDuKien = dateNgayDuKien
-        'Me.iMaPhieuMuonSach = iMaPhieuMuonSach
-    End Sub
-
-    Public Sub New(strMaSach As String,
+    Public Sub New(iMaSach As Integer,
                    strTenSach As String,
                    iTheLoai As String,
                    iTacGia As String,
@@ -96,7 +93,7 @@
         'dateNgayDyKien As DateTime)
 
 
-        Me.strMaSach = strMaSach
+        Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
@@ -109,26 +106,9 @@
         'Me.dateNgayDuKien = dateNgayDuKien
     End Sub
 
-    'Public Sub New(strTenSach As String,
-    '               iTheLoai As String,
-    '               iTacGia As String,
-    '               strTinhTrang As String,
-    '               dateNgayDuKien As DateTime)
 
 
-    '    'Me.strMaSach = strMaSach
-    '    Me.strTenSach = strTenSach
-    '    Me.iTheLoai = iTheLoai
-    '    ' Me.strMaTacGia = strMaTacGia
-    '    Me.iTacGia = iTacGia
-    '    Me.iNamXuatBan = iNamXuatBan
-    '    ' Me.strNhaXuatBan = strNhaXuatBan
-    '    'Me.dateNgayNhap = dateNgayNhap
-    '    ' Me.strTriGia = strTriGia
-    '    Me.strTinhTrang = strTinhTrang
-    '    Me.dateNgayDuKien = dateNgayDuKien
-    'End Sub
-    Public Sub New(strMaSach As String,
+    Public Sub New(iMaSach As Integer,
                   strTenSach As String,
                    iTheLoai As String,
                    iTacGia As String,
@@ -136,7 +116,7 @@
         'dateNgayDuKien As DateTime)
 
 
-        Me.strMaSach = strMaSach
+        Me.iMaSach = iMaSach
         Me.strTenSach = strTenSach
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
@@ -160,19 +140,22 @@
         Me.iTheLoai = iTheLoai
         ' Me.strMaTacGia = strMaTacGia
         Me.iTacGia = iTacGia
-        Me.iNamXuatBan = iNamXuatBan
+        ' Me.iNamXuatBan = iNamXuatBan
         ' Me.strNhaXuatBan = strNhaXuatBan
         'Me.dateNgayNhap = dateNgayNhap
         ' Me.strTriGia = strTriGia
         Me.strTinhTrang = strTinhTrang
         'Me.dateNgayDuKien = dateNgayDuKien
     End Sub
-    Property MaSach() As String
+
+
+
+    Property MaSach() As Integer
         Get
-            Return strMaSach
+            Return iMaSach
         End Get
-        Set(ByVal value As String)
-            strMaSach = value
+        Set(ByVal value As Integer)
+            iMaSach = value
         End Set
     End Property
     Property TenSach() As String
@@ -191,14 +174,7 @@
             iTheLoai = value
         End Set
     End Property
-    'Property TenTacGia() As String
-    '    Get
-    '        Return strTenTacGia
-    '    End Get
-    '    Set(ByVal value As String)
-    '        strTenTacGia = value
-    '    End Set
-    'End Property
+
     Property TenTacGia() As String
         Get
             Return iTacGia
@@ -223,11 +199,11 @@
             strNhaXuatBan = value
         End Set
     End Property
-    Property NgayNhap() As Date
+    Property NgayNhap() As DateTime
         Get
             Return dateNgayNhap
         End Get
-        Set(ByVal value As Date)
+        Set(ByVal value As DateTime)
             dateNgayNhap = value
         End Set
     End Property
@@ -265,3 +241,5 @@
         End Set
     End Property
 End Class
+
+
