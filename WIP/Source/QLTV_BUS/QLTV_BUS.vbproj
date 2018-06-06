@@ -80,6 +80,7 @@
     <Compile Include="ChiTietPhieuTraSach_BUS.vb" />
     <Compile Include="DocGia_BUS.vb" />
     <Compile Include="LoaiDocGia_BUS.vb" />
+    <Compile Include="Login_BUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

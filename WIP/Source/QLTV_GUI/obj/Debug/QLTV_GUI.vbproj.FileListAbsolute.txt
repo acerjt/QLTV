@@ -350,3 +350,4 @@ C:\Users\Administrator\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug
 C:\Users\Administrator\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.exe
 C:\Users\Administrator\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.xml
 C:\Users\Administrator\Desktop\New folder (2)\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.pdb
+C:\Users\ASUS\Desktop\New folder (2) - Copy\QLTV\WIP\Source\QLTV_GUI\obj\Debug\QLTV_GUI.Frm_Login.resources

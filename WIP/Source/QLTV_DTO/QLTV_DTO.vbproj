@@ -80,6 +80,7 @@
     <Compile Include="ChiTietPhieuTraSach_DTO.vb" />
     <Compile Include="DocGia_DTO.vb" />
     <Compile Include="LoaiDocGia_DTO.vb" />
+    <Compile Include="Login_DTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
