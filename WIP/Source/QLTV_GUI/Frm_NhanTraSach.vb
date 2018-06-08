@@ -87,18 +87,22 @@ Public Class Frm_NhanTraSach
             Dgv_ListSachDangMuon.AutoGenerateColumns = False
             Dgv_ListSachDangMuon.AllowUserToAddRows = False
             Dgv_ListSachDangMuon.DataSource = listChiTietPhieuMuonSach
+            Dgv_ListSachDangMuon.ColumnHeadersHeight = 100
 
             Dim Cl_MaSach1 = New DataGridViewTextBoxColumn()
             Cl_MaSach1.Name = "Cl_MaSach"
             Cl_MaSach1.HeaderText = "Mã Sách"
             Cl_MaSach1.DataPropertyName = "MaSach"
+
+            'Cl_MaSach1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             Dgv_ListSachDangMuon.Columns.Add(Cl_MaSach1)
 
-            Dim Cl_MaPhieuTraSach1 = New DataGridViewTextBoxColumn()
-            Cl_MaPhieuTraSach1.Name = "Cl_MaPhieuTraSach1"
-            Cl_MaPhieuTraSach1.HeaderText = "Mã Phiếu Mượn Sách"
-            Cl_MaPhieuTraSach1.DataPropertyName = "MaPhieuMuonSach"
-            Dgv_ListSachDangMuon.Columns.Add(Cl_MaPhieuTraSach1)
+            Dim Cl_MaPhieuMuonSach1 = New DataGridViewTextBoxColumn()
+            Cl_MaPhieuMuonSach1.Name = "Cl_MaPhieuMuonSach1"
+            Cl_MaPhieuMuonSach1.HeaderText = "Mã Phiếu Mượn Sách"
+            Cl_MaPhieuMuonSach1.DataPropertyName = "MaPhieuMuonSach"
+            'Cl_MaPhieuMuonSach1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            Dgv_ListSachDangMuon.Columns.Add(Cl_MaPhieuMuonSach1)
 
             'Dim Cl_TheLoaiSach = New DataGridView()
             'Dim clLoaiHS = New DataGridView()
@@ -111,6 +115,7 @@ Public Class Frm_NhanTraSach
             Cl_TenSach1.Name = "Cl_TenSach"
             Cl_TenSach1.HeaderText = "Tên Sách"
             Cl_TenSach1.DataPropertyName = "TenSach"
+            Cl_TenSach1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListSachDangMuon.Columns.Add(Cl_TenSach1)
 
 
@@ -119,18 +124,22 @@ Public Class Frm_NhanTraSach
             Cl_TheLoaiSach1.Name = "Cl_TheLoaiSach"
             Cl_TheLoaiSach1.HeaderText = "Thể Loại Sách"
             Cl_TheLoaiSach1.DataPropertyName = "TheLoai"
+            Cl_TheLoaiSach1.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+
             Dgv_ListSachDangMuon.Columns.Add(Cl_TheLoaiSach1)
 
             Dim Cl_TenTacGia1 = New DataGridViewTextBoxColumn()
             Cl_TenTacGia1.Name = "Cl_TenTacGia"
             Cl_TenTacGia1.HeaderText = "Tên Tác Giả"
             Cl_TenTacGia1.DataPropertyName = "TenTacGia"
+            Cl_TenTacGia1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListSachDangMuon.Columns.Add(Cl_TenTacGia1)
 
             Dim Cl_TinhTrang1 = New DataGridViewTextBoxColumn()
             Cl_TinhTrang1.Name = "Cl_TinhTrang "
             Cl_TinhTrang1.HeaderText = "Tình Trạng"
             Cl_TinhTrang1.DataPropertyName = "TinhTrang"
+            Cl_TinhTrang1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListSachDangMuon.Columns.Add(Cl_TinhTrang1)
 
 
@@ -140,6 +149,7 @@ Public Class Frm_NhanTraSach
             Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra "
             Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
             Cl_NgayDuKienTra.DataPropertyName = "NgayDuKien"
+            Cl_NgayDuKienTra.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListSachDangMuon.Columns.Add(Cl_NgayDuKienTra)
 
 
@@ -354,4 +364,7 @@ Public Class Frm_NhanTraSach
         RemoveHandler e.Control.KeyPress, AddressOf Control_KeyPress
         AddHandler e.Control.KeyPress, AddressOf Control_KeyPress
     End Sub
+
+
+
 End Class

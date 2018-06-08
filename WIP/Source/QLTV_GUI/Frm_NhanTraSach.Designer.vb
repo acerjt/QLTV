@@ -90,12 +90,13 @@ Partial Class Frm_NhanTraSach
         Me.Dgv_ListSachTra.EnableHeadersVisualStyles = False
         Me.Dgv_ListSachTra.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListSachTra.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListSachTra.Location = New System.Drawing.Point(47, 81)
+        Me.Dgv_ListSachTra.Location = New System.Drawing.Point(42, 65)
+        Me.Dgv_ListSachTra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Dgv_ListSachTra.Name = "Dgv_ListSachTra"
         Me.Dgv_ListSachTra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.Dgv_ListSachTra.RowHeadersWidth = 50
         Me.Dgv_ListSachTra.RowTemplate.Height = 28
-        Me.Dgv_ListSachTra.Size = New System.Drawing.Size(1007, 193)
+        Me.Dgv_ListSachTra.Size = New System.Drawing.Size(1268, 154)
         Me.Dgv_ListSachTra.TabIndex = 182
         '
         'Cl_MaSach
@@ -103,55 +104,56 @@ Partial Class Frm_NhanTraSach
         Me.Cl_MaSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.Cl_MaSach.HeaderText = "Mã Sách"
         Me.Cl_MaSach.Name = "Cl_MaSach"
-        Me.Cl_MaSach.Width = 160
+        Me.Cl_MaSach.Width = 137
         '
         'Cl_TenSach
         '
         Me.Cl_TenSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Cl_TenSach.HeaderText = "Tên Sách"
         Me.Cl_TenSach.Name = "Cl_TenSach"
-        Me.Cl_TenSach.Width = 166
+        Me.Cl_TenSach.Width = 143
         '
         'Cl_TheLoai
         '
         Me.Cl_TheLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Cl_TheLoai.HeaderText = "Thể Loại"
         Me.Cl_TheLoai.Name = "Cl_TheLoai"
-        Me.Cl_TheLoai.Width = 163
+        Me.Cl_TheLoai.Width = 139
         '
         'Cl_TacGia
         '
         Me.Cl_TacGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Cl_TacGia.HeaderText = "Tác Giả"
         Me.Cl_TacGia.Name = "Cl_TacGia"
-        Me.Cl_TacGia.Width = 150
+        Me.Cl_TacGia.Width = 126
         '
         'Cl_TinhTrang
         '
         Me.Cl_TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Cl_TinhTrang.HeaderText = "Tình Trạng"
         Me.Cl_TinhTrang.Name = "Cl_TinhTrang"
-        Me.Cl_TinhTrang.Width = 187
+        Me.Cl_TinhTrang.Width = 161
         '
         'Txt_HoVaTen
         '
         Me.Txt_HoVaTen.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_HoVaTen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_HoVaTen.Location = New System.Drawing.Point(888, 163)
-        Me.Txt_HoVaTen.MaximumSize = New System.Drawing.Size(282, 44)
+        Me.Txt_HoVaTen.Location = New System.Drawing.Point(1013, 130)
+        Me.Txt_HoVaTen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Txt_HoVaTen.MaximumSize = New System.Drawing.Size(251, 36)
         Me.Txt_HoVaTen.Multiline = True
         Me.Txt_HoVaTen.Name = "Txt_HoVaTen"
         Me.Txt_HoVaTen.ReadOnly = True
-        Me.Txt_HoVaTen.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_HoVaTen.Size = New System.Drawing.Size(251, 36)
         Me.Txt_HoVaTen.TabIndex = 180
         '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(664, 163)
+        Me.Label2.Location = New System.Drawing.Point(814, 130)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(218, 44)
+        Me.Label2.Size = New System.Drawing.Size(194, 35)
         Me.Label2.TabIndex = 179
         Me.Label2.Text = "Họ và Tên"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -160,9 +162,9 @@ Partial Class Frm_NhanTraSach
         '
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label10.Location = New System.Drawing.Point(664, 104)
+        Me.Label10.Location = New System.Drawing.Point(814, 83)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(196, 44)
+        Me.Label10.Size = New System.Drawing.Size(174, 35)
         Me.Label10.TabIndex = 176
         Me.Label10.Text = "Ngày Trả"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -171,23 +173,25 @@ Partial Class Frm_NhanTraSach
         '
         Me.Txt_MaDocGia.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_MaDocGia.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_MaDocGia.Location = New System.Drawing.Point(286, 163)
-        Me.Txt_MaDocGia.MaximumSize = New System.Drawing.Size(282, 44)
+        Me.Txt_MaDocGia.Location = New System.Drawing.Point(254, 130)
+        Me.Txt_MaDocGia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Txt_MaDocGia.MaximumSize = New System.Drawing.Size(251, 36)
         Me.Txt_MaDocGia.Multiline = True
         Me.Txt_MaDocGia.Name = "Txt_MaDocGia"
-        Me.Txt_MaDocGia.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_MaDocGia.Size = New System.Drawing.Size(251, 36)
         Me.Txt_MaDocGia.TabIndex = 175
         '
         'Txt_MaPhieuTraSach
         '
         Me.Txt_MaPhieuTraSach.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_MaPhieuTraSach.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_MaPhieuTraSach.Location = New System.Drawing.Point(286, 104)
-        Me.Txt_MaPhieuTraSach.MaximumSize = New System.Drawing.Size(282, 44)
+        Me.Txt_MaPhieuTraSach.Location = New System.Drawing.Point(254, 83)
+        Me.Txt_MaPhieuTraSach.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Txt_MaPhieuTraSach.MaximumSize = New System.Drawing.Size(251, 36)
         Me.Txt_MaPhieuTraSach.Multiline = True
         Me.Txt_MaPhieuTraSach.Name = "Txt_MaPhieuTraSach"
         Me.Txt_MaPhieuTraSach.ReadOnly = True
-        Me.Txt_MaPhieuTraSach.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_MaPhieuTraSach.Size = New System.Drawing.Size(251, 36)
         Me.Txt_MaPhieuTraSach.TabIndex = 174
         '
         'Dtp_NgayTra
@@ -198,10 +202,10 @@ Partial Class Frm_NhanTraSach
         Me.Dtp_NgayTra.ForeColor = System.Drawing.Color.White
         Me.Dtp_NgayTra.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Dtp_NgayTra.FormatCustom = Nothing
-        Me.Dtp_NgayTra.Location = New System.Drawing.Point(888, 104)
-        Me.Dtp_NgayTra.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Dtp_NgayTra.Location = New System.Drawing.Point(1013, 83)
+        Me.Dtp_NgayTra.Margin = New System.Windows.Forms.Padding(4)
         Me.Dtp_NgayTra.Name = "Dtp_NgayTra"
-        Me.Dtp_NgayTra.Size = New System.Drawing.Size(282, 44)
+        Me.Dtp_NgayTra.Size = New System.Drawing.Size(251, 35)
         Me.Dtp_NgayTra.TabIndex = 173
         Me.Dtp_NgayTra.Value = New Date(2018, 5, 30, 20, 45, 16, 234)
         '
@@ -209,9 +213,9 @@ Partial Class Frm_NhanTraSach
         '
         Me.d.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.d.ForeColor = System.Drawing.Color.SeaGreen
-        Me.d.Location = New System.Drawing.Point(62, 104)
+        Me.d.Location = New System.Drawing.Point(55, 83)
         Me.d.Name = "d"
-        Me.d.Size = New System.Drawing.Size(218, 44)
+        Me.d.Size = New System.Drawing.Size(194, 35)
         Me.d.TabIndex = 171
         Me.d.Text = "Mã Phiếu"
         Me.d.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -220,9 +224,9 @@ Partial Class Frm_NhanTraSach
         '
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label4.Location = New System.Drawing.Point(62, 163)
+        Me.Label4.Location = New System.Drawing.Point(55, 130)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(218, 44)
+        Me.Label4.Size = New System.Drawing.Size(194, 35)
         Me.Label4.TabIndex = 172
         Me.Label4.Text = "Mã Độc Giả"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -242,19 +246,20 @@ Partial Class Frm_NhanTraSach
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListSachDangMuon.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.Dgv_ListSachDangMuon.ColumnHeadersHeight = 30
+        Me.Dgv_ListSachDangMuon.ColumnHeadersHeight = 60
         Me.Dgv_ListSachDangMuon.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cl_MaSach1, Me.Cl_TenSach1, Me.Cl_theloai1, Me.Tacgia, Me.a, Me.sda})
         Me.Dgv_ListSachDangMuon.DoubleBuffered = True
         Me.Dgv_ListSachDangMuon.EnableHeadersVisualStyles = False
         Me.Dgv_ListSachDangMuon.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListSachDangMuon.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListSachDangMuon.Location = New System.Drawing.Point(47, 61)
+        Me.Dgv_ListSachDangMuon.Location = New System.Drawing.Point(42, 49)
+        Me.Dgv_ListSachDangMuon.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Dgv_ListSachDangMuon.Name = "Dgv_ListSachDangMuon"
         Me.Dgv_ListSachDangMuon.ReadOnly = True
         Me.Dgv_ListSachDangMuon.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.Dgv_ListSachDangMuon.RowHeadersWidth = 50
         Me.Dgv_ListSachDangMuon.RowTemplate.Height = 28
-        Me.Dgv_ListSachDangMuon.Size = New System.Drawing.Size(1007, 208)
+        Me.Dgv_ListSachDangMuon.Size = New System.Drawing.Size(1268, 166)
         Me.Dgv_ListSachDangMuon.TabIndex = 170
         '
         'Cl_MaSach1
@@ -263,7 +268,7 @@ Partial Class Frm_NhanTraSach
         Me.Cl_MaSach1.HeaderText = "Mã Sách"
         Me.Cl_MaSach1.Name = "Cl_MaSach1"
         Me.Cl_MaSach1.ReadOnly = True
-        Me.Cl_MaSach1.Width = 160
+        Me.Cl_MaSach1.Width = 137
         '
         'Cl_TenSach1
         '
@@ -271,7 +276,7 @@ Partial Class Frm_NhanTraSach
         Me.Cl_TenSach1.HeaderText = "Tên Sách"
         Me.Cl_TenSach1.Name = "Cl_TenSach1"
         Me.Cl_TenSach1.ReadOnly = True
-        Me.Cl_TenSach1.Width = 166
+        Me.Cl_TenSach1.Width = 143
         '
         'Cl_theloai1
         '
@@ -279,7 +284,7 @@ Partial Class Frm_NhanTraSach
         Me.Cl_theloai1.HeaderText = "Thể Loại"
         Me.Cl_theloai1.Name = "Cl_theloai1"
         Me.Cl_theloai1.ReadOnly = True
-        Me.Cl_theloai1.Width = 163
+        Me.Cl_theloai1.Width = 139
         '
         'Tacgia
         '
@@ -287,7 +292,7 @@ Partial Class Frm_NhanTraSach
         Me.Tacgia.HeaderText = "Tác Giả"
         Me.Tacgia.Name = "Tacgia"
         Me.Tacgia.ReadOnly = True
-        Me.Tacgia.Width = 150
+        Me.Tacgia.Width = 126
         '
         'a
         '
@@ -295,7 +300,7 @@ Partial Class Frm_NhanTraSach
         Me.a.HeaderText = "Tình Trạng"
         Me.a.Name = "a"
         Me.a.ReadOnly = True
-        Me.a.Width = 187
+        Me.a.Width = 161
         '
         'sda
         '
@@ -303,16 +308,16 @@ Partial Class Frm_NhanTraSach
         Me.sda.HeaderText = "Ngày Dự Kiến Trả"
         Me.sda.Name = "sda"
         Me.sda.ReadOnly = True
-        Me.sda.Width = 282
+        Me.sda.Width = 240
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 26.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label3.Location = New System.Drawing.Point(3, 9)
+        Me.Label3.Location = New System.Drawing.Point(3, 7)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(363, 70)
+        Me.Label3.Size = New System.Drawing.Size(304, 60)
         Me.Label3.TabIndex = 167
         Me.Label3.Text = "Phiếu Trả Sách"
         '
@@ -321,10 +326,10 @@ Partial Class Frm_NhanTraSach
         Me.BunifuSeparator1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuSeparator1.LineThickness = 2
-        Me.BunifuSeparator1.Location = New System.Drawing.Point(-5, 59)
-        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BunifuSeparator1.Location = New System.Drawing.Point(-4, 47)
+        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(1201, 54)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(1416, 43)
         Me.BunifuSeparator1.TabIndex = 168
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -355,14 +360,14 @@ Partial Class Frm_NhanTraSach
         Me.Btn_NhanTraSach.IconVisible = False
         Me.Btn_NhanTraSach.IconZoom = 90.0R
         Me.Btn_NhanTraSach.IsTab = False
-        Me.Btn_NhanTraSach.Location = New System.Drawing.Point(482, 943)
-        Me.Btn_NhanTraSach.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btn_NhanTraSach.Location = New System.Drawing.Point(428, 754)
+        Me.Btn_NhanTraSach.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_NhanTraSach.Name = "Btn_NhanTraSach"
         Me.Btn_NhanTraSach.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_NhanTraSach.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_NhanTraSach.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_NhanTraSach.selected = False
-        Me.Btn_NhanTraSach.Size = New System.Drawing.Size(227, 74)
+        Me.Btn_NhanTraSach.Size = New System.Drawing.Size(202, 59)
         Me.Btn_NhanTraSach.TabIndex = 181
         Me.Btn_NhanTraSach.Text = "Trả Sách"
         Me.Btn_NhanTraSach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -374,9 +379,10 @@ Partial Class Frm_NhanTraSach
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(1141, 9)
+        Me.Btn_Close.Location = New System.Drawing.Point(1363, 11)
+        Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_Close.Name = "Btn_Close"
-        Me.Btn_Close.Size = New System.Drawing.Size(55, 48)
+        Me.Btn_Close.Size = New System.Drawing.Size(49, 38)
         Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Btn_Close.TabIndex = 169
         Me.Btn_Close.TabStop = False
@@ -387,9 +393,11 @@ Partial Class Frm_NhanTraSach
         Me.GroupBox1.Controls.Add(Me.Dgv_ListSachDangMuon)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.GroupBox1.Location = New System.Drawing.Point(79, 250)
+        Me.GroupBox1.Location = New System.Drawing.Point(70, 200)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1091, 286)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(1342, 229)
         Me.GroupBox1.TabIndex = 185
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Danh sách các SÁCH đã mượn:"
@@ -399,19 +407,21 @@ Partial Class Frm_NhanTraSach
         Me.GroupBox2.Controls.Add(Me.Dgv_ListSachTra)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.GroupBox2.Location = New System.Drawing.Point(79, 594)
+        Me.GroupBox2.Location = New System.Drawing.Point(70, 475)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1091, 294)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox2.Size = New System.Drawing.Size(1342, 235)
         Me.GroupBox2.TabIndex = 186
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Danh sách các SÁCH trả:"
         '
         'Frm_NhanTraSach
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1225, 1048)
+        Me.ClientSize = New System.Drawing.Size(1462, 838)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Btn_NhanTraSach)
@@ -427,6 +437,7 @@ Partial Class Frm_NhanTraSach
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.Controls.Add(Me.Btn_Close)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_NhanTraSach"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_NhanTraSach"

@@ -55,11 +55,14 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
             Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
             Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
+            Dgv_ListBaoCaoThongKe.ColumnHeadersHeight = 100
+
 
             Dim Cl_TenTheLoai1 = New DataGridViewTextBoxColumn()
             Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
             Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
             Cl_TenTheLoai1.DataPropertyName = "TheLoai"
+            Cl_TenTheLoai1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
 
 
@@ -88,12 +91,14 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_Thang.Name = "Cl_Thang"
             Cl_Thang.HeaderText = "Tháng"
             Cl_Thang.DataPropertyName = "Thang"
+            Cl_Thang.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader = 1
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
 
             Dim Cl_Nam = New DataGridViewTextBoxColumn()
             Cl_Nam.Name = "Cl_Nam"
             Cl_Nam.HeaderText = "Năm"
             Cl_Nam.DataPropertyName = "Nam"
+            Cl_Nam.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
         End If
 
@@ -105,7 +110,7 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
 
     End Sub
 
-    Private Sub Dgv_ListBaoCaoThongKe_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub Dgv_ListLapBaoCaoThongKe_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListLapBaoCaoThongKe.CellValueChanged
         If (e.RowIndex <> -1 And e.ColumnIndex = 0) Then
             'Dim y As PhieuMuonSach_DTO
             'y = New PhieuMuonSach_DTO()

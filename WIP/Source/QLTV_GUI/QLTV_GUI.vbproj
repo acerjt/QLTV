@@ -192,6 +192,12 @@
     <Compile Include="Frm_ThemDocGia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_ThemListSach.Designer.vb">
+      <DependentUpon>Frm_ThemListSach.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThemListSach.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_ThemLoaiDocGia.Designer.vb">
       <DependentUpon>Frm_ThemLoaiDocGia.vb</DependentUpon>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ThemDocGia.resx">
       <DependentUpon>Frm_ThemDocGia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ThemListSach.resx">
+      <DependentUpon>Frm_ThemListSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ThemLoaiDocGia.resx">
       <DependentUpon>Frm_ThemLoaiDocGia.vb</DependentUpon>

@@ -29,7 +29,7 @@ Public Class Frm_Login
 
             'Dim frmLogin = New Frm_Login
             'frmLogin.Show()
-            Me.Close()
+            Me.Show()
         Else
             MessageBox.Show("UserName Or PassWord Are Ivalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
@@ -39,6 +39,7 @@ Public Class Frm_Login
     End Sub
 
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
+
         Me.Close()
     End Sub
 

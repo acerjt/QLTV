@@ -57,26 +57,28 @@ Partial Class Frm_Login
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(406, 554)
+        Me.Panel1.Size = New System.Drawing.Size(361, 443)
         Me.Panel1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 151)
+        Me.Label1.Location = New System.Drawing.Point(30, 128)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(364, 81)
+        Me.Label1.Size = New System.Drawing.Size(304, 68)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "The Secret"
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.QLTV_GUI.My.Resources.Resources.biblioteki_buro247_ru
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 269)
+        Me.PictureBox2.Location = New System.Drawing.Point(11, 215)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(380, 247)
+        Me.PictureBox2.Size = New System.Drawing.Size(338, 198)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
@@ -84,9 +86,10 @@ Partial Class Frm_Login
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.QLTV_GUI.My.Resources.Resources.icons8_lion_head_filled_100
-        Me.PictureBox1.Location = New System.Drawing.Point(140, 25)
+        Me.PictureBox1.Location = New System.Drawing.Point(124, 20)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(123, 109)
+        Me.PictureBox1.Size = New System.Drawing.Size(109, 87)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -95,10 +98,11 @@ Partial Class Frm_Login
         '
         Me.Txt_Username.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_Username.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Username.Location = New System.Drawing.Point(683, 128)
+        Me.Txt_Username.Location = New System.Drawing.Point(607, 102)
+        Me.Txt_Username.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Txt_Username.Multiline = True
         Me.Txt_Username.Name = "Txt_Username"
-        Me.Txt_Username.Size = New System.Drawing.Size(288, 44)
+        Me.Txt_Username.Size = New System.Drawing.Size(256, 36)
         Me.Txt_Username.TabIndex = 96
         Me.Txt_Username.Text = "Ton"
         '
@@ -107,9 +111,10 @@ Partial Class Frm_Login
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(981, 0)
+        Me.Btn_Close.Location = New System.Drawing.Point(872, 0)
+        Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_Close.Name = "Btn_Close"
-        Me.Btn_Close.Size = New System.Drawing.Size(85, 48)
+        Me.Btn_Close.Size = New System.Drawing.Size(76, 38)
         Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Btn_Close.TabIndex = 95
         Me.Btn_Close.TabStop = False
@@ -119,9 +124,9 @@ Partial Class Frm_Login
         '
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label4.Location = New System.Drawing.Point(449, 128)
+        Me.Label4.Location = New System.Drawing.Point(399, 102)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(192, 44)
+        Me.Label4.Size = New System.Drawing.Size(171, 35)
         Me.Label4.TabIndex = 94
         Me.Label4.Text = "Username"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -131,9 +136,9 @@ Partial Class Frm_Login
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label3.Location = New System.Drawing.Point(422, 9)
+        Me.Label3.Location = New System.Drawing.Point(375, 7)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(205, 81)
+        Me.Label3.Size = New System.Drawing.Size(169, 68)
         Me.Label3.TabIndex = 93
         Me.Label3.Text = "Login"
         '
@@ -143,10 +148,10 @@ Partial Class Frm_Login
         Me.BunifuSeparator1.Cursor = System.Windows.Forms.Cursors.Default
         Me.BunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuSeparator1.LineThickness = 2
-        Me.BunifuSeparator1.Location = New System.Drawing.Point(413, 69)
-        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BunifuSeparator1.Location = New System.Drawing.Point(367, 55)
+        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(595, 54)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(529, 43)
         Me.BunifuSeparator1.TabIndex = 92
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -172,16 +177,16 @@ Partial Class Frm_Login
         Me.Btn_Login.IconVisible = False
         Me.Btn_Login.IconZoom = 90.0R
         Me.Btn_Login.IsTab = False
-        Me.Btn_Login.Location = New System.Drawing.Point(639, 346)
-        Me.Btn_Login.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btn_Login.Location = New System.Drawing.Point(568, 277)
+        Me.Btn_Login.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_Login.Name = "Btn_Login"
         Me.Btn_Login.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_Login.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_Login.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_Login.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Login.selected = False
-        Me.Btn_Login.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_Login.TabIndex = 97
+        Me.Btn_Login.Size = New System.Drawing.Size(252, 59)
+        Me.Btn_Login.TabIndex = 98
         Me.Btn_Login.Text = "Log in"
         Me.Btn_Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_Login.Textcolor = System.Drawing.Color.White
@@ -191,21 +196,22 @@ Partial Class Frm_Login
         '
         Me.Txt_Password.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_Password.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Password.Location = New System.Drawing.Point(683, 204)
+        Me.Txt_Password.Location = New System.Drawing.Point(607, 163)
+        Me.Txt_Password.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Txt_Password.Multiline = True
         Me.Txt_Password.Name = "Txt_Password"
         Me.Txt_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_Password.Size = New System.Drawing.Size(288, 44)
-        Me.Txt_Password.TabIndex = 99
+        Me.Txt_Password.Size = New System.Drawing.Size(256, 36)
+        Me.Txt_Password.TabIndex = 97
         Me.Txt_Password.Text = "02101998"
         '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(449, 204)
+        Me.Label2.Location = New System.Drawing.Point(399, 163)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(192, 44)
+        Me.Label2.Size = New System.Drawing.Size(171, 35)
         Me.Label2.TabIndex = 98
         Me.Label2.Text = "Password"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -231,16 +237,16 @@ Partial Class Frm_Login
         Me.Btn_Exit.IconVisible = False
         Me.Btn_Exit.IconZoom = 90.0R
         Me.Btn_Exit.IsTab = False
-        Me.Btn_Exit.Location = New System.Drawing.Point(639, 442)
-        Me.Btn_Exit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btn_Exit.Location = New System.Drawing.Point(568, 354)
+        Me.Btn_Exit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_Exit.Name = "Btn_Exit"
         Me.Btn_Exit.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_Exit.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_Exit.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_Exit.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Exit.selected = False
-        Me.Btn_Exit.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_Exit.TabIndex = 100
+        Me.Btn_Exit.Size = New System.Drawing.Size(252, 59)
+        Me.Btn_Exit.TabIndex = 99
         Me.Btn_Exit.Text = "Exit"
         Me.Btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_Exit.Textcolor = System.Drawing.Color.White
@@ -248,10 +254,10 @@ Partial Class Frm_Login
         '
         'Frm_Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1068, 554)
+        Me.ClientSize = New System.Drawing.Size(949, 443)
         Me.Controls.Add(Me.Btn_Exit)
         Me.Controls.Add(Me.Txt_Password)
         Me.Controls.Add(Me.Label2)
@@ -263,7 +269,9 @@ Partial Class Frm_Login
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_Login"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -289,4 +297,13 @@ Partial Class Frm_Login
     Friend WithEvents Label2 As Label
     Friend WithEvents Btn_Login As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Btn_Exit As Bunifu.Framework.UI.BunifuFlatButton
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
 End Class

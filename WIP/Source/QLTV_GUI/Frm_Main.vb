@@ -5,11 +5,11 @@ Public Class Frm_Main
 
     Private Sub Frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.StartPosition = FormStartPosition.CenterScreen
-        Me.Location = New Point(40, 40)
-        Me.Size = New Size(1190, 695)
-        Pn_Menu.Width = 170
-        Btn_Menu.Location = New Point(125, 12)
+        'Me.StartPosition = FormStartPosition.CenterScreen
+        'Me.Location = New Point(40, 40)
+        'Me.Size = New Size(1190, 695)
+        'Pn_Menu.Width = 170
+        'Btn_Menu.Location = New Point(125, 12)
 
     End Sub
     Private Sub MenuMain_Click(sender As Object, e As EventArgs) Handles MenuMain.Click
@@ -19,19 +19,21 @@ Public Class Frm_Main
     Private Sub Btn_Menu_Click(sender As Object, e As EventArgs) Handles Btn_Menu.Click 'menu click
 
         If Pn_Menu.Width = 50 Then
+            Me.Size = New Size(1554, 882)
             Pn_Menu.Visible = False
-            Pn_Menu.Width = 170
-            Me.Size = New Size(1190, 600)
+            Pn_Menu.Width = 213
             PanelAnimator1.ShowSync(Pn_Menu)
-            Btn_Menu.Location = New Point(125, 12)
+
+            Btn_Menu.Location = New Point(153, 10)
 
         Else
             Pn_Menu.Visible = False
             Pn_Menu.Width = 50
             Btn_Menu.Location = New Point(10, 12)
-            'Pn_Main.Width = 700
-            PanelAnimator.ShowSync(Pn_Menu)
-            Me.Width = 1070
+            Me.Width = 1394
+            Pn_Main.Width = 1341
+            PanelAnimator1.ShowSync(Pn_Menu)
+
         End If
     End Sub
 
@@ -112,8 +114,8 @@ Public Class Frm_Main
     Private Sub Tile_QuanLiSach_Click(sender As Object, e As EventArgs) Handles Tile_QuanLiSach.Click
         Hide()
         Dim frmQLSach = New Frm_QLSach()
-        frmQLSach.Location = New Point(10, 10)
-        frmQLSach.Size = New Size(810, 550)
+        'frmQLSach.Location = New Point(10, 10)
+        'frmQLSach.Size = New Size(810, 550)
         frmQLSach.ShowDialog()
         Show()
     End Sub
@@ -135,8 +137,8 @@ Public Class Frm_Main
     Private Sub Tile_QuanLiDocGia_Click(sender As Object, e As EventArgs) Handles Tile_QuanLiDocGia.Click
         Hide()
         Dim frmQLDocGia = New Frm_QLDocGia()
-        frmQLDocGia.Location = New Point(10, 10)
-        frmQLDocGia.Size = New Size(810, 590)
+        'frmQLDocGia.Location = New Point(10, 10)
+        'frmQLDocGia.Size = New Size(810, 590)
         frmQLDocGia.ShowDialog()
         Show()
     End Sub
@@ -144,7 +146,7 @@ Public Class Frm_Main
     Private Sub Tile_LapPhieuMuonSach_Click(sender As Object, e As EventArgs) Handles Tile_LapPhieuMuonSach.Click
         Hide()
         Dim frmLapPhieuMuonSach = New Frm_LapPhieuMuonSach()
-        frmLapPhieuMuonSach.Size = New Size(810, 656)
+        'frmLapPhieuMuonSach.Size = New Size(810, 656)
         frmLapPhieuMuonSach.ShowDialog()
         Show()
     End Sub
@@ -152,7 +154,7 @@ Public Class Frm_Main
     Private Sub Tile_NhanTraSach_Click(sender As Object, e As EventArgs) Handles Tile_NhanTraSach.Click
         Hide()
         Dim frmNhanTraSach = New Frm_NhanTraSach()
-        frmNhanTraSach.Size = New Size(810, 656)
+        'frmNhanTraSach.Size = New Size(810, 656)
         frmNhanTraSach.ShowDialog()
         Show()
     End Sub
@@ -160,7 +162,7 @@ Public Class Frm_Main
     Private Sub Tile_BaoCaoTheoTheLoai_Click(sender As Object, e As EventArgs) Handles Tile_BaoCaoTheoTheLoai.Click
         Hide()
         Dim frmBaoCaoThongKeTheoTheLoai = New Frm_LapBaoCaoThongKeMuonSachTheoTheLoai()
-        frmBaoCaoThongKeTheoTheLoai.Size = New Size(1110, 540)
+        'frmBaoCaoThongKeTheoTheLoai.Size = New Size(1110, 540)
         frmBaoCaoThongKeTheoTheLoai.ShowDialog()
         Show()
     End Sub
@@ -168,7 +170,7 @@ Public Class Frm_Main
     Private Sub Tile_BaoCaoSachTraTre_Click(sender As Object, e As EventArgs) Handles Tile_BaoCaoSachTraTre.Click
         Hide()
         Dim frmBaoCaoThongKeSachTraTre = New Frm_LapBaoCaoThongKeSachTraTre()
-        frmBaoCaoThongKeSachTraTre.Size = New Size(1110, 540)
+        'frmBaoCaoThongKeSachTraTre.Size = New Size(1110, 540)
         frmBaoCaoThongKeSachTraTre.ShowDialog()
         Show()
     End Sub

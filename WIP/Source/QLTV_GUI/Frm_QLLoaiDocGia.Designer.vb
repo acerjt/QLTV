@@ -52,9 +52,9 @@ Partial Class Frm_QLLoaiDocGia
         '
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(138, 469)
+        Me.Label2.Location = New System.Drawing.Point(123, 375)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(281, 44)
+        Me.Label2.Size = New System.Drawing.Size(250, 35)
         Me.Label2.TabIndex = 65
         Me.Label2.Text = "Tên Loại Độc Giả"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -63,9 +63,9 @@ Partial Class Frm_QLLoaiDocGia
         '
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label1.Location = New System.Drawing.Point(138, 405)
+        Me.Label1.Location = New System.Drawing.Point(123, 324)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(240, 44)
+        Me.Label1.Size = New System.Drawing.Size(213, 35)
         Me.Label1.TabIndex = 63
         Me.Label1.Text = "Mã Loại Độc Giả"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -75,9 +75,10 @@ Partial Class Frm_QLLoaiDocGia
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(758, 12)
+        Me.Btn_Close.Location = New System.Drawing.Point(674, 10)
+        Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_Close.Name = "Btn_Close"
-        Me.Btn_Close.Size = New System.Drawing.Size(55, 48)
+        Me.Btn_Close.Size = New System.Drawing.Size(49, 38)
         Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Btn_Close.TabIndex = 75
         Me.Btn_Close.TabStop = False
@@ -88,9 +89,9 @@ Partial Class Frm_QLLoaiDocGia
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 26.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label3.Location = New System.Drawing.Point(-1, -3)
+        Me.Label3.Location = New System.Drawing.Point(-1, -2)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(504, 70)
+        Me.Label3.Size = New System.Drawing.Size(430, 60)
         Me.Label3.TabIndex = 76
         Me.Label3.Text = "Quản Lí Loại Độc Giả"
         '
@@ -98,20 +99,22 @@ Partial Class Frm_QLLoaiDocGia
         '
         Me.Txt_TenLoaiDocGia.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_TenLoaiDocGia.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TenLoaiDocGia.Location = New System.Drawing.Point(425, 469)
+        Me.Txt_TenLoaiDocGia.Location = New System.Drawing.Point(378, 375)
+        Me.Txt_TenLoaiDocGia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Txt_TenLoaiDocGia.Multiline = True
         Me.Txt_TenLoaiDocGia.Name = "Txt_TenLoaiDocGia"
-        Me.Txt_TenLoaiDocGia.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_TenLoaiDocGia.Size = New System.Drawing.Size(251, 36)
         Me.Txt_TenLoaiDocGia.TabIndex = 95
         '
         'Txt_MaLoaiDocGia
         '
         Me.Txt_MaLoaiDocGia.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_MaLoaiDocGia.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_MaLoaiDocGia.Location = New System.Drawing.Point(425, 405)
+        Me.Txt_MaLoaiDocGia.Location = New System.Drawing.Point(378, 324)
+        Me.Txt_MaLoaiDocGia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Txt_MaLoaiDocGia.Multiline = True
         Me.Txt_MaLoaiDocGia.Name = "Txt_MaLoaiDocGia"
-        Me.Txt_MaLoaiDocGia.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_MaLoaiDocGia.Size = New System.Drawing.Size(251, 36)
         Me.Txt_MaLoaiDocGia.TabIndex = 94
         '
         'BunifuSeparator1
@@ -119,10 +122,10 @@ Partial Class Frm_QLLoaiDocGia
         Me.BunifuSeparator1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuSeparator1.LineThickness = 2
-        Me.BunifuSeparator1.Location = New System.Drawing.Point(-6, 47)
-        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BunifuSeparator1.Location = New System.Drawing.Point(-5, 38)
+        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(819, 54)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(728, 43)
         Me.BunifuSeparator1.TabIndex = 96
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -148,15 +151,15 @@ Partial Class Frm_QLLoaiDocGia
         Me.Btn_CapNhat.IconVisible = False
         Me.Btn_CapNhat.IconZoom = 90.0R
         Me.Btn_CapNhat.IsTab = False
-        Me.Btn_CapNhat.Location = New System.Drawing.Point(144, 570)
-        Me.Btn_CapNhat.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btn_CapNhat.Location = New System.Drawing.Point(128, 456)
+        Me.Btn_CapNhat.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_CapNhat.Name = "Btn_CapNhat"
         Me.Btn_CapNhat.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_CapNhat.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_CapNhat.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_CapNhat.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_CapNhat.selected = False
-        Me.Btn_CapNhat.Size = New System.Drawing.Size(205, 74)
+        Me.Btn_CapNhat.Size = New System.Drawing.Size(182, 59)
         Me.Btn_CapNhat.TabIndex = 97
         Me.Btn_CapNhat.Text = "CẬP NHẬT"
         Me.Btn_CapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -184,14 +187,14 @@ Partial Class Frm_QLLoaiDocGia
         Me.Btn_Xoa.IconVisible = False
         Me.Btn_Xoa.IconZoom = 90.0R
         Me.Btn_Xoa.IsTab = False
-        Me.Btn_Xoa.Location = New System.Drawing.Point(435, 570)
-        Me.Btn_Xoa.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Btn_Xoa.Location = New System.Drawing.Point(387, 456)
+        Me.Btn_Xoa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Btn_Xoa.Name = "Btn_Xoa"
         Me.Btn_Xoa.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_Xoa.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_Xoa.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_Xoa.selected = False
-        Me.Btn_Xoa.Size = New System.Drawing.Size(258, 74)
+        Me.Btn_Xoa.Size = New System.Drawing.Size(229, 59)
         Me.Btn_Xoa.TabIndex = 98
         Me.Btn_Xoa.Text = "XÓA"
         Me.Btn_Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -227,7 +230,8 @@ Partial Class Frm_QLLoaiDocGia
         Me.Dgv_ListLoaiDocGia.EnableHeadersVisualStyles = False
         Me.Dgv_ListLoaiDocGia.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListLoaiDocGia.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListLoaiDocGia.Location = New System.Drawing.Point(109, 109)
+        Me.Dgv_ListLoaiDocGia.Location = New System.Drawing.Point(97, 87)
+        Me.Dgv_ListLoaiDocGia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Dgv_ListLoaiDocGia.Name = "Dgv_ListLoaiDocGia"
         Me.Dgv_ListLoaiDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -240,15 +244,15 @@ Partial Class Frm_QLLoaiDocGia
         Me.Dgv_ListLoaiDocGia.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.Dgv_ListLoaiDocGia.RowHeadersWidth = 50
         Me.Dgv_ListLoaiDocGia.RowTemplate.Height = 28
-        Me.Dgv_ListLoaiDocGia.Size = New System.Drawing.Size(632, 234)
+        Me.Dgv_ListLoaiDocGia.Size = New System.Drawing.Size(562, 187)
         Me.Dgv_ListLoaiDocGia.TabIndex = 99
         '
         'Frm_QLLoaiDocGia
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(849, 676)
+        Me.ClientSize = New System.Drawing.Size(755, 541)
         Me.Controls.Add(Me.Dgv_ListLoaiDocGia)
         Me.Controls.Add(Me.Btn_Xoa)
         Me.Controls.Add(Me.Btn_CapNhat)
@@ -260,7 +264,9 @@ Partial Class Frm_QLLoaiDocGia
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_QLLoaiDocGia"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_QLLoaiDocGia"
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Dgv_ListLoaiDocGia, System.ComponentModel.ISupportInitialize).EndInit()

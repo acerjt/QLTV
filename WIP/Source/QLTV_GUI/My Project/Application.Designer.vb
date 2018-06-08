@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.QLTV_GUI.Frm_Login
+            Me.MainForm = Global.QLTV_GUI.Frm_ThemListSach
         End Sub
     End Class
 End Namespace

@@ -90,6 +90,9 @@ Public Class Sach_BUS
     Public Function search_ByTen(TenSach As String, ByRef listChiTietPhieuMuonSach As List(Of Sach_DTO)) As Result
         Return SachDAL.search_ByTen(TenSach, listChiTietPhieuMuonSach)
     End Function
+    Public Function insert1(listSach As List(Of Sach_DTO)) As Result
+        Return SachDAL.insert1(listSach)
+    End Function
 End Class
 
 

@@ -70,11 +70,14 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
             Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
             Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
+            Dgv_ListBaoCaoThongKe.ColumnHeadersHeight = 100
+
 
             Dim Cl_TenSach = New DataGridViewTextBoxColumn()
             Cl_TenSach.Name = "Cl_TenSach"
             Cl_TenSach.HeaderText = "Tên Sách"
             Cl_TenSach.DataPropertyName = "TenSach"
+            Cl_TenSach.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenSach)
 
 
@@ -89,6 +92,7 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Cl_NgayMuon.Name = "Cl_NgayMuon"
             Cl_NgayMuon.HeaderText = "Ngày Mượn"
             Cl_NgayMuon.DataPropertyName = "NgayMuon"
+            Cl_NgayMuon.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_NgayMuon)
 
 
@@ -143,11 +147,14 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Dgv_ListLapBaoCaoThongKe.AutoGenerateColumns = False
             Dgv_ListLapBaoCaoThongKe.AllowUserToAddRows = False
             Dgv_ListLapBaoCaoThongKe.DataSource = listChiTiet2
+            Dgv_ListLapBaoCaoThongKe.ColumnHeadersHeight = 100
+
 
             Dim Cl_TenSach = New DataGridViewTextBoxColumn()
             Cl_TenSach.Name = "Cl_TenSach"
             Cl_TenSach.HeaderText = "Tên Sách"
             Cl_TenSach.DataPropertyName = "TenSach"
+            Cl_TenSach.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             Dgv_ListLapBaoCaoThongKe.Columns.Add(Cl_TenSach)
 
 
@@ -162,6 +169,7 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Cl_NgayMuon.Name = "Cl_NgayMuon"
             Cl_NgayMuon.HeaderText = "Ngày Mượn"
             Cl_NgayMuon.DataPropertyName = "NgayMuon"
+            Cl_NgayMuon.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListLapBaoCaoThongKe.Columns.Add(Cl_NgayMuon)
 
 
@@ -170,6 +178,7 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Cl_SoNgayTraTre.Name = "Cl_SoNgayTraTre"
             Cl_SoNgayTraTre.HeaderText = "Số Ngày Trả Trễ"
             Cl_SoNgayTraTre.DataPropertyName = "SoNgayTraTre"
+            Cl_SoNgayTraTre.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             Dgv_ListLapBaoCaoThongKe.Columns.Add(Cl_SoNgayTraTre)
 
 
@@ -191,11 +200,13 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
             Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
             Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
+            Dgv_ListBaoCaoThongKe.ColumnHeadersHeight = 100
 
             Dim Cl_TenSach = New DataGridViewTextBoxColumn()
             Cl_TenSach.Name = "Cl_TenSach"
             Cl_TenSach.HeaderText = "Tên Sách"
             Cl_TenSach.DataPropertyName = "TenSach"
+            Cl_TenSach.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenSach)
 
 
@@ -210,6 +221,7 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
             Cl_NgayMuon.Name = "Cl_NgayMuon"
             Cl_NgayMuon.HeaderText = "Ngày Mượn"
             Cl_NgayMuon.DataPropertyName = "NgayMuon"
+            Cl_NgayMuon.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_NgayMuon)
 
 
@@ -322,4 +334,6 @@ Public Class Frm_LapBaoCaoThongKeSachTraTre
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
         Me.Close()
     End Sub
+
+
 End Class
