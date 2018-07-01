@@ -8,6 +8,7 @@ Public Class Frm_QLSach
     Private TheLoaiSachBUS As TheLoaiSach_BUS
     Private TacGiaBUS As TacGia_BUS
     Private QuyDinhBUS As QuyDinh_BUS
+    Dim frm_Infor = New Frm_Information()
     Private Sub Frm_QlSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Size = New Size(800, 800)
         SachBUS = New Sach_BUS()
@@ -18,7 +19,8 @@ Public Class Frm_QLSach
         Dim result As Result
         result = TheLoaiSachBUS.selectAll(listTheLoaiSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách thể loại sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách Thể Loại Sách không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -36,7 +38,8 @@ Public Class Frm_QLSach
         'Dim result As Result
         result = TacGiaBUS.selectAll(listTacGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách Tác Giả không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -55,7 +58,8 @@ Public Class Frm_QLSach
         Dim result As Result
         result = SachBUS.selectALL_ByTheLoaiSach(MaTheLoaiSach, listSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách sách theo thể loại không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách Sách theo Thể Loại không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -127,7 +131,8 @@ Public Class Frm_QLSach
         Dim result As Result
         result = SachBUS.selectAll(listSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách Sách không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -205,7 +210,8 @@ Public Class Frm_QLSach
         Dim result As Result
         result = SachBUS.selectALL_ByTacGia(MaTacGia, listSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách sách theo tên tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách Sách theo Tên Tác Gi không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -277,10 +283,11 @@ Public Class Frm_QLSach
         Dim currentRowIndex As Integer = Dgv_ListSach.CurrentCellAddress.Y
         Try
 
-            Dim MaTheLoaiSach = Convert.ToInt32(Cb_TheLoaiSach.SelectedValue)
+            Dim MaTheLoaiSach = Cb_TheLoaiSach.SelectedValue
             loadListSachByTheLoaiSach(MaTheLoaiSach)
 
-            Cb_TheLoaiSachCapNhat.SelectedIndex = Cb_TheLoaiSach.SelectedIndex
+            Cb_TheLoaiSachCapNhat.Text = Cb_TheLoaiSach.Text
+
             If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
                 Try
                     Dim Sach = CType(Dgv_ListSach.Rows(currentRowIndex).DataBoundItem, Sach_DTO)
@@ -315,7 +322,7 @@ Public Class Frm_QLSach
                 Dtp_NgayNhap.Value = Sach.NgayNhap
                 Txt_TriGia.Text = Sach.TriGia
                 ' Cb_TheLoaiSachCapNhat.SelectedIndex =
-                'CB_TenTacGiaCapNhat.SelectedIndex =    
+                Cb_TenTacGiaCapNhat.Text = Sach.TenTacGia
                 Cb_TheLoaiSachCapNhat.Text = Sach.TheLoai
             Catch ex As Exception
                 Console.WriteLine(ex.StackTrace)
@@ -330,7 +337,7 @@ Public Class Frm_QLSach
         Try
             Dim MaTacGia = Convert.ToInt32(Cb_TenTacGia.SelectedValue)
             loadListSachByTenTacGia(MaTacGia)
-            Cb_TenTacGiaCapNhat.SelectedIndex = Cb_TenTacGia.SelectedIndex
+            Cb_TenTacGiaCapNhat.Text = Cb_TenTacGia.Text
             If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
                 Try
                     Dim Sach = CType(Dgv_ListSach.Rows(currentRowIndex).DataBoundItem, Sach_DTO)
@@ -359,16 +366,17 @@ Public Class Frm_QLSach
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListSach.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa học sinh có mã số: " + Txt_MaSach.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes
+            Frm_Close.i.Text = "Bạn có thực sự muốn xóa Sách có mã số: " + Txt_MaSach.Text
+            Select Case Frm_Close.ShowDialog()
+                Case DialogResult.OK
                     Try
                         '1. Delete from DB
                         Dim result As Result
                         result = SachBUS.delete(Txt_MaSach.Text)
                         If (result.FlagResult = True) Then
 
-                            ' Re-Load LoaiHocSinh list
-                            'loadListHocSinh(cbLoaiHS.SELECTedValue)
+                            ' Re-Load Sach list
+                            loadListSach()
 
                             ' Hightlight the next row on table
                             If (currentRowIndex >= Dgv_ListSach.Rows.Count) Then
@@ -377,16 +385,17 @@ Public Class Frm_QLSach
                             If (currentRowIndex >= 0) Then
                                 Dgv_ListSach.Rows(currentRowIndex).Selected = True
                             End If
-
-                            MessageBox.Show("Xóa Sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            frm_Infor.m.Text = "Xóa Sách thành công."
+                            frm_Infor.ShowDialog()
                         Else
-                            MessageBox.Show("Xóa Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            frm_Infor.m.Text = "Xóa Sách không thành công."
+                            frm_Infor.ShowDialog()
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                Case MsgBoxResult.No
+                Case DialogResult.No
                     Return
             End Select
         End If
@@ -413,7 +422,8 @@ Public Class Frm_QLSach
                 Dim result As Result
                 result = QuyDinhBUS.GetQuyDinh(QuyDinhSach)
                 If (result.FlagResult = False) Then
-                    MessageBox.Show("Lấy danh tự động Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    frm_Infor.m.Text = "Lấy tự động Quy Định không thành công."
+                    frm_Infor.ShowDialog()
                     System.Console.WriteLine(result.SystemMessage)
                     Me.Close()
                     Return
@@ -424,23 +434,39 @@ Public Class Frm_QLSach
                 Sach.NamXuatBan = Txt_NamXuatBan.Text
                 Sach.NhaXuatBan = Txt_NhaXuatBan.Text
                 Sach.TriGia = Txt_TriGia.Text
-                Sach.TheLoai = Convert.ToInt32(Cb_TheLoaiSachCapNhat.SelectedValue)
-                Sach.TenTacGia = Convert.ToInt32(Cb_TenTacGiaCapNhat.SelectedValue)
+                Sach.TheLoai = Cb_TheLoaiSachCapNhat.SelectedValue
+                Sach.TenTacGia = Cb_TenTacGiaCapNhat.SelectedValue
                 Sach.NgayNhap = Dtp_NgayNhap.Value
                 '2. Business .....
+
+
+
+                If (SachBUS.isValidTenSach(Sach) = False) Then
+                    frm_Infor.m.Text = "Tên Sách không hợp lệ."
+                    frm_Infor.ShowDialog()
+                    Txt_NamXuatBan.Focus()
+                    Return
+                End If
+
+
+
+
                 If (SachBUS.isValidNamXuatBan(Sach, QuyDinhSach) = False) Then
-                    MessageBox.Show("Khoảng cách năm xuất bản không đúng quy định!")
+                    frm_Infor.m.Text = "Khoảng cách năm xuất bản không đúng quy định."
+                    frm_Infor.ShowDialog()
                     Txt_NamXuatBan.Focus()
                     Return
                 End If
 
                 If (SachBUS.isValidTacGia(Sach) = False) Then
-                    MessageBox.Show("Tác giả chưa có trong cơ sở dữ liệu")
+                    frm_Infor.m.Text = "Tác giả chưa có trong cơ sở dữ liệu."
+                    frm_Infor.ShowDialog()
                     Cb_TenTacGiaCapNhat.Focus()
                     Return
                 End If
                 If (SachBUS.isValidTheLoai(Sach) = False) Then
-                    MessageBox.Show("Thể loại không hợp lệ")
+                    frm_Infor.m.Text = "Thể loại không hợp lệ."
+                    frm_Infor.ShowDialog()
                     Cb_TheLoaiSachCapNhat.Focus()
                     Return
                 End If
@@ -452,10 +478,11 @@ Public Class Frm_QLSach
                     loadListSach()
                     ' Hightlight the row has been updated on table
                     Dgv_ListSach.Rows(currentRowIndex).Selected = True
-
-                    MessageBox.Show("Cập nhật sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    frm_Infor.m.Text = "Cập nhật sách thành công."
+                    frm_Infor.ShowDialog()
                 Else
-                    MessageBox.Show("Cập nhật sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    frm_Infor.m.Text = "Cập nhật sách không thành công"
+                    frm_Infor.ShowDialog()
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

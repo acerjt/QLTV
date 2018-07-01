@@ -15,13 +15,6 @@ C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.Copy
 C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.exe
 C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.xml
 C:\Users\Administrator\source\repos\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.exe
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.xml
-C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.exe
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.pdb
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.xml
@@ -31,38 +24,28 @@ C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.pdb
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.xml
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\Utility.pdb
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Debug\Utility.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DAL.exe
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DAL.pdb
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DAL.xml
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DTO.exe
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\Utility.exe
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DTO.pdb
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DTO.xml
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\Utility.pdb
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\bin\Debug\Utility.xml
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.exe
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.xml
-C:\Users\ASUS\Desktop\New folder (5)\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DAL.exe
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DAL.pdb
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DAL.xml
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DTO.exe
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\Utility.exe
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DTO.pdb
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\QLTV_DTO.xml
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\Utility.pdb
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\bin\Debug\Utility.xml
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.exe
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.xml
-C:\Users\ASUS\Desktop\New folder (5) - Copy\QLTV\WIP\Source\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.pdb
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.exe
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.pdb
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DAL.xml
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.exe
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\Utility.exe
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.pdb
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\QLTV_DTO.xml
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\Utility.pdb
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\bin\Debug\Utility.xml
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.Resources.resources
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.vbproj.CopyComplete
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.exe
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.xml
+C:\Users\ASUS\Desktop\New folder (9)\Source\QLTV\QLTV_DAL\obj\Debug\QLTV_DAL.pdb

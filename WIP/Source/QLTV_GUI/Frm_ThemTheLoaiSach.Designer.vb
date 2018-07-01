@@ -106,7 +106,7 @@ Partial Class Frm_ThemTheLoaiSach
         Me.Btn_Nhap.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_Nhap.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_Nhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Nhap.BorderRadius = 0
+        Me.Btn_Nhap.BorderRadius = 7
         Me.Btn_Nhap.ButtonText = "NHẬP"
         Me.Btn_Nhap.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_Nhap.DisabledColor = System.Drawing.Color.Gray
@@ -131,7 +131,7 @@ Partial Class Frm_ThemTheLoaiSach
         Me.Btn_Nhap.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Nhap.selected = False
         Me.Btn_Nhap.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_Nhap.TabIndex = 87
+        Me.Btn_Nhap.TabIndex = 90
         Me.Btn_Nhap.Text = "NHẬP"
         Me.Btn_Nhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_Nhap.Textcolor = System.Drawing.Color.White
@@ -142,7 +142,7 @@ Partial Class Frm_ThemTheLoaiSach
         Me.Btn_NhapVaDong.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_NhapVaDong.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_NhapVaDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_NhapVaDong.BorderRadius = 0
+        Me.Btn_NhapVaDong.BorderRadius = 7
         Me.Btn_NhapVaDong.ButtonText = "NHẬP VÀ ĐÓNG"
         Me.Btn_NhapVaDong.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_NhapVaDong.DisabledColor = System.Drawing.Color.Gray
@@ -166,7 +166,7 @@ Partial Class Frm_ThemTheLoaiSach
         Me.Btn_NhapVaDong.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_NhapVaDong.selected = False
         Me.Btn_NhapVaDong.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_NhapVaDong.TabIndex = 86
+        Me.Btn_NhapVaDong.TabIndex = 91
         Me.Btn_NhapVaDong.Text = "NHẬP VÀ ĐÓNG"
         Me.Btn_NhapVaDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_NhapVaDong.Textcolor = System.Drawing.Color.White
@@ -197,6 +197,7 @@ Partial Class Frm_ThemTheLoaiSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(911, 424)
         Me.ControlBox = False
@@ -210,6 +211,7 @@ Partial Class Frm_ThemTheLoaiSach
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_ThemTheLoaiSach"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).EndInit()

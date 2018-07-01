@@ -35,7 +35,8 @@ Public Class Frm_QLDocGia
                 'docgia.LoaiDocGia = Convert.ToInt32(Cb_LoaiDocGiaCapNhap.SelectedValue)
                 '2. Business .....
                 If (dgBus.isValidName(docgia) = False) Then
-                    MessageBox.Show("Họ tên Độc Giả không đúng.")
+                    Frm_Information.m.Text = "Tên Độc Giả không hợp lệ."
+                    Frm_Information.ShowDialog()
                     Txt_HoVaTen.Focus()
                     Return
                 End If
@@ -48,9 +49,11 @@ Public Class Frm_QLDocGia
                     ' Hightlight the row has been updated on table
                     Dgv_ListDocGia.Rows(currentRowIndex).Selected = True
 
-                    MessageBox.Show("Cập nhật Độc Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Frm_Information.m.Text = "Cập nhật Độc Giả thành công."
+                    Frm_Information.ShowDialog()
                 Else
-                    MessageBox.Show("Cập nhật Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Frm_Information.m.Text = "Cập nhật Độc Giả không thành công."
+                    Frm_Information.ShowDialog()
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -64,11 +67,15 @@ Public Class Frm_QLDocGia
         ' Get the current cell location.
         Dim currentRowIndex As Integer = Dgv_ListDocGia.CurrentCellAddress.Y 'current row selected
 
-
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListDocGia.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa độc giả có mã số: " + Txt_MaDocGia.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes
+
+            Frm_Close.i.Text = "Bạn có thực sự muốn xóa độc giả có mã số: " + Txt_MaDocGia.Text
+            'Frm_Close.i.Location = New Point(80, 78)
+            Select Case Frm_Close.ShowDialog()
+
+                'MsgBox("Bạn có thực sự muốn xóa độc giả có mã số: " + Txt_MaDocGia.Text, MsgBoxStyle.YesNo, "Information")
+                Case DialogResult.OK 'MsgBoxResult.Yes
                     Try
                         '1. Delete from DB
                         Dim result As Result
@@ -86,15 +93,17 @@ Public Class Frm_QLDocGia
                                 Dgv_ListDocGia.Rows(currentRowIndex).Selected = True
                             End If
 
-                            MessageBox.Show("Xóa Độc Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Frm_Information.m.Text = "Xoá Độc Giả thành công."
+                            Frm_Information.ShowDialog()
                         Else
-                            MessageBox.Show("Xóa Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            Frm_Information.m.Text = "Xóa Độc Giả không thành công."
+                            Frm_Information.ShowDialog()
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                Case MsgBoxResult.No
+                Case DialogResult.No
                     Return
             End Select
 
@@ -112,7 +121,8 @@ Public Class Frm_QLDocGia
         Dim result As Result
         result = ldgBus.selectAll(listLoaiDocGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy danh sách loại độc giả không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -126,6 +136,8 @@ Public Class Frm_QLDocGia
         Cb_LoaiDocGiaCapNhap.DisplayMember = "TenLoaiDocGia"
         Cb_LoaiDocGiaCapNhap.ValueMember = "MaLoaiDocGia"
 
+        Txt_NgayHetHan.Text = ""
+        Txt_TinhTrangThe.Text = ""
     End Sub
 
     Private Sub loadListDocGia(MaLoaiDocGia As String)
@@ -133,7 +145,8 @@ Public Class Frm_QLDocGia
         Dim result As Result
         result = dgBus.selectALL_ByType(MaLoaiDocGia, listDocGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách độc giả theo loại không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy danh sách độc giả theo loại không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -150,6 +163,7 @@ Public Class Frm_QLDocGia
         clMaDocGia.Name = "MaDocGia"
         clMaDocGia.HeaderText = "Mã Độc Giả"
         clMaDocGia.DataPropertyName = "MaDocGia"
+        clMaDocGia.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
         Dgv_ListDocGia.Columns.Add(clMaDocGia)
 
         Dim clLoaiDocGia = New DataGridView()
@@ -205,6 +219,13 @@ Public Class Frm_QLDocGia
             Dim MaLoaiDocGia = Convert.ToInt32(Cb_LoaiDocGia.SelectedValue)
             loadListDocGia(MaLoaiDocGia)
 
+
+            For Each x As DataGridViewRow In Dgv_ListDocGia.Rows
+                Dim currentday = DateTime.Now
+                If (currentday > Dgv_ListDocGia.Rows(x.Index).Cells(6).Value) Then
+                    x.DefaultCellStyle.BackColor = Color.Pink
+                End If
+            Next
         Catch ex As Exception
 
         End Try
@@ -232,13 +253,11 @@ Public Class Frm_QLDocGia
                 Dtp_NgayLap.Value = dg.NgayLap
                 Txt_NgayHetHan.Text = dg.NgayHetHan
 
-                'Dim ThoiGian = DateTime.Now
-                'If (dg.NgayLap.AddMonths(6) >= ThoiGian) Then
-                '    Txt_TinhTrangThe.Text = "Còn Hạn"
-                'Else Txt_TinhTrangThe.Text = " Hết Hạn rồi đó"
+
 
                 If (dgBus.isValidHethan(dg) = False) Then
                     Txt_TinhTrangThe.Text = "Hết Hạn"
+                    ' Dgv_ListDocGia.Rows(currentRowIndex).
                 Else Txt_TinhTrangThe.Text = "Còn Hạn"
 
                 End If
@@ -258,6 +277,7 @@ Public Class Frm_QLDocGia
     End Sub
 
     Private Sub Txt_NgayLap_onValueChanged(sender As Object, e As EventArgs) Handles Dtp_NgayLap.onValueChanged
+
         Dim quydinh As QuyDinh_DTO
         quydinh = New QuyDinh_DTO()
 
@@ -265,7 +285,8 @@ Public Class Frm_QLDocGia
         Dim result As Result
         result = qdBus.GetQuyDinh(quydinh)
         If (result.FlagResult = False) Then
-            MessageBox.Show("lấy quy định từ database không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy quy định không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -274,8 +295,11 @@ Public Class Frm_QLDocGia
         Dim NamHienTai = DateTime.Now
         If (NamHienTai > Dtp_NgayLap.Value.AddMonths(quydinh.ThoiGianSuDung)) Then
             Txt_TinhTrangThe.Text = "Hết Hạn"
+            Txt_TinhTrangThe.BackColor = Color.Red
         Else
             Txt_TinhTrangThe.Text = "Còn Hạn"
+            Txt_TinhTrangThe.BackColor = Color.WhiteSmoke
+
         End If
 
     End Sub
@@ -284,7 +308,16 @@ Public Class Frm_QLDocGia
         If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
 
             e.Handled = True
-            MessageBox.Show("Vui lòng không nhập kí tự đặc biệt.")
+            Frm_Information.m.Text = "Vui lòng không nhập kí tự đặc biệt."
+            Frm_Information.ShowDialog()
         End If
+    End Sub
+
+    Private Sub Txt_TinhTrangThe_TextChanged(sender As Object, e As EventArgs) Handles Txt_TinhTrangThe.TextChanged
+
+    End Sub
+
+    Private Sub Dgv_ListDocGia_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListDocGia.CellContentClick
+
     End Sub
 End Class

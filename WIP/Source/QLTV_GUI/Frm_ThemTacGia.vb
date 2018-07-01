@@ -7,6 +7,7 @@ Public Class Frm_ThemTacGia
 
     Private TacGiaBUS As TacGia_BUS
     Private qdBus As QuyDinh_BUS
+    Dim frm_Infor = New Frm_Information()
     Private Sub Frm_ThemTacGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TacGiaBUS = New TacGia_BUS()
 
@@ -15,7 +16,9 @@ Public Class Frm_ThemTacGia
         Dim nextMaTacGia = "1"
         Result = TacGiaBUS.buildMaTacGia(nextMaTacGia)
         If (Result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động mã sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy tự động mã sách không thành công."
+            Frm_Information.ShowDialog()
+            'MessageBox.Show("Lấy tự động mã sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(Result.SystemMessage)
             Me.Close()
             Return
@@ -35,7 +38,9 @@ Public Class Frm_ThemTacGia
         Dim result As Result
         result = qdBus.GetQuyDinh(quydinh)
         If (result.FlagResult = False) Then
-            MessageBox.Show("lấy quy định từ database không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy Quy Định từ database không thành công."
+            Frm_Information.ShowDialog()
+            'MessageBox.Show("lấy quy định từ database không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -46,28 +51,38 @@ Public Class Frm_ThemTacGia
         TacGia.MaTacGia = Txt_MaTacGia.Text
         'TacGia.TenTacGia = Sach.TenTacGia
         '2. Business .....
+        If (TacGiaBUS.isValidTenTacGia(TacGia) = False) Then
+            Frm_Information.m.Text = "Tên Tác Giả không hợp lệ"
+            Frm_Information.ShowDialog()
+
+            Return
+        End If
         If (TacGiaBUS.isValidInsertTacGia(TacGia, quydinh) = False) Then
-            MessageBox.Show("Đã đủ số tác giả quy định")
-            ' Me.Close()
+            Frm_Information.m.Text = "Đã đủ số tác giả quy định."
+            Frm_Information.ShowDialog()
+
             Return
         End If
         '3. Insert to DB
         ' Dim result As Result
         result = TacGiaBUS.insert(TacGia)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm tác giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Thêm tác giả thành công."
+            Frm_Information.ShowDialog()
             'set MSSH auto
             Dim nextMaTacGia = "1"
             result = TacGiaBUS.buildMaTacGia(nextMaTacGia)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy danh tự động mã tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy tự động mã tác giả không thành công."
+                Frm_Information.ShowDialog()
                 Me.Close()
                 Return
             End If
             Txt_MaTacGia.Text = nextMaTacGia
             Txt_TenTacGia.Text = String.Empty
         Else
-            MessageBox.Show("Thêm tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm tác giả không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
 
@@ -88,9 +103,9 @@ Public Class Frm_ThemTacGia
         Dim result As Result
         result = qdBus.GetQuyDinh(quydinh)
         If (result.FlagResult = False) Then
-            MessageBox.Show("lấy quy định từ database không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy Quy Định từ database không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
-            'Me.Close()
             Return
         End If
 
@@ -99,8 +114,15 @@ Public Class Frm_ThemTacGia
         TacGia.MaTacGia = Txt_MaTacGia.Text
         'TacGia.TenTacGia = Sach.TenTacGia
         '2. Business .....
+        If (TacGiaBUS.isValidTenTacGia(TacGia) = False) Then
+            Frm_Information.m.Text = "Tên Tác Giả không hợp lệ"
+            Frm_Information.ShowDialog()
+
+            Return
+        End If
         If (TacGiaBUS.isValidInsertTacGia(TacGia, quydinh) = False) Then
-            MessageBox.Show("Đã đủ số tác giả quy định")
+            Frm_Information.m.Text = "Đã đủ số Tác Giả quy định."
+            Frm_Information.ShowDialog()
             Me.Close()
             Return
         End If
@@ -108,25 +130,21 @@ Public Class Frm_ThemTacGia
         'Dim result As Result
         result = TacGiaBUS.insert(TacGia)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm tác giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Thêm Tác Giả thành công."
+            Frm_Information.ShowDialog()
             Me.Close()
         Else
-            MessageBox.Show("Thêm tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm Tác Giả thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
     Private Sub Txt_TenTacGia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TenTacGia.KeyPress
-        'Dim a = {"W", "F", "z", "Z", "J"}
-        'For Each x As Char In a
-        '    If (e.KeyChar = x) Then
-        '        e.Handled = True
-        '        MessageBox.Show("Kí Tự Không Hợp Lệ.")
-        '    End If
-        'Next
         If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
 
             e.Handled = True
-            MessageBox.Show("Vui lòng không nhập kí tự đặc biệt.")
+            Frm_Information.m.Text = "Vui lòng không nhập kí tự đặc biệt."
+            Frm_Information.ShowDialog()
         End If
     End Sub
 End Class

@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\bin\Release\QLTV_DTO.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\bin\Release\QLTV_DTO.pdb
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\bin\Release\QLTV_DTO.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\obj\Release\QLTV_DTO.Resources.resources
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\obj\Release\QLTV_DTO.vbproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\obj\Release\QLTV_DTO.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\obj\Release\QLTV_DTO.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\obj\Release\QLTV_DTO.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DTO\obj\Release\QLTV_DTO.pdb

@@ -29,6 +29,8 @@ Partial Class Frm_QLTheLoaiSach
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_QLTheLoaiSach))
         Me.Dgv_ListTheLoaiSach = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.M = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Btn_Close = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
@@ -52,16 +54,18 @@ Partial Class Frm_QLTheLoaiSach
         Me.Dgv_ListTheLoaiSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListTheLoaiSach.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.Dgv_ListTheLoaiSach.ColumnHeadersHeight = 30
+        Me.Dgv_ListTheLoaiSach.ColumnHeadersHeight = 40
+        Me.Dgv_ListTheLoaiSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.Dgv_ListTheLoaiSach.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.M, Me.Column1})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -71,28 +75,42 @@ Partial Class Frm_QLTheLoaiSach
         Me.Dgv_ListTheLoaiSach.EnableHeadersVisualStyles = False
         Me.Dgv_ListTheLoaiSach.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListTheLoaiSach.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListTheLoaiSach.Location = New System.Drawing.Point(134, 97)
+        Me.Dgv_ListTheLoaiSach.Location = New System.Drawing.Point(151, 97)
         Me.Dgv_ListTheLoaiSach.Name = "Dgv_ListTheLoaiSach"
         Me.Dgv_ListTheLoaiSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListTheLoaiSach.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.Dgv_ListTheLoaiSach.RowHeadersWidth = 50
+        Me.Dgv_ListTheLoaiSach.RowHeadersWidth = 20
         Me.Dgv_ListTheLoaiSach.RowTemplate.Height = 28
-        Me.Dgv_ListTheLoaiSach.Size = New System.Drawing.Size(638, 234)
+        Me.Dgv_ListTheLoaiSach.Size = New System.Drawing.Size(570, 234)
         Me.Dgv_ListTheLoaiSach.TabIndex = 83
+        '
+        'M
+        '
+        Me.M.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.M.HeaderText = "Mã Thể Loại Sách"
+        Me.M.Name = "M"
+        Me.M.Width = 252
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = "Tên Thể Loại Sách"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 257
         '
         'Btn_Close
         '
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(755, 22)
+        Me.Btn_Close.Location = New System.Drawing.Point(809, 12)
         Me.Btn_Close.Name = "Btn_Close"
         Me.Btn_Close.Size = New System.Drawing.Size(55, 48)
         Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -119,7 +137,7 @@ Partial Class Frm_QLTheLoaiSach
         Me.BunifuSeparator1.Location = New System.Drawing.Point(-3, 53)
         Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(828, 54)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(867, 54)
         Me.BunifuSeparator1.TabIndex = 77
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -129,7 +147,7 @@ Partial Class Frm_QLTheLoaiSach
         Me.Btn_CapNhap.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_CapNhap.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_CapNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_CapNhap.BorderRadius = 0
+        Me.Btn_CapNhap.BorderRadius = 7
         Me.Btn_CapNhap.ButtonText = "CẬP NHẬT"
         Me.Btn_CapNhap.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_CapNhap.DisabledColor = System.Drawing.Color.Gray
@@ -165,7 +183,7 @@ Partial Class Frm_QLTheLoaiSach
         Me.Btn_Xoa.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_Xoa.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_Xoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Xoa.BorderRadius = 0
+        Me.Btn_Xoa.BorderRadius = 7
         Me.Btn_Xoa.ButtonText = "XÓA"
         Me.Btn_Xoa.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_Xoa.DisabledColor = System.Drawing.Color.Gray
@@ -201,7 +219,7 @@ Partial Class Frm_QLTheLoaiSach
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
         Me.Label4.Location = New System.Drawing.Point(134, 426)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(269, 44)
+        Me.Label4.Size = New System.Drawing.Size(289, 44)
         Me.Label4.TabIndex = 90
         Me.Label4.Text = "Tên Thể Loại Sách"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -212,7 +230,7 @@ Partial Class Frm_QLTheLoaiSach
         Me.d.ForeColor = System.Drawing.Color.SeaGreen
         Me.d.Location = New System.Drawing.Point(134, 363)
         Me.d.Name = "d"
-        Me.d.Size = New System.Drawing.Size(256, 44)
+        Me.d.Size = New System.Drawing.Size(289, 44)
         Me.d.TabIndex = 88
         Me.d.Text = "Mã Thể Loại Sách"
         Me.d.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -249,6 +267,7 @@ Partial Class Frm_QLTheLoaiSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(887, 636)
         Me.Controls.Add(Me.Txt_TenTheLoaiSach)
@@ -262,6 +281,7 @@ Partial Class Frm_QLTheLoaiSach
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_QLTheLoaiSach"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_QLTheLoaiSach"
@@ -282,4 +302,6 @@ Partial Class Frm_QLTheLoaiSach
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents Txt_TenTheLoaiSach As WindowsFormsControlLibrary1.BunifuCustomTextbox
     Friend WithEvents Txt_MaTheLoaiSach As WindowsFormsControlLibrary1.BunifuCustomTextbox
+    Friend WithEvents M As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
 End Class

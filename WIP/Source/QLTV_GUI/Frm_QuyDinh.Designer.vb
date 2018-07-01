@@ -147,7 +147,7 @@ Partial Class Frm_QuyDinh
         Me.Btn_CapNhap.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_CapNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_CapNhap.BorderRadius = 7
-        Me.Btn_CapNhap.ButtonText = "CẬP NHẬP"
+        Me.Btn_CapNhap.ButtonText = "CẬP NHẬT"
         Me.Btn_CapNhap.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_CapNhap.DisabledColor = System.Drawing.Color.Gray
         Me.Btn_CapNhap.Iconcolor = System.Drawing.Color.Transparent
@@ -170,8 +170,8 @@ Partial Class Frm_QuyDinh
         Me.Btn_CapNhap.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_CapNhap.selected = False
         Me.Btn_CapNhap.Size = New System.Drawing.Size(247, 74)
-        Me.Btn_CapNhap.TabIndex = 31
-        Me.Btn_CapNhap.Text = "CẬP NHẬP"
+        Me.Btn_CapNhap.TabIndex = 9
+        Me.Btn_CapNhap.Text = "CẬP NHẬT"
         Me.Btn_CapNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_CapNhap.Textcolor = System.Drawing.Color.White
         Me.Btn_CapNhap.TextFont = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -218,86 +218,87 @@ Partial Class Frm_QuyDinh
         '
         Me.Txt_SoNgayMuonToiDa.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_SoNgayMuonToiDa.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_SoNgayMuonToiDa.Location = New System.Drawing.Point(545, 559)
+        Me.Txt_SoNgayMuonToiDa.Location = New System.Drawing.Point(532, 559)
         Me.Txt_SoNgayMuonToiDa.Multiline = True
         Me.Txt_SoNgayMuonToiDa.Name = "Txt_SoNgayMuonToiDa"
         Me.Txt_SoNgayMuonToiDa.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_SoNgayMuonToiDa.TabIndex = 94
+        Me.Txt_SoNgayMuonToiDa.TabIndex = 8
         '
         'Txt_SoLuongSachMuonToiDa
         '
         Me.Txt_SoLuongSachMuonToiDa.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_SoLuongSachMuonToiDa.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_SoLuongSachMuonToiDa.Location = New System.Drawing.Point(545, 492)
+        Me.Txt_SoLuongSachMuonToiDa.Location = New System.Drawing.Point(532, 492)
         Me.Txt_SoLuongSachMuonToiDa.Multiline = True
         Me.Txt_SoLuongSachMuonToiDa.Name = "Txt_SoLuongSachMuonToiDa"
         Me.Txt_SoLuongSachMuonToiDa.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_SoLuongSachMuonToiDa.TabIndex = 95
+        Me.Txt_SoLuongSachMuonToiDa.TabIndex = 7
         '
         'Txt_KhoangCachNamXuatBan
         '
         Me.Txt_KhoangCachNamXuatBan.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_KhoangCachNamXuatBan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_KhoangCachNamXuatBan.Location = New System.Drawing.Point(545, 433)
+        Me.Txt_KhoangCachNamXuatBan.Location = New System.Drawing.Point(532, 433)
         Me.Txt_KhoangCachNamXuatBan.Multiline = True
         Me.Txt_KhoangCachNamXuatBan.Name = "Txt_KhoangCachNamXuatBan"
         Me.Txt_KhoangCachNamXuatBan.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_KhoangCachNamXuatBan.TabIndex = 96
+        Me.Txt_KhoangCachNamXuatBan.TabIndex = 6
         '
         'Txt_SoTacGiaToiDa
         '
         Me.Txt_SoTacGiaToiDa.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_SoTacGiaToiDa.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_SoTacGiaToiDa.Location = New System.Drawing.Point(545, 369)
+        Me.Txt_SoTacGiaToiDa.Location = New System.Drawing.Point(532, 369)
         Me.Txt_SoTacGiaToiDa.Multiline = True
         Me.Txt_SoTacGiaToiDa.Name = "Txt_SoTacGiaToiDa"
         Me.Txt_SoTacGiaToiDa.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_SoTacGiaToiDa.TabIndex = 97
+        Me.Txt_SoTacGiaToiDa.TabIndex = 5
         '
         'Txt_SoTheLoaiSachToiDa
         '
         Me.Txt_SoTheLoaiSachToiDa.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_SoTheLoaiSachToiDa.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_SoTheLoaiSachToiDa.Location = New System.Drawing.Point(545, 305)
+        Me.Txt_SoTheLoaiSachToiDa.Location = New System.Drawing.Point(532, 305)
         Me.Txt_SoTheLoaiSachToiDa.Multiline = True
         Me.Txt_SoTheLoaiSachToiDa.Name = "Txt_SoTheLoaiSachToiDa"
         Me.Txt_SoTheLoaiSachToiDa.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_SoTheLoaiSachToiDa.TabIndex = 98
+        Me.Txt_SoTheLoaiSachToiDa.TabIndex = 4
         '
         'Txt_ThoiGianSuDung
         '
         Me.Txt_ThoiGianSuDung.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_ThoiGianSuDung.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_ThoiGianSuDung.Location = New System.Drawing.Point(545, 244)
+        Me.Txt_ThoiGianSuDung.Location = New System.Drawing.Point(532, 244)
         Me.Txt_ThoiGianSuDung.Multiline = True
         Me.Txt_ThoiGianSuDung.Name = "Txt_ThoiGianSuDung"
         Me.Txt_ThoiGianSuDung.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_ThoiGianSuDung.TabIndex = 99
+        Me.Txt_ThoiGianSuDung.TabIndex = 3
         '
         'Txt_TuoiToiDa
         '
         Me.Txt_TuoiToiDa.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_TuoiToiDa.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TuoiToiDa.Location = New System.Drawing.Point(545, 180)
+        Me.Txt_TuoiToiDa.Location = New System.Drawing.Point(532, 180)
         Me.Txt_TuoiToiDa.Multiline = True
         Me.Txt_TuoiToiDa.Name = "Txt_TuoiToiDa"
         Me.Txt_TuoiToiDa.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_TuoiToiDa.TabIndex = 100
+        Me.Txt_TuoiToiDa.TabIndex = 2
         '
         'Txt_TuoiToiThieu
         '
         Me.Txt_TuoiToiThieu.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_TuoiToiThieu.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TuoiToiThieu.Location = New System.Drawing.Point(545, 116)
+        Me.Txt_TuoiToiThieu.Location = New System.Drawing.Point(532, 116)
         Me.Txt_TuoiToiThieu.Multiline = True
         Me.Txt_TuoiToiThieu.Name = "Txt_TuoiToiThieu"
         Me.Txt_TuoiToiThieu.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_TuoiToiThieu.TabIndex = 101
+        Me.Txt_TuoiToiThieu.TabIndex = 1
         '
         'Frm_QuyDinh
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(911, 720)
         Me.Controls.Add(Me.Txt_TuoiToiThieu)
@@ -322,9 +323,10 @@ Partial Class Frm_QuyDinh
         Me.Controls.Add(Me.sa)
         Me.ForeColor = System.Drawing.Color.SeaGreen
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(252, 73)
         Me.Name = "Frm_QuyDinh"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_QuyDinh"
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -13,7 +13,15 @@ Public Class TacGia_BUS
     End Sub
     Public Function isValidName(TacGia As TacGia_DTO) As Boolean
         'Dim currentyear = DateTime.Now.Year
-        If (TacGia.TenTacGia.Length < 0) Then
+        If (TacGia.TenTacGia.Length <= 0) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+    Public Function isValidTenTacGia(TacGia As TacGia_DTO) As Boolean
+        'Dim currentyear = DateTime.Now.Year
+        If (TacGia.TenTacGia.Length < 1) Then
             Return False
         End If
 

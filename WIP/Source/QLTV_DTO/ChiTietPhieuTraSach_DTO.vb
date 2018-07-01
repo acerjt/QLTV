@@ -1,7 +1,7 @@
 ﻿Public Class ChiTietPhieuTraSach_DTO
 
-    Private strMaSach As String
-    Private strMaPhieuTraSach As String
+    Private iMaSach As Integer
+    Private iMaPhieuTraSach As Integer
     Private strTinhTrang As String
     Private iMaPhieuMuonSach As Integer
 
@@ -9,33 +9,30 @@
 
     End Sub
 
-
-
-
-    Public Sub New(strMaPhieuTraSach As String, strMaSach As String, strTinhTrang As String, iMaPhieuMuonSach As Integer)
+    Public Sub New(iMaPhieuTraSach As Integer, iMaSach As Integer, strTinhTrang As String, iMaPhieuMuonSach As Integer)
         'Me.strMaChiTietPhieuMuonSach = strMaChiTietPhieuMuonSach
-        Me.strMaSach = strMaSach
-        Me.strMaPhieuTraSach = strMaPhieuTraSach
+        Me.iMaSach = iMaSach
+        Me.iMaPhieuTraSach = iMaPhieuTraSach
         Me.strTinhTrang = strTinhTrang
         Me.iMaPhieuMuonSach = iMaPhieuMuonSach
     End Sub
 
 
-    Property MaSach() As String
+    Property MaSach() As Integer
         Get
-            Return strMaSach
+            Return iMaSach
         End Get
-        Set(ByVal Value As String)
-            strMaSach = Value
+        Set(ByVal Value As Integer)
+            iMaSach = Value
         End Set
     End Property
 
-    Property MaPhieuTraSach() As String
+    Property MaPhieuTraSach() As Integer
         Get
-            Return strMaPhieuTraSach
+            Return iMaPhieuTraSach
         End Get
-        Set(ByVal Value As String)
-            strMaPhieuTraSach = Value
+        Set(ByVal Value As Integer)
+            iMaPhieuTraSach = Value
         End Set
     End Property
 

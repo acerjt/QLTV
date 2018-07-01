@@ -3,17 +3,14 @@ Imports System.Windows.Forms
 Public Class Frm_Close
 
     Private Sub btn_yes_Click(sender As Object, e As EventArgs) Handles btn_yes.Click
+        DialogResult = DialogResult.OK
 
-        'Me.Close()
-        'Frm_Main.Close()
+        Me.Close()
 
-        ' Frm_Login.Close()
-
-        'Application.ExitThread()
-        'Application.Exit()
     End Sub
 
     Private Sub btn_no_Click(sender As Object, e As EventArgs) Handles btn_no.Click
+        DialogResult = DialogResult.No
         Me.Close()
 
     End Sub

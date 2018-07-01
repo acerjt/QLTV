@@ -6,6 +6,7 @@ Public Class Frm_ThemLoaiDocGia
 
     Private ldgBus As LoaiDocGia_BUS
     Private qdBus As QuyDinh_BUS
+    Dim frm_Infor = New Frm_Information()
     Private Sub Frm_LoaiDocGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ldgBus = New LoaiDocGia_BUS()
@@ -17,13 +18,14 @@ Public Class Frm_ThemLoaiDocGia
         If (result.FlagResult = True) Then
             Txt_MaLoaiDocGia.Text = nextID.ToString()
         Else
-            MessageBox.Show("Lấy ID kế tiếp của Loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy ID kế tiếp của Loại Độc Giả không thành công."
+            Frm_Information.ShowDialog()
+
+            'MessageBox.Show("Lấy ID kế tiếp của Loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
 
     End Sub
-
-
 
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
         Me.Close()
@@ -44,7 +46,8 @@ Public Class Frm_ThemLoaiDocGia
 
         '2. Business .....
         If (ldgBus.isValidName(ldg) = False) Then
-            MessageBox.Show("Tên Loại Độc Giả không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Tên Loại Độc Giả không hợp lệ."
+            Frm_Information.ShowDialog()
             Txt_TenLoaiDocGia.Focus()
             Return
         End If
@@ -52,16 +55,17 @@ Public Class Frm_ThemLoaiDocGia
         Dim result As Result
         result = ldgBus.insert(ldg)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm Loại Độc Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Thêm loại độc giả thành công."
+            Frm_Information.ShowDialog()
             Me.Close()
         Else
-            MessageBox.Show("Thêm Loại Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm Loại Độc Giả không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
 
     Private Sub Btn_Nhap_Click(sender As Object, e As EventArgs) Handles Btn_Nhap.Click
-
 
         Dim ldg As LoaiDocGia_DTO
         ldg = New LoaiDocGia_DTO()
@@ -72,7 +76,8 @@ Public Class Frm_ThemLoaiDocGia
 
         '2. Business .....
         If (ldgBus.isValidName(ldg) = False) Then
-            MessageBox.Show("Tên Loại độc giả không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Tên Loại Độc Giả không hợp lệ."
+            Frm_Information.ShowDialog()
             Txt_TenLoaiDocGia.Focus()
             Return
         End If
@@ -80,7 +85,8 @@ Public Class Frm_ThemLoaiDocGia
         Dim result As Result
         result = ldgBus.insert(ldg)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm loại độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Thêm loại độc giả thành công."
+            Frm_Information.ShowDialog()
             Txt_TenLoaiDocGia.Text = String.Empty
 
             ' Get Next ID
@@ -89,23 +95,24 @@ Public Class Frm_ThemLoaiDocGia
             If (result.FlagResult = True) Then
                 Txt_MaLoaiDocGia.Text = nextID.ToString()
             Else
-                MessageBox.Show("Lấy ID kế tiếp của Loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy ID kế tiếp của Loại độc giả không thành công."
+                Frm_Information.ShowDialog()
                 System.Console.WriteLine(result.SystemMessage)
             End If
 
         Else
-            MessageBox.Show("Thêm loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm loại độc giả không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
 
     End Sub
 
     Private Sub Txt_TenLoaiDocGia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TenLoaiDocGia.KeyPress
-
         If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
-
             e.Handled = True
-            MessageBox.Show("Vui lòng không nhập kí tự đặc biệt.")
+            Frm_Information.m.Text = "Vui lòng không nhập kí tự đặc biệt."
+            Frm_Information.ShowDialog()
         End If
     End Sub
 End Class

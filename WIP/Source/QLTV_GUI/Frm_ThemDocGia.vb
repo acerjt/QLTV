@@ -6,6 +6,7 @@ Public Class Frm_ThemDocGia
     Private dgBus As DocGia_BUS
     Private ldgBus As LoaiDocGia_BUS
     Private qd As QuyDinh_BUS
+    Dim frm_Infor = New Frm_Information()
 
     Private Sub Frm_ThemDocGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -17,11 +18,16 @@ Public Class Frm_ThemDocGia
         Dim result As Result
         result = ldgBus.selectAll(listLoaiDocGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy danh sách loại độc giả không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
         End If
+
+        Dtp_NgayLap.Value = DateTime.Now
+        Dtp_NgaySinh.Value = DateTime.Now
+
         Cb_LoaiDocGia.DataSource = New BindingSource(listLoaiDocGia, String.Empty)
         Cb_LoaiDocGia.DisplayMember = "TenLoaiDocGia"
         Cb_LoaiDocGia.ValueMember = "MaLoaiDocGia"
@@ -30,7 +36,8 @@ Public Class Frm_ThemDocGia
         Dim nextMaDocGia = "1"
         result = dgBus.buildMaDocGia(nextMaDocGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động Mã Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy tự động Mã Độc Giả không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -53,7 +60,8 @@ Public Class Frm_ThemDocGia
         Dim result As Result
         result = qd.GetQuyDinh(quydinh)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy Quy Định không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -72,13 +80,15 @@ Public Class Frm_ThemDocGia
 
         '2. Business .....
         If (dgBus.isValidName(docgia) = False) Then
-            MessageBox.Show("Họ tên Độc Giả không đúng")
+            Frm_Information.m.Text = "Tên Độc Giả không hợp lệ."
+            Frm_Information.ShowDialog()
             Txt_HoVaTen.Focus()
             Return
         End If
 
         If (dgBus.isValidAge(docgia, quydinh) = False) Then
-            MessageBox.Show("Tuổi Độc Giả không hợp lệ")
+            Frm_Information.m.Text = "Tuổi Độc Giả không hợp lệ."
+            Frm_Information.ShowDialog()
             Dtp_NgaySinh.Focus()
             Return
         End If
@@ -86,10 +96,12 @@ Public Class Frm_ThemDocGia
         'Dim result As Result
         result = dgBus.insert(docgia)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm Độc Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Thêm Độc Giả thành công!"
+            Frm_Information.ShowDialog()
             Me.Close()
         Else
-            MessageBox.Show("Thêm Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm Độc Giả không thành công!"
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -113,7 +125,8 @@ Public Class Frm_ThemDocGia
         Dim result As Result
         result = qd.GetQuyDinh(quydinh)
         If (result.FlagResult = False) Then
-            MessageBox.Show("lấy quy định từ database không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy Quy Định không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -132,13 +145,15 @@ Public Class Frm_ThemDocGia
 
         '2. Business .....
         If (dgBus.isValidName(docgia) = False) Then
-            MessageBox.Show("Họ tên độc giả không đúng")
+            Frm_Information.m.Text = "Tên Độc Giả không hợp lệ."
+            Frm_Information.ShowDialog()
             Txt_HoVaTen.Focus()
             Return
         End If
 
         If (dgBus.isValidAge(docgia, quydinh) = False) Then
-            MessageBox.Show("Tuổi Độc Giả không hợp lệ")
+            Frm_Information.m.Text = "Tuôi Độc Giả không hợp lệ."
+            Frm_Information.ShowDialog()
             Dtp_NgaySinh.Focus()
             Return
         End If
@@ -147,12 +162,13 @@ Public Class Frm_ThemDocGia
 
         result = dgBus.insert(docgia)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm Độc Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'set Madocgia auto
+            frm_Infor.m.Text = "Thêm Độc Giả thành công."
+            frm_Infor.ShowDialog()
             Dim nextMaDocGia = "1"
             result = dgBus.buildMaDocGia(nextMaDocGia)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy  tự động Mã Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy tự động Mã Độc Giả không thành công."
+                Frm_Information.ShowDialog()
                 Me.Close()
                 Return
             End If
@@ -161,18 +177,20 @@ Public Class Frm_ThemDocGia
             Txt_HoVaTen.Text = String.Empty
 
         Else
-            MessageBox.Show("Thêm Độc Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Thêm Độc Giả không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
 
 
-    Private Sub TxtTenSach_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_HoVaTen.KeyPress
+    Private Sub TxtHovaTen_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_HoVaTen.KeyPress
 
         If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
-
             e.Handled = True
-            MessageBox.Show("Vui lòng không nhập kí tự đặc biệt.")
+            frm_Infor.m.Text = "Vui lòng không nhập kí tự đặc biệt."
+            frm_Infor.ShowDialog()
+
         End If
     End Sub
 End Class

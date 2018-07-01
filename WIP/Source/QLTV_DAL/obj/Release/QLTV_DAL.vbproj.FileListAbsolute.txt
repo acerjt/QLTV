@@ -1,0 +1,17 @@
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\QLTV_DAL.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\QLTV_DAL.pdb
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\QLTV_DAL.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\QLTV_DTO.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\Utility.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\QLTV_DTO.pdb
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\QLTV_DTO.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\Utility.pdb
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\bin\Release\Utility.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.vbprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.Resources.resources
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.vbproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.vbproj.CopyComplete
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.exe
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.xml
+C:\Users\Administrator\Desktop\Source\QLTV\QLTV_DAL\obj\Release\QLTV_DAL.pdb

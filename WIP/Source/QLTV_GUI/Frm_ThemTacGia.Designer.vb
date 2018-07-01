@@ -61,7 +61,7 @@ Partial Class Frm_ThemTacGia
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
         Me.Label4.Location = New System.Drawing.Point(205, 186)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(182, 44)
+        Me.Label4.Size = New System.Drawing.Size(207, 44)
         Me.Label4.TabIndex = 43
         Me.Label4.Text = "Tên Tác Giả"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -72,7 +72,7 @@ Partial Class Frm_ThemTacGia
         Me.d.ForeColor = System.Drawing.Color.SeaGreen
         Me.d.Location = New System.Drawing.Point(205, 123)
         Me.d.Name = "d"
-        Me.d.Size = New System.Drawing.Size(182, 44)
+        Me.d.Size = New System.Drawing.Size(207, 44)
         Me.d.TabIndex = 40
         Me.d.Text = "Mã Tác Giả"
         Me.d.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -107,7 +107,7 @@ Partial Class Frm_ThemTacGia
         Me.Btn_Nhap.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Nhap.selected = False
         Me.Btn_Nhap.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_Nhap.TabIndex = 44
+        Me.Btn_Nhap.TabIndex = 92
         Me.Btn_Nhap.Text = "NHẬP"
         Me.Btn_Nhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_Nhap.Textcolor = System.Drawing.Color.White
@@ -142,7 +142,7 @@ Partial Class Frm_ThemTacGia
         Me.Btn_NhapVaDong.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_NhapVaDong.selected = False
         Me.Btn_NhapVaDong.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_NhapVaDong.TabIndex = 41
+        Me.Btn_NhapVaDong.TabIndex = 93
         Me.Btn_NhapVaDong.Text = "NHẬP VÀ ĐÓNG"
         Me.Btn_NhapVaDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_NhapVaDong.Textcolor = System.Drawing.Color.White
@@ -197,6 +197,7 @@ Partial Class Frm_ThemTacGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(911, 424)
         Me.Controls.Add(Me.Txt_TenTacGia)
@@ -209,6 +210,7 @@ Partial Class Frm_ThemTacGia
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(262, 80)
         Me.Name = "Frm_ThemTacGia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

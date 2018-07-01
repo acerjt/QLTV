@@ -2,62 +2,52 @@
 Imports System.Windows.Forms
 
 Public Class Frm_Main
-
-    Private Sub Frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        'Me.StartPosition = FormStartPosition.CenterScreen
-        'Me.Location = New Point(40, 40)
-        'Me.Size = New Size(1190, 695)
-        'Pn_Menu.Width = 170
-        'Btn_Menu.Location = New Point(125, 12)
-
-    End Sub
-    Private Sub MenuMain_Click(sender As Object, e As EventArgs) Handles MenuMain.Click
-
-
-    End Sub
     Private Sub Btn_Menu_Click(sender As Object, e As EventArgs) Handles Btn_Menu.Click 'menu click
 
-        If Pn_Menu.Width = 50 Then
-            Me.Size = New Size(1554, 882)
+        If Pn_Menu.Width = 45 Then
+            Btn_Menu.Location = New Point(125, 12)
             Pn_Menu.Visible = False
-            Pn_Menu.Width = 213
-            PanelAnimator1.ShowSync(Pn_Menu)
+            Me.Size = New Size(1190, 700)
+            Pn_Menu.Width = 170
 
-            Btn_Menu.Location = New Point(153, 10)
+            PanelAnimator1.ShowSync(Pn_Menu)
 
         Else
             Pn_Menu.Visible = False
-            Pn_Menu.Width = 50
             Btn_Menu.Location = New Point(10, 12)
-            Me.Width = 1394
-            Pn_Main.Width = 1341
-            PanelAnimator1.ShowSync(Pn_Menu)
+            Me.Width = 1070
+            Pn_Menu.Width = 45
+            'Pn_Main.Width = 700
+            PanelAnimator.ShowSync(Pn_Menu)
 
         End If
     End Sub
 
 
     Private Sub Btn_QuanLiDocGia_Click(sender As Object, e As EventArgs)
+        Hide()
         Dim frmQLDocGia = New Frm_QLDocGia
-        frmQLDocGia.Show()
+        frmQLDocGia.ShowDialog()
+        Show()
     End Sub
 
     Private Sub Btn_QuanLiLoaiDocGia_Click(sender As Object, e As EventArgs)
+        Hide()
         Dim frmQLLoaiDocGIA = New Frm_QLLoaiDocGia
-        frmQLLoaiDocGIA.Show()
+        frmQLLoaiDocGIA.ShowDialog()
+        Show()
     End Sub
 
 
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
         'Hide()
-        'Dim frm_Close = New Frm_Close()
-        'Frm_Close.ShowDialog()
-        'If (MetroFramework.MetroMessageBox.Show(Me, "Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes) Then
-        '    Application.Exit()
-        Me.Close()
-        'End If
-        '
+        Dim frm_Close = New Frm_Close()
+        frm_Close.ShowDialog()
+        If (frm_Close.DialogResult = DialogResult.OK) Then
+            DialogResult = DialogResult.Cancel
+            Me.Close()
+        End If
+
 
     End Sub
 
@@ -114,8 +104,6 @@ Public Class Frm_Main
     Private Sub Tile_QuanLiSach_Click(sender As Object, e As EventArgs) Handles Tile_QuanLiSach.Click
         Hide()
         Dim frmQLSach = New Frm_QLSach()
-        'frmQLSach.Location = New Point(10, 10)
-        'frmQLSach.Size = New Size(810, 550)
         frmQLSach.ShowDialog()
         Show()
     End Sub
@@ -137,8 +125,6 @@ Public Class Frm_Main
     Private Sub Tile_QuanLiDocGia_Click(sender As Object, e As EventArgs) Handles Tile_QuanLiDocGia.Click
         Hide()
         Dim frmQLDocGia = New Frm_QLDocGia()
-        'frmQLDocGia.Location = New Point(10, 10)
-        'frmQLDocGia.Size = New Size(810, 590)
         frmQLDocGia.ShowDialog()
         Show()
     End Sub
@@ -146,15 +132,13 @@ Public Class Frm_Main
     Private Sub Tile_LapPhieuMuonSach_Click(sender As Object, e As EventArgs) Handles Tile_LapPhieuMuonSach.Click
         Hide()
         Dim frmLapPhieuMuonSach = New Frm_LapPhieuMuonSach()
-        'frmLapPhieuMuonSach.Size = New Size(810, 656)
         frmLapPhieuMuonSach.ShowDialog()
         Show()
     End Sub
 
     Private Sub Tile_NhanTraSach_Click(sender As Object, e As EventArgs) Handles Tile_NhanTraSach.Click
         Hide()
-        Dim frmNhanTraSach = New Frm_NhanTraSach()
-        'frmNhanTraSach.Size = New Size(810, 656)
+        Dim frmNhanTraSach = New Frm_LapPhieuTraSach()
         frmNhanTraSach.ShowDialog()
         Show()
     End Sub
@@ -162,7 +146,6 @@ Public Class Frm_Main
     Private Sub Tile_BaoCaoTheoTheLoai_Click(sender As Object, e As EventArgs) Handles Tile_BaoCaoTheoTheLoai.Click
         Hide()
         Dim frmBaoCaoThongKeTheoTheLoai = New Frm_LapBaoCaoThongKeMuonSachTheoTheLoai()
-        'frmBaoCaoThongKeTheoTheLoai.Size = New Size(1110, 540)
         frmBaoCaoThongKeTheoTheLoai.ShowDialog()
         Show()
     End Sub
@@ -170,12 +153,9 @@ Public Class Frm_Main
     Private Sub Tile_BaoCaoSachTraTre_Click(sender As Object, e As EventArgs) Handles Tile_BaoCaoSachTraTre.Click
         Hide()
         Dim frmBaoCaoThongKeSachTraTre = New Frm_LapBaoCaoThongKeSachTraTre()
-        'frmBaoCaoThongKeSachTraTre.Size = New Size(1110, 540)
         frmBaoCaoThongKeSachTraTre.ShowDialog()
         Show()
     End Sub
-
-
 
     Private Sub Tile_TraCuuSach_Click(sender As Object, e As EventArgs) Handles Tile_TraCuuSach.Click
         Hide()
@@ -184,5 +164,32 @@ Public Class Frm_Main
         Show()
     End Sub
 
+    Private Sub btn_GioiThieu_Click(sender As Object, e As EventArgs) Handles btn_GioiThieu.Click
+        Hide()
+        Dim frmAbout = New Frm_About()
+        frmAbout.ShowDialog()
+        Show()
+    End Sub
 
+    Private Sub MenuDocGia_Click(sender As Object, e As EventArgs) Handles MenuDocGia.Click
+        'DialogResult = DialogResult.Ignore
+        Dim Frm_Close = New Frm_Close()
+        Frm_Close.ShowDialog()
+        If (Frm_Close.DialogResult = DialogResult.OK) Then
+            DialogResult = DialogResult.OK
+            Me.Close()
+        Else
+            If (Frm_Close.DialogResult = DialogResult.No) Then
+                'DialogResult = DialogResult.No
+                'Me.Visible = False
+                'Me.ShowDialog()
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub Pn_Main_Paint(sender As Object, e As PaintEventArgs) Handles Pn_Main.Paint
+
+    End Sub
 End Class

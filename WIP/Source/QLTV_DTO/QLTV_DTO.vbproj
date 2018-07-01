@@ -72,9 +72,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoMuonSachTheoThang_DTO.vb" />
+    <Compile Include="BaoCaoMuonSachTheoTheLoai_DTO.vb" />
     <Compile Include="BaoCaoThongKeSachTraTre_DTO.vb" />
-    <Compile Include="ChiTietBaoCaoMuonSachTheoThang_DTO.vb" />
+    <Compile Include="ChiTietBaoCaoMuonSachTheoTheLoai_DTO.vb" />
     <Compile Include="ChiTietBaoCaoThongKeSachTraTre_DTO.vb" />
     <Compile Include="ChiTietPhieuMuonSach_DTO.vb" />
     <Compile Include="ChiTietPhieuTraSach_DTO.vb" />
@@ -96,7 +96,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NhanTraSach_DTO.vb" />
+    <Compile Include="PhieuTraSach_DTO.vb" />
     <Compile Include="PhieuMuonSach_DTO.vb" />
     <Compile Include="QuyDinh_DTO.vb" />
     <Compile Include="Sach_DTO.vb" />

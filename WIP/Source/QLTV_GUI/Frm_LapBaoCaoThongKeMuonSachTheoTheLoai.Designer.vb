@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -28,7 +28,6 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_LapBaoCaoThongKeMuonSachTheoTheLoai))
-        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Txt_Nam = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
         Me.Txt_MaLapBaoCao = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
@@ -63,18 +62,13 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BunifuElipse1
-        '
-        Me.BunifuElipse1.ElipseRadius = 5
-        Me.BunifuElipse1.TargetControl = Me
-        '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(659, 120)
+        Me.Label2.Location = New System.Drawing.Point(982, 150)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(122, 35)
+        Me.Label2.Size = New System.Drawing.Size(137, 44)
         Me.Label2.TabIndex = 180
         Me.Label2.Text = "Tháng"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -83,26 +77,24 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         '
         Me.Txt_Nam.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_Nam.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Nam.Location = New System.Drawing.Point(300, 120)
-        Me.Txt_Nam.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_Nam.MaximumSize = New System.Drawing.Size(251, 36)
+        Me.Txt_Nam.Location = New System.Drawing.Point(578, 150)
+        Me.Txt_Nam.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_Nam.Multiline = True
         Me.Txt_Nam.Name = "Txt_Nam"
-        Me.Txt_Nam.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_Nam.TabIndex = 176
+        Me.Txt_Nam.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_Nam.TabIndex = 2
         '
         'Txt_MaLapBaoCao
         '
         Me.Txt_MaLapBaoCao.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_MaLapBaoCao.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_MaLapBaoCao.Location = New System.Drawing.Point(300, 79)
-        Me.Txt_MaLapBaoCao.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_MaLapBaoCao.MaximumSize = New System.Drawing.Size(251, 36)
+        Me.Txt_MaLapBaoCao.Location = New System.Drawing.Point(578, 99)
+        Me.Txt_MaLapBaoCao.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_MaLapBaoCao.Multiline = True
         Me.Txt_MaLapBaoCao.Name = "Txt_MaLapBaoCao"
         Me.Txt_MaLapBaoCao.ReadOnly = True
-        Me.Txt_MaLapBaoCao.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_MaLapBaoCao.TabIndex = 175
+        Me.Txt_MaLapBaoCao.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_MaLapBaoCao.TabIndex = 1
         '
         'Dgv_ListBaoCaoThongKe
         '
@@ -119,66 +111,63 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListBaoCaoThongKe.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.Dgv_ListBaoCaoThongKe.ColumnHeadersHeight = 30
+        Me.Dgv_ListBaoCaoThongKe.ColumnHeadersHeight = 40
         Me.Dgv_ListBaoCaoThongKe.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dsfd, Me.dfs, Me.fsd, Me.dsf, Me.Cl_TinhTrangg})
         Me.Dgv_ListBaoCaoThongKe.DoubleBuffered = True
         Me.Dgv_ListBaoCaoThongKe.EnableHeadersVisualStyles = False
         Me.Dgv_ListBaoCaoThongKe.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListBaoCaoThongKe.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListBaoCaoThongKe.Location = New System.Drawing.Point(36, 34)
-        Me.Dgv_ListBaoCaoThongKe.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Dgv_ListBaoCaoThongKe.Location = New System.Drawing.Point(41, 43)
         Me.Dgv_ListBaoCaoThongKe.Name = "Dgv_ListBaoCaoThongKe"
         Me.Dgv_ListBaoCaoThongKe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.Dgv_ListBaoCaoThongKe.RowHeadersWidth = 50
+        Me.Dgv_ListBaoCaoThongKe.RowHeadersWidth = 20
         Me.Dgv_ListBaoCaoThongKe.RowTemplate.Height = 28
-        Me.Dgv_ListBaoCaoThongKe.Size = New System.Drawing.Size(604, 263)
-        Me.Dgv_ListBaoCaoThongKe.TabIndex = 164
+        Me.Dgv_ListBaoCaoThongKe.Size = New System.Drawing.Size(925, 351)
+        Me.Dgv_ListBaoCaoThongKe.TabIndex = 6
         '
         'dsfd
         '
         Me.dsfd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dsfd.HeaderText = "Tên Thể Loại"
+        Me.dsfd.HeaderText = "Thể Loại"
         Me.dsfd.Name = "dsfd"
-        Me.dsfd.Width = 188
+        Me.dsfd.Width = 163
         '
         'dfs
         '
         Me.dfs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.dfs.HeaderText = "Số Lượt Mượn"
         Me.dfs.Name = "dfs"
-        Me.dfs.Width = 204
+        Me.dfs.Width = 238
         '
         'fsd
         '
         Me.fsd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.fsd.HeaderText = "Tỉ Lệ"
         Me.fsd.Name = "fsd"
-        Me.fsd.Width = 99
+        Me.fsd.Width = 118
         '
         'dsf
         '
         Me.dsf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.dsf.HeaderText = "Tháng"
         Me.dsf.Name = "dsf"
-        Me.dsf.Width = 109
+        Me.dsf.Width = 127
         '
         'Cl_TinhTrangg
         '
         Me.Cl_TinhTrangg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Cl_TinhTrangg.HeaderText = "Năm"
         Me.Cl_TinhTrangg.Name = "Cl_TinhTrangg"
-        Me.Cl_TinhTrangg.Width = 92
+        Me.Cl_TinhTrangg.Width = 109
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Dgv_ListBaoCaoThongKe)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.GroupBox2.Location = New System.Drawing.Point(727, 193)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox2.Location = New System.Drawing.Point(820, 241)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(646, 326)
+        Me.GroupBox2.Size = New System.Drawing.Size(976, 407)
         Me.GroupBox2.TabIndex = 184
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Báo Cáo Đã Lập"
@@ -188,11 +177,9 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.GroupBox1.Controls.Add(Me.Dgv_ListLapBaoCaoThongKe)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.GroupBox1.Location = New System.Drawing.Point(47, 193)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(53, 241)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(646, 326)
+        Me.GroupBox1.Size = New System.Drawing.Size(723, 407)
         Me.GroupBox1.TabIndex = 183
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lập Báo Cáo Mới"
@@ -212,20 +199,19 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListLapBaoCaoThongKe.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.Dgv_ListLapBaoCaoThongKe.ColumnHeadersHeight = 30
+        Me.Dgv_ListLapBaoCaoThongKe.ColumnHeadersHeight = 40
         Me.Dgv_ListLapBaoCaoThongKe.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cl_TenTheLoai, Me.Cl_SoLuotMuon, Me.Cl_TiLe})
         Me.Dgv_ListLapBaoCaoThongKe.DoubleBuffered = True
         Me.Dgv_ListLapBaoCaoThongKe.EnableHeadersVisualStyles = False
         Me.Dgv_ListLapBaoCaoThongKe.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListLapBaoCaoThongKe.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListLapBaoCaoThongKe.Location = New System.Drawing.Point(20, 31)
-        Me.Dgv_ListLapBaoCaoThongKe.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Dgv_ListLapBaoCaoThongKe.Location = New System.Drawing.Point(23, 39)
         Me.Dgv_ListLapBaoCaoThongKe.Name = "Dgv_ListLapBaoCaoThongKe"
         Me.Dgv_ListLapBaoCaoThongKe.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.Dgv_ListLapBaoCaoThongKe.RowHeadersWidth = 50
+        Me.Dgv_ListLapBaoCaoThongKe.RowHeadersWidth = 20
         Me.Dgv_ListLapBaoCaoThongKe.RowTemplate.Height = 28
-        Me.Dgv_ListLapBaoCaoThongKe.Size = New System.Drawing.Size(604, 263)
-        Me.Dgv_ListLapBaoCaoThongKe.TabIndex = 165
+        Me.Dgv_ListLapBaoCaoThongKe.Size = New System.Drawing.Size(658, 355)
+        Me.Dgv_ListLapBaoCaoThongKe.TabIndex = 5
         '
         'Cl_TenTheLoai
         '
@@ -234,7 +220,7 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Cl_TenTheLoai.Name = "Cl_TenTheLoai"
         Me.Cl_TenTheLoai.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Cl_TenTheLoai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Cl_TenTheLoai.Width = 188
+        Me.Cl_TenTheLoai.Width = 218
         '
         'Cl_SoLuotMuon
         '
@@ -242,7 +228,7 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Cl_SoLuotMuon.HeaderText = "Số Lượt Mượn"
         Me.Cl_SoLuotMuon.Name = "Cl_SoLuotMuon"
         Me.Cl_SoLuotMuon.ReadOnly = True
-        Me.Cl_SoLuotMuon.Width = 204
+        Me.Cl_SoLuotMuon.Width = 238
         '
         'Cl_TiLe
         '
@@ -250,15 +236,15 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Cl_TiLe.HeaderText = "Tỉ Lệ"
         Me.Cl_TiLe.Name = "Cl_TiLe"
         Me.Cl_TiLe.ReadOnly = True
-        Me.Cl_TiLe.Width = 99
+        Me.Cl_TiLe.Width = 118
         '
         'd
         '
         Me.d.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.d.ForeColor = System.Drawing.Color.SeaGreen
-        Me.d.Location = New System.Drawing.Point(42, 79)
+        Me.d.Location = New System.Drawing.Point(288, 99)
         Me.d.Name = "d"
-        Me.d.Size = New System.Drawing.Size(252, 35)
+        Me.d.Size = New System.Drawing.Size(284, 44)
         Me.d.TabIndex = 172
         Me.d.Text = "Mã Lập Báo Cáo"
         Me.d.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -268,10 +254,10 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.BunifuSeparator1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuSeparator1.LineThickness = 2
-        Me.BunifuSeparator1.Location = New System.Drawing.Point(12, 44)
-        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BunifuSeparator1.Location = New System.Drawing.Point(13, 55)
+        Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(1393, 31)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(1807, 39)
         Me.BunifuSeparator1.TabIndex = 170
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -288,7 +274,7 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Label3.ForeColor = System.Drawing.Color.SeaGreen
         Me.Label3.Location = New System.Drawing.Point(0, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(898, 60)
+        Me.Label3.Size = New System.Drawing.Size(1053, 70)
         Me.Label3.TabIndex = 169
         Me.Label3.Text = "Báo Cáo Thống Kê Mượn Sách Theo Thể Loại"
         '
@@ -296,22 +282,21 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         '
         Me.Txt_TongSoLuotMuon.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_TongSoLuotMuon.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TongSoLuotMuon.Location = New System.Drawing.Point(443, 538)
-        Me.Txt_TongSoLuotMuon.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_TongSoLuotMuon.MaximumSize = New System.Drawing.Size(251, 36)
+        Me.Txt_TongSoLuotMuon.Location = New System.Drawing.Point(341, 674)
+        Me.Txt_TongSoLuotMuon.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_TongSoLuotMuon.Multiline = True
         Me.Txt_TongSoLuotMuon.Name = "Txt_TongSoLuotMuon"
         Me.Txt_TongSoLuotMuon.ReadOnly = True
-        Me.Txt_TongSoLuotMuon.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_TongSoLuotMuon.TabIndex = 186
+        Me.Txt_TongSoLuotMuon.Size = New System.Drawing.Size(282, 44)
+        Me.Txt_TongSoLuotMuon.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label4.Location = New System.Drawing.Point(42, 120)
+        Me.Label4.Location = New System.Drawing.Point(288, 150)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(236, 35)
+        Me.Label4.Size = New System.Drawing.Size(265, 44)
         Me.Label4.TabIndex = 187
         Me.Label4.Text = "Năm"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -320,9 +305,9 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         '
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label1.Location = New System.Drawing.Point(202, 538)
+        Me.Label1.Location = New System.Drawing.Point(70, 674)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(236, 35)
+        Me.Label1.Size = New System.Drawing.Size(265, 44)
         Me.Label1.TabIndex = 188
         Me.Label1.Text = "Tổng Số Lượt Mượn"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -334,20 +319,20 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Dtp_NgayLap.ForeColor = System.Drawing.Color.White
         Me.Dtp_NgayLap.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Dtp_NgayLap.FormatCustom = Nothing
-        Me.Dtp_NgayLap.Location = New System.Drawing.Point(831, 79)
-        Me.Dtp_NgayLap.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Dtp_NgayLap.Location = New System.Drawing.Point(1176, 99)
+        Me.Dtp_NgayLap.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Dtp_NgayLap.Name = "Dtp_NgayLap"
-        Me.Dtp_NgayLap.Size = New System.Drawing.Size(251, 35)
-        Me.Dtp_NgayLap.TabIndex = 189
+        Me.Dtp_NgayLap.Size = New System.Drawing.Size(282, 44)
+        Me.Dtp_NgayLap.TabIndex = 3
         Me.Dtp_NgayLap.Value = New Date(2018, 5, 28, 14, 6, 57, 11)
         '
         'Label5
         '
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label5.Location = New System.Drawing.Point(658, 79)
+        Me.Label5.Location = New System.Drawing.Point(981, 99)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(167, 35)
+        Me.Label5.Size = New System.Drawing.Size(188, 44)
         Me.Label5.TabIndex = 190
         Me.Label5.Text = "Ngày Lập"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -373,15 +358,15 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Btn_LapBaoCao.IconVisible = False
         Me.Btn_LapBaoCao.IconZoom = 90.0R
         Me.Btn_LapBaoCao.IsTab = False
-        Me.Btn_LapBaoCao.Location = New System.Drawing.Point(594, 592)
-        Me.Btn_LapBaoCao.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_LapBaoCao.Location = New System.Drawing.Point(755, 742)
+        Me.Btn_LapBaoCao.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Btn_LapBaoCao.Name = "Btn_LapBaoCao"
         Me.Btn_LapBaoCao.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_LapBaoCao.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_LapBaoCao.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_LapBaoCao.selected = False
-        Me.Btn_LapBaoCao.Size = New System.Drawing.Size(302, 59)
-        Me.Btn_LapBaoCao.TabIndex = 182
+        Me.Btn_LapBaoCao.Size = New System.Drawing.Size(340, 74)
+        Me.Btn_LapBaoCao.TabIndex = 8
         Me.Btn_LapBaoCao.Text = "LẬP BÁO CÁO"
         Me.Btn_LapBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_LapBaoCao.Textcolor = System.Drawing.Color.White
@@ -392,10 +377,9 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(1356, 10)
-        Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Btn_Close.Location = New System.Drawing.Point(1765, 12)
         Me.Btn_Close.Name = "Btn_Close"
-        Me.Btn_Close.Size = New System.Drawing.Size(49, 38)
+        Me.Btn_Close.Size = New System.Drawing.Size(55, 48)
         Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.Btn_Close.TabIndex = 171
         Me.Btn_Close.TabStop = False
@@ -407,20 +391,20 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Cb_Thang.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cb_Thang.FormattingEnabled = True
         Me.Cb_Thang.IntegralHeight = False
-        Me.Cb_Thang.ItemHeight = 22
+        Me.Cb_Thang.ItemHeight = 27
         Me.Cb_Thang.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.Cb_Thang.Location = New System.Drawing.Point(831, 121)
-        Me.Cb_Thang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Cb_Thang.Location = New System.Drawing.Point(1176, 151)
         Me.Cb_Thang.Name = "Cb_Thang"
-        Me.Cb_Thang.Size = New System.Drawing.Size(251, 30)
-        Me.Cb_Thang.TabIndex = 191
+        Me.Cb_Thang.Size = New System.Drawing.Size(282, 35)
+        Me.Cb_Thang.TabIndex = 4
         '
         'Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1484, 674)
+        Me.ClientSize = New System.Drawing.Size(1857, 858)
         Me.Controls.Add(Me.Cb_Thang)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Dtp_NgayLap)
@@ -438,7 +422,6 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_LapBaoCaoThongKeMuonSachTheoTheLoai"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_LapBaoCaoThongKeMuonSachTheoTheLoai"
@@ -451,8 +434,6 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents Btn_LapBaoCao As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Label2 As Label
     Friend WithEvents Txt_Nam As WindowsFormsControlLibrary1.BunifuCustomTextbox
@@ -465,11 +446,6 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
     Friend WithEvents Label3 As Label
     Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
     Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
-    Friend WithEvents dsfd As DataGridViewTextBoxColumn
-    Friend WithEvents dfs As DataGridViewTextBoxColumn
-    Friend WithEvents fsd As DataGridViewTextBoxColumn
-    Friend WithEvents dsf As DataGridViewTextBoxColumn
-    Friend WithEvents Cl_TinhTrangg As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_TongSoLuotMuon As WindowsFormsControlLibrary1.BunifuCustomTextbox
@@ -480,4 +456,9 @@ Partial Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
     Friend WithEvents Cl_TenTheLoai As DataGridViewComboBoxColumn
     Friend WithEvents Cl_SoLuotMuon As DataGridViewTextBoxColumn
     Friend WithEvents Cl_TiLe As DataGridViewTextBoxColumn
+    Friend WithEvents dsfd As DataGridViewTextBoxColumn
+    Friend WithEvents dfs As DataGridViewTextBoxColumn
+    Friend WithEvents fsd As DataGridViewTextBoxColumn
+    Friend WithEvents dsf As DataGridViewTextBoxColumn
+    Friend WithEvents Cl_TinhTrangg As DataGridViewTextBoxColumn
 End Class

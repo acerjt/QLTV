@@ -17,11 +17,14 @@ Public Class Frm_QLLoaiDocGia
             Dim listLoaiDocGia = New List(Of LoaiDocGia_DTO)
             Dim result As Result
             result = ldgBus.selectAll(listLoaiDocGia)
-            If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                System.Console.WriteLine(result.SystemMessage)
-                Return
-            End If
+        If (result.FlagResult = False) Then
+            Dim frm_Infor = New Frm_Information()
+            Frm_Information.m.Text = "Lấy danh sách loại Độc Giả không thành công."
+            Frm_Information.ShowDialog()
+            'MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
 
         Dgv_ListLoaiDocGia.Columns.Clear()
         Dgv_ListLoaiDocGia.DataSource = Nothing
@@ -96,7 +99,10 @@ Public Class Frm_QLLoaiDocGia
 
                 '2. Business .....
                 If (ldgBus.isValidName(ldg) = False) Then
-                    MessageBox.Show("Tên Loại độc giả không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Dim frm_Infor = New Frm_Information()
+                    Frm_Information.m.Text = "Tên loại độc giả không hợp lệ."
+                    Frm_Information.ShowDialog()
+                    'MessageBox.Show("Tên Loại độc giả không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Txt_TenLoaiDocGia.Focus()
                     Return
                 End If
@@ -117,9 +123,15 @@ Public Class Frm_QLLoaiDocGia
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật Loại độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Dim frm_Infor = New Frm_Information()
+                    Frm_Information.m.Text = "Cập nhật loại độc giả thành công."
+                    Frm_Information.ShowDialog()
+                    'MessageBox.Show("Cập nhật Loại độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Dim frm_Infor = New Frm_Information()
+                    Frm_Information.m.Text = "Cập nhật loại độc giả không thành công."
+                    Frm_Information.ShowDialog()
+                    'MessageBox.Show("Cập nhật loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -138,8 +150,9 @@ Public Class Frm_QLLoaiDocGia
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListLoaiDocGia.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa loại độc giả có mã: " + Txt_MaLoaiDocGia.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes
+            Frm_Close.i.Text = "Bạn có thực sự muốn xóa loại độc giả có mã số: " + Txt_MaLoaiDocGia.Text
+            Select Case Frm_Close.ShowDialog()'MsgBox("Bạn có thực sự muốn xóa loại độc giả có mã: " + Txt_MaLoaiDocGia.Text, MsgBoxStyle.YesNo, "Information")
+                Case DialogResult.OK 'MsgBoxResult.Yes
                     Try
 
                         '1. Delete from DB
@@ -164,15 +177,20 @@ Public Class Frm_QLLoaiDocGia
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
                             End If
-                            MessageBox.Show("Xóa Loại độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Frm_Information.m.Text = "Xoá loại độc giả thành công."
+                            Frm_Information.ShowDialog()
+                            'MessageBox.Show("Xóa Loại độc giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Xóa Loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            Dim frm_Infor = New Frm_Information()
+                            Frm_Information.m.Text = "Xoá loại độc giả không thành công."
+                            Frm_Information.ShowDialog()
+                            'MessageBox.Show("Xóa Loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                Case MsgBoxResult.No
+                Case DialogResult.No 'MsgBoxResult.No
                     Return
             End Select
 
@@ -183,7 +201,13 @@ Public Class Frm_QLLoaiDocGia
         If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
 
             e.Handled = True
-            MessageBox.Show("Vui lòng không nhập kí tự đặc biệt, kí tự số.")
+            Frm_Information.m.Text = "Vui lòng không nhập kí tự đặc biệt, kí tự số."
+            Frm_Information.ShowDialog()
+            'MessageBox.Show("Vui lòng không nhập kí tự đặc biệt, kí tự số.")
         End If
+    End Sub
+
+    Private Sub Dgv_ListLoaiDocGia_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListLoaiDocGia.CellContentClick
+
     End Sub
 End Class

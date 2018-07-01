@@ -5,6 +5,7 @@ Public Class Frm_LapPhieuMuonSach
     Private PhieuMuonSachBus As PhieuMuonSach_BUS
     Private DocGiaBus As DocGia_BUS
     Private SachBus As Sach_BUS
+    Private QuyDinhBUS As QuyDinh_BUS
     Private ChiTietPhieuMuonSachBUS As ChiTietPhieuMuonSach_BUS
     Private listChiTietPhieuMuonSach As List(Of Sach_DTO)
     Private listChiTietPhieuMuonSach1 As List(Of ChiTietPhieuMuonSach_DTO)
@@ -12,17 +13,20 @@ Public Class Frm_LapPhieuMuonSach
         PhieuMuonSachBus = New PhieuMuonSach_BUS()
         DocGiaBus = New DocGia_BUS()
         SachBus = New Sach_BUS()
+        QuyDinhBUS = New QuyDinh_BUS()
         ChiTietPhieuMuonSachBUS = New ChiTietPhieuMuonSach_BUS()
         listChiTietPhieuMuonSach = New List(Of Sach_DTO)
         listChiTietPhieuMuonSach1 = New List(Of ChiTietPhieuMuonSach_DTO)
         Dim listSach = New List(Of Sach_DTO)
 
+        Dtp_NgayMuon.Value = DateTime.Now
         Dim result As Result
         'set MSSH auto
         Dim nextMaPhieuMuonSach = "1"
         result = PhieuMuonSachBus.getNextID(nextMaPhieuMuonSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động mã phiếu mượn sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy tự động Mã Phiếu Mượn Sách không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -36,17 +40,24 @@ Public Class Frm_LapPhieuMuonSach
         Dim result As Result
         result = DocGiaBus.selecthovaten(MaDocGia, Dg)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách độc giả theo loại không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy thông tin Độc Giả theo Mã không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
         'DocGia.isValidHethan(Dg)
         If (DocGiaBus.isValidHethan(Dg) = False) Then
             Txt_TinhTrangThe.Text = "Hết Hạn"
-        Else Txt_TinhTrangThe.Text = "Còn Hạn"
+            Txt_TinhTrangThe.BackColor = Color.Pink
+
+        Else
+            Txt_TinhTrangThe.Text = "Còn Hạn"
+            Txt_TinhTrangThe.BackColor = Color.LightBlue
+
         End If
         If Dg.HoVaTen = "" Then
-            MessageBox.Show("Không tồn tại mã độc giả.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Không tồn tại mã độc giả."
+            Frm_Information.ShowDialog()
             Txt_TinhTrangThe.Text = ""
         End If
         Txt_HoVaTen.Text = Dg.HoVaTen
@@ -76,6 +87,7 @@ Public Class Frm_LapPhieuMuonSach
             Cl_TenSach1.Name = "Cl_TenSach"
             Cl_TenSach1.HeaderText = "Tên Sách"
             Cl_TenSach1.DataPropertyName = "TenSach"
+            Cl_TenSach1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TenSach1)
 
 
@@ -91,12 +103,14 @@ Public Class Frm_LapPhieuMuonSach
             Cl_TenTacGia1.Name = "Cl_TenTacGia"
             Cl_TenTacGia1.HeaderText = "Tên Tác Giả"
             Cl_TenTacGia1.DataPropertyName = "TenTacGia"
+            Cl_TenTacGia1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TenTacGia1)
 
             Dim Cl_TinhTrang1 = New DataGridViewTextBoxColumn()
             Cl_TinhTrang1.Name = "Cl_TinhTrang "
             Cl_TinhTrang1.HeaderText = "Tình Trạng"
             Cl_TinhTrang1.DataPropertyName = "TinhTrang"
+            Cl_TinhTrang1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_TinhTrang1)
 
 
@@ -106,7 +120,6 @@ Public Class Frm_LapPhieuMuonSach
             Cl_NgayDuKienTra.Name = "Cl_NgayDuKienTra "
             Cl_NgayDuKienTra.HeaderText = "Ngày Dự Kiến Trả"
             Cl_NgayDuKienTra.DataPropertyName = "NgayDuKien"
-            Cl_NgayDuKienTra.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Cl_NgayDuKienTra.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListPhieuMuonSach1.Columns.Add(Cl_NgayDuKienTra)
 
@@ -129,10 +142,9 @@ Public Class Frm_LapPhieuMuonSach
         If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
 
             e.Handled = True
-            MessageBox.Show("Vui lòng nhập số.")
-
+            Frm_Information.m.Text = "Vui lòng chỉ nhập kí tự số."
+            Frm_Information.ShowDialog()
         End If
-
     End Sub
 
 
@@ -141,7 +153,10 @@ Public Class Frm_LapPhieuMuonSach
         'listChiTietPhieuMuonSach.Clear()
         'Dgv_ListPhieuMuonSach.DataSource = Nothing
         'Dgv_ListPhieuMuonSach.Refresh()
+        Txt_TinhTrangThe.Text = String.Empty
 
+        Txt_TinhTrangThe.BackColor = Color.White
+        Txt_HoVaTen.Text = String.Empty
         Dgv_ListPhieuMuonSach1.DataSource = Nothing
         Dgv_ListPhieuMuonSach.Rows.Clear()
         If Txt_MaDocGia.Text <> "" Then
@@ -160,29 +175,26 @@ Public Class Frm_LapPhieuMuonSach
         Next
     End Sub
 
-
-
     Private Sub Dgv_ListPhieuMuonSach_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListPhieuMuonSach.CellValueChanged
         If (e.RowIndex <> -1 And e.ColumnIndex = 0) Then
 
-
-
             For Each z As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
                 If (Dgv_ListPhieuMuonSach1.Item(0, z.Index).Value = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(0).Value) Then
-
-                    MessageBox.Show("Sách chưa được trả.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Frm_Information.m.Text = "Sách chưa được trả."
+                    Frm_Information.ShowDialog()
                     Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
                     Dgv_ListPhieuMuonSach.Focus()
                     Return
                 End If
-
             Next
+
             For Each y As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
                 If e.RowIndex = 0 Then
                     Exit For
                 Else
                     If (Dgv_ListPhieuMuonSach.Item(0, y.Index).Value = Dgv_ListPhieuMuonSach.Rows(e.RowIndex).Cells(0).Value And y.Index <> e.RowIndex) Then
-                        MessageBox.Show("Sách đã được chọn ở trên.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Frm_Information.m.Text = "Sách đã được chọn ở trên."
+                        Frm_Information.ShowDialog()
                         Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
                         Return
                         'Dgv_ListPhieuMuonSach.Focus()
@@ -191,15 +203,17 @@ Public Class Frm_LapPhieuMuonSach
             Next
 
 
-
             SachBus = New Sach_BUS()
             Dim Chitietphieumuonsach As Sach_DTO
             Chitietphieumuonsach = New Sach_DTO()
 
+            Dim Quydinh As QuyDinh_DTO
+            Quydinh = New QuyDinh_DTO()
+            QuyDinhBUS.GetQuyDinh(Quydinh)
 
-            If Dgv_ListPhieuMuonSach.Rows.Count + Dgv_ListPhieuMuonSach1.Rows.Count > 6 Then
-                'Dgv_ListPhieuMuonSach1.AllowUserToDeleteRows = True
-                MessageBox.Show("Chỉ mượn tối đa 5 quyển trong 4 ngày.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If Dgv_ListPhieuMuonSach.Rows.Count + Dgv_ListPhieuMuonSach1.Rows.Count > Quydinh.SoLuongSachMuonToiDa + 1 Then
+                Frm_Information.m.Text = "Chỉ được mượn số lượng Sách theo Quy Định"
+                Frm_Information.ShowDialog()
                 Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
                 Return
             End If
@@ -212,13 +226,15 @@ Public Class Frm_LapPhieuMuonSach
             Dim result As Result
             result = SachBus.selectALL_ByMaSach(x, Chitietphieumuonsach)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy danh sach các sách theo mã không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy danh sach các Sách theo Mã không thành công."
+                Frm_Information.ShowDialog()
                 System.Console.WriteLine(result.SystemMessage)
 
                 Return
             End If
             If Chitietphieumuonsach.TenSach = "" Then
-                MessageBox.Show("Không tồn tại sách có mã này.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Không tồn tại sách có mã này."
+                Frm_Information.ShowDialog()
                 Dgv_ListPhieuMuonSach.Rows.RemoveAt(e.RowIndex)
                 Dgv_ListPhieuMuonSach.Focus()
             Else
@@ -227,18 +243,24 @@ Public Class Frm_LapPhieuMuonSach
                 Dgv_ListPhieuMuonSach.Item("Cl_TheLoai", e.RowIndex).Value = Chitietphieumuonsach.TheLoai
                 Dgv_ListPhieuMuonSach.Item("Cl_TinhTrang", e.RowIndex).Value = Chitietphieumuonsach.TinhTrang
                 Dgv_ListPhieuMuonSach.Item("Cl_TacGia", e.RowIndex).Value = Chitietphieumuonsach.TenTacGia
+                If Dgv_ListPhieuMuonSach.Item("Cl_TinhTrang", e.RowIndex).Value = "Đang Mượn" Then
+                    Dgv_ListPhieuMuonSach.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Yellow
+                Else
+                    Dgv_ListPhieuMuonSach.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
+
+                End If
                 'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKien
                 ' Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
                 If (listChiTietPhieuMuonSach1.Count() = e.RowIndex) Then
-                    listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
-                Else
-                    If (listChiTietPhieuMuonSach1.Count() > e.RowIndex) Then
-                        listChiTietPhieuMuonSach1.RemoveAt(e.RowIndex)
                         listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
+                    Else
+                        If (listChiTietPhieuMuonSach1.Count() > e.RowIndex) Then
+                            listChiTietPhieuMuonSach1.RemoveAt(e.RowIndex)
+                            listChiTietPhieuMuonSach1.Add(New ChiTietPhieuMuonSach_DTO(Txt_MaPhieuMuonSach.Text, x))
+                        End If
                     End If
                 End If
             End If
-        End If
 
 
 
@@ -249,29 +271,49 @@ Public Class Frm_LapPhieuMuonSach
         Dim PhieuMuonSach As PhieuMuonSach_DTO
         PhieuMuonSach = New PhieuMuonSach_DTO()
 
+        Dim Quydinh As QuyDinh_DTO
+        Quydinh = New QuyDinh_DTO()
+        QuyDinhBUS.GetQuyDinh(Quydinh)
 
         '1. Mapping data from GUI control
         PhieuMuonSach.MaPhieuMuonSach = Txt_MaPhieuMuonSach.Text
+        If Txt_MaDocGia.Text = "" Then
+            Frm_Information.m.Text = "Mã độc giả không được trống."
+            Frm_Information.ShowDialog()
+            Txt_MaDocGia.Focus()
+            Return
+        End If
         PhieuMuonSach.MaDocGia = Txt_MaDocGia.Text
         PhieuMuonSach.NgayMuon = Dtp_NgayMuon.Value
-        PhieuMuonSach.NgayDuKienTra = Dtp_NgayMuon.Value.AddDays(4)
+        PhieuMuonSach.NgayDuKienTra = Dtp_NgayMuon.Value.AddDays(Quydinh.SoNgayMuonToiDa)
 
         '2. Business .....
         If (PhieuMuonSachBus.isValidMaDocGia(PhieuMuonSach) = False) Then
-            MessageBox.Show("Mã độc giả không được trống")
+            Frm_Information.m.Text = "Mã độc giả không được trống."
+            Frm_Information.ShowDialog()
             Txt_MaDocGia.Focus()
             Return
         End If
 
         If (Txt_TinhTrangThe.Text = "Hết Hạn") Then
-            MessageBox.Show("Thẻ đã hết hạn")
+            Frm_Information.m.Text = "Thẻ Độc Giả đã hết hạn."
+            Frm_Information.ShowDialog()
             Return
         End If
+
+        If Dgv_ListPhieuMuonSach.Rows.Count = 1 Then
+            Frm_Information.m.Text = "Chưa nhập sách mượn."
+            Frm_Information.ShowDialog()
+            Return
+        End If
+
+
 
         For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach1.Rows
 
             If (Dgv_ListPhieuMuonSach1.Item(4, x.Index).Value = "Đã Quá Hạn") Then
-                MessageBox.Show("Có sách quá hạn chưa được trả")
+                Frm_Information.m.Text = "Có Sách đã 'quá hạn' chưa được trả."
+                Frm_Information.ShowDialog()
                 Return
             End If
         Next
@@ -280,7 +322,14 @@ Public Class Frm_LapPhieuMuonSach
         For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
 
             If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "Đang Mượn") Then
-                MessageBox.Show("Sách đã có người mượn")
+                Frm_Information.m.Text = "Sách hiện đang có người mượn."
+                Frm_Information.ShowDialog()
+                Return
+            End If
+
+            If (Dgv_ListPhieuMuonSach.Item(2, x.Index).Value = "") And Dgv_ListPhieuMuonSach.Rows.Count - 1 <> x.Index Then
+                Frm_Information.m.Text = "Error! Vui lòng kiểm tra đầy đủ thông tin của sách."
+                Frm_Information.ShowDialog()
                 Return
             End If
         Next
@@ -289,12 +338,14 @@ Public Class Frm_LapPhieuMuonSach
         Dim result As Result
         result = PhieuMuonSachBus.insert(PhieuMuonSach, listChiTietPhieuMuonSach1)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm Phiếu Mượn Sách  thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Thêm Phiếu Mượn Sách  thành công."
+            Frm_Information.ShowDialog()
             'set Madocgia auto
             Dim nextMaPhieuMuonSach = "1"
             result = PhieuMuonSachBus.getNextID(nextMaPhieuMuonSach)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy tự động Mã Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy tự động Mã Phiếu Mượn Sách không thành công."
+                Frm_Information.ShowDialog()
                 Me.Close()
                 Return
             End If
@@ -307,7 +358,8 @@ Public Class Frm_LapPhieuMuonSach
             listChiTietPhieuMuonSach1.Clear()
             Dgv_ListPhieuMuonSach.Rows.Clear()
         Else
-            MessageBox.Show("Thêm Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm Phiếu Mượn Sách không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
@@ -319,10 +371,9 @@ Public Class Frm_LapPhieuMuonSach
     Private Sub Txt_MaDocGia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_MaDocGia.KeyPress
 
         If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
-
             e.Handled = True
-            MessageBox.Show("Vui lòng nhập số.")
-
+            Frm_Information.m.Text = "Vui lòng nhập chỉ nhập mã số."
+            Frm_Information.ShowDialog()
         End If
 
     End Sub
@@ -330,7 +381,8 @@ Public Class Frm_LapPhieuMuonSach
     Private Sub Control_KeyPress(sender As Object, e As KeyPressEventArgs)
         If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
-            MessageBox.Show("Vui lòng nhập mã số")
+            Frm_Information.m.Text = "Vui lòng nhập chỉ nhập mã số."
+            Frm_Information.ShowDialog()
         End If
     End Sub
 
@@ -338,4 +390,6 @@ Public Class Frm_LapPhieuMuonSach
         RemoveHandler e.Control.KeyPress, AddressOf Control_KeyPress
         AddHandler e.Control.KeyPress, AddressOf Control_KeyPress
     End Sub
+
+
 End Class

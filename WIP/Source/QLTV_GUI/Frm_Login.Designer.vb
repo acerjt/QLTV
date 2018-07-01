@@ -66,7 +66,7 @@ Partial Class Frm_Login
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(30, 128)
+        Me.Label1.Location = New System.Drawing.Point(11, 121)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(304, 68)
         Me.Label1.TabIndex = 2
@@ -111,7 +111,7 @@ Partial Class Frm_Login
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(872, 0)
+        Me.Btn_Close.Location = New System.Drawing.Point(863, 20)
         Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_Close.Name = "Btn_Close"
         Me.Btn_Close.Size = New System.Drawing.Size(76, 38)
@@ -122,11 +122,11 @@ Partial Class Frm_Login
         '
         'Label4
         '
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
         Me.Label4.Location = New System.Drawing.Point(399, 102)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(171, 35)
+        Me.Label4.Size = New System.Drawing.Size(203, 35)
         Me.Label4.TabIndex = 94
         Me.Label4.Text = "Username"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -151,7 +151,7 @@ Partial Class Frm_Login
         Me.BunifuSeparator1.Location = New System.Drawing.Point(367, 55)
         Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(529, 43)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(559, 43)
         Me.BunifuSeparator1.TabIndex = 92
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -185,7 +185,7 @@ Partial Class Frm_Login
         Me.Btn_Login.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_Login.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Login.selected = False
-        Me.Btn_Login.Size = New System.Drawing.Size(252, 59)
+        Me.Btn_Login.Size = New System.Drawing.Size(216, 59)
         Me.Btn_Login.TabIndex = 98
         Me.Btn_Login.Text = "Log in"
         Me.Btn_Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -207,11 +207,11 @@ Partial Class Frm_Login
         '
         'Label2
         '
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
         Me.Label2.Location = New System.Drawing.Point(399, 163)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(171, 35)
+        Me.Label2.Size = New System.Drawing.Size(183, 35)
         Me.Label2.TabIndex = 98
         Me.Label2.Text = "Password"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -245,8 +245,8 @@ Partial Class Frm_Login
         Me.Btn_Exit.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_Exit.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Exit.selected = False
-        Me.Btn_Exit.Size = New System.Drawing.Size(252, 59)
-        Me.Btn_Exit.TabIndex = 99
+        Me.Btn_Exit.Size = New System.Drawing.Size(216, 59)
+        Me.Btn_Exit.TabIndex = 100
         Me.Btn_Exit.Text = "Exit"
         Me.Btn_Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_Exit.Textcolor = System.Drawing.Color.White
@@ -256,6 +256,7 @@ Partial Class Frm_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(949, 443)
         Me.Controls.Add(Me.Btn_Exit)
@@ -269,6 +270,7 @@ Partial Class Frm_Login
         Me.Controls.Add(Me.BunifuSeparator1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -297,13 +299,4 @@ Partial Class Frm_Login
     Friend WithEvents Label2 As Label
     Friend WithEvents Btn_Login As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Btn_Exit As Bunifu.Framework.UI.BunifuFlatButton
-
-    Public Sub New()
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-
-    End Sub
 End Class

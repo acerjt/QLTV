@@ -13,7 +13,9 @@ Public Class Frm_QuyDinh
         Dim result = qdBus.selectALL(listQuyDinh)
 
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy thông tin Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy thông tin Quy Định không thành công."
+            Frm_Information.ShowDialog()
+            'MessageBox.Show("Lấy thông tin Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
         End If
@@ -42,11 +44,15 @@ Public Class Frm_QuyDinh
 
             Dim result = qdBus.update(quydinh)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Cập nhật Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Cập nhật Quy Định không thành công."
+                Frm_Information.ShowDialog()
+                'MessageBox.Show("Cập nhật Quy Định không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 System.Console.WriteLine(result.SystemMessage)
                 Return
             End If
-            MessageBox.Show("Cập nhật Quy Định thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Cập nhật Quy Định thành công."
+            Frm_Information.ShowDialog()
+            'MessageBox.Show("Cập nhật Quy Định thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             System.Console.WriteLine(ex.StackTrace)
         End Try
@@ -60,10 +66,9 @@ Public Class Frm_QuyDinh
 #Region "Kiểm tra điều kiện nhập"
     Private Function check(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         If (Char.IsLetter(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
-
             e.Handled = True
-            MessageBox.Show("Vui lòng nhập số.")
-
+            Frm_Information.m.Text = "Vui lòng chỉ nhập kí tự số."
+            Frm_Information.ShowDialog()
         End If
         Return 0
     End Function
@@ -84,9 +89,6 @@ Public Class Frm_QuyDinh
         check(sender, e)
     End Sub
 
-    Private Sub Txt_SoTheLoaiSachToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TuoiToiDa.KeyPress, Txt_SoTheLoaiSachToiDa.KeyPress
-        check(sender, e)
-    End Sub
 
     Private Sub Txt_SoLuongSachMuonToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_SoLuongSachMuonToiDa.KeyPress
         check(sender, e)
@@ -96,6 +98,10 @@ Public Class Frm_QuyDinh
         check(sender, e)
     End Sub
     Private Sub Txt_SoTacGiaToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_SoTacGiaToiDa.KeyPress
+        check(sender, e)
+    End Sub
+
+    Private Sub Txt_SoTheLoaiSachToiDa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_SoTheLoaiSachToiDa.KeyPress
         check(sender, e)
     End Sub
 

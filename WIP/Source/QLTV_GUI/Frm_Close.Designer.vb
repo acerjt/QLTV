@@ -28,7 +28,7 @@ Partial Class Frm_Close
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuCustomLabel2 = New Bunifu.Framework.UI.BunifuCustomLabel()
+        Me.i = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.btn_no = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.btn_yes = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel1.SuspendLayout()
@@ -45,7 +45,7 @@ Partial Class Frm_Close
         Me.BunifuCustomLabel1.AutoSize = True
         Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BunifuCustomLabel1.ForeColor = System.Drawing.Color.Yellow
-        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(212, 9)
+        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(319, 9)
         Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
         Me.BunifuCustomLabel1.Size = New System.Drawing.Size(233, 40)
         Me.BunifuCustomLabel1.TabIndex = 0
@@ -59,7 +59,7 @@ Partial Class Frm_Close
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(637, 48)
+        Me.Panel1.Size = New System.Drawing.Size(834, 48)
         Me.Panel1.TabIndex = 0
         '
         'BunifuImageButton1
@@ -67,7 +67,7 @@ Partial Class Frm_Close
         Me.BunifuImageButton1.BackColor = System.Drawing.Color.DarkGreen
         Me.BunifuImageButton1.Image = Global.QLTV_GUI.My.Resources.Resources.icons8_about_30
         Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(149, 3)
+        Me.BunifuImageButton1.Location = New System.Drawing.Point(256, 3)
         Me.BunifuImageButton1.Name = "BunifuImageButton1"
         Me.BunifuImageButton1.Size = New System.Drawing.Size(57, 45)
         Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -75,16 +75,16 @@ Partial Class Frm_Close
         Me.BunifuImageButton1.TabStop = False
         Me.BunifuImageButton1.Zoom = 10
         '
-        'BunifuCustomLabel2
+        'i
         '
-        Me.BunifuCustomLabel2.AutoSize = True
-        Me.BunifuCustomLabel2.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel2.ForeColor = System.Drawing.Color.Black
-        Me.BunifuCustomLabel2.Location = New System.Drawing.Point(41, 78)
-        Me.BunifuCustomLabel2.Name = "BunifuCustomLabel2"
-        Me.BunifuCustomLabel2.Size = New System.Drawing.Size(549, 41)
-        Me.BunifuCustomLabel2.TabIndex = 1
-        Me.BunifuCustomLabel2.Text = "BẠN CÓ MUỐN THOÁT KHÔNG?"
+        Me.i.AutoSize = True
+        Me.i.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.i.ForeColor = System.Drawing.Color.Black
+        Me.i.Location = New System.Drawing.Point(53, 81)
+        Me.i.Name = "i"
+        Me.i.Size = New System.Drawing.Size(549, 41)
+        Me.i.TabIndex = 1
+        Me.i.Text = "BẠN CÓ MUỐN THOÁT KHÔNG?"
         '
         'btn_no
         '
@@ -108,7 +108,7 @@ Partial Class Frm_Close
         Me.btn_no.IconVisible = False
         Me.btn_no.IconZoom = 90.0R
         Me.btn_no.IsTab = False
-        Me.btn_no.Location = New System.Drawing.Point(373, 150)
+        Me.btn_no.Location = New System.Drawing.Point(461, 151)
         Me.btn_no.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_no.Name = "btn_no"
         Me.btn_no.Normalcolor = System.Drawing.Color.SeaGreen
@@ -144,7 +144,7 @@ Partial Class Frm_Close
         Me.btn_yes.IconVisible = False
         Me.btn_yes.IconZoom = 90.0R
         Me.btn_yes.IsTab = False
-        Me.btn_yes.Location = New System.Drawing.Point(138, 150)
+        Me.btn_yes.Location = New System.Drawing.Point(226, 151)
         Me.btn_yes.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btn_yes.Name = "btn_yes"
         Me.btn_yes.Normalcolor = System.Drawing.Color.SeaGreen
@@ -163,12 +163,13 @@ Partial Class Frm_Close
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gainsboro
-        Me.ClientSize = New System.Drawing.Size(637, 218)
+        Me.ClientSize = New System.Drawing.Size(834, 218)
         Me.Controls.Add(Me.btn_no)
         Me.Controls.Add(Me.btn_yes)
-        Me.Controls.Add(Me.BunifuCustomLabel2)
+        Me.Controls.Add(Me.i)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_Close"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frm_Close"
@@ -182,9 +183,9 @@ Partial Class Frm_Close
 
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents BunifuCustomLabel1 As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents BunifuCustomLabel2 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btn_no As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents btn_yes As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Public WithEvents i As Bunifu.Framework.UI.BunifuCustomLabel
 End Class

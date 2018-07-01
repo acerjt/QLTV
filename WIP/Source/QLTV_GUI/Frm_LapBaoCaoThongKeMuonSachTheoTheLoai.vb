@@ -4,17 +4,19 @@ Imports Utility
 
 
 Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
-    Private listChiTiet As List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
-    Private listChiTiet1 As List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
-    Private BaoCaoThongKeMuonSachBUS As BaoCaoMuonSachTheoThang_BUS
+    Private listChiTiet As List(Of ChiTietBaoCaoMuonSachTheoTheLoai_DTO)
+    Private listChiTiet1 As List(Of ChiTietBaoCaoMuonSachTheoTheLoai_DTO)
+    Private BaoCaoThongKeMuonSachBUS As BaoCaoMuonSachTheoTheLoai_BUS
     Private TheLoaiBUS As TheLoaiSach_BUS
-    Private ChiTietBUS As ChiTietBaoCaoMuonSachTheoThang_BUS
+    Private QuyDinhBUS As QuyDinh_BUS
+    Private ChiTietBUS As ChiTietBaoCaoMuonSachTheoTheLoai_BUS
     Private Sub Frm_LapBaoCaoThongKeMuonSachTheoTheLoai_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        BaoCaoThongKeMuonSachBUS = New BaoCaoMuonSachTheoThang_BUS()
+        BaoCaoThongKeMuonSachBUS = New BaoCaoMuonSachTheoTheLoai_BUS()
         TheLoaiBUS = New TheLoaiSach_BUS()
-        ChiTietBUS = New ChiTietBaoCaoMuonSachTheoThang_BUS()
-        listChiTiet = New List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
-        listChiTiet1 = New List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
+        ChiTietBUS = New ChiTietBaoCaoMuonSachTheoTheLoai_BUS()
+        QuyDinhBUS = New QuyDinh_BUS()
+        listChiTiet = New List(Of ChiTietBaoCaoMuonSachTheoTheLoai_DTO)
+        listChiTiet1 = New List(Of ChiTietBaoCaoMuonSachTheoTheLoai_DTO)
         ' Load LoaiDocGia list
         Dim listTheLoaiSach = New List(Of TheLoaiSach_DTO)
 
@@ -23,7 +25,8 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Dim nextMaBaoCaoThongKeMuonSachTheoTheLoai = "1"
         result = BaoCaoThongKeMuonSachBUS.getNextID(nextMaBaoCaoThongKeMuonSachTheoTheLoai)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động mã báo cáo thống kê mượn sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy tự động Mã Báo Cáo thống kê Mượn Sách không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -31,7 +34,8 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         Txt_MaLapBaoCao.Text = nextMaBaoCaoThongKeMuonSachTheoTheLoai
         result = TheLoaiBUS.selectAll(listTheLoaiSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy danh sách Thể Loại Sách không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -45,7 +49,8 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         result = ChiTietBUS.SelectAll(listChiTiet1)
 
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy tất cả báo cáo không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Lấy tất cả Báo Cáo đã lập không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         Else
@@ -55,28 +60,20 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Dgv_ListBaoCaoThongKe.AutoGenerateColumns = False
             Dgv_ListBaoCaoThongKe.AllowUserToAddRows = False
             Dgv_ListBaoCaoThongKe.DataSource = listChiTiet1
-            Dgv_ListBaoCaoThongKe.ColumnHeadersHeight = 100
-
 
             Dim Cl_TenTheLoai1 = New DataGridViewTextBoxColumn()
             Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
-            Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
+            Cl_TenTheLoai1.HeaderText = "Thể Loại"
             Cl_TenTheLoai1.DataPropertyName = "TheLoai"
-            Cl_TenTheLoai1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            Cl_TenTheLoai1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
 
-
-            'Dim Cl_TheLoaiSach = New DataGridView()
-            'Dim clLoaiHS = New DataGridView()
-            'clLoaiHS.Name = "LoaiHS"
-            'clLoaiHS.HeaderText = "Tên Loại"
-            'clLoaiHS.DataPropertyName = "LoaiHS"
-            'dgvListHS.Columns.Add(clLoaiHS)
 
             Dim Cl_SoLuotMuon1 = New DataGridViewTextBoxColumn()
             Cl_SoLuotMuon1.Name = "Cl_SoLuotMuon1"
             Cl_SoLuotMuon1.HeaderText = "Số Lượt Mượn"
             Cl_SoLuotMuon1.DataPropertyName = "SoLuotMuon"
+            Cl_SoLuotMuon1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_SoLuotMuon1)
 
 
@@ -85,51 +82,39 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_TyLe1.Name = "Cl_TyLe1"
             Cl_TyLe1.HeaderText = "Tỷ Lệ"
             Cl_TyLe1.DataPropertyName = "TyLe"
+            Cl_TyLe1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TyLe1)
 
             Dim Cl_Thang = New DataGridViewTextBoxColumn()
             Cl_Thang.Name = "Cl_Thang"
             Cl_Thang.HeaderText = "Tháng"
             Cl_Thang.DataPropertyName = "Thang"
-            Cl_Thang.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader = 1
+            Cl_Thang.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
 
             Dim Cl_Nam = New DataGridViewTextBoxColumn()
             Cl_Nam.Name = "Cl_Nam"
             Cl_Nam.HeaderText = "Năm"
             Cl_Nam.DataPropertyName = "Nam"
-            Cl_Nam.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
+            Cl_Nam.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
         End If
 
 
-
-
-
-
+        Dtp_NgayLap.Value = DateTime.Now
 
     End Sub
 
-    Private Sub Dgv_ListLapBaoCaoThongKe_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListLapBaoCaoThongKe.CellValueChanged
+    Private Sub Dgv_ListBaoCaoThongKe_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_ListLapBaoCaoThongKe.CellValueChanged
         If (e.RowIndex <> -1 And e.ColumnIndex = 0) Then
-            'Dim y As PhieuMuonSach_DTO
-            'y = New PhieuMuonSach_DTO()
-            'If (PhieuMuonSachBus.isValidMaDocGia(y) = False) Then
-            '    MessageBox.Show("Mã độc giả không được trống")
-            '    Txt_MaDocGia.Focus()
-            '    Return
-            'End If
-
-
-
-
 
             For Each y As DataGridViewRow In Dgv_ListLapBaoCaoThongKe.Rows
                 If e.RowIndex = 0 Then
                     Exit For
                 Else
                     If (Dgv_ListLapBaoCaoThongKe.Item(0, y.Index).Value = Dgv_ListLapBaoCaoThongKe.Rows(e.RowIndex).Cells(0).Value And y.Index <> e.RowIndex) Then
-                        MessageBox.Show("Sách đã được chọn ở trên.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        Frm_Information.m.Text = "Sách đã được chọn ở trên."
+                        Frm_Information.ShowDialog()
                         Dgv_ListLapBaoCaoThongKe.Rows.RemoveAt(e.RowIndex)
                         Return
                         'Dgv_ListPhieuMuonSach.Focus()
@@ -137,18 +122,20 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
                 End If
             Next
 
-
-
             'SachBus = New Sach_BUS()
-            Dim ChiTiet As ChiTietBaoCaoMuonSachTheoThang_DTO
-            ChiTiet = New ChiTietBaoCaoMuonSachTheoThang_DTO()
+            Dim ChiTiet As ChiTietBaoCaoMuonSachTheoTheLoai_DTO
+            ChiTiet = New ChiTietBaoCaoMuonSachTheoTheLoai_DTO()
+
+            Dim QuyDinh As QuyDinh_DTO
+            QuyDinh = New QuyDinh_DTO()
+            QuyDinhBUS.GetQuyDinh(QuyDinh)
 
 
+            If Dgv_ListLapBaoCaoThongKe.Rows.Count > QuyDinh.SoTheLoaiSachToiDa + 1 Then
+                Frm_Information.m.Text = "Số lượng Thể Loại cần lập báo cáo đã vượt quá Quy Định."
+                Frm_Information.ShowDialog()
 
-
-            If Dgv_ListLapBaoCaoThongKe.Rows.Count > 4 Then
-                'Dgv_ListPhieuMuonSach1.AllowUserToDeleteRows = True
-                MessageBox.Show("Số lượng thể loại cần lập báo cáo đã vượt quá qui định.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Dgv_ListLapBaoCaoThongKe.Rows.RemoveAt(e.RowIndex)
                 Return
             End If
@@ -160,7 +147,8 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             For Each y As DataGridViewRow In Dgv_ListBaoCaoThongKe.Rows
 
                 If (Dgv_ListBaoCaoThongKe.Item(0, y.Index).Value = Dgv_ListLapBaoCaoThongKe.Rows(e.RowIndex).Cells(0).FormattedValue) Then
-                    MessageBox.Show("Thể Loại này đã được lập báo cáo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Frm_Information.m.Text = "Thể Loại này đã được lập Báo Cáo."
+                    Frm_Information.ShowDialog()
                     Dgv_ListLapBaoCaoThongKe.Rows.RemoveAt(e.RowIndex)
                     Return
                     'Dgv_ListPhieuMuonSach.Focus()
@@ -172,15 +160,31 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Dim result As Result
             result = ChiTietBUS.selecListChiTiet(TheLoai, Txt_Nam.Text, Cb_Thang.Text, ChiTiet, Txt_TongSoLuotMuon.Text)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy danh sach các sách theo mã không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy danh sách các Sách theo Mã không thành công."
+                Frm_Information.ShowDialog()
                 System.Console.WriteLine(result.SystemMessage)
 
                 Return
             End If
             If ChiTiet.TheLoai = "" Then
-                MessageBox.Show("Không tồn tại thể loại này.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Dgv_ListLapBaoCaoThongKe.Rows.RemoveAt(e.RowIndex)
-                Dgv_ListLapBaoCaoThongKe.Focus()
+                'MessageBox.Show("Không tồn tại thể loại này.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Dgv_ListLapBaoCaoThongKe.Rows(e.RowIndex).Cells(2).Value = 0
+                Dgv_ListLapBaoCaoThongKe.Rows(e.RowIndex).Cells(1).Value = 0
+                'Dgv_ListLapBaoCaoThongKe.Focus()
+
+
+
+                If (listChiTiet.Count() = e.RowIndex) Then
+                    listChiTiet.Add(New ChiTietBaoCaoMuonSachTheoTheLoai_DTO(TheLoai, ChiTiet.SoLuotMuon, ChiTiet.TyLe))
+                Else
+                    If (listChiTiet.Count() > e.RowIndex) Then
+                        listChiTiet.RemoveAt(e.RowIndex)
+                        listChiTiet.Add(New ChiTietBaoCaoMuonSachTheoTheLoai_DTO(TheLoai, ChiTiet.SoLuotMuon, ChiTiet.TyLe))
+                    End If
+                End If
+
+
+
             Else
 
                 Dgv_ListLapBaoCaoThongKe.Item("Cl_SoLuotMuon", e.RowIndex).Value = ChiTiet.SoLuotMuon
@@ -191,11 +195,11 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
                 'Dgv_ListPhieuMuonSach.Item("Cl_NgayDuKienTra", e.RowIndex).Value = Chitietphieumuonsach.NgayDuKien
                 ' Dgv_ListPhieuMuonSach.Item("Cl_STT", e.RowIndex).Value = e.RowIndex + 1
                 If (listChiTiet.Count() = e.RowIndex) Then
-                    listChiTiet.Add(New ChiTietBaoCaoMuonSachTheoThang_DTO(TheLoai, ChiTiet.SoLuotMuon, ChiTiet.TyLe))
+                    listChiTiet.Add(New ChiTietBaoCaoMuonSachTheoTheLoai_DTO(TheLoai, ChiTiet.SoLuotMuon, ChiTiet.TyLe))
                 Else
                     If (listChiTiet.Count() > e.RowIndex) Then
                         listChiTiet.RemoveAt(e.RowIndex)
-                        listChiTiet.Add(New ChiTietBaoCaoMuonSachTheoThang_DTO(TheLoai, ChiTiet.SoLuotMuon, ChiTiet.TyLe))
+                        listChiTiet.Add(New ChiTietBaoCaoMuonSachTheoTheLoai_DTO(TheLoai, ChiTiet.SoLuotMuon, ChiTiet.TyLe))
                     End If
                 End If
             End If
@@ -208,9 +212,7 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
 
     Private Sub Txt_Nam_TextChanged(sender As Object, e As EventArgs) Handles Txt_Nam.TextChanged
 
-        'listChiTietPhieuMuonSach.Clear()
-        'Dgv_ListPhieuMuonSach.DataSource = Nothing
-        'Dgv_ListPhieuMuonSach.Refresh()
+
         Txt_TongSoLuotMuon.Text = String.Empty
         Dgv_ListLapBaoCaoThongKe.Rows.Clear()
         If Txt_Nam.Text.Length = 4 And Cb_Thang.Text = "" Then
@@ -226,16 +228,8 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
 
     Private Sub loadListChiTiet(ByRef Nam As Integer)
 
-        listChiTiet1 = New List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
+        listChiTiet1 = New List(Of ChiTietBaoCaoMuonSachTheoTheLoai_DTO)
         Dim result As Result
-        'result = ChiTietBUS.LoadListChiTietByNam(Nam, listChiTiet1)
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh sách độc giả theo loại không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Return
-        'End If
-
-
 
         result = ChiTietBUS.LoadListChiTietByNam(Nam, listChiTiet1)
         If (result.FlagResult = True) Then
@@ -255,20 +249,15 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
             Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
             Cl_TenTheLoai1.DataPropertyName = "TheLoai"
+            Cl_TenTheLoai1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
 
-
-            'Dim Cl_TheLoaiSach = New DataGridView()
-            'Dim clLoaiHS = New DataGridView()
-            'clLoaiHS.Name = "LoaiHS"
-            'clLoaiHS.HeaderText = "Tên Loại"
-            'clLoaiHS.DataPropertyName = "LoaiHS"
-            'dgvListHS.Columns.Add(clLoaiHS)
 
             Dim Cl_SoLuotMuon1 = New DataGridViewTextBoxColumn()
             Cl_SoLuotMuon1.Name = "Cl_SoLuotMuon1"
             Cl_SoLuotMuon1.HeaderText = "Số Lượt Mượn"
             Cl_SoLuotMuon1.DataPropertyName = "SoLuotMuon"
+            Cl_SoLuotMuon1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_SoLuotMuon1)
 
 
@@ -277,12 +266,14 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_TyLe1.Name = "Cl_TyLe1"
             Cl_TyLe1.HeaderText = "Tỷ Lệ"
             Cl_TyLe1.DataPropertyName = "TyLe"
+            Cl_TyLe1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TyLe1)
 
             Dim Cl_Thang = New DataGridViewTextBoxColumn()
             Cl_Thang.Name = "Cl_Thang"
             Cl_Thang.HeaderText = "Tháng"
             Cl_Thang.DataPropertyName = "Thang"
+            Cl_Thang.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
 
 
@@ -290,25 +281,17 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_Nam.Name = "Cl_Nam"
             Cl_Nam.HeaderText = "Năm"
             Cl_Nam.DataPropertyName = "Nam"
+            Cl_Nam.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
 
         End If
 
-        ' Dgv_ListPhieuMuonSach.Rows.Add()
-        'listChiTietPhieuMuonSach.Clear()
     End Sub
 
     Private Sub loadListChiTiet2(ByRef Nam As Integer, ByRef Thang As Integer)
 
-        listChiTiet1 = New List(Of ChiTietBaoCaoMuonSachTheoThang_DTO)
+        listChiTiet1 = New List(Of ChiTietBaoCaoMuonSachTheoTheLoai_DTO)
         Dim result As Result
-        'result = ChiTietBUS.LoadListChiTietByNam(Nam, listChiTiet1)
-        'If (result.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh sách độc giả theo loại không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Return
-        'End If
-
 
 
         result = ChiTietBUS.LoadListChiTietByNam_ByThang(Nam, Thang, listChiTiet1)
@@ -327,22 +310,18 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
 
             Dim Cl_TenTheLoai1 = New DataGridViewTextBoxColumn()
             Cl_TenTheLoai1.Name = "Cl_TenTheLoai1"
-            Cl_TenTheLoai1.HeaderText = "Tên Thể Loại"
+            Cl_TenTheLoai1.HeaderText = "Thể Loại"
             Cl_TenTheLoai1.DataPropertyName = "TheLoai"
+            Cl_TenTheLoai1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TenTheLoai1)
 
 
-            'Dim Cl_TheLoaiSach = New DataGridView()
-            'Dim clLoaiHS = New DataGridView()
-            'clLoaiHS.Name = "LoaiHS"
-            'clLoaiHS.HeaderText = "Tên Loại"
-            'clLoaiHS.DataPropertyName = "LoaiHS"
-            'dgvListHS.Columns.Add(clLoaiHS)
 
             Dim Cl_SoLuotMuon1 = New DataGridViewTextBoxColumn()
             Cl_SoLuotMuon1.Name = "Cl_SoLuotMuon1"
             Cl_SoLuotMuon1.HeaderText = "Số Lượt Mượn"
             Cl_SoLuotMuon1.DataPropertyName = "SoLuotMuon"
+            Cl_SoLuotMuon1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_SoLuotMuon1)
 
 
@@ -351,12 +330,14 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_TyLe1.Name = "Cl_TyLe1"
             Cl_TyLe1.HeaderText = "Tỷ Lệ"
             Cl_TyLe1.DataPropertyName = "TyLe"
+            Cl_TyLe1.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_TyLe1)
 
             Dim Cl_Thang = New DataGridViewTextBoxColumn()
             Cl_Thang.Name = "Cl_Thang"
             Cl_Thang.HeaderText = "Tháng"
             Cl_Thang.DataPropertyName = "Thang"
+            Cl_Thang.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Thang)
 
 
@@ -364,67 +345,66 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             Cl_Nam.Name = "Cl_Nam"
             Cl_Nam.HeaderText = "Năm"
             Cl_Nam.DataPropertyName = "Nam"
+            Cl_Nam.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
             Dgv_ListBaoCaoThongKe.Columns.Add(Cl_Nam)
 
         End If
 
-        ' Dgv_ListPhieuMuonSach.Rows.Add()
-        'listChiTietPhieuMuonSach.Clear()
     End Sub
 
     Private Sub Btn_LapBaoCao_Click(sender As Object, e As EventArgs) Handles Btn_LapBaoCao.Click
-        Dim BaoCaoThongKeMuonSach As BaoCaoMuonSachTheoThang_DTO
-        BaoCaoThongKeMuonSach = New BaoCaoMuonSachTheoThang_DTO()
+        Dim BaoCaoThongKeMuonSach As BaoCaoMuonSachTheoTheLoai_DTO
+        BaoCaoThongKeMuonSach = New BaoCaoMuonSachTheoTheLoai_DTO()
 
 
         '1. Mapping data from GUI control
         BaoCaoThongKeMuonSach.MaBaoCaoMuonSachTheoThang = Txt_MaLapBaoCao.Text
+        If Txt_Nam.Text = "" Then
+            Frm_Information.m.Text = "Chưa Nhập Năm."
+            Frm_Information.ShowDialog()
+            Return
+        End If
         BaoCaoThongKeMuonSach.Nam = Txt_Nam.Text
+        If Cb_Thang.Text = "" Then
+            Frm_Information.m.Text = "Chưa Nhập Tháng."
+            Frm_Information.ShowDialog()
+            Return
+        End If
         BaoCaoThongKeMuonSach.Thang = Cb_Thang.Text
+        If Txt_TongSoLuotMuon.Text = "" Then
+            Frm_Information.m.Text = "Chưa Chọn Thể Loại Để Lập."
+            Frm_Information.ShowDialog()
+            Return
+        End If
         BaoCaoThongKeMuonSach.TongSoLuotMuon = Txt_TongSoLuotMuon.Text
-
+        BaoCaoThongKeMuonSach.NgayLap = Dtp_NgayLap.Value
         '2. Business .....
         If (BaoCaoThongKeMuonSachBUS.isValidNam(BaoCaoThongKeMuonSach) = False) Then
-            MessageBox.Show("Năm Không Hợp Lệ")
+            Frm_Information.m.Text = "Năm không hợp lệ."
+            Frm_Information.ShowDialog()
             Txt_Nam.Focus()
             Return
         End If
 
-        'If (Txt_TinhTrangThe.Text = "Hết Hạn") Then
-        '    MessageBox.Show("Thẻ đã hết hạn")
-        '    Return
-        'End If
-
-
         If (Dgv_ListLapBaoCaoThongKe.Rows.Count = 0) Then
-            MessageBox.Show("Không có dữ liệu để lập báo cáo")
+            Frm_Information.m.Text = "Không có dữ liệu để lập báo cáo."
+            Frm_Information.ShowDialog()
             Return
         End If
-
-
-
-
-        'For Each x As DataGridViewRow In Dgv_ListPhieuMuonSach.Rows
-
-        '    If (Dgv_ListPhieuMuonSach.Item(4, x.Index).Value = "DangMuon") Then
-        '        MessageBox.Show("Sách đã có người mượn")
-        '        Return
-        '    End If
-        'Next
-
-
 
 
         '3. Insert to DB
         Dim result As Result
         result = BaoCaoThongKeMuonSachBUS.insert(BaoCaoThongKeMuonSach, listChiTiet)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Lập Báo cáo thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Information.m.Text = "Lập Báo cáo thành công."
+            Frm_Information.ShowDialog()
             'set Madocgia auto
             Dim nextMaBaoCaoThongKeMuonSach = "1"
             result = BaoCaoThongKeMuonSachBUS.getNextID(nextMaBaoCaoThongKeMuonSach)
             If (result.FlagResult = False) Then
-                MessageBox.Show("Lấy tự động Mã lập báo cáo không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Frm_Information.m.Text = "Lấy tự động Mã lập báo cáo không thành công."
+                Frm_Information.ShowDialog()
                 Me.Close()
                 Return
             End If
@@ -436,12 +416,13 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
             listChiTiet.Clear()
             Dgv_ListLapBaoCaoThongKe.Rows.Clear()
         Else
-            MessageBox.Show("Thêm Phiếu Mượn Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Frm_Information.m.Text = "Thêm Phiếu Mượn Sách không thành công."
+            Frm_Information.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub
 
-    Private Sub Cb_Thang_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub Cb_Thang_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_Thang.SelectedIndexChanged
         If (Txt_Nam.Text.Length = 4) Then
 
             Try
@@ -453,8 +434,9 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
         End If
     End Sub
 
-    Private Sub Cb_Thang_TextChanged(sender As Object, e As EventArgs)
+    Private Sub Cb_Thang_TextChanged(sender As Object, e As EventArgs) Handles Cb_Thang.TextChanged
         Dgv_ListBaoCaoThongKe.DataSource = Nothing
+        Dgv_ListLapBaoCaoThongKe.DataSource = Nothing
         If (Txt_Nam.Text.Length = 4) Then
             Try
                 Dim Thang = Cb_Thang.Text
@@ -471,39 +453,4 @@ Public Class Frm_LapBaoCaoThongKeMuonSachTheoTheLoai
     Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
         Me.Close()
     End Sub
-
-    'Private Sub Dgv_ListBaoCaoThongKe_SelectionChanged(sender As Object, e As EventArgs) Handles Dgv_ListBaoCaoThongKe.SelectionChanged
-    '    If (Cb_Thang.Text <> "") Then
-    '        Dim currentRowIndex As Integer = Dgv_ListBaoCaoThongKe.CurrentCellAddress.Y 'current row selected
-    '        'Dim x As Integer = Dgv_ListDocGia.CurrentCellAddress.X 'curent column selected
-    '        'Dim x As Integer = Dgv_ListDocGia.CurrentCell.Selected
-    '        ' Write coordinates to console for debugging
-    '        'Console.WriteLine(y.ToString + " " + x.ToString)
-
-    '        'Verify that indexing OK
-    '        If (Dgv_ListBaoCaoThongKe.Rows.Count <> 0) Then
-    '            If (-1 < currentRowIndex And currentRowIndex < Dgv_ListBaoCaoThongKe.RowCount) Then
-    '                Try
-    '                    Dim ctbctkms = CType(Dgv_ListBaoCaoThongKe.Rows(currentRowIndex).DataBoundItem, ChiTietBaoCaoMuonSachTheoThang_DTO)
-    '                    Dgv_ListLapBaoCaoThongKe.Item("Cl_TenTheLoai", 0).Value = ctbctkms.TheLoai
-    '                    Dgv_ListLapBaoCaoThongKe("Cl_SoLuotMuon", 0).Value = ctbctkms.SoLuotMuon
-
-    '                    'Txt_HoVaTen.Text = dg.HoVaTen 
-    '                    'Txt_DiaChi.Text = dg.DiaChi
-    '                    'Dtp_NgaySinh.Value = dg.NgaySinh
-    '                    'Txt_Email.Text = dg.Email
-    '                    'Dtp_NgayLap.Value = dg.NgayLap
-    '                    'Txt_NgayHetHan.Text = dg.NgayHetHan
-
-
-
-
-    '                    'Cb_LoaiDocGiaCapNhap.SelectedIndex = Cb_LoaiDocGia.SelectedIndex
-    '                Catch ex As Exception
-    '                    Console.WriteLine(ex.StackTrace)
-    '                End Try
-    '            End If
-    '        End If
-    '        End If
-    'End Sub
 End Class

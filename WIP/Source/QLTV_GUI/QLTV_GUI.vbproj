@@ -28,6 +28,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,6 +40,7 @@
     <DocumentationFile>QLTV_GUI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +51,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>QLTV_GUI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -87,6 +90,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -107,10 +111,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_About.Designer.vb">
+      <DependentUpon>Frm_About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_About.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frm_Close.Designer.vb">
       <DependentUpon>Frm_Close.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_Close.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Information.Designer.vb">
+      <DependentUpon>Frm_Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Information.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.Designer.vb">
@@ -144,10 +160,10 @@
       <DependentUpon>Frm_Main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_NhanTraSach.Designer.vb">
-      <DependentUpon>Frm_NhanTraSach.vb</DependentUpon>
+    <Compile Include="Frm_LapPhieuTraSach.Designer.vb">
+      <DependentUpon>Frm_LapPhieuTraSach.vb</DependentUpon>
     </Compile>
-    <Compile Include="Frm_NhanTraSach.vb">
+    <Compile Include="Frm_LapPhieuTraSach.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_QLDocGia.Designer.vb">
@@ -190,12 +206,6 @@
       <DependentUpon>Frm_ThemDocGia.vb</DependentUpon>
     </Compile>
     <Compile Include="Frm_ThemDocGia.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_ThemListSach.Designer.vb">
-      <DependentUpon>Frm_ThemListSach.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_ThemListSach.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_ThemLoaiDocGia.Designer.vb">
@@ -245,8 +255,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frm_About.resx">
+      <DependentUpon>Frm_About.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Close.resx">
       <DependentUpon>Frm_Close.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Information.resx">
+      <DependentUpon>Frm_Information.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.resx">
       <DependentUpon>Frm_LapBaoCaoThongKeMuonSachTheoTheLoai.vb</DependentUpon>
@@ -263,8 +279,8 @@
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_NhanTraSach.resx">
-      <DependentUpon>Frm_NhanTraSach.vb</DependentUpon>
+    <EmbeddedResource Include="Frm_LapPhieuTraSach.resx">
+      <DependentUpon>Frm_LapPhieuTraSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_QLDocGia.resx">
       <DependentUpon>Frm_QLDocGia.vb</DependentUpon>
@@ -286,9 +302,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ThemDocGia.resx">
       <DependentUpon>Frm_ThemDocGia.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_ThemListSach.resx">
-      <DependentUpon>Frm_ThemListSach.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ThemLoaiDocGia.resx">
       <DependentUpon>Frm_ThemLoaiDocGia.vb</DependentUpon>
@@ -338,9 +351,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-read-online-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\form.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QLTV_BUS\QLTV_BUS.vbproj">
@@ -457,6 +467,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-lion-head-filled-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-help-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-help-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

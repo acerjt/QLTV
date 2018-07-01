@@ -5,6 +5,7 @@ Imports Utility
 Public Class Frm_QLTheLoaiSach
 
     Private tlsBus As TheLoaiSach_BUS
+    Dim frm_Infor = New Frm_Information()
     Private Sub Frm_QLTheLoaiSach_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tlsBus = New TheLoaiSach_BUS()
         ' Load LoaiDocGia list
@@ -18,7 +19,8 @@ Public Class Frm_QLTheLoaiSach
         Dim result As Result
         result = tlsBus.selectAll(listTheLoaiSach)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách thể loại sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách thể loại sách không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -37,11 +39,12 @@ Public Class Frm_QLTheLoaiSach
         clMaTheLoaiSach.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
         Dgv_ListTheLoaiSach.Columns.Add(clMaTheLoaiSach)
 
+
         Dim clTenTheLoaiSach = New DataGridViewTextBoxColumn()
         clTenTheLoaiSach.Name = "TenTheLoaiSah"
         clTenTheLoaiSach.HeaderText = "Tên Thể Loại Sách"
         clTenTheLoaiSach.DataPropertyName = "TenTheLoaiSach"
-        clTenTheLoaiSach.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        clTenTheLoaiSach.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader
         Dgv_ListTheLoaiSach.Columns.Add(clTenTheLoaiSach)
 
     End Sub
@@ -63,7 +66,8 @@ Public Class Frm_QLTheLoaiSach
 
                 '2. Business .....
                 If (tlsBus.isValidName(tls) = False) Then
-                    MessageBox.Show("Tên Thể Loại Sách không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    frm_Infor.m.Text = "Tên Thể Loại Sách không đúng. Vui lòng kiểm tra lại"
+                    frm_Infor.ShowDialog()
                     Txt_TenTheLoaiSach.Focus()
                     Return
                 End If
@@ -84,10 +88,11 @@ Public Class Frm_QLTheLoaiSach
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật Thể Loại Sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    frm_Infor.m.Text = "Cập nhật Thể Loại Sách thành công."
+                    frm_Infor.ShowDialog()
                 Else
-                    MessageBox.Show("Cập nhật loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    System.Console.WriteLine(result.SystemMessage)
+                    frm_Infor.m.Text = "Cập nhật Thể Loại Sách không thành công."
+                    frm_Infor.ShowDialog()
                 End If
             Catch ex As Exception
                 Console.WriteLine(ex.StackTrace)
@@ -129,8 +134,9 @@ Public Class Frm_QLTheLoaiSach
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListTheLoaiSach.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa thể loại sách có mã: " + Txt_MaTheLoaiSach.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes
+            Frm_Close.i.Text = "Bạn có thực sự muốn xóa sách có mã số: " + Txt_MaTheLoaiSach.Text
+            Select Case Frm_Close.ShowDialog()
+                Case DialogResult.OK
                     Try
 
                         '1. Delete from DB
@@ -155,15 +161,17 @@ Public Class Frm_QLTheLoaiSach
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
                             End If
-                            MessageBox.Show("Xóa Thể Loại Sách thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            frm_Infor.m.Text = "Xóa Thể Loại Sách thành công"
+                            frm_Infor.ShowDialog()
                         Else
-                            MessageBox.Show("Xóa Thể Loại Sách không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            frm_Infor.m.Text = "Xóa Thể Loại Sách không thành công"
+                            frm_Infor.ShowDialog()
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                Case MsgBoxResult.No
+                Case DialogResult.No
                     Return
             End Select
 

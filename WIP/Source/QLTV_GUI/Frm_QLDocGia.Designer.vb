@@ -54,6 +54,13 @@ Partial Class Frm_QLDocGia
         Me.Cb_LoaiDocGiaCapNhap = New System.Windows.Forms.ComboBox()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Dgv_ListDocGia = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Ngay = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.d = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Dgv_ListDocGia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,7 +69,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label7.Location = New System.Drawing.Point(618, 485)
+        Me.Label7.Location = New System.Drawing.Point(741, 543)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(195, 44)
         Me.Label7.TabIndex = 47
@@ -73,7 +80,7 @@ Partial Class Frm_QLDocGia
         '
         Me.gdf.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gdf.ForeColor = System.Drawing.Color.SeaGreen
-        Me.gdf.Location = New System.Drawing.Point(52, 745)
+        Me.gdf.Location = New System.Drawing.Point(175, 803)
         Me.gdf.Name = "gdf"
         Me.gdf.Size = New System.Drawing.Size(161, 35)
         Me.gdf.TabIndex = 45
@@ -84,7 +91,7 @@ Partial Class Frm_QLDocGia
         '
         Me.ad.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ad.ForeColor = System.Drawing.Color.SeaGreen
-        Me.ad.Location = New System.Drawing.Point(52, 672)
+        Me.ad.Location = New System.Drawing.Point(175, 730)
         Me.ad.Name = "ad"
         Me.ad.Size = New System.Drawing.Size(161, 45)
         Me.ad.TabIndex = 43
@@ -95,7 +102,7 @@ Partial Class Frm_QLDocGia
         '
         Me.sa.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sa.ForeColor = System.Drawing.Color.SeaGreen
-        Me.sa.Location = New System.Drawing.Point(52, 609)
+        Me.sa.Location = New System.Drawing.Point(175, 667)
         Me.sa.Name = "sa"
         Me.sa.Size = New System.Drawing.Size(184, 45)
         Me.sa.TabIndex = 42
@@ -106,7 +113,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label.Location = New System.Drawing.Point(338, 120)
+        Me.Label.Location = New System.Drawing.Point(419, 112)
         Me.Label.Name = "Label"
         Me.Label.Size = New System.Drawing.Size(203, 35)
         Me.Label.TabIndex = 41
@@ -117,7 +124,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(52, 558)
+        Me.Label2.Location = New System.Drawing.Point(175, 616)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(198, 35)
         Me.Label2.TabIndex = 39
@@ -128,7 +135,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label1.Location = New System.Drawing.Point(52, 494)
+        Me.Label1.Location = New System.Drawing.Point(175, 552)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(210, 35)
         Me.Label1.TabIndex = 37
@@ -139,7 +146,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label3.Location = New System.Drawing.Point(618, 668)
+        Me.Label3.Location = New System.Drawing.Point(741, 726)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(215, 44)
         Me.Label3.TabIndex = 52
@@ -150,7 +157,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label4.Location = New System.Drawing.Point(618, 549)
+        Me.Label4.Location = New System.Drawing.Point(741, 607)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(256, 44)
         Me.Label4.TabIndex = 54
@@ -161,7 +168,7 @@ Partial Class Frm_QLDocGia
         '
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label5.Location = New System.Drawing.Point(618, 608)
+        Me.Label5.Location = New System.Drawing.Point(741, 666)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(242, 46)
         Me.Label5.TabIndex = 56
@@ -174,7 +181,7 @@ Partial Class Frm_QLDocGia
         Me.Btn_CapNhap.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_CapNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Btn_CapNhap.BorderRadius = 7
-        Me.Btn_CapNhap.ButtonText = "CẬP NHẬP"
+        Me.Btn_CapNhap.ButtonText = "CẬP NHẬT"
         Me.Btn_CapNhap.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_CapNhap.DisabledColor = System.Drawing.Color.Gray
         Me.Btn_CapNhap.Iconcolor = System.Drawing.Color.Transparent
@@ -189,7 +196,7 @@ Partial Class Frm_QLDocGia
         Me.Btn_CapNhap.IconVisible = False
         Me.Btn_CapNhap.IconZoom = 90.0R
         Me.Btn_CapNhap.IsTab = False
-        Me.Btn_CapNhap.Location = New System.Drawing.Point(294, 810)
+        Me.Btn_CapNhap.Location = New System.Drawing.Point(425, 878)
         Me.Btn_CapNhap.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Btn_CapNhap.Name = "Btn_CapNhap"
         Me.Btn_CapNhap.Normalcolor = System.Drawing.Color.SeaGreen
@@ -198,7 +205,7 @@ Partial Class Frm_QLDocGia
         Me.Btn_CapNhap.selected = False
         Me.Btn_CapNhap.Size = New System.Drawing.Size(247, 74)
         Me.Btn_CapNhap.TabIndex = 59
-        Me.Btn_CapNhap.Text = "CẬP NHẬP"
+        Me.Btn_CapNhap.Text = "CẬP NHẬT"
         Me.Btn_CapNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_CapNhap.Textcolor = System.Drawing.Color.White
         Me.Btn_CapNhap.TextFont = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -224,14 +231,14 @@ Partial Class Frm_QLDocGia
         Me.Btn_Xoa.IconVisible = False
         Me.Btn_Xoa.IconZoom = 90.0R
         Me.Btn_Xoa.IsTab = False
-        Me.Btn_Xoa.Location = New System.Drawing.Point(660, 810)
+        Me.Btn_Xoa.Location = New System.Drawing.Point(751, 878)
         Me.Btn_Xoa.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Btn_Xoa.Name = "Btn_Xoa"
         Me.Btn_Xoa.Normalcolor = System.Drawing.Color.SeaGreen
         Me.Btn_Xoa.OnHovercolor = System.Drawing.Color.DarkGreen
         Me.Btn_Xoa.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_Xoa.selected = False
-        Me.Btn_Xoa.Size = New System.Drawing.Size(200, 74)
+        Me.Btn_Xoa.Size = New System.Drawing.Size(240, 74)
         Me.Btn_Xoa.TabIndex = 60
         Me.Btn_Xoa.Text = "XÓA"
         Me.Btn_Xoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -255,10 +262,10 @@ Partial Class Frm_QLDocGia
         Me.BunifuSeparator1.Cursor = System.Windows.Forms.Cursors.Default
         Me.BunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuSeparator1.LineThickness = 2
-        Me.BunifuSeparator1.Location = New System.Drawing.Point(3, 61)
+        Me.BunifuSeparator1.Location = New System.Drawing.Point(3, 75)
         Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(1195, 54)
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(1415, 20)
         Me.BunifuSeparator1.TabIndex = 77
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
@@ -270,11 +277,11 @@ Partial Class Frm_QLDocGia
         Me.Dtp_NgaySinh.ForeColor = System.Drawing.Color.White
         Me.Dtp_NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Dtp_NgaySinh.FormatCustom = Nothing
-        Me.Dtp_NgaySinh.Location = New System.Drawing.Point(268, 608)
+        Me.Dtp_NgaySinh.Location = New System.Drawing.Point(391, 666)
         Me.Dtp_NgaySinh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Dtp_NgaySinh.Name = "Dtp_NgaySinh"
         Me.Dtp_NgaySinh.Size = New System.Drawing.Size(282, 44)
-        Me.Dtp_NgaySinh.TabIndex = 84
+        Me.Dtp_NgaySinh.TabIndex = 5
         Me.Dtp_NgaySinh.Value = New Date(2018, 5, 28, 16, 51, 25, 349)
         '
         'Dtp_NgayLap
@@ -284,11 +291,11 @@ Partial Class Frm_QLDocGia
         Me.Dtp_NgayLap.ForeColor = System.Drawing.Color.White
         Me.Dtp_NgayLap.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.Dtp_NgayLap.FormatCustom = Nothing
-        Me.Dtp_NgayLap.Location = New System.Drawing.Point(878, 485)
+        Me.Dtp_NgayLap.Location = New System.Drawing.Point(1001, 543)
         Me.Dtp_NgayLap.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Dtp_NgayLap.Name = "Dtp_NgayLap"
         Me.Dtp_NgayLap.Size = New System.Drawing.Size(282, 44)
-        Me.Dtp_NgayLap.TabIndex = 85
+        Me.Dtp_NgayLap.TabIndex = 8
         Me.Dtp_NgayLap.Value = New Date(2018, 5, 28, 16, 51, 25, 349)
         '
         'Btn_Close
@@ -296,7 +303,7 @@ Partial Class Frm_QLDocGia
         Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
         Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(1138, 12)
+        Me.Btn_Close.Location = New System.Drawing.Point(1363, 22)
         Me.Btn_Close.Name = "Btn_Close"
         Me.Btn_Close.Size = New System.Drawing.Size(55, 48)
         Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -311,77 +318,79 @@ Partial Class Frm_QLDocGia
         Me.Cb_LoaiDocGia.FormattingEnabled = True
         Me.Cb_LoaiDocGia.IntegralHeight = False
         Me.Cb_LoaiDocGia.ItemHeight = 27
-        Me.Cb_LoaiDocGia.Location = New System.Drawing.Point(578, 120)
+        Me.Cb_LoaiDocGia.Location = New System.Drawing.Point(659, 112)
         Me.Cb_LoaiDocGia.Name = "Cb_LoaiDocGia"
         Me.Cb_LoaiDocGia.Size = New System.Drawing.Size(282, 35)
-        Me.Cb_LoaiDocGia.TabIndex = 126
+        Me.Cb_LoaiDocGia.TabIndex = 1
         '
         'Txt_HoVaTen
         '
         Me.Txt_HoVaTen.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_HoVaTen.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_HoVaTen.Location = New System.Drawing.Point(268, 549)
+        Me.Txt_HoVaTen.Location = New System.Drawing.Point(391, 607)
         Me.Txt_HoVaTen.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_HoVaTen.Multiline = True
         Me.Txt_HoVaTen.Name = "Txt_HoVaTen"
         Me.Txt_HoVaTen.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_HoVaTen.TabIndex = 135
+        Me.Txt_HoVaTen.TabIndex = 4
         '
         'Txt_MaDocGia
         '
         Me.Txt_MaDocGia.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_MaDocGia.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_MaDocGia.Location = New System.Drawing.Point(268, 485)
+        Me.Txt_MaDocGia.Location = New System.Drawing.Point(391, 543)
         Me.Txt_MaDocGia.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_MaDocGia.Multiline = True
         Me.Txt_MaDocGia.Name = "Txt_MaDocGia"
         Me.Txt_MaDocGia.ReadOnly = True
         Me.Txt_MaDocGia.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_MaDocGia.TabIndex = 134
+        Me.Txt_MaDocGia.TabIndex = 3
         '
         'Txt_TinhTrangThe
         '
         Me.Txt_TinhTrangThe.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_TinhTrangThe.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TinhTrangThe.Location = New System.Drawing.Point(878, 608)
+        Me.Txt_TinhTrangThe.Location = New System.Drawing.Point(1001, 666)
         Me.Txt_TinhTrangThe.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_TinhTrangThe.Multiline = True
         Me.Txt_TinhTrangThe.Name = "Txt_TinhTrangThe"
+        Me.Txt_TinhTrangThe.ReadOnly = True
         Me.Txt_TinhTrangThe.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_TinhTrangThe.TabIndex = 136
+        Me.Txt_TinhTrangThe.TabIndex = 10
         '
         'Txt_NgayHetHan
         '
         Me.Txt_NgayHetHan.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_NgayHetHan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_NgayHetHan.Location = New System.Drawing.Point(878, 549)
+        Me.Txt_NgayHetHan.Location = New System.Drawing.Point(1001, 607)
         Me.Txt_NgayHetHan.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_NgayHetHan.Multiline = True
         Me.Txt_NgayHetHan.Name = "Txt_NgayHetHan"
+        Me.Txt_NgayHetHan.ReadOnly = True
         Me.Txt_NgayHetHan.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_NgayHetHan.TabIndex = 137
+        Me.Txt_NgayHetHan.TabIndex = 9
         '
         'Txt_Email
         '
         Me.Txt_Email.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_Email.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_Email.Location = New System.Drawing.Point(268, 736)
+        Me.Txt_Email.Location = New System.Drawing.Point(391, 794)
         Me.Txt_Email.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_Email.Multiline = True
         Me.Txt_Email.Name = "Txt_Email"
         Me.Txt_Email.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_Email.TabIndex = 138
+        Me.Txt_Email.TabIndex = 7
         '
         'Txt_DiaChi
         '
         Me.Txt_DiaChi.BorderColor = System.Drawing.Color.SeaGreen
         Me.Txt_DiaChi.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_DiaChi.Location = New System.Drawing.Point(268, 672)
+        Me.Txt_DiaChi.Location = New System.Drawing.Point(391, 730)
         Me.Txt_DiaChi.MaximumSize = New System.Drawing.Size(282, 44)
         Me.Txt_DiaChi.Multiline = True
         Me.Txt_DiaChi.Name = "Txt_DiaChi"
         Me.Txt_DiaChi.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_DiaChi.TabIndex = 139
+        Me.Txt_DiaChi.TabIndex = 6
         '
         'Cb_LoaiDocGiaCapNhap
         '
@@ -390,7 +399,7 @@ Partial Class Frm_QLDocGia
         Me.Cb_LoaiDocGiaCapNhap.FormattingEnabled = True
         Me.Cb_LoaiDocGiaCapNhap.IntegralHeight = False
         Me.Cb_LoaiDocGiaCapNhap.ItemHeight = 27
-        Me.Cb_LoaiDocGiaCapNhap.Location = New System.Drawing.Point(878, 668)
+        Me.Cb_LoaiDocGiaCapNhap.Location = New System.Drawing.Point(1001, 726)
         Me.Cb_LoaiDocGiaCapNhap.Name = "Cb_LoaiDocGiaCapNhap"
         Me.Cb_LoaiDocGiaCapNhap.Size = New System.Drawing.Size(282, 35)
         Me.Cb_LoaiDocGiaCapNhap.TabIndex = 140
@@ -409,13 +418,14 @@ Partial Class Frm_QLDocGia
         Me.Dgv_ListDocGia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Dgv_ListDocGia.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.Dgv_ListDocGia.ColumnHeadersHeight = 30
+        Me.Dgv_ListDocGia.ColumnHeadersHeight = 40
+        Me.Dgv_ListDocGia.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Ngay, Me.Column3, Me.Column4, Me.d, Me.Column5})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -428,20 +438,78 @@ Partial Class Frm_QLDocGia
         Me.Dgv_ListDocGia.EnableHeadersVisualStyles = False
         Me.Dgv_ListDocGia.HeaderBgColor = System.Drawing.Color.SeaGreen
         Me.Dgv_ListDocGia.HeaderForeColor = System.Drawing.Color.White
-        Me.Dgv_ListDocGia.Location = New System.Drawing.Point(68, 201)
+        Me.Dgv_ListDocGia.Location = New System.Drawing.Point(55, 176)
         Me.Dgv_ListDocGia.Name = "Dgv_ListDocGia"
+        Me.Dgv_ListDocGia.ReadOnly = True
         Me.Dgv_ListDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.Dgv_ListDocGia.RowHeadersWidth = 50
+        Me.Dgv_ListDocGia.RowHeadersWidth = 20
         Me.Dgv_ListDocGia.RowTemplate.Height = 28
-        Me.Dgv_ListDocGia.Size = New System.Drawing.Size(1070, 234)
-        Me.Dgv_ListDocGia.TabIndex = 141
+        Me.Dgv_ListDocGia.Size = New System.Drawing.Size(1346, 334)
+        Me.Dgv_ListDocGia.TabIndex = 2
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Column1.HeaderText = "Mã Độc Giả"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 185
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Column2.HeaderText = "Họ Và Tên"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 168
+        '
+        'Ngay
+        '
+        Me.Ngay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Ngay.HeaderText = "Ngày Sinh"
+        Me.Ngay.Name = "Ngay"
+        Me.Ngay.ReadOnly = True
+        Me.Ngay.Width = 166
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Column3.HeaderText = "Địa Chỉ"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 137
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Column4.HeaderText = "Email"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 114
+        '
+        'd
+        '
+        Me.d.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.d.HeaderText = "Ngày Lập"
+        Me.d.Name = "d"
+        Me.d.ReadOnly = True
+        Me.d.Width = 156
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Column5.HeaderText = "Ngày Hết Hạn"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 205
         '
         'Frm_QLDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1225, 907)
+        Me.ClientSize = New System.Drawing.Size(1451, 992)
         Me.Controls.Add(Me.Dgv_ListDocGia)
         Me.Controls.Add(Me.Cb_LoaiDocGiaCapNhap)
         Me.Controls.Add(Me.Txt_DiaChi)
@@ -469,6 +537,7 @@ Partial Class Frm_QLDocGia
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(10, 10)
         Me.Name = "Frm_QLDocGia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -506,4 +575,11 @@ Partial Class Frm_QLDocGia
     Friend WithEvents Cb_LoaiDocGiaCapNhap As ComboBox
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents Dgv_ListDocGia As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Ngay As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents d As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

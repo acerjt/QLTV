@@ -37,11 +37,6 @@ QLTV_GUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:QLTV_GUI.My.Resources.Resources.form">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:QLTV_GUI.My.Resources.Resources.icons8_abc_80">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -92,6 +87,16 @@ QLTV_GUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_exit_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_exit_50">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:QLTV_GUI.My.Resources.Resources.icons8_google_web_search_128">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -102,12 +107,17 @@ QLTV_GUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:QLTV_GUI.My.Resources.Resources.icons8_google_web_search_32">
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_google_web_search_80">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:QLTV_GUI.My.Resources.Resources.icons8_google_web_search_80">
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_help_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_help_50">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -122,7 +132,12 @@ QLTV_GUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:QLTV_GUI.My.Resources.Resources.icons8_home_64">
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_info_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTV_GUI.My.Resources.Resources.icons8_info_50">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -167,11 +182,6 @@ QLTV_GUI
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:QLTV_GUI.My.Resources.Resources.icons8_read_online_16">
-<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
-</member>
 <member name="P:QLTV_GUI.My.Resources.Resources.icons8_read_online_32">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -193,6 +203,11 @@ QLTV_GUI
 </summary>
 </member>
 <member name="P:QLTV_GUI.My.Resources.Resources.icons8_rules_32">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QLTV_GUI.My.Resources.Resources.Untitled">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

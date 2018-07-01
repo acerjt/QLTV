@@ -59,52 +59,6 @@ Public Class Sach_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function insert1(listSach As List(Of Sach_DTO)) As Result
-
-        Dim query As String = String.Empty
-        query &= "INSERT INTO [tblSach] ([MaSach], [TenSach], [MaTheLoaiSach], [MaTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia],[TinhTrang])"
-        query &= "VALUES (@MaSach,@TenSach,@MaTheLoaiSach,@MaTacGia,@NamXuatBan,@NhaXuatBan,@NgayNhap,@TriGia,@TinhTrang)"
-
-        'get MSSach
-        'Dim nextMaSach = "1"
-        'buildMaSach(nextMaSach)
-        'Sach.MaSach = nextMaSach
-
-        Using conn As New SqlConnection(connectionString)
-            Using comm As New SqlCommand()
-                With comm
-                    conn.Open()
-                    For Each Sach As Sach_DTO In listSach
-                        .Parameters.Clear()
-                        .Connection = conn
-                        .CommandType = CommandType.Text
-                        .CommandText = query
-                        .Parameters.AddWithValue("@MaSach", Sach.MaSach)
-                        .Parameters.AddWithValue("@TenSach", Sach.TenSach)
-                        .Parameters.AddWithValue("@MaTheloaiSach", Sach.TheLoai)
-                        .Parameters.AddWithValue("@MaTacGia", Sach.TenTacGia)
-                        .Parameters.AddWithValue("@NamXuatBan", Sach.NamXuatBan)
-                        .Parameters.AddWithValue("@NhaXuatBan", Sach.NhaXuatBan)
-                        .Parameters.AddWithValue("@NgayNhap", Sach.NgayNhap)
-                        .Parameters.AddWithValue("@TriGia", Sach.TriGia)
-                        .Parameters.AddWithValue("@TinhTrang", Sach.TinhTrang)
-                        Try
-
-                            comm.ExecuteNonQuery()
-                        Catch ex As Exception
-                            conn.Close()
-                            System.Console.WriteLine(ex.StackTrace)
-                            Return New Result(False, "Thêm Sách không thành công", ex.StackTrace)
-                        End Try
-                    Next
-                End With
-
-            End Using
-        End Using
-        Return New Result(True) ' thanh cong
-    End Function
-
-
     Public Function insert(Sach As Sach_DTO) As Result
 
         Dim query As String = String.Empty
@@ -144,10 +98,6 @@ Public Class Sach_DAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-
-
-
-
 
     Public Function selectALL(ByRef listSach As List(Of Sach_DTO)) As Result
 
@@ -493,6 +443,51 @@ Public Class Sach_DAL
                     System.Console.WriteLine(ex.StackTrace)
                     Return New Result(False, "Lấy danh sách theo mã sách không thành công", ex.StackTrace)
                 End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+    Public Function insert1(listSach As List(Of Sach_DTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "INSERT INTO [tblSach] ([MaSach], [TenSach], [MaTheLoaiSach], [MaTacGia],[NamXuatBan],[NhaXuatBan],[NgayNhap],[TriGia],[TinhTrang])"
+        query &= "VALUES (@MaSach,@TenSach,@MaTheLoaiSach,@MaTacGia,@NamXuatBan,@NhaXuatBan,@NgayNhap,@TriGia,@TinhTrang)"
+
+        'get MSSach
+        'Dim nextMaSach = "1"
+        'buildMaSach(nextMaSach)
+        'Sach.MaSach = nextMaSach
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    conn.Open()
+                    For Each Sach As Sach_DTO In listSach
+                        .Parameters.Clear()
+                        .Connection = conn
+                        .CommandType = CommandType.Text
+                        .CommandText = query
+                        .Parameters.AddWithValue("@MaSach", Sach.MaSach)
+                        .Parameters.AddWithValue("@TenSach", Sach.TenSach)
+                        .Parameters.AddWithValue("@MaTheloaiSach", Sach.TheLoai)
+                        .Parameters.AddWithValue("@MaTacGia", Sach.TenTacGia)
+                        .Parameters.AddWithValue("@NamXuatBan", Sach.NamXuatBan)
+                        .Parameters.AddWithValue("@NhaXuatBan", Sach.NhaXuatBan)
+                        .Parameters.AddWithValue("@NgayNhap", Sach.NgayNhap)
+                        .Parameters.AddWithValue("@TriGia", Sach.TriGia)
+                        .Parameters.AddWithValue("@TinhTrang", Sach.TinhTrang)
+                        Try
+
+                            comm.ExecuteNonQuery()
+                        Catch ex As Exception
+                            conn.Close()
+                            System.Console.WriteLine(ex.StackTrace)
+                            Return New Result(False, "Thêm Sách không thành công", ex.StackTrace)
+                        End Try
+                    Next
+                End With
+
             End Using
         End Using
         Return New Result(True) ' thanh cong

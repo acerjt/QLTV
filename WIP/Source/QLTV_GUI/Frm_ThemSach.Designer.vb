@@ -23,29 +23,27 @@ Partial Class Frm_ThemSach
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_ThemSach))
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.gdf = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ad = New System.Windows.Forms.Label()
-        Me.Label = New System.Windows.Forms.Label()
-        Me.sa = New System.Windows.Forms.Label()
-        Me.Btn_Close = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
+        Me.Dgv_ThemListSach = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.Dtp_NgayNhap = New Bunifu.Framework.UI.BunifuDatepicker()
-        Me.Btn_Nhap = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Btn_NhapVaDong = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Txt_TenSach = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
-        Me.Txt_MaSach = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
-        Me.Cb_Theloai = New System.Windows.Forms.ComboBox()
-        Me.Cb_TenTacGia = New System.Windows.Forms.ComboBox()
-        Me.Txt_TriGia = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
-        Me.Txt_NhaXuatBan = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
-        Me.Txt_NamXuatBan = New WindowsFormsControlLibrary1.BunifuCustomTextbox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.BunifuSeparator1 = New Bunifu.Framework.UI.BunifuSeparator()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.Btn_Nhap = New System.Windows.Forms.Button()
+        Me.Btn_Close = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Cl_MaSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cl_TenSach = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cl_TheLoaiSach = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Cl_TacGia = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Cl_NamXuatBan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cl_NhaXuatBan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cl_TriGia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.Dgv_ThemListSach, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,332 +52,202 @@ Partial Class Frm_ThemSach
         Me.BunifuElipse1.ElipseRadius = 20
         Me.BunifuElipse1.TargetControl = Me
         '
+        'Dgv_ThemListSach
+        '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv_ThemListSach.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.Dgv_ThemListSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.Dgv_ThemListSach.BackgroundColor = System.Drawing.Color.White
+        Me.Dgv_ThemListSach.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgv_ThemListSach.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ThemListSach.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_ThemListSach.ColumnHeadersHeight = 50
+        Me.Dgv_ThemListSach.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cl_MaSach, Me.Cl_TenSach, Me.Cl_TheLoaiSach, Me.Cl_TacGia, Me.Cl_NamXuatBan, Me.Cl_NhaXuatBan, Me.Cl_TriGia})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_ThemListSach.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Dgv_ThemListSach.DoubleBuffered = True
+        Me.Dgv_ThemListSach.EnableHeadersVisualStyles = False
+        Me.Dgv_ThemListSach.HeaderBgColor = System.Drawing.Color.SeaGreen
+        Me.Dgv_ThemListSach.HeaderForeColor = System.Drawing.Color.White
+        Me.Dgv_ThemListSach.Location = New System.Drawing.Point(77, 158)
+        Me.Dgv_ThemListSach.Name = "Dgv_ThemListSach"
+        Me.Dgv_ThemListSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_ThemListSach.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.Dgv_ThemListSach.RowHeadersWidth = 30
+        Me.Dgv_ThemListSach.RowTemplate.Height = 35
+        Me.Dgv_ThemListSach.Size = New System.Drawing.Size(1595, 303)
+        Me.Dgv_ThemListSach.TabIndex = 1
+        '
+        'Dtp_NgayNhap
+        '
+        Me.Dtp_NgayNhap.BackColor = System.Drawing.Color.SeaGreen
+        Me.Dtp_NgayNhap.BorderRadius = 0
+        Me.Dtp_NgayNhap.Font = New System.Drawing.Font("Times New Roman", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dtp_NgayNhap.ForeColor = System.Drawing.Color.White
+        Me.Dtp_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtp_NgayNhap.FormatCustom = Nothing
+        Me.Dtp_NgayNhap.Location = New System.Drawing.Point(388, 97)
+        Me.Dtp_NgayNhap.Margin = New System.Windows.Forms.Padding(4)
+        Me.Dtp_NgayNhap.Name = "Dtp_NgayNhap"
+        Me.Dtp_NgayNhap.Size = New System.Drawing.Size(245, 33)
+        Me.Dtp_NgayNhap.TabIndex = 2
+        Me.Dtp_NgayNhap.Value = New Date(2018, 6, 9, 10, 7, 9, 0)
+        '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 26.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label3.Location = New System.Drawing.Point(153, 439)
+        Me.Label3.Location = New System.Drawing.Point(-2, -4)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(237, 28)
-        Me.Label3.TabIndex = 48
-        Me.Label3.Text = "Trị Giá"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label7
-        '
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label7.Location = New System.Drawing.Point(153, 386)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(237, 36)
-        Me.Label7.TabIndex = 46
-        Me.Label7.Text = "Ngày Nhập"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label1.Location = New System.Drawing.Point(153, 85)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 28)
-        Me.Label1.TabIndex = 34
-        Me.Label1.Text = "Mã Sách"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'gdf
-        '
-        Me.gdf.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gdf.ForeColor = System.Drawing.Color.SeaGreen
-        Me.gdf.Location = New System.Drawing.Point(153, 338)
-        Me.gdf.Name = "gdf"
-        Me.gdf.Size = New System.Drawing.Size(237, 28)
-        Me.gdf.TabIndex = 44
-        Me.gdf.Text = "Nhà Xuất Bản"
-        Me.gdf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(153, 136)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(229, 28)
-        Me.Label2.TabIndex = 36
-        Me.Label2.Text = "Tên Sách"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ad
-        '
-        Me.ad.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ad.ForeColor = System.Drawing.Color.SeaGreen
-        Me.ad.Location = New System.Drawing.Point(153, 287)
-        Me.ad.Name = "ad"
-        Me.ad.Size = New System.Drawing.Size(237, 28)
-        Me.ad.TabIndex = 42
-        Me.ad.Text = "Năm Xuất Bản"
-        Me.ad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label
-        '
-        Me.Label.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label.Location = New System.Drawing.Point(153, 187)
-        Me.Label.Name = "Label"
-        Me.Label.Size = New System.Drawing.Size(229, 28)
-        Me.Label.TabIndex = 38
-        Me.Label.Text = "Thể Loại Sách"
-        Me.Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'sa
-        '
-        Me.sa.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sa.ForeColor = System.Drawing.Color.SeaGreen
-        Me.sa.Location = New System.Drawing.Point(153, 236)
-        Me.sa.Name = "sa"
-        Me.sa.Size = New System.Drawing.Size(237, 28)
-        Me.sa.TabIndex = 40
-        Me.sa.Text = "Tên Tác Giả"
-        Me.sa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Btn_Close
-        '
-        Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
-        Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
-        Me.Btn_Close.ImageActive = Nothing
-        Me.Btn_Close.Location = New System.Drawing.Point(741, 18)
-        Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Btn_Close.Name = "Btn_Close"
-        Me.Btn_Close.Size = New System.Drawing.Size(49, 38)
-        Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Btn_Close.TabIndex = 57
-        Me.Btn_Close.TabStop = False
-        Me.Btn_Close.Zoom = 10
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 26.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label4.Location = New System.Drawing.Point(0, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(236, 60)
-        Me.Label4.TabIndex = 55
-        Me.Label4.Text = "Thêm Sách"
+        Me.Label3.Size = New System.Drawing.Size(236, 60)
+        Me.Label3.TabIndex = 101
+        Me.Label3.Text = "Thêm Sách"
         '
         'BunifuSeparator1
         '
         Me.BunifuSeparator1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BunifuSeparator1.LineThickness = 2
-        Me.BunifuSeparator1.Location = New System.Drawing.Point(11, 46)
+        Me.BunifuSeparator1.Location = New System.Drawing.Point(-5, 48)
         Me.BunifuSeparator1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BunifuSeparator1.Name = "BunifuSeparator1"
-        Me.BunifuSeparator1.Size = New System.Drawing.Size(780, 43)
-        Me.BunifuSeparator1.TabIndex = 56
+        Me.BunifuSeparator1.Size = New System.Drawing.Size(1677, 25)
+        Me.BunifuSeparator1.TabIndex = 102
         Me.BunifuSeparator1.Transparency = 255
         Me.BunifuSeparator1.Vertical = False
         '
-        'Dtp_NgayNhap
+        'label5
         '
-        Me.Dtp_NgayNhap.BackColor = System.Drawing.Color.SeaGreen
-        Me.Dtp_NgayNhap.BorderRadius = 0
-        Me.Dtp_NgayNhap.ForeColor = System.Drawing.Color.White
-        Me.Dtp_NgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtp_NgayNhap.FormatCustom = Nothing
-        Me.Dtp_NgayNhap.Location = New System.Drawing.Point(385, 384)
-        Me.Dtp_NgayNhap.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Dtp_NgayNhap.Name = "Dtp_NgayNhap"
-        Me.Dtp_NgayNhap.Size = New System.Drawing.Size(251, 30)
-        Me.Dtp_NgayNhap.TabIndex = 63
-        Me.Dtp_NgayNhap.Value = New Date(2018, 5, 28, 14, 6, 57, 11)
+        Me.label5.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label5.ForeColor = System.Drawing.Color.SeaGreen
+        Me.label5.Location = New System.Drawing.Point(180, 97)
+        Me.label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label5.Name = "label5"
+        Me.label5.Size = New System.Drawing.Size(202, 33)
+        Me.label5.TabIndex = 104
+        Me.label5.Text = "Ngày Nhập"
         '
         'Btn_Nhap
         '
-        Me.Btn_Nhap.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_Nhap.BackColor = System.Drawing.Color.SeaGreen
-        Me.Btn_Nhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Nhap.BorderRadius = 7
-        Me.Btn_Nhap.ButtonText = "NHẬP"
-        Me.Btn_Nhap.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Nhap.DisabledColor = System.Drawing.Color.Gray
-        Me.Btn_Nhap.Iconcolor = System.Drawing.Color.Transparent
-        Me.Btn_Nhap.Iconimage = CType(resources.GetObject("Btn_Nhap.Iconimage"), System.Drawing.Image)
-        Me.Btn_Nhap.Iconimage_right = Nothing
-        Me.Btn_Nhap.Iconimage_right_Selected = Nothing
-        Me.Btn_Nhap.Iconimage_Selected = Nothing
-        Me.Btn_Nhap.IconMarginLeft = 0
-        Me.Btn_Nhap.IconMarginRight = 0
-        Me.Btn_Nhap.IconRightVisible = True
-        Me.Btn_Nhap.IconRightZoom = 0R
-        Me.Btn_Nhap.IconVisible = False
-        Me.Btn_Nhap.IconZoom = 90.0R
-        Me.Btn_Nhap.IsTab = False
-        Me.Btn_Nhap.Location = New System.Drawing.Point(111, 497)
-        Me.Btn_Nhap.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Btn_Nhap.Font = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Nhap.Image = Global.QLTV_GUI.My.Resources.Resources.Untitled
+        Me.Btn_Nhap.Location = New System.Drawing.Point(768, 491)
+        Me.Btn_Nhap.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_Nhap.Name = "Btn_Nhap"
-        Me.Btn_Nhap.Normalcolor = System.Drawing.Color.SeaGreen
-        Me.Btn_Nhap.OnHovercolor = System.Drawing.Color.DarkGreen
-        Me.Btn_Nhap.OnHoverTextColor = System.Drawing.Color.White
-        Me.Btn_Nhap.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Btn_Nhap.selected = False
-        Me.Btn_Nhap.Size = New System.Drawing.Size(248, 59)
-        Me.Btn_Nhap.TabIndex = 67
-        Me.Btn_Nhap.Text = "NHẬP"
-        Me.Btn_Nhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Btn_Nhap.Textcolor = System.Drawing.Color.White
-        Me.Btn_Nhap.TextFont = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Nhap.Size = New System.Drawing.Size(230, 52)
+        Me.Btn_Nhap.TabIndex = 106
+        Me.Btn_Nhap.Text = "Nhập"
+        Me.Btn_Nhap.UseVisualStyleBackColor = False
         '
-        'Btn_NhapVaDong
+        'Btn_Close
         '
-        Me.Btn_NhapVaDong.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.Btn_NhapVaDong.BackColor = System.Drawing.Color.SeaGreen
-        Me.Btn_NhapVaDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_NhapVaDong.BorderRadius = 7
-        Me.Btn_NhapVaDong.ButtonText = "NHẬP VÀ ĐÓNG"
-        Me.Btn_NhapVaDong.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_NhapVaDong.DisabledColor = System.Drawing.Color.Gray
-        Me.Btn_NhapVaDong.Iconcolor = System.Drawing.Color.Transparent
-        Me.Btn_NhapVaDong.Iconimage = CType(resources.GetObject("Btn_NhapVaDong.Iconimage"), System.Drawing.Image)
-        Me.Btn_NhapVaDong.Iconimage_right = Nothing
-        Me.Btn_NhapVaDong.Iconimage_right_Selected = Nothing
-        Me.Btn_NhapVaDong.Iconimage_Selected = Nothing
-        Me.Btn_NhapVaDong.IconMarginLeft = 0
-        Me.Btn_NhapVaDong.IconMarginRight = 0
-        Me.Btn_NhapVaDong.IconRightVisible = True
-        Me.Btn_NhapVaDong.IconRightZoom = 0R
-        Me.Btn_NhapVaDong.IconVisible = False
-        Me.Btn_NhapVaDong.IconZoom = 90.0R
-        Me.Btn_NhapVaDong.IsTab = False
-        Me.Btn_NhapVaDong.Location = New System.Drawing.Point(396, 497)
-        Me.Btn_NhapVaDong.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Btn_NhapVaDong.Name = "Btn_NhapVaDong"
-        Me.Btn_NhapVaDong.Normalcolor = System.Drawing.Color.SeaGreen
-        Me.Btn_NhapVaDong.OnHovercolor = System.Drawing.Color.DarkGreen
-        Me.Btn_NhapVaDong.OnHoverTextColor = System.Drawing.Color.White
-        Me.Btn_NhapVaDong.selected = False
-        Me.Btn_NhapVaDong.Size = New System.Drawing.Size(303, 59)
-        Me.Btn_NhapVaDong.TabIndex = 66
-        Me.Btn_NhapVaDong.Text = "NHẬP VÀ ĐÓNG"
-        Me.Btn_NhapVaDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Btn_NhapVaDong.Textcolor = System.Drawing.Color.White
-        Me.Btn_NhapVaDong.TextFont = New System.Drawing.Font("Times New Roman", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Close.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Close.Image = Global.QLTV_GUI.My.Resources.Resources.btnclose
+        Me.Btn_Close.ImageActive = Nothing
+        Me.Btn_Close.Location = New System.Drawing.Point(1623, 4)
+        Me.Btn_Close.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Btn_Close.Name = "Btn_Close"
+        Me.Btn_Close.Size = New System.Drawing.Size(49, 38)
+        Me.Btn_Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Btn_Close.TabIndex = 103
+        Me.Btn_Close.TabStop = False
+        Me.Btn_Close.Zoom = 10
         '
-        'Txt_TenSach
+        'Cl_MaSach
         '
-        Me.Txt_TenSach.BorderColor = System.Drawing.Color.SeaGreen
-        Me.Txt_TenSach.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TenSach.Location = New System.Drawing.Point(385, 129)
-        Me.Txt_TenSach.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_TenSach.Multiline = True
-        Me.Txt_TenSach.Name = "Txt_TenSach"
-        Me.Txt_TenSach.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_TenSach.TabIndex = 93
+        Me.Cl_MaSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_MaSach.FillWeight = 111.0!
+        Me.Cl_MaSach.HeaderText = "Mã Sách"
+        Me.Cl_MaSach.Name = "Cl_MaSach"
+        Me.Cl_MaSach.ReadOnly = True
         '
-        'Txt_MaSach
+        'Cl_TenSach
         '
-        Me.Txt_MaSach.BorderColor = System.Drawing.Color.SeaGreen
-        Me.Txt_MaSach.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_MaSach.Location = New System.Drawing.Point(385, 78)
-        Me.Txt_MaSach.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_MaSach.Multiline = True
-        Me.Txt_MaSach.Name = "Txt_MaSach"
-        Me.Txt_MaSach.ReadOnly = True
-        Me.Txt_MaSach.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_MaSach.TabIndex = 92
+        Me.Cl_TenSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_TenSach.HeaderText = "Tên Sách"
+        Me.Cl_TenSach.Name = "Cl_TenSach"
+        Me.Cl_TenSach.Width = 260
         '
-        'Cb_Theloai
+        'Cl_TheLoaiSach
         '
-        Me.Cb_Theloai.DropDownWidth = 269
-        Me.Cb_Theloai.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cb_Theloai.FormattingEnabled = True
-        Me.Cb_Theloai.IntegralHeight = False
-        Me.Cb_Theloai.ItemHeight = 22
-        Me.Cb_Theloai.Location = New System.Drawing.Point(385, 187)
-        Me.Cb_Theloai.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Cb_Theloai.Name = "Cb_Theloai"
-        Me.Cb_Theloai.Size = New System.Drawing.Size(251, 30)
-        Me.Cb_Theloai.TabIndex = 125
+        Me.Cl_TheLoaiSach.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_TheLoaiSach.HeaderText = "Thể Loại Sách"
+        Me.Cl_TheLoaiSach.Name = "Cl_TheLoaiSach"
+        Me.Cl_TheLoaiSach.Width = 85
         '
-        'Cb_TenTacGia
+        'Cl_TacGia
         '
-        Me.Cb_TenTacGia.DropDownWidth = 269
-        Me.Cb_TenTacGia.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cb_TenTacGia.FormattingEnabled = True
-        Me.Cb_TenTacGia.IntegralHeight = False
-        Me.Cb_TenTacGia.ItemHeight = 22
-        Me.Cb_TenTacGia.Location = New System.Drawing.Point(385, 236)
-        Me.Cb_TenTacGia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Cb_TenTacGia.Name = "Cb_TenTacGia"
-        Me.Cb_TenTacGia.Size = New System.Drawing.Size(251, 30)
-        Me.Cb_TenTacGia.TabIndex = 126
+        Me.Cl_TacGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_TacGia.HeaderText = "Tác Giả"
+        Me.Cl_TacGia.Name = "Cl_TacGia"
+        Me.Cl_TacGia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Cl_TacGia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Cl_TacGia.Width = 240
         '
-        'Txt_TriGia
+        'Cl_NamXuatBan
         '
-        Me.Txt_TriGia.BorderColor = System.Drawing.Color.SeaGreen
-        Me.Txt_TriGia.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_TriGia.Location = New System.Drawing.Point(385, 432)
-        Me.Txt_TriGia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_TriGia.Multiline = True
-        Me.Txt_TriGia.Name = "Txt_TriGia"
-        Me.Txt_TriGia.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_TriGia.TabIndex = 127
+        Me.Cl_NamXuatBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_NamXuatBan.HeaderText = "Năm Xuất Bản"
+        Me.Cl_NamXuatBan.Name = "Cl_NamXuatBan"
+        Me.Cl_NamXuatBan.Width = 85
         '
-        'Txt_NhaXuatBan
+        'Cl_NhaXuatBan
         '
-        Me.Txt_NhaXuatBan.BorderColor = System.Drawing.Color.SeaGreen
-        Me.Txt_NhaXuatBan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_NhaXuatBan.Location = New System.Drawing.Point(385, 331)
-        Me.Txt_NhaXuatBan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_NhaXuatBan.Multiline = True
-        Me.Txt_NhaXuatBan.Name = "Txt_NhaXuatBan"
-        Me.Txt_NhaXuatBan.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_NhaXuatBan.TabIndex = 128
+        Me.Cl_NhaXuatBan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_NhaXuatBan.HeaderText = "Nhà Xuất Bản"
+        Me.Cl_NhaXuatBan.Name = "Cl_NhaXuatBan"
+        Me.Cl_NhaXuatBan.Width = 177
         '
-        'Txt_NamXuatBan
+        'Cl_TriGia
         '
-        Me.Txt_NamXuatBan.BorderColor = System.Drawing.Color.SeaGreen
-        Me.Txt_NamXuatBan.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txt_NamXuatBan.Location = New System.Drawing.Point(385, 280)
-        Me.Txt_NamXuatBan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Txt_NamXuatBan.Multiline = True
-        Me.Txt_NamXuatBan.Name = "Txt_NamXuatBan"
-        Me.Txt_NamXuatBan.Size = New System.Drawing.Size(251, 36)
-        Me.Txt_NamXuatBan.TabIndex = 129
+        Me.Cl_TriGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cl_TriGia.HeaderText = "Trị Giá"
+        Me.Cl_TriGia.Name = "Cl_TriGia"
+        Me.Cl_TriGia.Width = 106
         '
         'Frm_ThemSach
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(810, 576)
-        Me.Controls.Add(Me.Txt_NamXuatBan)
-        Me.Controls.Add(Me.Txt_NhaXuatBan)
-        Me.Controls.Add(Me.Txt_TriGia)
-        Me.Controls.Add(Me.Cb_TenTacGia)
-        Me.Controls.Add(Me.Cb_Theloai)
-        Me.Controls.Add(Me.Txt_TenSach)
-        Me.Controls.Add(Me.Txt_MaSach)
+        Me.ClientSize = New System.Drawing.Size(1710, 554)
         Me.Controls.Add(Me.Btn_Nhap)
-        Me.Controls.Add(Me.Btn_NhapVaDong)
-        Me.Controls.Add(Me.Dtp_NgayNhap)
+        Me.Controls.Add(Me.label5)
         Me.Controls.Add(Me.Btn_Close)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.BunifuSeparator1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.gdf)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ad)
-        Me.Controls.Add(Me.Label)
-        Me.Controls.Add(Me.sa)
-        Me.ForeColor = System.Drawing.Color.SeaGreen
+        Me.Controls.Add(Me.BunifuSeparator1)
+        Me.Controls.Add(Me.Dtp_NgayNhap)
+        Me.Controls.Add(Me.Dgv_ThemListSach)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Frm_ThemSach"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Frm_ThemSach"
+        Me.Text = "??"
+        CType(Me.Dgv_ThemListSach, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Btn_Close, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -387,25 +255,18 @@ Partial Class Frm_ThemSach
     End Sub
 
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents gdf As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents ad As Label
-    Friend WithEvents Label As Label
-    Friend WithEvents sa As Label
-    Friend WithEvents Btn_Close As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Label4 As Label
-    Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
+    Friend WithEvents Dgv_ThemListSach As Bunifu.Framework.UI.BunifuCustomDataGrid
     Friend WithEvents Dtp_NgayNhap As Bunifu.Framework.UI.BunifuDatepicker
-    Friend WithEvents Btn_Nhap As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents Btn_NhapVaDong As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents Txt_TenSach As WindowsFormsControlLibrary1.BunifuCustomTextbox
-    Friend WithEvents Txt_MaSach As WindowsFormsControlLibrary1.BunifuCustomTextbox
-    Friend WithEvents Cb_TenTacGia As ComboBox
-    Friend WithEvents Cb_Theloai As ComboBox
-    Friend WithEvents Txt_NamXuatBan As WindowsFormsControlLibrary1.BunifuCustomTextbox
-    Friend WithEvents Txt_NhaXuatBan As WindowsFormsControlLibrary1.BunifuCustomTextbox
-    Friend WithEvents Txt_TriGia As WindowsFormsControlLibrary1.BunifuCustomTextbox
+    Friend WithEvents Btn_Close As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents Label3 As Label
+    Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
+    Private WithEvents label5 As Label
+    Friend WithEvents Btn_Nhap As Button
+    Friend WithEvents Cl_MaSach As DataGridViewTextBoxColumn
+    Friend WithEvents Cl_TenSach As DataGridViewTextBoxColumn
+    Friend WithEvents Cl_TheLoaiSach As DataGridViewComboBoxColumn
+    Friend WithEvents Cl_TacGia As DataGridViewComboBoxColumn
+    Friend WithEvents Cl_NamXuatBan As DataGridViewTextBoxColumn
+    Friend WithEvents Cl_NhaXuatBan As DataGridViewTextBoxColumn
+    Friend WithEvents Cl_TriGia As DataGridViewTextBoxColumn
 End Class

@@ -72,9 +72,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoMuonSachTheoThang_BUS.vb" />
+    <Compile Include="BaoCaoMuonSachTheoTheLoai_BUS.vb" />
     <Compile Include="BaoCaoThongKeSachTraTre_BUS.vb" />
-    <Compile Include="ChiTietBaoCaoMuonSachTheoThang_BUS.vb" />
+    <Compile Include="ChiTietBaoCaoMuonSachTheoTheLoai_BUS.vb" />
     <Compile Include="ChiTietBaoCaoThongKeSachTraTre_BUS.vb" />
     <Compile Include="ChiTietPhieuMuonSach_BUS.vb" />
     <Compile Include="ChiTietPhieuTraSach_BUS.vb" />
@@ -96,7 +96,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NhanTraSach_BUS.vb" />
+    <Compile Include="PhieuTraSach_BUS.vb" />
     <Compile Include="PhieuMuonSach_BUS.vb" />
     <Compile Include="QuyDinh_BUS.vb" />
     <Compile Include="Sach_BUS.vb" />

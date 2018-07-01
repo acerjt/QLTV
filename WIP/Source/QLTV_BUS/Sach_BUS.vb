@@ -11,6 +11,21 @@ Public Class Sach_BUS
     Public Sub New(connectionString As String)
         SachDAL = New Sach_DAL(connectionString)
     End Sub
+    Public Function isValidTenSach(Sach As Sach_DTO) As Boolean
+
+        If (Sach.TenSach.Length < 1) Then
+            Return False
+        End If
+
+        Return True
+    End Function
+    Public Function isValidName(Sach As Sach_DTO) As Boolean
+        If (Sach.TenSach.Length < 1) Then
+            Return False
+        End If
+
+        Return True
+    End Function
     Public Function isValidNamXuatBan(Sach As Sach_DTO, qds As QuyDinh_DTO) As Boolean
         Dim currentyear = DateTime.Now.Year
         If (currentyear - Sach.NamXuatBan < 0 Or currentyear - Sach.NamXuatBan > qds.KhoangCachNamXuatBan) Then
@@ -90,6 +105,7 @@ Public Class Sach_BUS
     Public Function search_ByTen(TenSach As String, ByRef listChiTietPhieuMuonSach As List(Of Sach_DTO)) As Result
         Return SachDAL.search_ByTen(TenSach, listChiTietPhieuMuonSach)
     End Function
+
     Public Function insert1(listSach As List(Of Sach_DTO)) As Result
         Return SachDAL.insert1(listSach)
     End Function

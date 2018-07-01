@@ -74,8 +74,8 @@ Partial Class Frm_ThemDocGia
         Me.Dtp_NgaySinh.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Dtp_NgaySinh.Name = "Dtp_NgaySinh"
         Me.Dtp_NgaySinh.Size = New System.Drawing.Size(282, 44)
-        Me.Dtp_NgaySinh.TabIndex = 25
-        Me.Dtp_NgaySinh.Value = New Date(2018, 5, 28, 14, 6, 57, 11)
+        Me.Dtp_NgaySinh.TabIndex = 93
+        Me.Dtp_NgaySinh.Value = New Date(2018, 6, 8, 0, 0, 0, 0)
         '
         'Dtp_NgayLap
         '
@@ -88,8 +88,8 @@ Partial Class Frm_ThemDocGia
         Me.Dtp_NgayLap.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Dtp_NgayLap.Name = "Dtp_NgayLap"
         Me.Dtp_NgayLap.Size = New System.Drawing.Size(282, 44)
-        Me.Dtp_NgayLap.TabIndex = 28
-        Me.Dtp_NgayLap.Value = New Date(2018, 5, 28, 14, 6, 57, 11)
+        Me.Dtp_NgayLap.TabIndex = 96
+        Me.Dtp_NgayLap.Value = New Date(2018, 6, 8, 0, 0, 0, 0)
         '
         'BunifuSeparator1
         '
@@ -212,7 +212,7 @@ Partial Class Frm_ThemDocGia
         Me.Btn_Nhap.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Btn_Nhap.selected = False
         Me.Btn_Nhap.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_Nhap.TabIndex = 38
+        Me.Btn_Nhap.TabIndex = 97
         Me.Btn_Nhap.Text = "NHẬP"
         Me.Btn_Nhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_Nhap.Textcolor = System.Drawing.Color.White
@@ -260,7 +260,7 @@ Partial Class Frm_ThemDocGia
         Me.Btn_NhapVaDong.OnHoverTextColor = System.Drawing.Color.White
         Me.Btn_NhapVaDong.selected = False
         Me.Btn_NhapVaDong.Size = New System.Drawing.Size(283, 74)
-        Me.Btn_NhapVaDong.TabIndex = 18
+        Me.Btn_NhapVaDong.TabIndex = 98
         Me.Btn_NhapVaDong.Text = "NHẬP VÀ ĐÓNG"
         Me.Btn_NhapVaDong.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Btn_NhapVaDong.Textcolor = System.Drawing.Color.White
@@ -295,7 +295,7 @@ Partial Class Frm_ThemDocGia
         Me.Txt_Email.Multiline = True
         Me.Txt_Email.Name = "Txt_Email"
         Me.Txt_Email.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_Email.TabIndex = 126
+        Me.Txt_Email.TabIndex = 95
         '
         'Txt_DiaChi
         '
@@ -305,7 +305,7 @@ Partial Class Frm_ThemDocGia
         Me.Txt_DiaChi.Multiline = True
         Me.Txt_DiaChi.Name = "Txt_DiaChi"
         Me.Txt_DiaChi.Size = New System.Drawing.Size(282, 44)
-        Me.Txt_DiaChi.TabIndex = 127
+        Me.Txt_DiaChi.TabIndex = 94
         '
         'Cb_LoaiDocGia
         '
@@ -317,12 +317,13 @@ Partial Class Frm_ThemDocGia
         Me.Cb_LoaiDocGia.Location = New System.Drawing.Point(413, 225)
         Me.Cb_LoaiDocGia.Name = "Cb_LoaiDocGia"
         Me.Cb_LoaiDocGia.Size = New System.Drawing.Size(282, 35)
-        Me.Cb_LoaiDocGia.TabIndex = 128
+        Me.Cb_LoaiDocGia.TabIndex = 92
         '
         'Frm_ThemDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(911, 644)
         Me.Controls.Add(Me.Cb_LoaiDocGia)
@@ -347,6 +348,7 @@ Partial Class Frm_ThemDocGia
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Location = New System.Drawing.Point(262, 80)
         Me.MaximizeBox = False
         Me.Name = "Frm_ThemDocGia"

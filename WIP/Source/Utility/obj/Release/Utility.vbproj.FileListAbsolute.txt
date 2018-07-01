@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\bin\Release\Utility.exe
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\bin\Release\Utility.pdb
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\bin\Release\Utility.xml
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\obj\Release\Utility.Resources.resources
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\obj\Release\Utility.vbproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\obj\Release\Utility.vbproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\obj\Release\Utility.exe
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\obj\Release\Utility.xml
+C:\Users\Administrator\Desktop\Source\QLTV\Utility\obj\Release\Utility.pdb

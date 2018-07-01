@@ -5,6 +5,7 @@ Imports Utility
 Public Class Frm_QLTacGia
 
     Private tgBus As TacGia_BUS
+    Dim frm_Infor = New Frm_Information()
     Private Sub Frm_ListTacGia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         tgBus = New TacGia_BUS()
@@ -18,7 +19,8 @@ Public Class Frm_QLTacGia
         Dim result As Result
         result = tgBus.selectAll(listTacGia)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách loại độc giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            frm_Infor.m.Text = "Lấy danh sách Loại Độc Giả không thành công."
+            frm_Infor.ShowDialog()
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -68,7 +70,8 @@ Public Class Frm_QLTacGia
 
                 '2. Business .....
                 If (tgBus.isValidName(tg) = False) Then
-                    MessageBox.Show("Tên Loại độc giả không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    frm_Infor.m.Text = "Tên Tác Giả không đúng. Vui lòng kiểm tra lại."
+                    frm_Infor.ShowDialog()
                     Txt_TenTacGia.Focus()
                     Return
                 End If
@@ -89,9 +92,11 @@ Public Class Frm_QLTacGia
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật Tác Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    frm_Infor.m.Text = "Cập nhật Tác Giả thành công."
+                    frm_Infor.ShowDialog()
                 Else
-                    MessageBox.Show("Cập nhật Tác giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    frm_Infor.m.Text = "Cập nhật Tác Giả không thành công."
+                    frm_Infor.ShowDialog()
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -106,12 +111,7 @@ Public Class Frm_QLTacGia
 
         ' Get the current cell location.
         Dim currentRowIndex As Integer = Dgv_ListTacGia.CurrentCellAddress.Y 'current row selected
-        'Dim x As Integer = dgvDanhSachLoaiHS.CurrentCellAddress.X 'curent column selected
 
-        ' Write coordinates to console for debugging
-        'Console.WriteLine(y.ToString + " " + x.ToString)
-
-        'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListTacGia.RowCount) Then
             Try
                 Dim tg = CType(Dgv_ListTacGia.Rows(currentRowIndex).DataBoundItem, TacGia_DTO)
@@ -132,8 +132,9 @@ Public Class Frm_QLTacGia
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < Dgv_ListTacGia.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa Tác Giả có mã: " + Txt_MaTacGia.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes
+            Frm_Close.i.Text = "Bạn có thực sự muốn xóa Tác Giả có mã số: " + Txt_MaTacGia.Text
+            Select Case Frm_Close.ShowDialog()
+                Case DialogResult.OK
                     Try
 
                         '1. Delete from DB
@@ -158,15 +159,17 @@ Public Class Frm_QLTacGia
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
                             End If
-                            MessageBox.Show("Xóa Tác Giả thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            frm_Infor.m.Text = "Xóa Tác Giả thành công."
+                            frm_Infor.ShowDialog()
                         Else
-                            MessageBox.Show("Xóa Tác Giả không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            frm_Infor.m.Text = "Xóa Tác Giả không thành công."
+                            frm_Infor.ShowDialog()
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                Case MsgBoxResult.No
+                Case DialogResult.No
                     Return
             End Select
 
@@ -179,9 +182,9 @@ Public Class Frm_QLTacGia
 
     Private Sub Txt_TenTacGia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txt_TenTacGia.KeyPress
         If (Char.IsNumber(e.KeyChar) Or Char.IsSymbol(e.KeyChar) Or Char.IsPunctuation(e.KeyChar)) Then
-
             e.Handled = True
-            MessageBox.Show("Vui lòng không nhập kí tự đặc biệt, kí tự số.")
+            frm_Infor.m.Text = "Vui lòng không nhập kí tự đặc biệt."
+            frm_Infor.ShowDialog()
         End If
     End Sub
 

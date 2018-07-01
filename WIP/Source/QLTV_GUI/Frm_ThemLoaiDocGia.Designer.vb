@@ -106,7 +106,7 @@ Partial Class Frm_ThemLoaiDocGia
         Me.Btn_Nhap.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_Nhap.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_Nhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Nhap.BorderRadius = 0
+        Me.Btn_Nhap.BorderRadius = 7
         Me.Btn_Nhap.ButtonText = "NHẬP"
         Me.Btn_Nhap.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_Nhap.DisabledColor = System.Drawing.Color.Gray
@@ -142,7 +142,7 @@ Partial Class Frm_ThemLoaiDocGia
         Me.Btn_NhapVaDong.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.Btn_NhapVaDong.BackColor = System.Drawing.Color.SeaGreen
         Me.Btn_NhapVaDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_NhapVaDong.BorderRadius = 0
+        Me.Btn_NhapVaDong.BorderRadius = 7
         Me.Btn_NhapVaDong.ButtonText = "NHẬP VÀ ĐÓNG"
         Me.Btn_NhapVaDong.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_NhapVaDong.DisabledColor = System.Drawing.Color.Gray
@@ -197,6 +197,7 @@ Partial Class Frm_ThemLoaiDocGia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(911, 424)
         Me.Controls.Add(Me.Txt_TenLoaiDocGia)
@@ -209,6 +210,7 @@ Partial Class Frm_ThemLoaiDocGia
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Frm_ThemLoaiDocGia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Frm_ThemLoaiDocGia"
